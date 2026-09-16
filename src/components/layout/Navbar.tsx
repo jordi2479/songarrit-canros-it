@@ -1,24 +1,27 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useState, useEffect } from "react";
 import { Zap } from "lucide-react";
-
-const navItems = [
-  { href: "#hero", label: "Inicio" },
-  { href: "#problema", label: "Problema" },
-  { href: "#solucion", label: "Solución" },
-  { href: "#perfil", label: "Perfil" },
-  { href: "#bloques", label: "Bloques" },
-  { href: "#areas", label: "Áreas" },
-  { href: "#prototipos", label: "Prototipos" },
-  { href: "#viabilidad", label: "Viabilidad" },
-  { href: "#cierre", label: "Cierre" },
-];
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Navbar() {
+  const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+
+  const navItems = [
+    { href: "#hero", label: t("inicio") },
+    { href: "#problema", label: t("problema") },
+    { href: "#solucion", label: t("solucion") },
+    { href: "#perfil", label: t("perfil") },
+    { href: "#bloques", label: t("bloques") },
+    { href: "#areas", label: t("areas") },
+    { href: "#prototipos", label: t("prototipos") },
+    { href: "#viabilidad", label: t("viabilidad") },
+    { href: "#cierre", label: t("cierre") },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +39,7 @@ export function Navbar() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]);
 
   return (
     <nav
@@ -52,7 +55,7 @@ export function Navbar() {
             <Zap className="w-4 h-4 text-white" />
           </div>
           <span className="text-white font-bold text-sm tracking-tight hidden sm:inline">
-            Son Garrit + Ca'n Ros
+            {t("brand")}
           </span>
         </Link>
 
@@ -74,8 +77,11 @@ export function Navbar() {
             href="/catalogo"
             className="ml-3 px-4 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold rounded-full transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40"
           >
-            150 Ideas →
+            {t("catalogo")}
           </Link>
+          <div className="ml-2 pl-2 border-l border-slate-800">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </nav>

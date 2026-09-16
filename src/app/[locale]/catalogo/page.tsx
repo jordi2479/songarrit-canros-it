@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Filter, ChevronDown, ChevronUp, ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import data from "@/data/ideas.json";
 
 const bloqueLabels: Record<string, string> = {

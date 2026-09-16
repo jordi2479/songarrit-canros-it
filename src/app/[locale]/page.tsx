@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import {
   Flame, BarChart3, Clock, Shield, Handshake, RotateCcw,
   Building2, Store, Users, Settings, ArrowRight,
