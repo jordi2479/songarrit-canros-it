@@ -20,36 +20,61 @@
     "scroll": "Scroll"
   },
   "problema": {
-    "title": "¿Qué implica gestionar",
+    "title": "¿Qué pasa cuando gestionas",
     "highlight": "2 tiendas",
-    "titleEnd": "con métodos de 1?",
-    "intro": "Adquirir Ca'n Ros fue un éxito estratégico, pero a nivel operativo multiplica el estrés. Los métodos tradicionales diseñados para una sola tienda generan desorden silencioso que roba horas de venta cada semana.",
-    "pain1Title": "Apagar fuegos",
-    "pain1Desc": "El tiempo se invierte en urgencias en lugar de planificar.",
-    "pain2Title": "Datos cruzados a mano",
-    "pain2Desc": "Tarifas, stock y facturas comparadas manualmente entre Palma y Campos.",
-    "pain3Title": "Horas perdidas",
-    "pain3Desc": "Los encargados pasan más tiempo tecleando que vendiendo en mostrador."
+    "titleEnd": "con el motor de una sola?",
+    "intro": "Comprar Ca'n Ros fue el movimiento correcto para crecer. Sin embargo, detrás del mostrador estamos trabajando el doble para mantenerlo a flote. Los métodos que funcionaban para una tienda ahora son un embudo: un \"desorden silencioso\" que nos roba horas de venta.",
+    "pain1Title": "Vivir apagando fuegos",
+    "pain1Desc": "El día a día se va en urgencias: persiguiendo un albarán que no cuadra o buscando material perdido, en lugar de poder organizar la tienda o planificar.",
+    "pain2Title": "Cruzar datos a mano",
+    "pain2Desc": "Comparar tarifas y stock entre Palma y Campos a base de memoria y hojas de cálculo. Es un trabajo agotador, propenso a errores y que frena la agilidad.",
+    "pain3Title": "Ventas perdidas por descontrol",
+    "pain3Desc": "No se vende todo lo que se debería por pura desorganización. Roturas de stock que no se apuntan, productos desordenados y falta de procesos claros cuestan dinero a diario."
   },
   "solucion": {
-    "title1": "No se trata de comprar programas.",
-    "title2": "Se trata de poner orden.",
-    "desc": "Un Departamento de IT interno elimina el trabajo mecánico: puntear facturas, revisar stock a ojo, redactar correos repetitivos. Los encargados vuelven al mostrador a vender.",
-    "antes1": "📋 Facturas a mano",
-    "despues1": "✅ Factura revisada al instante",
-    "antes2": "📦 Stock a ojo",
-    "despues2": "📊 Alerta de rotura inteligente",
-    "antes3": "✉️ Correos manuales",
-    "despues3": "🤖 Borrador listo para enviar"
+    "title1": "Automatizar lo invisible.",
+    "title2": "La tecnología debe trabajar para nosotros.",
+    "desc": "Un Departamento de IT interno asume el trabajo robótico. Deja que los sistemas comparen tarifas y vigilen el stock para que tu mejor talento haga lo que nadie más puede hacer: asesorar, fidelizar y cerrar ventas.",
+    "antes1": "Perseguir los albaranes perdidos y buscar dónde se originó el descuadre",
+    "despues1": "Descuadres e incidencias detectados de forma automática en 3 segundos",
+    "antes2": "Cruzar las tarifas de ambas tiendas exportando los datos a mano en Excel",
+    "despues2": "Agente comparador de precios trabajando en segundo plano de forma continua",
+    "antes3": "Descubrir que nos hemos quedado sin un producto cuando el cliente lo pide",
+    "despues3": "Sistema de avisos predictivos que nos alerta antes de la rotura de stock"
   },
   "perfil": {
-    "title": "El Perfil Híbrido",
-    "subtitle": "Una agencia monta un panel bonito. Pero",
-    "subtitleBold": "no sabe qué es un taco químico",
-    "mostrador": "50% Mostrador",
-    "mostradorItems": ["Cobrar y atender al profesional", "Reponer y ordenar almacén", "Conocer el catálogo de primera mano", "Detectar los cuellos de botella reales"],
-    "procesos": "50% Procesos",
-    "procesosItems": ["Automatizar alertas y cuadros de mando", "Diseñar herramientas a medida", "Coordinar al especialista externo", "Analizar datos de las dos tiendas"]
+    "title": "El valor del Perfil Híbrido",
+    "intro": "<p>El mayor error de las empresas es <bold>separar a quienes diseñan la tecnología</bold> de quienes la sufren a diario. Mi propuesta no es ser un vendedor más ni un técnico encerrado en una oficina.</p><p>Mi objetivo es <highlight>ser el puente entre ambos mundos</highlight>:</p><p>Alguien capaz de <bold>detectar el problema</bold> manchándose las manos en el mostrador, y con la capacidad técnica para <bold>solucionarlo creando herramientas a medida</bold>.</p>",
+    "mostrador": "50% Análisis en Tienda",
+    "mostradorItems": [
+      {
+        "title": "Entender el negocio desde dentro",
+        "desc": "Atender al profesional en el mostrador para conocer de primera mano el catálogo y la demanda."
+      },
+      {
+        "title": "Mapear la operativa",
+        "desc": "Trabajar en el almacén para detectar los cuellos de botella reales en los flujos de stock."
+      },
+      {
+        "title": "Diagnosticar",
+        "desc": "Identificar con precisión qué tareas repetitivas están robando tiempo de venta a los encargados."
+      }
+    ],
+    "procesos": "50% Soluciones con IA",
+    "procesosItems": [
+      {
+        "title": "Automatización inteligente",
+        "desc": "Desplegar Agentes de IA para que asuman el procesamiento de datos y tareas mecánicas."
+      },
+      {
+        "title": "Herramientas de precisión",
+        "desc": "Desarrollar soluciones IT a medida que resuelvan problemas concretos del día a día en la tienda."
+      },
+      {
+        "title": "Unificación de datos",
+        "desc": "Cruzar y analizar la información de Palma y Campos para facilitar la toma de decisiones a Dirección."
+      }
+    ]
   },
   "garantias": {
     "title": "Tres garantías",

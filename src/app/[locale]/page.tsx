@@ -8,7 +8,7 @@ import {
   Building2, Store, Users, Settings, ArrowRight,
   ShoppingCart, CreditCard, Compass,
   LayoutDashboard, Package, Truck, UserCog, Lock, MessageSquare, Wrench,
-  TrendingUp, PiggyBank, AlertTriangle, Sparkles,
+  TrendingUp, PiggyBank, AlertTriangle, Sparkles, XCircle, CheckCircle2,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Section } from "@/components/layout/Section";
@@ -99,8 +99,8 @@ export default function Home() {
     },
   ];
 
-  const mostradorItems = tPerfil.raw("mostradorItems") as string[];
-  const procesosItems = tPerfil.raw("procesosItems") as string[];
+  const mostradorItems = tPerfil.raw("mostradorItems") as {title: string, desc: string}[];
+  const procesosItems = tPerfil.raw("procesosItems") as {title: string, desc: string}[];
 
   return (
     <>
@@ -190,9 +190,20 @@ export default function Home() {
               { antes: tSol("antes2"), despues: tSol("despues2"), delay: 0.15 },
               { antes: tSol("antes3"), despues: tSol("despues3"), delay: 0.3 },
             ].map((item, idx) => (
-              <FadeCard key={idx} delay={item.delay} className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-                <div className="text-slate-500 text-sm mb-4 line-through">{item.antes}</div>
-                <div className="text-lg font-bold text-white">{item.despues}</div>
+              <FadeCard key={idx} delay={item.delay} className="rounded-2xl bg-slate-900 border border-slate-800 flex flex-col h-full min-h-[20rem] text-center">
+                <div className="flex-1 p-6 flex flex-col justify-end items-center">
+                  <div className="text-slate-400 text-base mb-4">{item.antes}</div>
+                  <span className="flex items-center justify-center gap-2 text-base font-black text-slate-500 uppercase tracking-widest">
+                    <XCircle className="w-5 h-5" /> Antes
+                  </span>
+                </div>
+                <div className="h-px bg-slate-800 w-full"></div>
+                <div className="flex-1 p-6 flex flex-col justify-start items-center">
+                  <span className="flex items-center justify-center gap-2 text-base font-black text-emerald-500 uppercase tracking-widest mb-4">
+                    <CheckCircle2 className="w-5 h-5" /> Con IA
+                  </span>
+                  <div className="text-white text-base font-bold">{item.despues}</div>
+                </div>
               </FadeCard>
             ))}
           </div>
@@ -202,21 +213,27 @@ export default function Home() {
       {/* ─── SECCIÓN 4: EL PERFIL HÍBRIDO ─── */}
       <Section id="perfil" className="bg-gradient-to-b from-white to-emerald-50/30">
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight text-slate-900">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8 leading-tight text-slate-900">
             {tPerfil("title")}
           </h2>
-          <p className="text-xl text-slate-500 mb-16 max-w-2xl mx-auto">
-            {tPerfil("subtitle")} <strong className="text-slate-900">{tPerfil("subtitleBold")}</strong>.
-          </p>
+          <div className="text-xl md:text-2xl text-slate-600 mb-16 max-w-4xl mx-auto leading-relaxed font-medium">
+            {tPerfil.rich("intro", {
+              bold: (chunks) => <strong className="text-slate-900 font-bold">{chunks}</strong>,
+              highlight: (chunks) => <span className="text-emerald-600 font-bold">{chunks}</span>,
+              p: (chunks) => <p className="mb-6 last:mb-0">{chunks}</p>
+            })}
+          </div>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <FadeCard delay={0} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 text-left">
               <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-5">
                 <Store className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-4">{tPerfil("mostrador")}</h3>
-              <ul className="space-y-2 text-slate-600 text-sm">
+              <ul className="space-y-3 text-slate-600 text-sm">
                 {mostradorItems.map((item, i) => (
-                  <li key={i}>• {item}</li>
+                  <li key={i}>
+                    <strong className="text-slate-900">{item.title}:</strong> {item.desc}
+                  </li>
                 ))}
               </ul>
             </FadeCard>
@@ -225,9 +242,11 @@ export default function Home() {
                 <LayoutDashboard className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-4">{tPerfil("procesos")}</h3>
-              <ul className="space-y-2 text-slate-600 text-sm">
+              <ul className="space-y-3 text-slate-600 text-sm">
                 {procesosItems.map((item, i) => (
-                  <li key={i}>• {item}</li>
+                  <li key={i}>
+                    <strong className="text-slate-900">{item.title}:</strong> {item.desc}
+                  </li>
                 ))}
               </ul>
             </FadeCard>
