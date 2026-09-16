@@ -10,6 +10,7 @@ import {
   LayoutDashboard, Package, Truck, UserCog, Lock, MessageSquare, Wrench,
   TrendingUp, PiggyBank, AlertTriangle, Sparkles,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Section } from "@/components/layout/Section";
 import { Navbar } from "@/components/layout/Navbar";
 import { AnimatedText } from "@/components/ui/AnimatedText";
@@ -34,49 +35,6 @@ function FadeCard({ children, className = "", delay = 0 }: { children: React.Rea
   );
 }
 
-/* ─── Áreas por bloque ─── */
-const bloques = [
-  {
-    id: "B1", nombre: "Grupo", icon: Building2, color: "blue",
-    desc: "Sinergias Palma + Campos",
-    areas: [
-      { num: "04", nombre: "Dirección de Grupo", icon: Compass },
-      { num: "05", nombre: "Compras Centralizadas", icon: ShoppingCart },
-      { num: "06", nombre: "Stock Compartido", icon: Package },
-      { num: "07", nombre: "Tesorería de Grupo", icon: CreditCard },
-      { num: "08", nombre: "Marcas Locales", icon: Sparkles },
-    ],
-  },
-  {
-    id: "B2", nombre: "Núcleo", icon: Store, color: "emerald",
-    desc: "Gestión interna Ca'n Ros",
-    areas: [
-      { num: "01", nombre: "Compras y Stock", icon: ShoppingCart },
-      { num: "02", nombre: "Finanzas Tienda", icon: CreditCard },
-      { num: "03", nombre: "Dirección Tienda", icon: LayoutDashboard },
-    ],
-  },
-  {
-    id: "B3", nombre: "Clientes", icon: Users, color: "violet",
-    desc: "Mostrador, marketing y ventas",
-    areas: [
-      { num: "09", nombre: "Marketing y Reputación", icon: TrendingUp },
-      { num: "10", nombre: "Saber Hacer Palma→Campos", icon: UserCog },
-      { num: "14", nombre: "Atención y WhatsApp", icon: MessageSquare },
-    ],
-  },
-  {
-    id: "B4", nombre: "Operativa", icon: Settings, color: "amber",
-    desc: "Logística, equipo y seguridad",
-    areas: [
-      { num: "11", nombre: "Reparto a Obra", icon: Truck },
-      { num: "12", nombre: "Equipo y Administración", icon: UserCog },
-      { num: "13", nombre: "Seguridad y Control", icon: Lock },
-      { num: "15", nombre: "Operaciones Auxiliares", icon: Wrench },
-    ],
-  },
-];
-
 const colorClasses: Record<string, { card: string; badge: string; icon: string }> = {
   blue: { card: "border-blue-500/20 hover:border-blue-500/40", badge: "bg-blue-500/10 text-blue-400", icon: "text-blue-400" },
   emerald: { card: "border-emerald-500/20 hover:border-emerald-500/40", badge: "bg-emerald-500/10 text-emerald-400", icon: "text-emerald-400" },
@@ -88,6 +46,62 @@ const colorClasses: Record<string, { card: string; badge: string; icon: string }
    PAGE
    ═══════════════════════════════════════════════════════════════════ */
 export default function Home() {
+  const tHero = useTranslations("hero");
+  const tProb = useTranslations("problema");
+  const tSol = useTranslations("solucion");
+  const tPerfil = useTranslations("perfil");
+  const tGarantias = useTranslations("garantias");
+  const tBloques = useTranslations("bloques");
+  const tAreas = useTranslations("areas");
+  const tProto = useTranslations("prototipos");
+  const tViab = useTranslations("viabilidad");
+  const tCierre = useTranslations("cierre");
+
+  const bloques = [
+    {
+      id: "B1", nombre: tBloques("b1"), icon: Building2, color: "blue",
+      desc: tBloques("b1Desc"),
+      areas: [
+        { num: "04", nombre: tAreas("a04"), icon: Compass },
+        { num: "05", nombre: tAreas("a05"), icon: ShoppingCart },
+        { num: "06", nombre: tAreas("a06"), icon: Package },
+        { num: "07", nombre: tAreas("a07"), icon: CreditCard },
+        { num: "08", nombre: tAreas("a08"), icon: Sparkles },
+      ],
+    },
+    {
+      id: "B2", nombre: tBloques("b2"), icon: Store, color: "emerald",
+      desc: tBloques("b2Desc"),
+      areas: [
+        { num: "01", nombre: tAreas("a01"), icon: ShoppingCart },
+        { num: "02", nombre: tAreas("a02"), icon: CreditCard },
+        { num: "03", nombre: tAreas("a03"), icon: LayoutDashboard },
+      ],
+    },
+    {
+      id: "B3", nombre: tBloques("b3"), icon: Users, color: "violet",
+      desc: tBloques("b3Desc"),
+      areas: [
+        { num: "09", nombre: tAreas("a09"), icon: TrendingUp },
+        { num: "10", nombre: tAreas("a10"), icon: UserCog },
+        { num: "14", nombre: tAreas("a14"), icon: MessageSquare },
+      ],
+    },
+    {
+      id: "B4", nombre: tBloques("b4"), icon: Settings, color: "amber",
+      desc: tBloques("b4Desc"),
+      areas: [
+        { num: "11", nombre: tAreas("a11"), icon: Truck },
+        { num: "12", nombre: tAreas("a12"), icon: UserCog },
+        { num: "13", nombre: tAreas("a13"), icon: Lock },
+        { num: "15", nombre: tAreas("a15"), icon: Wrench },
+      ],
+    },
+  ];
+
+  const mostradorItems = tPerfil.raw("mostradorItems") as string[];
+  const procesosItems = tPerfil.raw("procesosItems") as string[];
+
   return (
     <>
       <Navbar />
@@ -102,10 +116,10 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">Propuesta de Departamento IT</span>
+            <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">{tHero("badge")}</span>
           </motion.div>
           <AnimatedText
-            text="Dos tiendas. Un grupo. Cero caos."
+            text={tHero("title")}
             className="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] mb-8"
             delay={0.4}
           />
@@ -115,7 +129,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            Propuesta de Departamento de Operaciones e IT para el Grupo <strong className="text-white font-semibold">Son Garrit + Ca'n Ros</strong>
+            {tHero("subtitle")} <strong className="text-white font-semibold">{tHero("brand")}</strong>
           </motion.p>
         </div>
         <ScrollIndicator targetId="problema" />
@@ -126,19 +140,19 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8 leading-tight">
-              ¿Qué implica gestionar
-              <span className="text-emerald-500"> 2 tiendas</span> con métodos de 1?
+              {tProb("title")}{" "}
+              <span className="text-emerald-500">{tProb("highlight")}</span>{" "}
+              {tProb("titleEnd")}
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Adquirir Ca'n Ros fue un éxito estratégico, pero a nivel operativo multiplica el estrés.
-              Los métodos tradicionales diseñados para una sola tienda generan desorden silencioso que roba horas de venta cada semana.
+              {tProb("intro")}
             </p>
           </div>
           <div className="space-y-4">
             {[
-              { icon: Flame, title: "Apagar fuegos", desc: "El tiempo se invierte en urgencias en lugar de planificar.", color: "red" as const },
-              { icon: BarChart3, title: "Datos cruzados a mano", desc: "Tarifas, stock y facturas comparadas manualmente entre Palma y Campos.", color: "amber" as const },
-              { icon: Clock, title: "Horas perdidas", desc: "Los encargados pasan más tiempo tecleando que vendiendo en mostrador.", color: "blue" as const },
+              { icon: Flame, title: tProb("pain1Title"), desc: tProb("pain1Desc"), color: "red" as const },
+              { icon: BarChart3, title: tProb("pain2Title"), desc: tProb("pain2Desc"), color: "amber" as const },
+              { icon: Clock, title: tProb("pain3Title"), desc: tProb("pain3Desc"), color: "blue" as const },
             ].map((item, i) => (
               <FadeCard key={item.title} delay={i * 0.15} className={`p-6 rounded-2xl border bg-slate-50 ${
                 item.color === "red" ? "border-red-200" : item.color === "amber" ? "border-amber-200" : "border-blue-200"
@@ -164,19 +178,19 @@ export default function Home() {
       <Section id="solucion" dark>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8 leading-tight">
-            No se trata de comprar programas.<br/>
-            <span className="text-emerald-400">Se trata de poner orden.</span>
+            {tSol("title1")}<br/>
+            <span className="text-emerald-400">{tSol("title2")}</span>
           </h2>
           <p className="text-xl text-slate-400 leading-relaxed mb-16">
-            Un Departamento de IT interno elimina el trabajo mecánico: puntear facturas, revisar stock a ojo, redactar correos repetitivos. Los encargados vuelven al mostrador a vender.
+            {tSol("desc")}
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { antes: "📋 Facturas a mano", despues: "✅ Factura revisada al instante", delay: 0 },
-              { antes: "📦 Stock a ojo", despues: "📊 Alerta de rotura inteligente", delay: 0.15 },
-              { antes: "✉️ Correos manuales", despues: "🤖 Borrador listo para enviar", delay: 0.3 },
-            ].map((item) => (
-              <FadeCard key={item.antes} delay={item.delay} className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+              { antes: tSol("antes1"), despues: tSol("despues1"), delay: 0 },
+              { antes: tSol("antes2"), despues: tSol("despues2"), delay: 0.15 },
+              { antes: tSol("antes3"), despues: tSol("despues3"), delay: 0.3 },
+            ].map((item, idx) => (
+              <FadeCard key={idx} delay={item.delay} className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
                 <div className="text-slate-500 text-sm mb-4 line-through">{item.antes}</div>
                 <div className="text-lg font-bold text-white">{item.despues}</div>
               </FadeCard>
@@ -189,34 +203,32 @@ export default function Home() {
       <Section id="perfil" className="bg-gradient-to-b from-white to-emerald-50/30">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight text-slate-900">
-            El Perfil Híbrido
+            {tPerfil("title")}
           </h2>
           <p className="text-xl text-slate-500 mb-16 max-w-2xl mx-auto">
-            Una agencia monta un panel bonito. Pero <strong className="text-slate-900">no sabe qué es un taco químico</strong>.
+            {tPerfil("subtitle")} <strong className="text-slate-900">{tPerfil("subtitleBold")}</strong>.
           </p>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <FadeCard delay={0} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 text-left">
               <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-5">
                 <Store className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-black text-slate-900 mb-4">50% Mostrador</h3>
+              <h3 className="text-xl font-black text-slate-900 mb-4">{tPerfil("mostrador")}</h3>
               <ul className="space-y-2 text-slate-600 text-sm">
-                <li>• Cobrar y atender al profesional</li>
-                <li>• Reponer y ordenar almacén</li>
-                <li>• Conocer el catálogo de primera mano</li>
-                <li>• Detectar los cuellos de botella reales</li>
+                {mostradorItems.map((item, i) => (
+                  <li key={i}>• {item}</li>
+                ))}
               </ul>
             </FadeCard>
             <FadeCard delay={0.2} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 text-left">
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
                 <LayoutDashboard className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-black text-slate-900 mb-4">50% Procesos</h3>
+              <h3 className="text-xl font-black text-slate-900 mb-4">{tPerfil("procesos")}</h3>
               <ul className="space-y-2 text-slate-600 text-sm">
-                <li>• Automatizar alertas y cuadros de mando</li>
-                <li>• Diseñar herramientas a medida</li>
-                <li>• Coordinar al especialista externo</li>
-                <li>• Analizar datos de las dos tiendas</li>
+                {procesosItems.map((item, i) => (
+                  <li key={i}>• {item}</li>
+                ))}
               </ul>
             </FadeCard>
           </div>
@@ -226,13 +238,13 @@ export default function Home() {
       {/* ─── SECCIÓN 5: LAS 3 GARANTÍAS ─── */}
       <Section id="garantias" dark>
         <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-16 text-center leading-tight">
-          Tres garantías<br/><span className="text-emerald-400">inquebrantables</span>
+          {tGarantias("title")}<br/><span className="text-emerald-400">{tGarantias("highlight")}</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
-            { icon: Shield, title: "Propone el sistema, dispone la Dirección", desc: "Nada se ejecuta sin vuestro clic de aprobación. Las automatizaciones solo generan borradores.", color: "emerald" },
-            { icon: Handshake, title: "Lo sensible, con especialista", desc: "TPV, ERP y banco los toca un profesional certificado. Yo coordino la lógica, no el código crítico.", color: "blue" },
-            { icon: RotateCcw, title: "100% Reversible", desc: "Si algo no funciona, se apaga en un minuto. El negocio sigue igual que hoy. Cero daño.", color: "amber" },
+            { icon: Shield, title: tGarantias("g1Title"), desc: tGarantias("g1Desc"), color: "emerald" },
+            { icon: Handshake, title: tGarantias("g2Title"), desc: tGarantias("g2Desc"), color: "blue" },
+            { icon: RotateCcw, title: tGarantias("g3Title"), desc: tGarantias("g3Desc"), color: "amber" },
           ].map((g, i) => (
             <FadeCard key={g.title} delay={i * 0.15} className={`p-8 rounded-2xl bg-slate-900 border border-slate-800 text-center`}>
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 ${
@@ -253,10 +265,10 @@ export default function Home() {
       <Section id="bloques">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-900 leading-tight">
-            150 ideas en <span className="text-emerald-600">4 pilares</span>
+            {tBloques("title")} <span className="text-emerald-600">{tBloques("highlight")}</span>
           </h2>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-            Todo el trabajo organizado en bloques estructurales. De lo macro (el grupo) a lo micro (el mostrador).
+            {tBloques("desc")}
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
@@ -293,10 +305,10 @@ export default function Home() {
       <Section id="areas" dark>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
-            15 áreas. <span className="text-emerald-400">10 ideas cada una.</span>
+            {tAreas("title")} <span className="text-emerald-400">{tAreas("highlight")}</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Cada área del negocio tiene 10 propuestas concretas analizadas. Desde las compras de Ca'n Ros hasta la ruta de la furgoneta.
+            {tAreas("desc")}
           </p>
         </div>
         <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-3">
@@ -310,7 +322,7 @@ export default function Home() {
                   </div>
                   <span className="font-mono text-[10px] text-slate-500 block">{a.num}</span>
                   <span className="text-xs text-slate-300 font-medium block mt-1">{a.nombre}</span>
-                  <span className="text-[10px] text-slate-600 mt-2 block">10 proyectos</span>
+                  <span className="text-[10px] text-slate-600 mt-2 block">{tBloques("proyectos")}</span>
                 </FadeCard>
               );
             })
@@ -318,7 +330,7 @@ export default function Home() {
         </div>
         <div className="text-center mt-12">
           <Link href="/catalogo" className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm rounded-xl transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40">
-            Explorar las 150 ideas <ArrowRight className="w-4 h-4" />
+            {tAreas("cta")} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </Section>
@@ -327,10 +339,10 @@ export default function Home() {
       <Section id="prototipos" className="bg-gradient-to-b from-slate-950 to-slate-900" dark>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
-            Así se verá en el <span className="text-emerald-400">día a día</span>
+            {tProto("title")} <span className="text-emerald-400">{tProto("highlight")}</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Prototipos funcionales. Haced clic. Probad. Esto es lo que veréis en vuestro móvil o pantalla cada mañana.
+            {tProto("desc")}
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -343,16 +355,16 @@ export default function Home() {
       <Section id="viabilidad">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-900 leading-tight">
-            El baño de <span className="text-emerald-600">realidad</span>
+            {tViab("title")} <span className="text-emerald-600">{tViab("highlight")}</span>
           </h2>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-            No todo es gratis ni inmediato. Transparencia total sobre costes, tiempos y riesgos.
+            {tViab("desc")}
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <FadeCard delay={0} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
             <PiggyBank className="w-8 h-8 text-emerald-500 mb-4" />
-            <h3 className="text-lg font-black text-slate-900 mb-2">Inversión</h3>
+            <h3 className="text-lg font-black text-slate-900 mb-2">{tViab("inversionTitle")}</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3">
                 <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
@@ -360,46 +372,46 @@ export default function Home() {
                 </div>
                 <span className="text-slate-900 font-bold whitespace-nowrap">75%</span>
               </div>
-              <p className="text-slate-500">Cubierto por el rol híbrido (herramientas no-code, IA estándar)</p>
+              <p className="text-slate-500">{tViab("inversion75")}</p>
               <div className="flex items-center gap-3">
                 <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
                   <div className="bg-amber-500 h-full rounded-full" style={{ width: "25%" }}></div>
                 </div>
                 <span className="text-slate-900 font-bold whitespace-nowrap">25%</span>
               </div>
-              <p className="text-slate-500">Requiere inversión externa (especialista TPV/ERP, licencias)</p>
+              <p className="text-slate-500">{tViab("inversion25")}</p>
             </div>
           </FadeCard>
           <FadeCard delay={0.15} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
             <Clock className="w-8 h-8 text-blue-500 mb-4" />
-            <h3 className="text-lg font-black text-slate-900 mb-2">Tiempo</h3>
+            <h3 className="text-lg font-black text-slate-900 mb-2">{tViab("tiempoTitle")}</h3>
             <div className="space-y-4 text-sm mt-4">
               <div>
-                <div className="flex justify-between text-xs mb-1"><span className="text-slate-500">Antes (manual)</span><span className="text-red-500 font-bold">2 horas</span></div>
+                <div className="flex justify-between text-xs mb-1"><span className="text-slate-500">{tViab("tiempoAntes")}</span><span className="text-red-500 font-bold">{tViab("tiempoAntesVal")}</span></div>
                 <div className="w-full bg-red-100 rounded-full h-3"><div className="bg-red-400 h-full rounded-full" style={{ width: "100%" }}></div></div>
               </div>
               <div>
-                <div className="flex justify-between text-xs mb-1"><span className="text-slate-500">Después (supervisión)</span><span className="text-emerald-600 font-bold">15 min</span></div>
+                <div className="flex justify-between text-xs mb-1"><span className="text-slate-500">{tViab("tiempoDespues")}</span><span className="text-emerald-600 font-bold">{tViab("tiempoDespuesVal")}</span></div>
                 <div className="w-full bg-emerald-100 rounded-full h-3"><div className="bg-emerald-500 h-full rounded-full" style={{ width: "12.5%" }}></div></div>
               </div>
             </div>
-            <p className="text-slate-500 text-sm mt-4">El humano nunca desaparece. Solo deja de picar teclas.</p>
+            <p className="text-slate-500 text-sm mt-4">{tViab("tiempoNota")}</p>
           </FadeCard>
           <FadeCard delay={0.3} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
             <AlertTriangle className="w-8 h-8 text-amber-500 mb-4" />
-            <h3 className="text-lg font-black text-slate-900 mb-2">Riesgos</h3>
+            <h3 className="text-lg font-black text-slate-900 mb-2">{tViab("riesgosTitle")}</h3>
             <ul className="space-y-3 text-sm text-slate-600">
               <li className="flex items-start gap-2">
                 <span className="text-emerald-500 mt-0.5">✓</span>
-                <span><strong className="text-slate-900">Operativo:</strong> Cero. Solo genera borradores.</span>
+                <span><strong className="text-slate-900">{tViab("riesgo1Label")}</strong> {tViab("riesgo1")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-emerald-500 mt-0.5">✓</span>
-                <span><strong className="text-slate-900">Económico:</strong> 100% reversible. Se apaga en 1 minuto.</span>
+                <span><strong className="text-slate-900">{tViab("riesgo2Label")}</strong> {tViab("riesgo2")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-amber-500 mt-0.5">!</span>
-                <span><strong className="text-slate-900">Datos:</strong> El primer mes será limpiar tarifas y códigos.</span>
+                <span><strong className="text-slate-900">{tViab("riesgo3Label")}</strong> {tViab("riesgo3")}</span>
               </li>
             </ul>
           </FadeCard>
@@ -416,15 +428,15 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-8 leading-tight">
-              Arrancamos con<br/>
-              <span className="text-emerald-400">2 pruebas piloto</span><br/>
-              este mes.
+              {tCierre("title1")}<br/>
+              <span className="text-emerald-400">{tCierre("highlight")}</span><br/>
+              {tCierre("title2")}
             </h2>
             <p className="text-xl text-slate-400 mb-12 leading-relaxed max-w-xl mx-auto">
-              Elegid las áreas que más os duelen. Medimos resultados reales. Decidís si seguimos.
+              {tCierre("desc")}
             </p>
             <Link href="/catalogo" className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-lg rounded-2xl transition-all shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-0.5">
-              Explorar el catálogo completo <ArrowRight className="w-5 h-5" />
+              {tCierre("cta")} <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
         </div>

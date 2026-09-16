@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUp, Minus } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const tarifas = [
   { ref: "Cloro Rápido 5L", palma: 8.50, campos: 9.20, diff: -0.70 },
@@ -12,6 +13,8 @@ const tarifas = [
 ];
 
 export function ComparadorTarifas() {
+  const t = useTranslations("comparador");
+
   return (
     <motion.div
       className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden max-w-2xl shadow-2xl shadow-black/40"
@@ -22,48 +25,48 @@ export function ComparadorTarifas() {
     >
       <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between">
         <div>
-          <h4 className="font-bold text-white text-sm">Comparador de Tarifas</h4>
-          <p className="text-xs text-slate-500">Proveedor: Distribuciones Balear S.L.</p>
+          <h4 className="font-bold text-white text-sm">{t("title")}</h4>
+          <p className="text-xs text-slate-500">{t("proveedor")}</p>
         </div>
         <span className="text-[10px] bg-amber-500/10 text-amber-400 px-3 py-1 rounded-full font-bold uppercase tracking-widest border border-amber-500/20">
-          3 diferencias
+          {t("diferencias")}
         </span>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="text-slate-500 text-xs uppercase tracking-wider">
-              <th className="text-left px-6 py-3 font-semibold">Referencia</th>
-              <th className="text-right px-4 py-3 font-semibold">Palma</th>
-              <th className="text-right px-4 py-3 font-semibold">Campos</th>
-              <th className="text-right px-6 py-3 font-semibold">Diferencia</th>
+              <th className="text-left px-6 py-3 font-semibold">{t("colRef")}</th>
+              <th className="text-right px-4 py-3 font-semibold">{t("colPalma")}</th>
+              <th className="text-right px-4 py-3 font-semibold">{t("colCampos")}</th>
+              <th className="text-right px-6 py-3 font-semibold">{t("colDiff")}</th>
             </tr>
           </thead>
           <tbody>
-            {tarifas.map((t, i) => (
+            {tarifas.map((tRow, i) => (
               <motion.tr
-                key={t.ref}
-                className={`border-t border-slate-800/50 ${t.diff !== 0 ? "bg-red-500/5" : ""}`}
+                key={tRow.ref}
+                className={`border-t border-slate-800/50 ${tRow.diff !== 0 ? "bg-red-500/5" : ""}`}
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * i }}
               >
-                <td className="px-6 py-3 text-slate-300 font-medium">{t.ref}</td>
-                <td className="text-right px-4 py-3 text-slate-400 tabular-nums">{t.palma.toFixed(2)} €</td>
-                <td className="text-right px-4 py-3 text-slate-400 tabular-nums">{t.campos.toFixed(2)} €</td>
+                <td className="px-6 py-3 text-slate-300 font-medium">{tRow.ref}</td>
+                <td className="text-right px-4 py-3 text-slate-400 tabular-nums">{tRow.palma.toFixed(2)} €</td>
+                <td className="text-right px-4 py-3 text-slate-400 tabular-nums">{tRow.campos.toFixed(2)} €</td>
                 <td className="text-right px-6 py-3">
-                  {t.diff === 0 ? (
+                  {tRow.diff === 0 ? (
                     <span className="inline-flex items-center gap-1 text-slate-600">
-                      <Minus className="w-3 h-3" /> Igual
+                      <Minus className="w-3 h-3" /> {t("igual")}
                     </span>
-                  ) : t.diff < 0 ? (
+                  ) : tRow.diff < 0 ? (
                     <span className="inline-flex items-center gap-1 text-red-400 font-bold tabular-nums">
-                      <ArrowUp className="w-3 h-3" /> +{Math.abs(t.diff).toFixed(2)} €
+                      <ArrowUp className="w-3 h-3" /> +{Math.abs(tRow.diff).toFixed(2)} €
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-1 text-emerald-400 font-bold tabular-nums">
-                      <ArrowDown className="w-3 h-3" /> -{t.diff.toFixed(2)} €
+                      <ArrowDown className="w-3 h-3" /> -{tRow.diff.toFixed(2)} €
                     </span>
                   )}
                 </td>
@@ -73,8 +76,8 @@ export function ComparadorTarifas() {
         </table>
       </div>
       <div className="px-6 py-4 border-t border-slate-800 flex justify-end">
-        <button className="px-5 py-2 bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20">
-          Generar Email de Reclamación →
+        <button className="px-5 py-2 bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20 cursor-pointer">
+          {t("cta")}
         </button>
       </div>
     </motion.div>
