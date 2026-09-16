@@ -1,0 +1,42 @@
+[
+  {
+    "id": "01.01",
+    "bloque": "B2",
+    "area": "Compras Tienda",
+    "titulo": "Propuesta de Pedido Semanal",
+    "dificultad": "verde",
+    "requiere_especialista": false,
+    "descripcion": "El sistema cruza el stock actual con el histórico de ventas (90 días) y genera un borrador de pedido sugerido.",
+    "riesgos": "Depende de tener el inventario base actualizado."
+  },
+  {
+    "id": "04.01",
+    "bloque": "B1",
+    "area": "Dirección Grupo",
+    "titulo": "Informe Lunes 9h Grupo",
+    "dificultad": "verde",
+    "requiere_especialista": false,
+    "descripcion": "Resumen ejecutivo automático de ventas, márgenes y desviaciones comparando Son Garrit y Ca'n Ros.",
+    "riesgos": "Requiere extraer datos homogéneos de ambos sistemas."
+  },
+  {
+    "id": "05.01",
+    "bloque": "B1",
+    "area": "Compras Centralizadas",
+    "titulo": "Comparador de Tarifas de Proveedor",
+    "dificultad": "amarillo",
+    "requiere_especialista": true,
+    "descripcion": "Asistente que cruza tarifas vigentes de ambas tiendas, detecta diferencias y avisa para exigir igualación.",
+    "riesgos": "Requiere exportación limpia del ERP."
+  },
+  {
+    "id": "11.01",
+    "bloque": "B4",
+    "area": "Logística y Reparto",
+    "titulo": "Agrupador de Rutas de Entrega",
+    "dificultad": "verde",
+    "requiere_especialista": false,
+    "descripcion": "Asistente que ordena los pedidos pendientes por códigos postales para optimizar el trayecto de la furgoneta.",
+    "riesgos": "Ninguno. Funciona como sugerencia."
+  }
+]
