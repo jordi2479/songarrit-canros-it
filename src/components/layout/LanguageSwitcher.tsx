@@ -2,14 +2,14 @@
 
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { Globe } from "lucide-react";
+import { Globe, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
 const locales = [
-  { code: "es", name: "ES" },
-  { code: "ca", name: "CA" },
-  { code: "en", name: "EN" },
-  { code: "de", name: "DE" },
+  { code: "es", label: "Español", short: "ES" },
+  { code: "ca", label: "Català", short: "CA" },
+  { code: "en", label: "English", short: "EN" },
+  { code: "de", label: "Deutsch", short: "DE" },
 ];
 
 export function LanguageSwitcher() {
@@ -34,29 +34,34 @@ export function LanguageSwitcher() {
     setIsOpen(false);
   };
 
+  const current = locales.find((l) => l.code === locale) || locales[0];
+
   return (
-    <div className="relative" ref={ref}>
+    <div className="relative inline-block text-left" ref={ref}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-700 text-slate-200 hover:text-white hover:border-emerald-500/50 hover:bg-slate-800 transition-all shadow-sm cursor-pointer"
+        aria-label="Cambiar idioma"
       >
-        <Globe className="w-3.5 h-3.5" />
-        <span className="uppercase">{locale}</span>
+        <Globe className="w-3.5 h-3.5 text-emerald-400" />
+        <span className="uppercase tracking-wider font-bold">{current.short}</span>
+        <ChevronDown className={`w-3 h-3 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-24 bg-slate-900 border border-slate-800 rounded-xl shadow-xl overflow-hidden z-50">
+        <div className="absolute right-0 mt-2 w-36 bg-slate-900/95 backdrop-blur-xl border border-slate-700 rounded-xl shadow-2xl p-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
           {locales.map((l) => (
             <button
               key={l.code}
               onClick={() => switchLocale(l.code)}
-              className={`w-full text-left px-4 py-2 text-xs font-medium transition-colors ${
+              className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium transition-all flex items-center justify-between cursor-pointer ${
                 locale === l.code
-                  ? "bg-emerald-500/10 text-emerald-400"
-                  : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                  ? "bg-emerald-500/20 text-emerald-300 font-bold"
+                  : "text-slate-300 hover:bg-slate-800 hover:text-white"
               }`}
             >
-              {l.name}
+              <span>{l.label}</span>
+              <span className="text-[10px] uppercase text-slate-500 font-mono">{l.short}</span>
             </button>
           ))}
         </div>

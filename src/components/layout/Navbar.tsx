@@ -49,8 +49,9 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 group">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+        {/* Brand */}
+        <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
           <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-shadow">
             <Zap className="w-4 h-4 text-white" />
           </div>
@@ -59,12 +60,13 @@ export function Navbar() {
           </span>
         </Link>
 
-        <div className="flex items-center gap-1">
+        {/* Center section links (visible on wide screens) */}
+        <div className="hidden xl:flex items-center gap-1">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
+              className={`px-2.5 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
                 activeSection === item.href.replace("#", "")
                   ? "bg-emerald-500/20 text-emerald-300"
                   : "text-slate-400 hover:text-white hover:bg-white/5"
@@ -73,15 +75,17 @@ export function Navbar() {
               {item.label}
             </a>
           ))}
+        </div>
+
+        {/* Right actions (ALWAYS visible on all screens) */}
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
           <Link
             href="/catalogo"
-            className="ml-3 px-4 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold rounded-full transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40"
+            className="px-3.5 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold rounded-full transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40"
           >
             {t("catalogo")}
           </Link>
-          <div className="ml-2 pl-2 border-l border-slate-800">
-            <LanguageSwitcher />
-          </div>
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>
