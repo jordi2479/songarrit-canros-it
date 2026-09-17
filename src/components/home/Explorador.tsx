@@ -83,15 +83,24 @@ export function Explorador() {
         <div className="w-full md:w-[45%] flex flex-col justify-center relative z-10">
           <div className="relative">
             {/* Efecto de aura centralizado cuando interactúas */}
-            <div className={`absolute inset-0 bg-indigo-500/5 blur-[100px] rounded-full transition-opacity duration-700 pointer-events-none ${isInteracting ? 'opacity-100' : 'opacity-0'}`} />
+            <div className={`absolute inset-0 bg-indigo-500/10 blur-[100px] rounded-full transition-opacity duration-700 pointer-events-none ${isInteracting ? 'opacity-100' : 'opacity-0'}`} />
             
-            <div className={`p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 transition-all duration-500 ${isInteracting ? 'border-indigo-500/40 bg-slate-900/80 shadow-2xl shadow-indigo-500/10' : 'border-slate-800 bg-slate-900/50'}`}>
-              <div className="flex items-center gap-3 mb-4 md:mb-8 pb-3 md:pb-4 border-b border-slate-800">
-                <Building2 className="w-6 h-6 md:w-8 md:h-8 text-indigo-400" />
-                <div>
-                  <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight">{t("grupo")}</h3>
-                  <p className="text-xs md:text-sm text-indigo-400 font-semibold tracking-wider">{tAreas("estrategiaCentral")}</p>
+            <div className={`p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 transition-all duration-500 ${
+              isInteracting && activeGlobals.length > 0 
+                ? 'border-indigo-500/50 bg-slate-900/90 shadow-2xl shadow-indigo-500/15' 
+                : 'border-indigo-500/20 bg-slate-900/60 hover:border-indigo-500/40'
+            }`}>
+              <div className="flex items-center justify-between mb-4 md:mb-8 pb-3 md:pb-4 border-b border-slate-800">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
+                    <Building2 className="w-4 h-4 md:w-5 md:h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg md:text-2xl font-black text-white uppercase tracking-tight">{t("grupo")}</h3>
+                    <p className="text-xs md:text-sm text-indigo-400 font-semibold tracking-wider">{tAreas("estrategiaCentral")}</p>
+                  </div>
                 </div>
+                <div className="w-2.5 h-2.5 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.6)]" />
               </div>
 
               <div className="grid grid-cols-1 gap-2.5 md:gap-3">
@@ -112,7 +121,7 @@ export function Explorador() {
                           ? 'bg-indigo-500/20 border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.3)] scale-[1.02] z-10' 
                           : isDimmed
                             ? 'bg-slate-900 border-slate-800 opacity-40 grayscale'
-                            : 'bg-slate-950/80 border-slate-800 hover:border-slate-700'
+                            : 'bg-slate-950/80 border-slate-800 hover:border-indigo-500/40 hover:bg-slate-900'
                       } ${isPinned ? 'ring-2 ring-indigo-400 ring-offset-2 ring-offset-slate-900' : ''}`}
                     >
                       {isActive && (
@@ -120,7 +129,7 @@ export function Explorador() {
                       )}
                       <div className="relative z-10 flex items-center justify-between">
                         <div>
-                          <h4 className={`text-sm md:text-base font-bold ${isActive ? 'text-indigo-100' : 'text-slate-200'}`}>{area.titulo}</h4>
+                          <h4 className={`text-sm md:text-base font-bold ${isActive ? 'text-indigo-100' : 'text-slate-200 group-hover:text-indigo-200 transition-colors'}`}>{area.titulo}</h4>
                         </div>
                         <Target className={`w-4 h-4 md:w-5 md:h-5 ${isActive ? 'text-indigo-400' : 'text-slate-600'} group-hover:text-indigo-400 transition-colors`} />
                       </div>
@@ -134,39 +143,39 @@ export function Explorador() {
 
         {/* CONECTOR MÓVIL: Sinergias Global a Local */}
         <div className="md:hidden flex flex-col items-center my-2 gap-1 relative z-0">
-          <div className="w-0.5 h-3 bg-blue-500/40" />
-          <div className="bg-blue-500/10 text-blue-400 border border-blue-500/30 text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
-            <Zap className="w-3 h-3 text-blue-400 animate-pulse" />
+          <div className="w-0.5 h-3 bg-indigo-500/40" />
+          <div className="bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+            <Zap className="w-3 h-3 text-indigo-400 animate-pulse" />
             <span>{tAreas("sinergiasBadge")}</span>
           </div>
-          <div className="w-0.5 h-3 bg-blue-500/40" />
+          <div className="w-0.5 h-3 bg-indigo-500/40" />
         </div>
 
         {/* CENTRO: Conector Visual Abstracto (Flujo) - Solo Desktop */}
         <div className="hidden md:flex flex-col justify-center items-center w-[10%] relative z-0">
           
           {/* Eje central (Columna vertebral) */}
-          <div className="absolute inset-y-10 w-px bg-gradient-to-b from-transparent via-blue-500/20 to-transparent"></div>
+          <div className="absolute inset-y-10 w-px bg-gradient-to-b from-transparent via-indigo-500/30 to-transparent"></div>
           
           <motion.div 
             animate={{ 
               scale: isInteracting ? 1.2 : 1, 
-              opacity: isInteracting ? 1 : 0.3,
-              boxShadow: isInteracting ? "0 0 40px rgba(59,130,246,0.5)" : "0 0 0px rgba(59,130,246,0)"
+              opacity: isInteracting ? 1 : 0.4,
+              boxShadow: isInteracting ? "0 0 40px rgba(99,102,241,0.5)" : "0 0 0px rgba(99,102,241,0)"
             }}
-            className="w-12 h-12 bg-slate-900 border-2 border-blue-500/50 rounded-full flex items-center justify-center z-10 relative overflow-hidden"
+            className="w-12 h-12 bg-slate-900 border-2 border-indigo-500/50 rounded-full flex items-center justify-center z-10 relative overflow-hidden"
           >
             <motion.div 
               animate={{ x: isInteracting ? [ 20, -20 ] : 0, opacity: isInteracting ? [0, 1, 0] : 0.5 }}
               transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-400">
                 <path d="m15 18-6-6 6-6"/>
               </svg>
             </motion.div>
             {!isInteracting && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400/50">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-400/50">
                 <path d="m15 18-6-6 6-6"/>
               </svg>
             )}
@@ -231,13 +240,36 @@ function LocalBlock({
   isInteracting 
 }: any) {
   const theme = AREA_THEMES[areaId as AreaId]?.dark;
+  const dotColor = AREA_THEMES[areaId as AreaId]?.dot || 'bg-slate-400';
+  const colorName = AREA_THEMES[areaId as AreaId]?.colorName || 'slate';
   const iconColor = theme?.baseText || 'text-slate-400';
 
+  const isBlockActive = areas.some((a: any) => activeLocals.includes(a.id));
+
+  // Mapping de ring según colorName
+  const ringClasses: Record<string, string> = {
+    sky: 'ring-sky-400',
+    amber: 'ring-amber-400',
+    emerald: 'ring-emerald-400',
+    indigo: 'ring-indigo-400',
+  };
+
+  const ringClass = ringClasses[colorName] || 'ring-blue-400';
+
   return (
-    <div className={`p-4 sm:p-5 md:p-6 rounded-2xl md:rounded-3xl border transition-all duration-500 bg-slate-900/50 ${isInteracting ? 'border-slate-800' : 'border-slate-800'}`}>
-      <div className="flex items-center gap-2 mb-3 md:mb-4">
-        <Icon className={`w-4 h-4 md:w-5 md:h-5 ${iconColor}`} />
-        <h3 className="font-bold text-slate-300 uppercase tracking-wider text-xs md:text-sm">{title}</h3>
+    <div className={`p-4 sm:p-5 md:p-6 rounded-2xl md:rounded-3xl border transition-all duration-500 bg-slate-900/50 ${
+      isBlockActive 
+        ? `${theme?.border} ${theme?.glow} bg-slate-900/80` 
+        : `border-slate-800 ${theme?.bgHover}`
+    }`}>
+      <div className="flex items-center justify-between mb-3 md:mb-4 pb-2 border-b border-slate-800/80">
+        <div className="flex items-center gap-2">
+          <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${theme?.badge}`}>
+            <Icon className={`w-3.5 h-3.5 ${iconColor}`} />
+          </div>
+          <h3 className="font-bold text-white uppercase tracking-wider text-xs md:text-sm">{title}</h3>
+        </div>
+        <div className={`w-2.5 h-2.5 rounded-full ${dotColor}`} />
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -255,14 +287,14 @@ function LocalBlock({
               onMouseLeave={() => setHovered(null)}
               className={`w-full text-left p-2.5 sm:p-3 rounded-lg border transition-all duration-300 cursor-pointer flex justify-between items-center group ${
                 isActive 
-                  ? `${theme?.badge} ${theme?.border} ${theme?.glow}` 
+                  ? `${theme?.badge} ${theme?.border} ${theme?.glow} scale-[1.02] z-10` 
                   : isDimmed
                     ? 'bg-slate-900 border-slate-800/50 opacity-30 grayscale'
-                    : 'bg-slate-950 border-slate-800 hover:border-slate-700'
-              } ${isPinned ? 'ring-2 ring-blue-400 ring-offset-2 ring-offset-slate-900' : ''}`}
+                    : `bg-slate-950 border-slate-800 ${theme?.borderHover}`
+              } ${isPinned ? `ring-2 ${ringClass} ring-offset-2 ring-offset-slate-900` : ''}`}
             >
               <div>
-                <h4 className={`text-xs font-bold leading-tight ${isActive ? 'text-white' : 'text-slate-300'}`}>
+                <h4 className={`text-xs font-bold leading-tight ${isActive ? 'text-white' : 'text-slate-300 group-hover:text-white transition-colors'}`}>
                   {area.titulo}
                 </h4>
               </div>
