@@ -2,16 +2,22 @@ export type AreaId = 'global' | 'administracion' | 'clientes' | 'operativa';
 
 export interface Propuesta {
   id: string;
+  codigo?: string;
   titulo: string;
   descripcion: string;
   descripcionLarga: string;
   facilidad: string;
   riesgo: string;
   beneficio: string;
-  fase: string;
-  stack: string;
-  veredicto: string;
-  estado: string;
+  acceso?: 'lectura' | 'escritura';
+  ejemplo?: string;
+  viabilidad?: string;
+  fase?: string;
+  stack?: string;
+  veredicto?: string;
+  estado?: string;
+  area_id?: AreaId;
+  cat_id?: string;
 }
 
 export interface Categoria {

@@ -311,6 +311,15 @@ export default function Catalogo() {
                     <span className="px-2 py-0.5 bg-slate-800/50 text-slate-400 rounded text-[10px] font-bold uppercase tracking-wider flex-shrink-0 border border-slate-700/50">
                       {idea.categoriaTitulo}
                     </span>
+                    {idea.acceso && (
+                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider flex-shrink-0 border ${
+                        idea.acceso === 'escritura'
+                          ? 'bg-amber-950/40 text-amber-400 border-amber-800/50'
+                          : 'bg-cyan-950/40 text-cyan-400 border-cyan-800/50'
+                      }`}>
+                        {idea.acceso === 'escritura' ? 'Escritura' : 'Lectura'}
+                      </span>
+                    )}
                   </div>
                   
                   <span className="font-semibold text-sm text-white flex-1">{idea.titulo}</span>
@@ -353,25 +362,42 @@ export default function Catalogo() {
                     >
                       <div className="px-6 pb-6 pt-2 border-t border-slate-800 grid md:grid-cols-3 gap-8">
                         
-                        <div className="md:col-span-2 space-y-6">
+                        <div className="md:col-span-2 space-y-5">
                           <div>
                             <h4 className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-3 flex items-center gap-2">
-                              <Zap className="w-4 h-4" /> Resumen Ejecutivo
+                              <Zap className="w-4 h-4 text-amber-400" /> Resumen Ejecutivo
                             </h4>
                             <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">{idea.descripcionLarga || idea.descripcion}</p>
                           </div>
-                          
-                          {idea.veredicto && (
-                            <div className="bg-slate-950/50 p-4 rounded-xl border border-slate-800 shadow-inner">
-                              <h4 className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
-                                <HardHat className="w-4 h-4" /> Veredicto honesto
+
+                          {idea.ejemplo && (
+                            <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 shadow-inner">
+                              <h4 className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2 flex items-center gap-2 text-cyan-400">
+                                <Activity className="w-4 h-4" /> Qué recibe el dueño / Ejemplo real
                               </h4>
-                              <p className="text-sm text-slate-400 leading-relaxed font-mono whitespace-pre-wrap">{idea.veredicto}</p>
+                              <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">{idea.ejemplo}</p>
+                            </div>
+                          )}
+                          
+                          {(idea.viabilidad || idea.veredicto) && (
+                            <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 shadow-inner">
+                              <h4 className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2 flex items-center gap-2 text-amber-400">
+                                <HardHat className="w-4 h-4" /> Viabilidad técnica & operativa
+                              </h4>
+                              <p className="text-sm text-slate-400 leading-relaxed font-mono whitespace-pre-wrap">{idea.viabilidad || idea.veredicto}</p>
                             </div>
                           )}
                         </div>
 
                         <div className="bg-slate-950 p-5 rounded-xl border border-slate-800 h-fit space-y-4 shadow-inner">
+                          {idea.acceso && (
+                            <div>
+                              <h4 className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Permiso de Acceso</h4>
+                              <p className={`text-sm font-bold flex items-center gap-1.5 ${idea.acceso === 'escritura' ? 'text-amber-400' : 'text-cyan-400'}`}>
+                                {idea.acceso === 'escritura' ? 'Escritura en sistemas (sensible)' : 'Solo lectura'}
+                              </p>
+                            </div>
+                          )}
                           <div>
                             <h4 className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Impacto / Beneficio</h4>
                             <p className={`text-sm font-bold flex items-center gap-2 ${getBeneficioColor(idea.beneficio)}`}>
@@ -387,10 +413,6 @@ export default function Catalogo() {
                           <div>
                             <h4 className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Facilidad Técnica</h4>
                             <p className="text-sm text-slate-300">{idea.facilidad}</p>
-                          </div>
-                          <div>
-                            <h4 className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Stack Propuesto</h4>
-                            <p className="text-sm text-slate-400">{idea.stack}</p>
                           </div>
                         </div>
 

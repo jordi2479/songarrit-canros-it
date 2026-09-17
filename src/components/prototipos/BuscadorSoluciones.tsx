@@ -357,6 +357,15 @@ export function BuscadorSoluciones() {
                           <span className="px-2 py-0.5 bg-slate-800/60 text-slate-400 rounded-md text-[10px] font-medium tracking-wide border border-slate-700/50">
                             {idea.categoriaTitulo}
                           </span>
+                          {idea.acceso && (
+                            <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
+                              idea.acceso === 'escritura'
+                                ? 'bg-amber-950/40 text-amber-400 border-amber-800/50'
+                                : 'bg-cyan-950/40 text-cyan-400 border-cyan-800/50'
+                            }`}>
+                              {idea.acceso === 'escritura' ? 'Escritura' : 'Lectura'}
+                            </span>
+                          )}
                         </div>
                         
                         <div className="text-slate-500 group-hover:text-emerald-400 transition-colors p-1">
@@ -411,13 +420,24 @@ export function BuscadorSoluciones() {
                             </p>
                           </div>
 
-                          {idea.veredicto && (
+                          {idea.ejemplo && (
+                            <div className="bg-slate-900/80 p-3 rounded-xl border border-slate-800/90">
+                              <h5 className="text-[11px] text-cyan-400 uppercase tracking-wider font-bold mb-1 flex items-center gap-1.5">
+                                <Activity className="w-3.5 h-3.5" /> Qué recibe el dueño / Ejemplo real
+                              </h5>
+                              <p className="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">
+                                {idea.ejemplo}
+                              </p>
+                            </div>
+                          )}
+
+                          {(idea.viabilidad || idea.veredicto) && (
                             <div className="bg-slate-900 p-3 rounded-xl border border-slate-800/90">
                               <h5 className="text-[11px] text-amber-400 uppercase tracking-wider font-bold mb-1 flex items-center gap-1.5">
-                                <HardHat className="w-3.5 h-3.5" /> Veredicto Operativo
+                                <HardHat className="w-3.5 h-3.5" /> Viabilidad Técnica & Veredicto
                               </h5>
                               <p className="text-xs text-slate-400 leading-relaxed font-mono whitespace-pre-wrap">
-                                {idea.veredicto}
+                                {idea.viabilidad || idea.veredicto}
                               </p>
                             </div>
                           )}
