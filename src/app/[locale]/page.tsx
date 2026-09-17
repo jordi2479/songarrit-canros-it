@@ -10,7 +10,7 @@ import {
   LayoutDashboard, Package, Truck, UserCog, Lock, MessageSquare, Wrench,
   TrendingUp, PiggyBank, AlertTriangle, Sparkles, XCircle, CheckCircle2,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Section } from "@/components/layout/Section";
 import { Navbar } from "@/components/layout/Navbar";
 import { EsquemaEmpresa } from "@/components/layout/EsquemaEmpresa";
@@ -49,6 +49,7 @@ const colorClasses: Record<string, { card: string; badge: string; icon: string }
    PAGE
    ═══════════════════════════════════════════════════════════════════ */
 export default function Home() {
+  const locale = useLocale();
   const tHero = useTranslations("hero");
   const tProb = useTranslations("problema");
   const tSol = useTranslations("solucion");
@@ -373,21 +374,43 @@ export default function Home() {
         <div className="text-center mb-6 md:mb-16">
           <div className="flex justify-center items-center gap-2 mb-3 md:mb-6">
             <span className="px-2.5 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
-              Filosofía de Ejecución
+              {locale === 'ca' ? "Filosofia d'Execució" : locale === 'en' ? "Execution Philosophy" : locale === 'de' ? "Ausführungsphilosophie" : "Filosofía de Ejecución"}
             </span>
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 md:mb-6 text-white leading-tight">
-            Transformación Orgánica y <span className="text-emerald-400">Segura</span>
+            {locale === 'ca' ? (
+              <>Transformació Orgànica i <span className="text-emerald-400">Segura</span></>
+            ) : locale === 'en' ? (
+              <>Organic and <span className="text-emerald-400">Secure</span> Transformation</>
+            ) : locale === 'de' ? (
+              <>Organische und <span className="text-emerald-400">Sichere</span> Transformation</>
+            ) : (
+              <>Transformación Orgánica y <span className="text-emerald-400">Segura</span></>
+            )}
           </h2>
           {/* Móvil: Directo y claro */}
           <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed md:hidden font-normal">
-            Premisa innegociable: <strong className="text-white">no interrumpir la operativa diaria</strong>. Inyecciones tecnológicas modulares probadas en el mostrador: <strong className="text-emerald-400">si no facilita el trabajo inmediato, se descarta.</strong>
+            {locale === 'ca' ? (
+              <>Premissa innegociable: <strong className="text-white">no interrompre l'operativa diària</strong>. Injeccions tecnològiques modulars provades al taulell: <strong className="text-emerald-400">si no facilita la feina immediata, es descarta.</strong></>
+            ) : locale === 'en' ? (
+              <>Non-negotiable rule: <strong className="text-white">zero disruption to daily business</strong>. Modular tech injected and verified at counter: <strong className="text-emerald-400">if it doesn't instantly ease team work, it is discarded.</strong></>
+            ) : locale === 'de' ? (
+              <>Unverhandelbar: <strong className="text-white">keine Unterbrechung des Tagesgeschäfts</strong>. Modulare Technologien, direkt am Tresen erprobt: <strong className="text-emerald-400">wenn es die Arbeit nicht sofort erleichtert, wird es verworfen.</strong></>
+            ) : (
+              <>Premisa innegociable: <strong className="text-white">no interrumpir la operativa diaria</strong>. Inyecciones tecnológicas modulares probadas en el mostrador: <strong className="text-emerald-400">si no facilita el trabajo inmediato, se descarta.</strong></>
+            )}
           </p>
           {/* Desktop: Párrafo completo */}
           <p className="hidden md:block text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            La premisa innegociable de este plan es <strong className="text-white">no interrumpir ni desestabilizar la operativa diaria</strong> de las tiendas. 
-            No aplicamos revoluciones teóricas. El desarrollo se plantea mediante inyecciones tecnológicas modulares que se prueban y validan directamente en el mostrador. 
-            <strong className="text-emerald-400"> Si una solución no facilita el trabajo del equipo de forma inmediata, se descarta.</strong>
+            {locale === 'ca' ? (
+              <>La premissa innegociable d'aquest pla és <strong className="text-white">no interrompre ni desestabilitzar l'operativa diària</strong> de les botigues. No apliquem revolucions teòriques. El desenvolupament es planteja mitjançant injeccions tecnològiques modulars que es proven i validen directament al taulell. <strong className="text-emerald-400"> Si una solució no facilita la feina de l'equip de forma immediata, es descarta.</strong></>
+            ) : locale === 'en' ? (
+              <>The non-negotiable premise of this roadmap is <strong className="text-white">never disrupting daily store operations</strong>. We avoid theoretical revolutions. Execution is deployed through modular technological injections tested and validated live at the counter. <strong className="text-emerald-400"> If a solution does not immediately make the team's work easier, it is discarded.</strong></>
+            ) : locale === 'de' ? (
+              <>Die unverhandelbare Prämisse dieses Plans ist es, <strong className="text-white">das Tagesgeschäft der Filialen niemals zu stören</strong>. Wir vermeiden theoretische Revolutionen. Die Entwicklung erfolgt über modulare Technologiebausteine, die direkt am Tresen getestet werden. <strong className="text-emerald-400"> Wenn eine Lösung die Arbeit des Teams nicht sofort spürbar erleichtert, wird sie verworfen.</strong></>
+            ) : (
+              <>La premisa innegociable de este plan es <strong className="text-white">no interrumpir ni desestabilizar la operativa diaria</strong> de las tiendas. No aplicamos revoluciones teóricas. El desarrollo se plantea mediante inyecciones tecnológicas modulares que se prueban y validan directamente en el mostrador. <strong className="text-emerald-400"> Si una solución no facilita el trabajo del equipo de forma inmediata, se descarta.</strong></>
+            )}
           </p>
         </div>
         <Viabilidad />
@@ -399,7 +422,7 @@ export default function Home() {
           Grupo Son Garrit &amp; Ca'n Ros
         </p>
         <p className="text-emerald-400/40 text-xs">
-          El futuro del grupo. Construido desde dentro.
+          {locale === 'ca' ? "El futur del grup. Construït des de dins." : locale === 'en' ? "The future of the group. Built from within." : locale === 'de' ? "Die Zukunft der Gruppe. Von innen heraus aufgebaut." : "El futuro del grupo. Construido desde dentro."}
         </p>
       </footer>
     </>
