@@ -15,7 +15,8 @@
   "hero": {
     "badge": "IT Department Proposal",
     "title": "Two stores. One group. Zero chaos.",
-    "subtitle": "Operations & IT Department Proposal for the Group",
+    "subtitle": "Operations & IT Department Proposal",
+    "groupPrefix": "for the Group",
     "brand": "Son Garrit + Ca'n Ros",
     "scroll": "Scroll"
   },
@@ -35,6 +36,8 @@
     "title1": "Automate the invisible.",
     "title2": "Technology must work for us.",
     "desc": "An internal IT Department takes over the robotic work. Let systems compare prices and monitor stock so your best talent can do what no one else can: advise, build loyalty, and close sales.",
+    "antesTag": "Before",
+    "conIaTag": "With AI",
     "antes1": "Chasing lost delivery notes and finding where the mismatch originated",
     "despues1": "Mismatches and incidents detected automatically in 3 seconds",
     "antes2": "Cross-referencing rates from both stores by exporting data manually to Excel",
@@ -88,15 +91,15 @@
     "g3Desc": "Any implemented tool can be toggled on or off in seconds. Operations never stop or depend on a single tool."
   },
   "bloques": {
-    "title": "Architecture of",
-    "highlight": "Implementation",
-    "desc": "The entire work plan is organized following the company's real structure. At the top, a <bold>Global Headquarters</bold> unifies the strategy and resources of both hardware stores. Below, each store operates on three identical pillars (<bold>Administration, Customers and Operations</bold>). To ensure maximum security, any innovation is first implemented in the Ca'n Ros environment and, only after proving its effectiveness, cloned to Son Garrit.",
+    "title": "Implementation",
+    "highlight": "Architecture",
+    "desc": "<p>The work plan replicates the group's real structure: a <bold>Global Central</bold> to unify strategy and <bold>three tactical pillars</bold> in each store.</p><p><italic>Safety guarantee:</italic> any innovation is first validated as a pilot at <bold>Ca'n Ros</bold> and, once proven, deployed to <bold>Son Garrit</bold>.</p>",
     "b1": "Global",
     "b1Desc": "Synergies, Treasury and Strategy",
     "b2": "Administration",
     "b2Desc": "Management, Backoffice and Local Finances",
     "b3": "Customers",
-    "b3Desc": "Counter, marketing and sales",
+    "b3Desc": "Shopping experience and marketing",
     "b4": "Operations",
     "b4Desc": "Logistics, team and security",
     "proyectos": "10 projects",

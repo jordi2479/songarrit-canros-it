@@ -30,7 +30,18 @@ export function LanguageSwitcher() {
   }, []);
 
   const switchLocale = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
+    const currentScrollY = typeof window !== "undefined" ? window.scrollY : 0;
+    router.replace(pathname, { locale: newLocale, scroll: false });
+    
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: currentScrollY, behavior: "instant" });
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: currentScrollY, behavior: "instant" });
+      });
+      setTimeout(() => {
+        window.scrollTo({ top: currentScrollY, behavior: "instant" });
+      }, 50);
+    }
     setIsOpen(false);
   };
 

@@ -15,7 +15,8 @@
   "hero": {
     "badge": "IT-Abteilungsvorschlag",
     "title": "Zwei Geschäfte. Eine Gruppe. Null Chaos.",
-    "subtitle": "Vorschlag für die Betriebs- und IT-Abteilung der Gruppe",
+    "subtitle": "Vorschlag für die Betriebs- und IT-Abteilung",
+    "groupPrefix": "für die Gruppe",
     "brand": "Son Garrit + Ca'n Ros",
     "scroll": "Scroll"
   },
@@ -35,6 +36,8 @@
     "title1": "Das Unsichtbare automatisieren.",
     "title2": "Technologie muss für uns arbeiten.",
     "desc": "Eine interne IT-Abteilung übernimmt die Roboterarbeit. Lassen Sie Systeme Tarife vergleichen und den Bestand überwachen, damit Ihre besten Mitarbeiter das tun können, was sonst niemand kann: beraten, binden und Verkäufe abschließen.",
+    "antesTag": "Vorher",
+    "conIaTag": "Mit KI",
     "antes1": "Verlorenen Lieferscheinen hinterherjagen und suchen, wo die Unstimmigkeit entstand",
     "despues1": "Unstimmigkeiten und Vorfälle werden innerhalb von 3 Sekunden automatisch erkannt",
     "antes2": "Tarife beider Geschäfte durch manuellen Export nach Excel abgleichen",
@@ -90,7 +93,7 @@
   "bloques": {
     "title": "Architektur der",
     "highlight": "Umsetzung",
-    "desc": "Der gesamte Arbeitsplan ist nach der tatsächlichen Unternehmensstruktur organisiert. Oben vereint eine <bold>Globale Zentrale</bold> die Strategie und Ressourcen beider Baumärkte. Unten operiert jedes Geschäft auf drei identischen Säulen (<bold>Verwaltung, Kunden und Betrieb</bold>). Um maximale Sicherheit zu gewährleisten, wird jede Innovation zunächst in der Umgebung von Ca'n Ros implementiert und erst nach erwiesener Wirksamkeit auf Son Garrit übertragen.",
+    "desc": "<p>Der Arbeitsplan bildet die reale Struktur der Gruppe ab: eine <bold>Globale Zentrale</bold> zur Strategiebündelung und <bold>drei taktische Säulen</bold> in jedem Geschäft.</p><p><italic>Sicherheitsgarantie:</italic> Jede Innovation wird zuerst als Pilot bei <bold>Ca'n Ros</bold> validiert und nach erfolgreichem Test auf <bold>Son Garrit</bold> übertragen.</p>",
     "b1": "Global",
     "b1Desc": "Synergien, Finanzen und Strategie",
     "b2": "Verwaltung",

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
-import { Building2, Store, Users, Settings, ArrowRight, Zap, Target } from "lucide-react";
+import { Building2, Store, Users, Settings, Zap, Target } from "lucide-react";
 
 // Datasets
 import { catalogoCategorias } from "@/data/catalogo";
@@ -62,7 +62,7 @@ export function Explorador() {
     if (!globalAreas.find(a => a.id === hoveredLocal)) return [hoveredLocal];
     // Si hacemos hover sobre global, buscamos los locales que lo apuntan
     return Object.entries(sinapsis)
-      .filter(([localId, globalIds]) => globalIds.includes(hoveredLocal))
+      .filter(([, globalIds]) => globalIds.includes(hoveredLocal))
       .map(([localId]) => localId);
   };
 
@@ -71,8 +71,8 @@ export function Explorador() {
   const isHovering = hoveredLocal !== null;
 
   return (
-    <div className="w-full relative max-w-7xl mx-auto py-10 px-4">
-      <div className="flex flex-col md:flex-row gap-8 items-stretch justify-between relative">
+    <div className="w-full relative max-w-7xl mx-auto py-4 md:py-10 px-2 sm:px-4">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-stretch justify-between relative">
         
         {/* IZQUIERDA: Bloque Estratégico (Global) */}
         <div className="w-full md:w-[45%] flex flex-col justify-center relative z-10">
@@ -80,16 +80,16 @@ export function Explorador() {
             {/* Efecto de aura centralizado cuando interactúas */}
             <div className={`absolute inset-0 bg-indigo-500/5 blur-[100px] rounded-full transition-opacity duration-700 pointer-events-none ${isHovering ? 'opacity-100' : 'opacity-0'}`} />
             
-            <div className={`p-8 rounded-3xl border-2 transition-all duration-500 ${isHovering ? 'border-indigo-500/40 bg-slate-900/80 shadow-2xl shadow-indigo-500/10' : 'border-slate-800 bg-slate-900/50'}`}>
-              <div className="flex items-center gap-3 mb-8 pb-4 border-b border-slate-800">
-                <Building2 className="w-8 h-8 text-indigo-400" />
+            <div className={`p-3.5 sm:p-5 md:p-8 rounded-2xl md:rounded-3xl border-2 transition-all duration-500 ${isHovering ? 'border-indigo-500/40 bg-slate-900/80 shadow-2xl shadow-indigo-500/10' : 'border-slate-800 bg-slate-900/50'}`}>
+              <div className="flex items-center gap-2.5 md:gap-3 mb-3 md:mb-8 pb-2.5 md:pb-4 border-b border-slate-800">
+                <Building2 className="w-6 h-6 md:w-8 md:h-8 text-indigo-400 shrink-0" />
                 <div>
-                  <h3 className="text-2xl font-black text-white uppercase tracking-tight">{t("grupo")}</h3>
-                  <p className="text-sm text-indigo-400 font-semibold tracking-wider">ESTRATEGIA CENTRAL</p>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white uppercase tracking-tight leading-tight">{t("grupo")}</h3>
+                  <p className="text-[10px] md:text-sm text-indigo-400 font-semibold tracking-wider">ESTRATEGIA CENTRAL</p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 gap-3">
+              <div className="grid grid-cols-1 gap-2 md:gap-3">
                 {globalAreas.map((area) => {
                   const isActive = activeGlobals.includes(area.id);
                   const isDimmed = isHovering && !isActive;
@@ -98,9 +98,16 @@ export function Explorador() {
                     <a 
                       key={area.id}
                       href="#prototipos"
+                      onClick={(e) => {
+                        // En móvil permite activar el brillo con tap
+                        if (window.innerWidth < 768) {
+                          e.preventDefault();
+                          setHoveredLocal(hoveredLocal === area.id ? null : area.id);
+                        }
+                      }}
                       onMouseEnter={() => setHoveredLocal(area.id)}
                       onMouseLeave={() => setHoveredLocal(null)}
-                      className={`block p-4 rounded-xl border transition-all duration-300 relative overflow-hidden group ${
+                      className={`block p-2.5 sm:p-3 md:p-4 rounded-xl border transition-all duration-300 relative overflow-hidden group ${
                         isActive 
                           ? 'bg-indigo-500/20 border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.3)] scale-[1.02] z-10' 
                           : isDimmed
@@ -111,11 +118,13 @@ export function Explorador() {
                       {isActive && (
                         <motion.div layoutId="glowGlobal" className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0" />
                       )}
-                      <div className="relative z-10 flex items-center justify-between">
-                        <div>
-                          <h4 className={`font-bold ${isActive ? 'text-indigo-100' : 'text-slate-200'}`}>{area.titulo}</h4>
+                      <div className="relative z-10 flex items-center justify-between gap-1">
+                        <div className="min-w-0">
+                          <h4 className={`text-xs sm:text-sm md:text-base font-bold truncate md:whitespace-normal ${isActive ? 'text-indigo-100' : 'text-slate-200'}`}>
+                            {area.titulo}
+                          </h4>
                         </div>
-                        <Target className={`w-5 h-5 ${isActive ? 'text-indigo-400' : 'text-slate-600'} group-hover:text-indigo-400 transition-colors`} />
+                        <Target className={`w-3.5 h-3.5 md:w-5 md:h-5 shrink-0 ${isActive ? 'text-indigo-400' : 'text-slate-600'} group-hover:text-indigo-400 transition-colors`} />
                       </div>
                     </a>
                   );
@@ -157,7 +166,7 @@ export function Explorador() {
         </div>
 
         {/* DERECHA: Bloques Tácticos (Local) */}
-        <div className="w-full md:w-[45%] flex flex-col gap-6 relative z-10">
+        <div className="w-full md:w-[45%] flex flex-col gap-3 md:gap-6 relative z-10">
           <LocalBlock 
             title={t("nucleo")} 
             icon={Store} 
@@ -201,13 +210,13 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
   const iconColor = theme?.baseText || 'text-slate-400';
 
   return (
-    <div className={`p-6 rounded-3xl border transition-all duration-500 bg-slate-900/50 ${isHovering ? 'border-slate-800' : 'border-slate-800'}`}>
-      <div className="flex items-center gap-2 mb-4">
-        <Icon className={`w-5 h-5 ${iconColor}`} />
-        <h3 className="font-bold text-slate-300 uppercase tracking-wider text-sm">{title}</h3>
+    <div className={`p-3.5 sm:p-5 md:p-6 rounded-2xl md:rounded-3xl border transition-all duration-500 bg-slate-900/50 ${isHovering ? 'border-slate-800' : 'border-slate-800'}`}>
+      <div className="flex items-center gap-2 mb-2 md:mb-4">
+        <Icon className={`w-4 h-4 md:w-5 md:h-5 ${iconColor}`} />
+        <h3 className="font-bold text-slate-300 uppercase tracking-wider text-xs md:text-sm">{title}</h3>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
         {areas.map((area: any) => {
           const isActive = activeLocals.includes(area.id);
           const isDimmed = isHovering && !isActive;
@@ -216,9 +225,16 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
             <a 
               key={area.id}
               href="#prototipos"
+              onClick={(e) => {
+                // En móvil permite activar el brillo con tap
+                if (window.innerWidth < 768) {
+                  e.preventDefault();
+                  setHovered(hoveredLocal === area.id ? null : area.id);
+                }
+              }}
               onMouseEnter={() => setHovered(area.id)}
               onMouseLeave={() => setHovered(null)}
-              className={`p-3 rounded-lg border transition-all duration-300 cursor-pointer flex justify-between items-center group ${
+              className={`p-2 sm:p-2.5 md:p-3 rounded-lg border transition-all duration-300 cursor-pointer flex justify-between items-center gap-1 group ${
                 isActive 
                   ? `${theme?.badge} ${theme?.border} ${theme?.glow}` 
                   : isDimmed
@@ -226,8 +242,8 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
                     : 'bg-slate-950 border-slate-800 hover:border-slate-700'
               }`}
             >
-              <div>
-                <h4 className={`text-xs font-bold leading-tight ${isActive ? 'text-white' : 'text-slate-300'}`}>
+              <div className="min-w-0">
+                <h4 className={`text-[11px] sm:text-xs font-bold leading-tight truncate md:whitespace-normal ${isActive ? 'text-white' : 'text-slate-300'}`}>
                   {area.titulo}
                 </h4>
               </div>
@@ -239,3 +255,4 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
     </div>
   );
 }
+

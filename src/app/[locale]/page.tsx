@@ -111,8 +111,8 @@ export default function Home() {
 
       {/* ─── SECCIÓN 1: HERO ─── */}
       <Section id="hero" dark className="relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.08),transparent_60%)]" />
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.08),transparent_60%)] pointer-events-none" />
+        <div className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
           <motion.div
             className="inline-block mb-8 px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full"
             initial={{ opacity: 0, y: 10 }}
@@ -127,15 +127,19 @@ export default function Home() {
             delay={0.4}
           />
           <motion.p
-            className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            {tHero("subtitle")} <strong className="text-white font-semibold">{tHero("brand")}</strong>
+            <span>{tHero("subtitle")}</span>
+            <span className="block mt-1 text-slate-300">
+              {tHero("groupPrefix")}{" "}
+              <strong className="text-white font-semibold">{tHero("brand")}</strong>
+            </span>
           </motion.p>
+          <ScrollIndicator targetId="problema" />
         </div>
-        <ScrollIndicator targetId="problema" />
       </Section>
 
       {/* ─── SECCIÓN 2: EL PROBLEMA ─── */}
@@ -197,13 +201,13 @@ export default function Home() {
                 <div className="flex-1 p-6 flex flex-col justify-end items-center">
                   <div className="text-slate-400 text-base mb-4">{item.antes}</div>
                   <span className="flex items-center justify-center gap-2 text-base font-black text-slate-500 uppercase tracking-widest">
-                    <XCircle className="w-5 h-5" /> Antes
+                    <XCircle className="w-5 h-5" /> {tSol("antesTag")}
                   </span>
                 </div>
                 <div className="h-px bg-slate-800 w-full"></div>
                 <div className="flex-1 p-6 flex flex-col justify-start items-center">
                   <span className="flex items-center justify-center gap-2 text-base font-black text-emerald-500 uppercase tracking-widest mb-4">
-                    <CheckCircle2 className="w-5 h-5" /> Con IA
+                    <CheckCircle2 className="w-5 h-5" /> {tSol("conIaTag")}
                   </span>
                   <div className="text-white text-base font-bold">{item.despues}</div>
                 </div>
@@ -227,11 +231,13 @@ export default function Home() {
             })}
           </div>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <FadeCard delay={0} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 text-left">
-              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-5">
-                <Store className="w-6 h-6" />
+            <FadeCard delay={0} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 text-left flex flex-col justify-start">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                  <Store className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-black text-slate-900 leading-tight">{tPerfil("mostrador")}</h3>
               </div>
-              <h3 className="text-xl font-black text-slate-900 mb-4">{tPerfil("mostrador")}</h3>
               <ul className="space-y-3 text-slate-600 text-sm">
                 {mostradorItems.map((item, i) => (
                   <li key={i}>
@@ -240,11 +246,13 @@ export default function Home() {
                 ))}
               </ul>
             </FadeCard>
-            <FadeCard delay={0.2} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 text-left">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
-                <LayoutDashboard className="w-6 h-6" />
+            <FadeCard delay={0.2} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 text-left flex flex-col justify-start">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center shrink-0">
+                  <LayoutDashboard className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-black text-slate-900 leading-tight">{tPerfil("procesos")}</h3>
               </div>
-              <h3 className="text-xl font-black text-slate-900 mb-4">{tPerfil("procesos")}</h3>
               <ul className="space-y-3 text-slate-600 text-sm">
                 {procesosItems.map((item, i) => (
                   <li key={i}>
@@ -293,15 +301,14 @@ export default function Home() {
       {/* ─── SECCIÓN 6: LOS 4 BLOQUES ─── */}
       <Section id="bloques" className="bg-slate-50">
         <div className="text-center mb-10">
-          <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 font-bold text-xs tracking-widest uppercase mb-4">
-            {tBloques("badge")}
-          </span>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-900 leading-tight">
             {tBloques("title")} <span className="text-emerald-600">{tBloques("highlight")}</span>
           </h2>
-          <div className="text-lg md:text-xl text-slate-500 max-w-4xl mx-auto mb-6 leading-relaxed">
+          <div className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed space-y-3">
             {tBloques.rich("desc", {
-              bold: (chunks) => <strong className="text-slate-800 font-bold">{chunks}</strong>
+              p: (chunks) => <p>{chunks}</p>,
+              bold: (chunks) => <strong className="text-slate-900 font-bold">{chunks}</strong>,
+              italic: (chunks) => <span className="text-slate-500 font-medium italic">{chunks}</span>
             })}
           </div>
         </div>

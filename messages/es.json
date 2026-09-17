@@ -15,7 +15,8 @@
   "hero": {
     "badge": "Propuesta de Departamento IT",
     "title": "Dos tiendas. Un grupo. Cero caos.",
-    "subtitle": "Propuesta de Departamento de Operaciones e IT para el Grupo",
+    "subtitle": "Propuesta de Departamento de Operaciones e IT",
+    "groupPrefix": "para el Grupo",
     "brand": "Son Garrit + Ca'n Ros",
     "scroll": "Scroll"
   },
@@ -35,6 +36,8 @@
     "title1": "Automatizar lo invisible.",
     "title2": "La tecnología debe trabajar para nosotros.",
     "desc": "Un Departamento de IT interno asume el trabajo robótico. Deja que los sistemas comparen tarifas y vigilen el stock para que tu mejor talento haga lo que nadie más puede hacer: asesorar, fidelizar y cerrar ventas.",
+    "antesTag": "Antes",
+    "conIaTag": "Con IA",
     "antes1": "Perseguir los albaranes perdidos y buscar dónde se originó el descuadre",
     "despues1": "Descuadres e incidencias detectados de forma automática en 3 segundos",
     "antes2": "Cruzar las tarifas de ambas tiendas exportando los datos a mano en Excel",
@@ -90,7 +93,7 @@
   "bloques": {
     "title": "Arquitectura de",
     "highlight": "Implantación",
-    "desc": "Todo el plan de trabajo se organiza siguiendo la estructura real de la empresa. Arriba, una <bold>Central Global</bold> que unifica la estrategia y los recursos de ambas ferreterías. Abajo, cada tienda opera sobre tres pilares idénticos (<bold>Administración, Clientes y Operativa</bold>). Para garantizar la máxima seguridad, cualquier innovación se implanta primero en el entorno de Ca'n Ros y, solo tras probar su eficacia, se clona a Son Garrit.",
+    "desc": "<p>El plan de trabajo replica la estructura real del grupo: una <bold>Central Global</bold> para unificar estrategia y <bold>tres pilares tácticos</bold> en cada tienda.</p><p><italic>Garantía de seguridad:</italic> cualquier innovación se valida primero como piloto en <bold>Ca'n Ros</bold> y, una vez probada, se despliega en <bold>Son Garrit</bold>.</p>",
     "b1": "Global",
     "b1Desc": "Sinergias, Tesorería y Estrategia",
     "b2": "Administración",

@@ -15,7 +15,8 @@
   "hero": {
     "badge": "Proposta de Departament IT",
     "title": "Dues botigues. Un grup. Zero caos.",
-    "subtitle": "Proposta de Departament d'Operacions i IT per al Grup",
+    "subtitle": "Proposta de Departament d'Operacions i IT",
+    "groupPrefix": "per al Grup",
     "brand": "Son Garrit + Ca'n Ros",
     "scroll": "Scroll"
   },
@@ -35,6 +36,8 @@
     "title1": "Automatitzar allò invisible.",
     "title2": "La tecnologia ha de treballar per a nosaltres.",
     "desc": "Un Departament d'IT intern assumeix el treball robòtic. Deixa que els sistemes comparin tarifes i vigilin l'estoc perquè el teu millor talent faci el que ningú més pot fer: assessorar, fidelitzar i tancar vendes.",
+    "antesTag": "Abans",
+    "conIaTag": "Amb IA",
     "antes1": "Perseguir els albarans perduts i buscar on es va originar el desquadrament",
     "despues1": "Desquadraments i incidències detectats de forma automàtica en 3 segons",
     "antes2": "Creuar les tarifes d'ambdues botigues exportant les dades a mà en Excel",
@@ -90,7 +93,7 @@
   "bloques": {
     "title": "Arquitectura d'",
     "highlight": "Implantació",
-    "desc": "Tot el pla de treball s'organitza seguint l'estructura real de l'empresa. A dalt, una <bold>Central Global</bold> que unifica l'estratègia i els recursos de totes dues ferreteries. A baix, cada botiga opera sobre tres pilars idèntics (<bold>Administració, Clients i Operativa</bold>). Per garantir la màxima seguretat, qualsevol innovació s'implanta primer en l'entorn de Ca'n Ros i, només després de provar-ne l'eficàcia, es clona a Son Garrit.",
+    "desc": "<p>El pla de treball replica l'estructura real del grup: una <bold>Central Global</bold> per unificar estratègia i <bold>tres pilars tàctics</bold> a cada botiga.</p><p><italic>Garantia de seguretat:</italic> qualsevol innovació es valida primer com a pilot a <bold>Ca'n Ros</bold> i, un cop provada, es desplega a <bold>Son Garrit</bold>.</p>",
     "b1": "Global",
     "b1Desc": "Sinergies, Tresoreria i Estratègia",
     "b2": "Administració",
