@@ -16,6 +16,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { EsquemaEmpresa } from "@/components/layout/EsquemaEmpresa";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
+import { Explorador } from "@/components/home/Explorador";
 import { AlertaStock } from "@/components/prototipos/AlertaStock";
 import { ComparadorTarifas } from "@/components/prototipos/ComparadorTarifas";
 
@@ -316,32 +317,9 @@ export default function Home() {
             {tAreas("desc")}
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {bloques.map((b, bIdx) => (
-            <div key={b.id} className="flex flex-col gap-3">
-              <div className={`flex items-center gap-3 mb-2 pb-2 border-b ${b.id === 'B1' ? 'border-blue-500/20' : b.id === 'B2' ? 'border-emerald-500/20' : b.id === 'B3' ? 'border-violet-500/20' : 'border-amber-500/20'}`}>
-                <b.icon className={`w-5 h-5 ${b.id === 'B1' ? 'text-blue-400' : b.id === 'B2' ? 'text-emerald-400' : b.id === 'B3' ? 'text-violet-400' : 'text-amber-400'}`} />
-                <h3 className="font-bold text-white">{b.nombre}</h3>
-              </div>
-              {b.areas.map((a, i) => (
-                <FadeCard key={a.num} delay={bIdx * 0.1 + i * 0.05} className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all group">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-0.5 text-slate-500 font-mono text-[10px]">{a.num}</div>
-                    <div>
-                      <h4 className="text-sm text-slate-200 font-bold mb-1">{a.nombre}</h4>
-                      <p className="text-xs text-slate-400 leading-relaxed">{tAreas(`a${a.num}Desc` as any)}</p>
-                    </div>
-                  </div>
-                </FadeCard>
-              ))}
-            </div>
-          ))}
-        </div>
-        <div className="text-center mt-12">
-          <Link href="/catalogo" className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm rounded-xl transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40">
-            {tAreas("cta")} <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+        
+        <Explorador />
+        
       </Section>
 
       {/* ─── SECCIÓN 8: MINI-PROTOTIPOS ─── */}

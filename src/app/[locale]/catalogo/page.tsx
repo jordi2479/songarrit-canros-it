@@ -4,13 +4,17 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Filter, ChevronDown, ChevronUp, ArrowLeft, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { catalogoAreas } from "@/data/catalogo";
+import { catalogoAreasEn } from "@/data/catalogo_en";
+import { catalogoAreasCa } from "@/data/catalogo_ca";
+import { catalogoAreasDe } from "@/data/catalogo_de";
 
 export default function Catalogo() {
   const t = useTranslations("catalogo");
+  const locale = useLocale();
   const [search, setSearch] = useState("");
-  
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   // Nivel 1 - Estructura
   const [bloqueFilter, setBloqueFilter] = useState<string | null>(null);
   const [areaFilter, setAreaFilter] = useState<string | null>(null);
@@ -21,9 +25,16 @@ export default function Catalogo() {
   
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
+  const localizedCatalogoAreas = useMemo(() => {
+    if (locale === 'en') return catalogoAreasEn;
+    if (locale === 'ca') return catalogoAreasCa;
+    if (locale === 'de') return catalogoAreasDe;
+    return catalogoAreas;
+  }, [locale]);
+
   const allPropuestas = useMemo(() => {
     const list: any[] = [];
-    catalogoAreas.forEach(area => {
+    localizedCatalogoAreas.forEach(area => {
       area.propuestas.forEach(prop => {
         list.push({
           ...prop,
@@ -33,7 +44,7 @@ export default function Catalogo() {
       });
     });
     return list;
-  }, []);
+  }, [localizedCatalogoAreas]);
 
   const customBloqueLabels: Record<string, string> = {
     global: t("grupo"), 
@@ -68,8 +79,8 @@ export default function Catalogo() {
 
   const areasParaBloque = useMemo(() => {
     if (!bloqueFilter) return [];
-    return catalogoAreas.filter(a => a.bloque === bloqueFilter).map(a => a.titulo);
-  }, [bloqueFilter]);
+    return localizedCatalogoAreas.filter(a => a.bloque === bloqueFilter).map(a => a.titulo);
+  }, [bloqueFilter, localizedCatalogoAreas]);
 
   const filtered = useMemo(() => {
     return allPropuestas.filter((idea) => {
@@ -138,7 +149,7 @@ export default function Catalogo() {
       <div className="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-xl border-b border-white/5 shadow-xl shadow-black/50">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between mb-4">
-            <Link href="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-medium">
+            <Link href="/#areas" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-medium">
               <ArrowLeft className="w-4 h-4" /> {t("volver")}
             </Link>
             <span className="text-sm text-slate-500">
@@ -146,120 +157,132 @@ export default function Catalogo() {
             </span>
           </div>
 
-          {/* Search */}
-          <div className="relative mb-4">
-            <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
-            <input
-              type="text"
-              placeholder={t("buscar")}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all shadow-inner"
-            />
+          {/* Search and Mobile Filter Toggle */}
+          <div className="flex gap-3 mb-4">
+            <div className="relative flex-1">
+              <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
+              <input
+                type="text"
+                placeholder={t("buscar")}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full pl-11 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all shadow-inner"
+              />
+            </div>
+            <button 
+              onClick={() => setIsFiltersOpen(!isFiltersOpen)}
+              className={`md:hidden flex items-center justify-center px-4 rounded-xl border transition-colors ${
+                isFiltersOpen || bloqueFilter || metricaFilter || areaFilter || metricaValorFilter
+                  ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
+                  : 'bg-slate-900 border-slate-800 text-slate-400'
+              }`}
+            >
+              <Filter className="w-5 h-5" />
+            </button>
           </div>
 
-          {/* Línea Principal (Padres) */}
-          <div className="flex flex-col md:flex-row gap-3 items-start md:items-center justify-between">
+          {/* Filters Container */}
+          <div className={`md:flex flex-col gap-3 ${isFiltersOpen ? 'flex' : 'hidden'}`}>
             
-            {/* Bloques (Alineados a la izquierda) */}
-            <div className="flex flex-wrap gap-2 items-center">
-              <Filter className="w-3.5 h-3.5 text-slate-500 mr-1" />
-              {Object.entries(customBloqueLabels).map(([key, label]) => (
-                <button
-                  key={key}
-                  onClick={() => handleBloqueClick(key)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                    bloqueFilter === key
-                      ? "bg-blue-500 text-white border border-blue-400"
-                      : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
+            {/* Grupo: Bloques y Áreas */}
+            <div className="bg-slate-900/30 p-3 rounded-xl border border-slate-800/50 flex flex-col gap-3">
+              <div className="flex flex-wrap gap-2 items-center">
+                <Filter className="w-3.5 h-3.5 text-slate-500 mr-1 hidden md:block" />
+                {Object.entries(customBloqueLabels).map(([key, label]) => (
+                  <button
+                    key={key}
+                    onClick={() => handleBloqueClick(key)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                      bloqueFilter === key
+                        ? "bg-blue-500 text-white border border-blue-400"
+                        : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+              
+              <AnimatePresence>
+                {bloqueFilter && areasParaBloque.length > 0 && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="flex flex-wrap gap-2 items-center pt-2 border-t border-slate-800/50">
+                      <Layers className="w-3.5 h-3.5 text-slate-500 hidden sm:block" />
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-1">Áreas:</span>
+                      {areasParaBloque.map((areaNombre) => (
+                        <button
+                          key={areaNombre}
+                          onClick={() => setAreaFilter(areaFilter === areaNombre ? null : areaNombre)}
+                          className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all cursor-pointer ${
+                            areaFilter === areaNombre
+                              ? "bg-blue-500/20 text-blue-400 border border-blue-500/50"
+                              : "bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-800"
+                          }`}
+                        >
+                          {areaNombre}
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-            
-            {/* Métricas (Alineados a la derecha) */}
-            <div className="flex flex-wrap gap-2 items-center">
-              <span className="text-xs uppercase font-bold text-slate-500 mr-1 hidden md:block">Métricas:</span>
-              {metricaBotones.map((btn) => (
-                <button
-                  key={btn.id}
-                  onClick={() => handleMetricaClick(btn.id as any)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
-                    metricaFilter === btn.id
-                      ? "bg-emerald-500 text-white border border-emerald-400"
-                      : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
-                  }`}
-                >
-                  <btn.icon className={`w-3.5 h-3.5 ${metricaFilter === btn.id ? "text-white" : "text-slate-500"}`} />
-                  {btn.label}
-                </button>
-              ))}
+
+            {/* Grupo: Métricas y Niveles */}
+            <div className="bg-slate-900/30 p-3 rounded-xl border border-slate-800/50 flex flex-col gap-3">
+              <div className="flex flex-wrap gap-2 items-center">
+                <span className="text-xs uppercase font-bold text-slate-500 mr-1 hidden md:block">Métricas:</span>
+                {metricaBotones.map((btn) => (
+                  <button
+                    key={btn.id}
+                    onClick={() => handleMetricaClick(btn.id as any)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                      metricaFilter === btn.id
+                        ? "bg-emerald-500 text-white border border-emerald-400"
+                        : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
+                    }`}
+                  >
+                    <btn.icon className={`w-3.5 h-3.5 ${metricaFilter === btn.id ? "text-white" : "text-slate-500"}`} />
+                    {btn.label}
+                  </button>
+                ))}
+              </div>
+              
+              <AnimatePresence>
+                {metricaFilter && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="flex flex-wrap gap-2 items-center pt-2 border-t border-slate-800/50">
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-1">Nivel:</span>
+                      {valoresPorMetrica[metricaFilter].map((val) => (
+                        <button
+                          key={val.id}
+                          onClick={() => setMetricaValorFilter(metricaValorFilter === val.id ? null : val.id)}
+                          className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
+                            metricaValorFilter === val.id
+                              ? val.active
+                              : "bg-slate-900 text-slate-400 border-slate-800 hover:bg-slate-800 hover:text-slate-200"
+                          }`}
+                        >
+                          <span className={`w-1.5 h-1.5 rounded-full ${val.dot}`}></span>
+                          {val.label}
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
-
-          {/* Línea Secundaria (Hijos) */}
-          <AnimatePresence>
-            {(bloqueFilter || metricaFilter) && (
-              <motion.div 
-                initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                animate={{ opacity: 1, height: "auto", marginTop: 16 }}
-                exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                className="overflow-hidden"
-              >
-                <div className="pt-3 border-t border-slate-800 flex flex-col md:flex-row flex-wrap gap-4 items-start md:items-center justify-between bg-slate-900/50 p-3 rounded-xl">
-                  
-                  {/* Hijos de Bloques */}
-                  <div className="flex flex-wrap gap-2 items-center">
-                    {bloqueFilter && areasParaBloque.length > 0 && (
-                      <>
-                        <Layers className="w-3.5 h-3.5 text-slate-500 hidden sm:block" />
-                        <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-1">Áreas:</span>
-                        {areasParaBloque.map((areaNombre) => (
-                          <button
-                            key={areaNombre}
-                            onClick={() => setAreaFilter(areaFilter === areaNombre ? null : areaNombre)}
-                            className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all cursor-pointer ${
-                              areaFilter === areaNombre
-                                ? "bg-blue-500/20 text-blue-400 border border-blue-500/50"
-                                : "bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-800"
-                            }`}
-                          >
-                            {areaNombre}
-                          </button>
-                        ))}
-                      </>
-                    )}
-                  </div>
-
-                  {/* Hijos de Métricas */}
-                  <div className="flex flex-wrap gap-2 items-center">
-                    {metricaFilter && (
-                      <>
-                        <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-1">Nivel:</span>
-                        {valoresPorMetrica[metricaFilter].map((val) => (
-                          <button
-                            key={val.id}
-                            onClick={() => setMetricaValorFilter(metricaValorFilter === val.id ? null : val.id)}
-                            className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
-                              metricaValorFilter === val.id
-                                ? val.active
-                                : "bg-slate-900 text-slate-400 border-slate-800 hover:bg-slate-800 hover:text-slate-200"
-                            }`}
-                          >
-                            <span className={`w-1.5 h-1.5 rounded-full ${val.dot}`}></span>
-                            {val.label}
-                          </button>
-                        ))}
-                      </>
-                    )}
-                  </div>
-                  
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
         </div>
       </div>
 
@@ -293,8 +316,8 @@ export default function Catalogo() {
                   <span className="font-semibold text-sm text-white flex-1">{idea.titulo}</span>
                   
                   <div className="flex items-center justify-between w-full sm:w-auto gap-4">
-                    {/* Mini Dashboard de Métricas (Solo visible en desktop) */}
-                    <div className="hidden md:flex items-center gap-3 mr-2 bg-slate-950/50 px-3 py-1.5 rounded-lg border border-slate-800/50">
+                    {/* Mini Dashboard de Métricas */}
+                    <div className="flex items-center gap-2 sm:gap-3 mr-0 sm:mr-2 bg-slate-950/50 px-3 py-1.5 rounded-lg border border-slate-800/50 flex-1 sm:flex-initial justify-between sm:justify-start">
                       <div title={`Beneficio: ${idea.beneficio}`} className={`flex items-center gap-1.5 ${getBeneficioTextColor(idea.beneficio)}`}>
                         <BarChart className="w-3.5 h-3.5" />
                         <span className="text-[10px] font-bold uppercase tracking-wider">{idea.beneficio}</span>
@@ -312,9 +335,9 @@ export default function Catalogo() {
                     </div>
 
                     {expandedId === idea.id ? (
-                      <ChevronUp className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                      <ChevronUp className="w-4 h-4 text-slate-500 flex-shrink-0 hidden sm:block" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                      <ChevronDown className="w-4 h-4 text-slate-500 flex-shrink-0 hidden sm:block" />
                     )}
                   </div>
                 </button>
