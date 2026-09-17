@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Filter, ChevronDown, ChevronUp, ArrowLeft, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity } from "lucide-react";
+import { Search, Filter, ChevronDown, ChevronUp, ArrowLeft, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity, CheckCircle2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { catalogoCategorias } from "@/data/catalogo";
@@ -379,12 +379,30 @@ export default function Catalogo() {
                             </div>
                           )}
                           
+                          {idea.pasos && idea.pasos.length > 0 && (
+                            <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 shadow-inner">
+                              <h4 className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-3 flex items-center gap-2 text-emerald-400">
+                                <CheckCircle2 className="w-4 h-4" /> Guía de Implementación
+                              </h4>
+                              <ol className="space-y-2.5">
+                                {idea.pasos.map((paso: string, idx: number) => (
+                                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[11px] flex items-center justify-center mt-0.5 border border-emerald-500/30">
+                                      {idx + 1}
+                                    </span>
+                                    <span>{paso}</span>
+                                  </li>
+                                ))}
+                              </ol>
+                            </div>
+                          )}
+
                           {(idea.viabilidad || idea.veredicto) && (
                             <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 shadow-inner">
                               <h4 className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2 flex items-center gap-2 text-amber-400">
                                 <HardHat className="w-4 h-4" /> Viabilidad técnica & operativa
                               </h4>
-                              <p className="text-sm text-slate-400 leading-relaxed font-mono whitespace-pre-wrap">{idea.viabilidad || idea.veredicto}</p>
+                              <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">{idea.viabilidad || idea.veredicto}</p>
                             </div>
                           )}
                         </div>

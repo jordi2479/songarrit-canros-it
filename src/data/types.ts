@@ -18,6 +18,7 @@ export interface Propuesta {
   estado?: string;
   area_id?: AreaId;
   cat_id?: string;
+  pasos?: string[];
 }
 
 export interface Categoria {

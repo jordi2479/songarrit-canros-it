@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Filter, ChevronDown, ChevronUp, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity, Sparkles, X, SlidersHorizontal, ArrowUpDown, Maximize2 } from "lucide-react";
+import { Search, Filter, ChevronDown, ChevronUp, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity, Sparkles, X, SlidersHorizontal, ArrowUpDown, Maximize2, CheckCircle2 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 
 import { catalogoCategorias } from "@/data/catalogo";
@@ -476,7 +476,7 @@ export function BuscadorSoluciones() {
                         </span>
                       )}
                     </div>
-                    <h3 className="text-xl md:text-2xl font-black text-slate-900 leading-tight">
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-snug">
                       {activeIdea.titulo}
                     </h3>
                   </div>
@@ -511,7 +511,7 @@ export function BuscadorSoluciones() {
                       </span>
                     </div>
                   </div>
-                  <span className="text-[11px] font-mono text-slate-400">{activeIdea.id}</span>
+                  <span className="text-xs font-medium text-slate-400">{activeIdea.id}</span>
                 </div>
 
                 {/* Contenido scrolleable */}
@@ -520,7 +520,7 @@ export function BuscadorSoluciones() {
                     <h5 className="text-xs text-emerald-700 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
                       <Zap className="w-4 h-4 text-emerald-600" /> Resumen Ejecutivo
                     </h5>
-                    <p className="text-sm md:text-base text-slate-700 leading-relaxed whitespace-pre-wrap">
+                    <p className="text-sm md:text-base text-slate-700 leading-relaxed whitespace-pre-wrap font-normal">
                       {activeIdea.descripcionLarga || activeIdea.descripcion}
                     </p>
                   </div>
@@ -530,9 +530,27 @@ export function BuscadorSoluciones() {
                       <h5 className="text-xs text-sky-800 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
                         <Activity className="w-4 h-4 text-sky-600" /> Caso de uso
                       </h5>
-                      <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">
+                      <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap font-normal">
                         {activeIdea.ejemplo}
                       </p>
+                    </div>
+                  )}
+
+                  {activeIdea.pasos && activeIdea.pasos.length > 0 && (
+                    <div className="bg-slate-50/90 p-5 rounded-2xl border border-slate-200">
+                      <h5 className="text-xs text-slate-800 uppercase tracking-widest font-bold mb-3 flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Guía de Implementación (Paso a Paso)
+                      </h5>
+                      <ol className="space-y-2.5">
+                        {activeIdea.pasos.map((paso: string, idx: number) => (
+                          <li key={idx} className="flex items-start gap-3 text-xs md:text-sm text-slate-700 leading-relaxed">
+                            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[11px] flex items-center justify-center mt-0.5 border border-emerald-300">
+                              {idx + 1}
+                            </span>
+                            <span className="font-normal">{paso}</span>
+                          </li>
+                        ))}
+                      </ol>
                     </div>
                   )}
 
@@ -541,7 +559,7 @@ export function BuscadorSoluciones() {
                       <h5 className="text-xs text-amber-900 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
                         <HardHat className="w-4 h-4 text-amber-600" /> Viabilidad Técnica & Operativa
                       </h5>
-                      <p className="text-sm text-slate-700 leading-relaxed font-mono whitespace-pre-wrap text-xs">
+                      <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap font-normal">
                         {activeIdea.viabilidad || activeIdea.veredicto}
                       </p>
                     </div>
