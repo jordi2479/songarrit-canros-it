@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Filter, ChevronDown, ChevronUp, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity, Sparkles, X, SlidersHorizontal, ArrowUpDown } from "lucide-react";
+import { Search, Filter, ChevronDown, ChevronUp, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity, Sparkles, X, SlidersHorizontal, ArrowUpDown, Maximize2 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 
 import { catalogoCategorias } from "@/data/catalogo";
@@ -46,6 +46,27 @@ export function BuscadorSoluciones() {
     });
     return list;
   }, [localizedCatalogoAreas]);
+
+  const activeIdea = useMemo(() => {
+    if (!expandedId) return null;
+    return allPropuestas.find(p => p.id === expandedId) || null;
+  }, [expandedId, allPropuestas]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setExpandedId(null);
+    };
+    if (expandedId) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [expandedId]);
 
   const customAreaLabels: Record<string, string> = {
     global: t("grupo"), 
@@ -324,11 +345,10 @@ export function BuscadorSoluciones() {
           </span>
         </div>
 
-        {/* Rejilla de Tarjetas 2 Columnas Libre */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+        {/* Rejilla de Tarjetas 3 Columnas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
           <AnimatePresence mode="popLayout">
             {filtered.map((idea) => {
-              const isExpanded = expandedId === idea.id;
               return (
                 <motion.div
                   key={idea.id}
@@ -337,133 +357,191 @@ export function BuscadorSoluciones() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className={`bg-slate-900/90 border transition-all rounded-2xl overflow-hidden flex flex-col ${
-                    isExpanded 
-                      ? "border-emerald-500/60 shadow-2xl shadow-emerald-950/50 bg-slate-900" 
-                      : "border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/100"
-                  }`}
+                  onClick={() => setExpandedId(idea.id)}
+                  className="bg-slate-900/90 border border-slate-800/80 hover:border-emerald-500/50 hover:bg-slate-900 transition-all rounded-2xl overflow-hidden flex flex-col justify-between p-4 md:p-5 cursor-pointer group select-none shadow-sm hover:shadow-xl hover:shadow-emerald-950/20"
                 >
-                  {/* Tarjeta Principal */}
-                  <div 
-                    onClick={() => setExpandedId(isExpanded ? null : idea.id)}
-                    className="p-4 md:p-5 cursor-pointer flex flex-col h-full justify-between gap-3 group select-none"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between gap-2 mb-2">
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="px-2 py-0.5 bg-slate-800 text-slate-300 rounded-md text-[10px] font-bold uppercase tracking-wider">
-                            {customAreaLabels[idea.area] || idea.area}
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="px-2 py-0.5 bg-slate-800 text-slate-300 rounded-md text-[10px] font-bold uppercase tracking-wider">
+                          {customAreaLabels[idea.area] || idea.area}
+                        </span>
+                        <span className="px-2 py-0.5 bg-slate-800/60 text-slate-400 rounded-md text-[10px] font-medium tracking-wide border border-slate-700/50">
+                          {idea.categoriaTitulo}
+                        </span>
+                        {idea.acceso && (
+                          <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
+                            idea.acceso === 'escritura'
+                              ? 'bg-amber-950/40 text-amber-400 border-amber-800/50'
+                              : 'bg-cyan-950/40 text-cyan-400 border-cyan-800/50'
+                          }`}>
+                            {idea.acceso === 'escritura' ? 'Escritura' : 'Lectura'}
                           </span>
-                          <span className="px-2 py-0.5 bg-slate-800/60 text-slate-400 rounded-md text-[10px] font-medium tracking-wide border border-slate-700/50">
-                            {idea.categoriaTitulo}
-                          </span>
-                          {idea.acceso && (
-                            <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
-                              idea.acceso === 'escritura'
-                                ? 'bg-amber-950/40 text-amber-400 border-amber-800/50'
-                                : 'bg-cyan-950/40 text-cyan-400 border-cyan-800/50'
-                            }`}>
-                              {idea.acceso === 'escritura' ? 'Escritura' : 'Lectura'}
-                            </span>
-                          )}
-                        </div>
-                        
-                        <div className="text-slate-500 group-hover:text-emerald-400 transition-colors p-1">
-                          {isExpanded ? <ChevronUp className="w-4 h-4 text-emerald-400" /> : <ChevronDown className="w-4 h-4" />}
-                        </div>
+                        )}
                       </div>
-
-                      <h4 className="font-bold text-sm md:text-base text-white group-hover:text-emerald-300 transition-colors leading-snug">
-                        {idea.titulo}
-                      </h4>
                       
-                      <p className={`text-xs text-slate-400 mt-2 leading-relaxed ${!isExpanded ? "line-clamp-2" : ""}`}>
-                        {idea.descripcion}
-                      </p>
+                      <div className="text-slate-500 group-hover:text-emerald-400 transition-colors p-1 flex-shrink-0">
+                        <Maximize2 className="w-3.5 h-3.5" />
+                      </div>
                     </div>
 
-                    {/* Métricas Inferiores */}
-                    <div className="flex items-center gap-1.5 pt-3 border-t border-slate-800/70 flex-wrap">
-                      <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getBeneficioBadge(idea.beneficio)}`}>
-                        <BarChart className="w-3 h-3" />
-                        <span>{idea.beneficio}</span>
-                      </div>
-                      <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getRiesgoBadge(idea.riesgo)}`}>
-                        <ShieldAlert className="w-3 h-3" />
-                        <span>{idea.riesgo}</span>
-                      </div>
-                      <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getFacilidadBadge(idea.facilidad)}`}>
-                        <Activity className="w-3 h-3" />
-                        <span>{idea.facilidad}</span>
-                      </div>
-                    </div>
+                    <h4 className="font-bold text-sm md:text-base text-white group-hover:text-emerald-300 transition-colors leading-snug mb-2">
+                      {idea.titulo}
+                    </h4>
+                    
+                    <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">
+                      {idea.descripcion}
+                    </p>
                   </div>
 
-                  {/* Desplegable In-Place */}
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.22 }}
-                        className="overflow-hidden bg-slate-950/70 border-t border-slate-800"
-                      >
-                        <div className="p-4 md:p-5 space-y-4">
-                          
-                          <div>
-                            <h5 className="text-[11px] text-emerald-400 uppercase tracking-wider font-bold mb-1.5 flex items-center gap-1.5">
-                              <Zap className="w-3.5 h-3.5" /> Resumen Ejecutivo & Detalle
-                            </h5>
-                            <p className="text-xs md:text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">
-                              {idea.descripcionLarga || idea.descripcion}
-                            </p>
-                          </div>
-
-                          {idea.ejemplo && (
-                            <div className="bg-slate-900/80 p-3 rounded-xl border border-slate-800/90">
-                              <h5 className="text-[11px] text-cyan-400 uppercase tracking-wider font-bold mb-1 flex items-center gap-1.5">
-                                <Activity className="w-3.5 h-3.5" /> Caso de uso
-                              </h5>
-                              <p className="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">
-                                {idea.ejemplo}
-                              </p>
-                            </div>
-                          )}
-
-                          {(idea.viabilidad || idea.veredicto) && (
-                            <div className="bg-slate-900 p-3 rounded-xl border border-slate-800/90">
-                              <h5 className="text-[11px] text-amber-400 uppercase tracking-wider font-bold mb-1 flex items-center gap-1.5">
-                                <HardHat className="w-3.5 h-3.5" /> Viabilidad Técnica & Veredicto
-                              </h5>
-                              <p className="text-xs text-slate-400 leading-relaxed font-mono whitespace-pre-wrap">
-                                {idea.viabilidad || idea.veredicto}
-                              </p>
-                            </div>
-                          )}
-
-                          {idea.stack && (
-                            <div className="pt-2 border-t border-slate-800/80">
-                              <span className="text-[10px] text-slate-500 uppercase tracking-wider font-bold block mb-1.5">Stack & Herramientas</span>
-                              <div className="flex flex-wrap gap-1.5">
-                                {idea.stack.split(',').map((s: string, idx: number) => (
-                                  <span key={idx} className="px-2 py-0.5 bg-slate-900 border border-slate-800 rounded-md text-[10px] font-semibold text-slate-300">
-                                    {s.trim()}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* Métricas Inferiores */}
+                  <div className="flex items-center gap-1.5 pt-3 mt-4 border-t border-slate-800/70 flex-wrap">
+                    <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getBeneficioBadge(idea.beneficio)}`}>
+                      <BarChart className="w-3 h-3" />
+                      <span>{idea.beneficio}</span>
+                    </div>
+                    <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getRiesgoBadge(idea.riesgo)}`}>
+                      <ShieldAlert className="w-3 h-3" />
+                      <span>{idea.riesgo}</span>
+                    </div>
+                    <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getFacilidadBadge(idea.facilidad)}`}>
+                      <Activity className="w-3 h-3" />
+                      <span>{idea.facilidad}</span>
+                    </div>
+                  </div>
                 </motion.div>
               );
             })}
           </AnimatePresence>
         </div>
+
+        {/* Modal Flotante Expandido */}
+        <AnimatePresence>
+          {activeIdea && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+              {/* Fondo desenfocado */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setExpandedId(null)}
+                className="fixed inset-0 bg-slate-950/85 backdrop-blur-md"
+              />
+
+              {/* Caja Modal Flotante */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.94, y: 16 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.94, y: 16 }}
+                transition={{ type: "spring", duration: 0.32, bounce: 0.1 }}
+                className="relative w-full max-w-3xl max-h-[88vh] bg-slate-900 border border-slate-700/80 rounded-3xl shadow-2xl shadow-emerald-950/60 overflow-hidden flex flex-col z-10"
+              >
+                {/* Header modal */}
+                <div className="p-6 pb-4 border-b border-slate-800 flex items-start justify-between gap-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="px-2.5 py-0.5 bg-slate-800 text-slate-200 rounded-md text-[11px] font-bold uppercase tracking-wider">
+                        {customAreaLabels[activeIdea.area] || activeIdea.area}
+                      </span>
+                      <span className="px-2.5 py-0.5 bg-slate-800/80 text-slate-300 rounded-md text-[11px] font-medium tracking-wide border border-slate-700">
+                        {activeIdea.categoriaTitulo}
+                      </span>
+                      {activeIdea.acceso && (
+                        <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider border ${
+                          activeIdea.acceso === 'escritura'
+                            ? 'bg-amber-950/50 text-amber-300 border-amber-800/60'
+                            : 'bg-cyan-950/50 text-cyan-300 border-cyan-800/60'
+                        }`}>
+                          {activeIdea.acceso === 'escritura' ? 'Escritura en sistemas' : 'Solo lectura'}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-black text-white leading-tight">
+                      {activeIdea.titulo}
+                    </h3>
+                  </div>
+                  <button
+                    onClick={() => setExpandedId(null)}
+                    className="p-2 text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-full transition-colors cursor-pointer flex-shrink-0"
+                    title="Cerrar (Esc)"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Dashboard de Métricas en el Modal */}
+                <div className="px-6 py-3 bg-slate-950/60 border-b border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+                  <div className="flex items-center gap-4 flex-wrap">
+                    <div className="flex items-center gap-1.5 text-slate-300">
+                      <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Beneficio:</span>
+                      <span className={`font-bold flex items-center gap-1 ${getBeneficioBadge(activeIdea.beneficio)} px-2 py-0.5 rounded-md border text-[11px]`}>
+                        <BarChart className="w-3 h-3" /> {activeIdea.beneficio}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-slate-300">
+                      <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Riesgo:</span>
+                      <span className={`font-bold flex items-center gap-1 ${getRiesgoBadge(activeIdea.riesgo)} px-2 py-0.5 rounded-md border text-[11px]`}>
+                        <ShieldAlert className="w-3 h-3" /> {activeIdea.riesgo}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-slate-300">
+                      <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Facilidad:</span>
+                      <span className={`font-bold flex items-center gap-1 ${getFacilidadBadge(activeIdea.facilidad)} px-2 py-0.5 rounded-md border text-[11px]`}>
+                        <Activity className="w-3 h-3" /> {activeIdea.facilidad}
+                      </span>
+                    </div>
+                  </div>
+                  <span className="text-[11px] font-mono text-slate-500">{activeIdea.id}</span>
+                </div>
+
+                {/* Contenido scrolleable */}
+                <div className="p-6 overflow-y-auto space-y-6">
+                  <div>
+                    <h5 className="text-xs text-emerald-400 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+                      <Zap className="w-4 h-4" /> Resumen Ejecutivo
+                    </h5>
+                    <p className="text-sm md:text-base text-slate-200 leading-relaxed whitespace-pre-wrap">
+                      {activeIdea.descripcionLarga || activeIdea.descripcion}
+                    </p>
+                  </div>
+
+                  {activeIdea.ejemplo && (
+                    <div className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 shadow-inner">
+                      <h5 className="text-xs text-cyan-400 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+                        <Activity className="w-4 h-4" /> Caso de uso
+                      </h5>
+                      <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">
+                        {activeIdea.ejemplo}
+                      </p>
+                    </div>
+                  )}
+
+                  {(activeIdea.viabilidad || activeIdea.veredicto) && (
+                    <div className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 shadow-inner">
+                      <h5 className="text-xs text-amber-400 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+                        <HardHat className="w-4 h-4" /> Viabilidad Técnica & Operativa
+                      </h5>
+                      <p className="text-sm text-slate-400 leading-relaxed font-mono whitespace-pre-wrap">
+                        {activeIdea.viabilidad || activeIdea.veredicto}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Footer Modal */}
+                <div className="p-4 px-6 border-t border-slate-800 bg-slate-950/40 flex items-center justify-between">
+                  <span className="text-xs text-slate-500">Pulsa ESC o fuera para cerrar</span>
+                  <button
+                    onClick={() => setExpandedId(null)}
+                    className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold transition-colors cursor-pointer"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
 
         {filtered.length === 0 && (
           <div className="text-center py-16 bg-slate-900/40 border border-slate-800 rounded-2xl">
