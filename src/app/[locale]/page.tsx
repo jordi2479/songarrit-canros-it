@@ -18,6 +18,8 @@ import { AnimatedText } from "@/components/ui/AnimatedText";
 import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 import { Explorador } from "@/components/home/Explorador";
 import { BuscadorSoluciones } from "@/components/prototipos/BuscadorSoluciones";
+import { ModeloImplantacion } from "@/components/home/ModeloImplantacion";
+import { Viabilidad } from "@/components/home/Viabilidad";
 
 /* ─── Helper: animated card ─── */
 function FadeCard({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -322,12 +324,12 @@ export default function Home() {
       </Section>
 
       {/* ─── SECCIÓN 8: BUSCADOR DE SOLUCIONES (PROTOTIPOS) ─── */}
-      <Section id="prototipos" className="bg-gradient-to-b from-slate-950 to-slate-900" dark>
+      <Section id="prototipos" className="bg-slate-50">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
-            {tProto("title")} <span className="text-emerald-400">{tProto("highlight")}</span>
+            {tProto("title")} <span className="text-emerald-500">{tProto("highlight")}</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
             {tProto("desc")}
           </p>
         </div>
@@ -336,74 +338,42 @@ export default function Home() {
         
       </Section>
 
-      {/* ─── SECCIÓN 9: VIABILIDAD ─── */}
-      <Section id="viabilidad">
+      {/* ─── SECCIÓN 9: MODELO DE IMPLANTACIÓN ─── */}
+      <Section id="implantacion" dark>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-900 leading-tight">
-            {tViab("title")} <span className="text-emerald-600">{tViab("highlight")}</span>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
+            {tViab("title")} <span className="text-blue-400">{tViab("highlight")}</span>
           </h2>
-          <p className="text-xl text-slate-500 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
             {tViab("desc")}
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <FadeCard delay={0} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
-            <PiggyBank className="w-8 h-8 text-emerald-500 mb-4" />
-            <h3 className="text-lg font-black text-slate-900 mb-2">{tViab("inversionTitle")}</h3>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-3">
-                <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
-                  <div className="bg-emerald-500 h-full rounded-full" style={{ width: "75%" }}></div>
-                </div>
-                <span className="text-slate-900 font-bold whitespace-nowrap">75%</span>
-              </div>
-              <p className="text-slate-500">{tViab("inversion75")}</p>
-              <div className="flex items-center gap-3">
-                <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
-                  <div className="bg-amber-500 h-full rounded-full" style={{ width: "25%" }}></div>
-                </div>
-                <span className="text-slate-900 font-bold whitespace-nowrap">25%</span>
-              </div>
-              <p className="text-slate-500">{tViab("inversion25")}</p>
-            </div>
-          </FadeCard>
-          <FadeCard delay={0.15} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
-            <Clock className="w-8 h-8 text-blue-500 mb-4" />
-            <h3 className="text-lg font-black text-slate-900 mb-2">{tViab("tiempoTitle")}</h3>
-            <div className="space-y-4 text-sm mt-4">
-              <div>
-                <div className="flex justify-between text-xs mb-1"><span className="text-slate-500">{tViab("tiempoAntes")}</span><span className="text-red-500 font-bold">{tViab("tiempoAntesVal")}</span></div>
-                <div className="w-full bg-red-100 rounded-full h-3"><div className="bg-red-400 h-full rounded-full" style={{ width: "100%" }}></div></div>
-              </div>
-              <div>
-                <div className="flex justify-between text-xs mb-1"><span className="text-slate-500">{tViab("tiempoDespues")}</span><span className="text-emerald-600 font-bold">{tViab("tiempoDespuesVal")}</span></div>
-                <div className="w-full bg-emerald-100 rounded-full h-3"><div className="bg-emerald-500 h-full rounded-full" style={{ width: "12.5%" }}></div></div>
-              </div>
-            </div>
-            <p className="text-slate-500 text-sm mt-4">{tViab("tiempoNota")}</p>
-          </FadeCard>
-          <FadeCard delay={0.3} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
-            <AlertTriangle className="w-8 h-8 text-amber-500 mb-4" />
-            <h3 className="text-lg font-black text-slate-900 mb-2">{tViab("riesgosTitle")}</h3>
-            <ul className="space-y-3 text-sm text-slate-600">
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-500 mt-0.5">✓</span>
-                <span><strong className="text-slate-900">{tViab("riesgo1Label")}</strong> {tViab("riesgo1")}</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-500 mt-0.5">✓</span>
-                <span><strong className="text-slate-900">{tViab("riesgo2Label")}</strong> {tViab("riesgo2")}</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-amber-500 mt-0.5">!</span>
-                <span><strong className="text-slate-900">{tViab("riesgo3Label")}</strong> {tViab("riesgo3")}</span>
-              </li>
-            </ul>
-          </FadeCard>
-        </div>
+        
+        <ModeloImplantacion />
+
       </Section>
 
-      {/* ─── SECCIÓN 10: CIERRE ─── */}
+      {/* ─── SECCIÓN 10: VIABILIDAD (Negocio) ─── */}
+      <Section id="viabilidad" className="bg-slate-50">
+        <div className="text-center mb-16">
+          <div className="flex justify-center items-center gap-2 mb-6">
+            <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full">
+              Filosofía de Ejecución
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-slate-900 leading-tight">
+            Transformación Orgánica y <span className="text-emerald-500">Segura</span>
+          </h2>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            La premisa innegociable de este plan es <strong className="text-slate-900">no interrumpir ni desestabilizar la operativa diaria</strong> de las tiendas. 
+            No aplicamos revoluciones teóricas. El desarrollo se plantea mediante inyecciones tecnológicas modulares que se prueban y validan directamente en el mostrador. 
+            <strong className="text-emerald-600"> Si una solución no facilita el trabajo del equipo de forma inmediata, se descarta.</strong>
+          </p>
+        </div>
+        <Viabilidad />
+      </Section>
+
+      {/* ─── SECCIÓN 11: CIERRE ─── */}
       <Section id="cierre" dark className="bg-gradient-to-b from-slate-950 to-emerald-950">
         <div className="text-center max-w-3xl mx-auto">
           <motion.div

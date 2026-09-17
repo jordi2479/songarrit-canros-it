@@ -89,7 +89,7 @@ export function BuscadorSoluciones() {
       {/* Search Input Box */}
       <div className="w-full relative group">
         <div className="absolute inset-0 bg-emerald-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        <div className="relative flex items-center bg-slate-900 border-2 border-slate-700 hover:border-emerald-500 focus-within:border-emerald-400 rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden">
+        <div className="relative flex items-center bg-white border-2 border-slate-200 hover:border-emerald-500 focus-within:border-emerald-400 rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden">
           <div className="pl-6 text-emerald-400">
             <Sparkles className="w-6 h-6" />
           </div>
@@ -99,12 +99,12 @@ export function BuscadorSoluciones() {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSearch(query)}
             placeholder="Ej: ¿Cómo reduzco las roturas de stock en verano?"
-            className="w-full bg-transparent text-white placeholder-slate-500 px-6 py-6 text-lg focus:outline-none"
+            className="w-full bg-transparent text-slate-900 placeholder-slate-500 px-6 py-6 text-lg focus:outline-none"
           />
           <button
             onClick={() => handleSearch(query)}
             disabled={!query.trim() || isSearching}
-            className="mr-3 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            className="mr-3 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-900 rounded-xl font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {isSearching ? <Loader2 className="w-5 h-5 animate-spin" /> : <Search className="w-5 h-5" />}
             <span className="hidden sm:inline">Analizar</span>
@@ -119,7 +119,7 @@ export function BuscadorSoluciones() {
           <button
             key={idx}
             onClick={() => handleSearch(challenge.keyword)}
-            className="px-4 py-2 bg-slate-800/50 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-emerald-500/50 rounded-full text-sm transition-all"
+            className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-emerald-500/50 rounded-full text-sm transition-all"
           >
             {challenge.label}
           </button>
@@ -167,7 +167,7 @@ export function BuscadorSoluciones() {
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <h3 className="text-xl font-black text-white text-center mb-8 flex items-center justify-center gap-3">
+              <h3 className="text-xl font-black text-slate-900 text-center mb-8 flex items-center justify-center gap-3">
                 <Sparkles className="w-6 h-6 text-emerald-400" />
                 Se han encontrado {results.length} iniciativas clave de alto impacto
               </h3>
@@ -179,16 +179,16 @@ export function BuscadorSoluciones() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 flex flex-col shadow-xl transition-colors group"
+                    className="bg-white border border-slate-100 hover:border-emerald-500/50 rounded-2xl p-6 flex flex-col shadow-xl transition-colors group"
                   >
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 bg-slate-950 px-2 py-1 rounded border border-slate-800">
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-100">
                         {idea.areaTitulo}
                       </span>
                     </div>
                     
-                    <h4 className="text-lg font-bold text-white mb-3 leading-tight">{idea.titulo}</h4>
-                    <p className="text-sm text-slate-400 flex-1 mb-6 line-clamp-3">{idea.descripcion}</p>
+                    <h4 className="text-lg font-bold text-slate-900 mb-3 leading-tight">{idea.titulo}</h4>
+                    <p className="text-sm text-slate-500 flex-1 mb-6 line-clamp-3">{idea.descripcion}</p>
                     
                     <div className="mt-auto space-y-4">
                       <div className="flex items-center justify-between">
@@ -200,7 +200,7 @@ export function BuscadorSoluciones() {
                       
                       <Link 
                         href={`/catalogo`} 
-                        className="flex items-center justify-center w-full gap-2 px-4 py-3 bg-slate-950 hover:bg-emerald-500 text-slate-300 hover:text-white rounded-xl font-semibold transition-all group-hover:border-emerald-400 border border-slate-800"
+                        className="flex items-center justify-center w-full gap-2 px-4 py-3 bg-slate-50 hover:bg-emerald-500 text-slate-600 hover:text-slate-900 rounded-xl font-semibold transition-all group-hover:border-emerald-400 border border-slate-100"
                       >
                         Ver detalle <ArrowRight className="w-4 h-4" />
                       </Link>
