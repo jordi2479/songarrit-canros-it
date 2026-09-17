@@ -183,7 +183,7 @@ export function BuscadorSoluciones() {
     escrituraLabel: isCa ? "Importació a ERP/TPV (amb validació)" : isEn ? "ERP/POS Import (validated)" : isDe ? "ERP/Kasse Import (validiert)" : "Importación a ERP/TPV (con validación)",
     lecturaLabel: isCa ? "Volcat segur des d'ERP/TPV" : isEn ? "Safe ERP/POS export dump" : isDe ? "Sicherer ERP/Kasse Datenabzug" : "Volcado seguro desde ERP/TPV",
     escCerrar: isCa ? "Prem ESC o a fora per tornar a la taula" : isEn ? "Press ESC or click outside to return to board" : isDe ? "ESC drücken oder außen klicken" : "Pulsa ESC o fuera para volver a la mesa",
-    guardarFicha: isCa ? "Desar Fitxa" : isEn ? "Save Card" : isDe ? "Karte Speichern" : "Guardar Ficha",
+    cerrarFicha: isCa ? "Tancar Fitxa" : isEn ? "Close Card" : isDe ? "Karte Schließen" : "Cerrar Ficha",
   };
 
   // Semántica de métricas: Verde (Favorable), Amarillo (Neutro), Rojo (Desafiante)
@@ -321,33 +321,6 @@ export function BuscadorSoluciones() {
             )
           })}
         </div>
-
-        {/* 3. Leyenda de Métricas (Iconos) */}
-        <div className="mt-2 pt-5 border-t border-slate-100 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Leyenda:</span>
-          
-          <div className="flex items-center gap-2 bg-slate-50 px-2.5 py-1.5 rounded-xl border border-slate-200/70">
-            <div className="w-5 h-5 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-2xs">
-              <BarChart className="w-3 h-3" />
-            </div>
-            <span className="text-xs font-bold text-slate-700">{t("beneficio")}</span>
-          </div>
-
-          <div className="flex items-center gap-2 bg-slate-50 px-2.5 py-1.5 rounded-xl border border-slate-200/70">
-            <div className="w-5 h-5 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-2xs">
-              <ShieldAlert className="w-3 h-3" />
-            </div>
-            <span className="text-xs font-bold text-slate-700">{t("riesgo")}</span>
-          </div>
-
-          <div className="flex items-center gap-2 bg-slate-50 px-2.5 py-1.5 rounded-xl border border-slate-200/70">
-            <div className="w-5 h-5 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-2xs">
-              <Wrench className="w-3 h-3" />
-            </div>
-            <span className="text-xs font-bold text-slate-700">{t("dificultad")}</span>
-          </div>
-        </div>
-
       </div>
 
       {/* BLOQUE 2: MURAL DE INICIATIVAS */}
@@ -765,7 +738,7 @@ export function BuscadorSoluciones() {
                     onClick={() => setExpandedId(null)}
                     className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold transition-colors cursor-pointer shadow-xs"
                   >
-                    {uiText.guardarFicha}
+                    {uiText.cerrarFicha}
                   </button>
                 </div>
               </motion.div>
