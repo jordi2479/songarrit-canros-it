@@ -127,16 +127,19 @@ export default function Home() {
             className="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] mb-8"
             delay={0.4}
           />
-          <motion.p
-            className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
+          <motion.div
+            className="mt-2 text-2xl sm:text-3xl md:text-4xl tracking-tight"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.0, duration: 0.8 }}
           >
-            <strong className="text-white font-bold tracking-tight">
-              {tHero("groupPrefix")} {tHero("brand")}
-            </strong>
-          </motion.p>
+            <span className="font-semibold text-slate-300">
+              {tHero("groupPrefix")}{" "}
+            </span>
+            <span className="font-black text-white">
+              {tHero("brand")}
+            </span>
+          </motion.div>
           <ScrollIndicator targetId="problema" />
         </div>
       </Section>
