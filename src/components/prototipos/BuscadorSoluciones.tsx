@@ -423,7 +423,7 @@ export function BuscadorSoluciones() {
                           {idea.ejemplo && (
                             <div className="bg-slate-900/80 p-3 rounded-xl border border-slate-800/90">
                               <h5 className="text-[11px] text-cyan-400 uppercase tracking-wider font-bold mb-1 flex items-center gap-1.5">
-                                <Activity className="w-3.5 h-3.5" /> Qué recibe el dueño / Ejemplo real
+                                <Activity className="w-3.5 h-3.5" /> Caso de uso
                               </h5>
                               <p className="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">
                                 {idea.ejemplo}

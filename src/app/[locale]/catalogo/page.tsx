@@ -373,7 +373,7 @@ export default function Catalogo() {
                           {idea.ejemplo && (
                             <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 shadow-inner">
                               <h4 className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2 flex items-center gap-2 text-cyan-400">
-                                <Activity className="w-4 h-4" /> Qué recibe el dueño / Ejemplo real
+                                <Activity className="w-4 h-4" /> Caso de uso
                               </h4>
                               <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">{idea.ejemplo}</p>
                             </div>
