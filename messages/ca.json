@@ -91,8 +91,8 @@
     "g3Desc": "Qualsevol eina implementada es pot activar o desactivar en segons. El negoci mai no s'atura ni depèn d'una sola solució."
   },
   "bloques": {
-    "title": "Arquitectura d'",
-    "highlight": "Implantació",
+    "title": "Estructura d'",
+    "highlight": "Àrees.",
     "desc": "<p>El pla de treball replica l'estructura real del grup: una <bold>Central Global</bold> per unificar estratègia i <bold>tres pilars tàctics</bold> a cada botiga.</p><p><italic>Garantia de seguretat:</italic> qualsevol innovació es valida primer com a pilot a <bold>Ca'n Ros</bold> i, un cop provada, es desplega a <bold>Son Garrit</bold>.</p>",
     "b1": "Global",
     "b1Desc": "Sinergies, Tresoreria i Estratègia",
@@ -115,8 +115,8 @@
     "expansionDesc": "Rèplica del model d'èxit"
   },
   "areas": {
-    "title": "Mapa de Transformació.",
-    "highlight": "Sinergia Local i Global.",
+    "title": "Mapa de",
+    "highlight": "Categories.",
     "desc": "L'èxit no resideix en optimitzar departaments aïllats, sinó en connectar-los. Descobreix com les operacions tàctiques de les botigues alimenten directament l'estratègia i fortalesa del Grup.",
     "cta": "Explorar les 150 idees",
     "estrategiaCentral": "ESTRATÈGIA CENTRAL",
@@ -153,8 +153,8 @@
     "a15Desc": "Processos de suport diversos (neteja, manteniment)."
   },
   "prototipos": {
-    "title": "Assistent del",
-    "highlight": "Pla d'Acció.",
+    "title": "Catàleg de",
+    "highlight": "Propostes.",
     "desc": "Cada repte operatiu de Son Garrit i Ca'n Ros ja té una resposta planificada. Consulta qualsevol àrea o problema diari per veure la iniciativa exacta dissenyada per solucionar-lo amb tecnologia i IA."
   },
   "alertaStock": {

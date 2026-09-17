@@ -91,8 +91,8 @@
     "g3Desc": "Cualquier herramienta implementada se puede activar o desactivar en segundos. El negocio nunca se detiene ni depende de una sola solución."
   },
   "bloques": {
-    "title": "Arquitectura de",
-    "highlight": "Implantación",
+    "title": "Estructura de",
+    "highlight": "Áreas.",
     "desc": "<p>El plan de trabajo replica la estructura real del grupo: una <bold>Central Global</bold> para unificar estrategia y <bold>tres pilares tácticos</bold> en cada tienda.</p><p><italic>Garantía de seguridad:</italic> cualquier innovación se valida primero como piloto en <bold>Ca'n Ros</bold> y, una vez probada, se despliega en <bold>Son Garrit</bold>.</p>",
     "b1": "Global",
     "b1Desc": "Sinergias, Tesorería y Estrategia",
@@ -115,8 +115,8 @@
     "expansionDesc": "Réplica del modelo de éxito"
   },
   "areas": {
-    "title": "Mapa de Transformación.",
-    "highlight": "Sinergia Local y Global.",
+    "title": "Mapa de",
+    "highlight": "Categorías.",
     "desc": "El éxito no reside en optimizar departamentos aislados, sino en conectarlos. Descubre cómo las operaciones tácticas de las tiendas alimentan directamente la estrategia y fortaleza del Grupo.",
     "cta": "Explorar las 150 ideas",
     "estrategiaCentral": "ESTRATEGIA CENTRAL",
@@ -153,8 +153,8 @@
     "a15Desc": "Procesos de soporte varios (limpieza, mantenimiento)."
   },
   "prototipos": {
-    "title": "Asistente del",
-    "highlight": "Plan de Acción.",
+    "title": "Catálogo de",
+    "highlight": "Propuestas.",
     "desc": "Cada reto operativo de Son Garrit y Ca'n Ros ya tiene una respuesta planificada. Consulta cualquier área o problema diario para ver la iniciativa exacta diseñada para solucionarlo con tecnología e IA."
   },
   "alertaStock": {

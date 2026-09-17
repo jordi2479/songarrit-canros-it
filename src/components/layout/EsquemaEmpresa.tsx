@@ -34,8 +34,8 @@ export function EsquemaEmpresa() {
       >
         {/* --- NIVEL 1: GLOBAL --- */}
         <motion.div variants={itemVariants} className="relative z-10 w-full max-w-md">
-          <div className="bg-slate-900 border-2 border-blue-500/30 rounded-2xl p-4 sm:p-5 md:p-6 text-center shadow-xl shadow-blue-500/10">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-4">
+          <div className="bg-slate-900 border-2 border-indigo-500/40 rounded-2xl p-4 sm:p-5 md:p-6 text-center shadow-xl shadow-indigo-500/15">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-4 shadow-sm">
               <Building2 className="w-5 h-5 md:w-6 md:h-6" />
             </div>
             <h4 className="text-xl sm:text-2xl font-black text-white mb-1 md:mb-2">{tBloques("b1")}</h4>
@@ -45,7 +45,7 @@ export function EsquemaEmpresa() {
 
         {/* --- CONECTOR MÓVIL 1: De Global a Ca'n Ros --- */}
         <div className="md:hidden flex flex-col items-center my-3 relative z-0">
-          <div className="w-0.5 h-6 bg-gradient-to-b from-blue-500/70 to-emerald-500/70 rounded-full animate-pulse" />
+          <div className="w-0.5 h-6 bg-gradient-to-b from-indigo-500/70 to-emerald-500/70 rounded-full animate-pulse" />
         </div>
 
         {/* --- LÍNEAS CONECTORAS DESKTOP (INLINE ROBUSTAS) --- */}
@@ -82,10 +82,10 @@ export function EsquemaEmpresa() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full relative z-10">
           
           {/* CA'N ROS (NÚCLEO/LABORATORIO) */}
-          <motion.div variants={itemVariants} className="bg-emerald-50 border-2 border-emerald-200 rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl shadow-emerald-500/5 relative overflow-hidden group">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600"></div>
+          <motion.div variants={itemVariants} className="bg-emerald-50/70 border-2 border-emerald-200 rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl shadow-emerald-500/5 relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
             <div className="text-center mb-4 md:mb-8 relative z-10">
-              <span className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 bg-emerald-100 text-emerald-700 text-[10px] md:text-xs font-black uppercase tracking-wider md:tracking-widest rounded-full mb-2 md:mb-4">
+              <span className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 bg-emerald-100 text-emerald-800 text-[10px] md:text-xs font-black uppercase tracking-wider md:tracking-widest rounded-full mb-2 md:mb-4 border border-emerald-200">
                 {tBloques("labBadge")}
               </span>
               <div className="flex justify-center items-center gap-2 md:gap-3 mb-1 md:mb-2">
@@ -96,8 +96,9 @@ export function EsquemaEmpresa() {
             </div>
             
             <div className="flex flex-col gap-1.5 md:gap-3 relative z-10">
-              <div className="bg-white border border-emerald-100 rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
-                <div className="bg-slate-100 text-slate-600 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+              {/* B2: Administración (Sky) */}
+              <div className="bg-white border border-sky-100 hover:border-sky-200 rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs transition-colors">
+                <div className="bg-sky-50 text-sky-600 border border-sky-200/80 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
                    <Store className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
@@ -105,8 +106,10 @@ export function EsquemaEmpresa() {
                   <p className="hidden md:block text-xs text-slate-500">{tBloques("b2Sub")}</p>
                 </div>
               </div>
-              <div className="bg-white border border-emerald-100 rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
-                <div className="bg-slate-100 text-slate-600 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+
+              {/* B3: Clientes (Amber) */}
+              <div className="bg-white border border-amber-100 hover:border-amber-200 rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs transition-colors">
+                <div className="bg-amber-50 text-amber-600 border border-amber-200/80 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
                    <Users className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
@@ -114,8 +117,10 @@ export function EsquemaEmpresa() {
                   <p className="hidden md:block text-xs text-slate-500">{tBloques("b3Sub")}</p>
                 </div>
               </div>
-              <div className="bg-white border border-emerald-100 rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
-                <div className="bg-slate-100 text-slate-600 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+
+              {/* B4: Operativa (Emerald) */}
+              <div className="bg-white border border-emerald-100 hover:border-emerald-200 rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs transition-colors">
+                <div className="bg-emerald-50 text-emerald-600 border border-emerald-200/80 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
                    <Package className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
@@ -180,30 +185,35 @@ export function EsquemaEmpresa() {
             </div>
             
             <div className="flex flex-col gap-1.5 md:gap-3 relative z-10">
-              <div className="bg-white/50 border border-slate-200 border-dashed rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
-                <div className="bg-slate-200/50 text-slate-400 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+              {/* B2: Administración (Sky) */}
+              <div className="bg-white/70 border border-slate-200 border-dashed rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
+                <div className="bg-sky-50/80 text-sky-500 border border-sky-200/60 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
                    <Store className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-600 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b2")}</h5>
+                  <h5 className="font-bold text-slate-700 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b2")}</h5>
                   <p className="hidden md:block text-xs text-slate-400">{tBloques("b2Sub")}</p>
                 </div>
               </div>
-              <div className="bg-white/50 border border-slate-200 border-dashed rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
-                <div className="bg-slate-200/50 text-slate-400 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+
+              {/* B3: Clientes (Amber) */}
+              <div className="bg-white/70 border border-slate-200 border-dashed rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
+                <div className="bg-amber-50/80 text-amber-500 border border-amber-200/60 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
                    <Users className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-600 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b3")}</h5>
+                  <h5 className="font-bold text-slate-700 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b3")}</h5>
                   <p className="hidden md:block text-xs text-slate-400">{tBloques("b3Sub")}</p>
                 </div>
               </div>
-              <div className="bg-white/50 border border-slate-200 border-dashed rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
-                <div className="bg-slate-200/50 text-slate-400 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+
+              {/* B4: Operativa (Emerald) */}
+              <div className="bg-white/70 border border-slate-200 border-dashed rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
+                <div className="bg-emerald-50/80 text-emerald-500 border border-emerald-200/60 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
                    <Package className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-600 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b4")}</h5>
+                  <h5 className="font-bold text-slate-700 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b4")}</h5>
                   <p className="hidden md:block text-xs text-slate-400">{tBloques("b4Sub")}</p>
                 </div>
               </div>

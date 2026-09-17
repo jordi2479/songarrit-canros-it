@@ -91,8 +91,8 @@
     "g3Desc": "Any implemented tool can be toggled on or off in seconds. Operations never stop or depend on a single tool."
   },
   "bloques": {
-    "title": "Implementation",
-    "highlight": "Architecture",
+    "title": "Structure of",
+    "highlight": "Areas.",
     "desc": "<p>The work plan replicates the group's real structure: a <bold>Global Central</bold> to unify strategy and <bold>three tactical pillars</bold> in each store.</p><p><italic>Safety guarantee:</italic> any innovation is first validated as a pilot at <bold>Ca'n Ros</bold> and, once proven, deployed to <bold>Son Garrit</bold>.</p>",
     "b1": "Global",
     "b1Desc": "Synergies, Treasury and Strategy",
@@ -115,8 +115,8 @@
     "expansionDesc": "Replication of the success model"
   },
   "areas": {
-    "title": "Transformation Map.",
-    "highlight": "Local & Global Synergy.",
+    "title": "Map of",
+    "highlight": "Categories.",
     "desc": "Success does not lie in optimizing isolated departments, but in connecting them. Discover how the tactical operations of the stores directly feed the strategy and strength of the Group.",
     "cta": "Explore the 150 ideas",
     "estrategiaCentral": "CENTRAL STRATEGY",
@@ -153,8 +153,8 @@
     "a15Desc": "Various support processes (cleaning, maintenance)."
   },
   "prototipos": {
-    "title": "Action Plan",
-    "highlight": "Assistant.",
+    "title": "Catalog of",
+    "highlight": "Proposals.",
     "desc": "Every operational challenge at Son Garrit and Ca'n Ros already has a planned response. Search any daily issue or department to find the exact initiative designed to solve it with technology and AI."
   },
   "alertaStock": {
