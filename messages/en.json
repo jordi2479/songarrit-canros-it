@@ -145,9 +145,9 @@
     "a15Desc": "Various support processes (cleaning, maintenance)."
   },
   "prototipos": {
-    "title": "Transformation",
+    "title": "Action Plan",
     "highlight": "Assistant.",
-    "desc": "Tell me what business challenge you need to solve today. Our search engine will cross-reference your problem with the 150 initiatives in the plan to give you exact solutions."
+    "desc": "Every operational challenge at Son Garrit and Ca'n Ros already has a planned response. Search any daily issue or department to find the exact initiative designed to solve it with technology and AI."
   },
   "alertaStock": {
     "title": "Critical Stock Alert",

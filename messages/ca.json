@@ -145,9 +145,9 @@
     "a15Desc": "Processos de suport diversos (neteja, manteniment)."
   },
   "prototipos": {
-    "title": "Assistent de",
-    "highlight": "Transformació.",
-    "desc": "Digues quin repte de negoci necessites resoldre avui. El nostre cercador creuarà el teu problema amb les 150 iniciatives del pla per donar-te solucions exactes."
+    "title": "Assistent del",
+    "highlight": "Pla d'Acció.",
+    "desc": "Cada repte operatiu de Son Garrit i Ca'n Ros ja té una resposta planificada. Consulta qualsevol àrea o problema diari per veure la iniciativa exacta dissenyada per solucionar-lo amb tecnologia i IA."
   },
   "alertaStock": {
     "title": "Alerta d'Estoc Crític",

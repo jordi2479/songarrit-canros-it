@@ -145,9 +145,9 @@
     "a15Desc": "Procesos de soporte varios (limpieza, mantenimiento)."
   },
   "prototipos": {
-    "title": "Asistente de",
-    "highlight": "Transformación.",
-    "desc": "Dime qué reto de negocio necesitas resolver hoy. Nuestro buscador cruzará tu problema con las 150 iniciativas del plan para darte soluciones exactas."
+    "title": "Asistente del",
+    "highlight": "Plan de Acción.",
+    "desc": "Cada reto operativo de Son Garrit y Ca'n Ros ya tiene una respuesta planificada. Consulta cualquier área o problema diario para ver la iniciativa exacta diseñada para solucionarlo con tecnología e IA."
   },
   "alertaStock": {
     "title": "Alerta de Stock Crítico",
