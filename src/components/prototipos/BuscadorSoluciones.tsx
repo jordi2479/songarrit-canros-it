@@ -393,59 +393,80 @@ export function BuscadorSoluciones() {
       {/* BLOQUE 2: MURAL DE INICIATIVAS */}
       <div className="w-full flex flex-col gap-4">
         
-        {/* Barra de Estado de Resultados */}
-        <div className="flex items-center justify-between px-1">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">
-              {uiText.iniciativasEncontradas}
+        {/* Barra de Estado de Resultados (visible solo cuando hay filtro activo) */}
+        {(areaFilter || categoriaFilter) && (
+          <div className="flex items-center justify-between px-1">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">
+                {uiText.iniciativasEncontradas}
+              </span>
+            </div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              {filtered.length} {filtered.length === 1 ? uiText.iniciativaSingular : uiText.iniciativasPlural}
             </span>
-          </div>
-          <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-            {filtered.length} {filtered.length === 1 ? uiText.iniciativaSingular : uiText.iniciativasPlural}
-          </span>
-        </div>
-
-        {/* Guía en Móvil cuando no hay nada seleccionado */}
-        {!areaFilter && !categoriaFilter && (
-          <div className="md:hidden bg-white border border-slate-200/90 rounded-2xl p-6 text-center shadow-xs">
-            <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-3 border border-emerald-100">
-              <Layers className="w-5 h-5" />
-            </div>
-            <h4 className="text-sm font-bold text-slate-900 mb-1">
-              {isCa ? "Tria una àrea per començar" : isEn ? "Select an area to start" : isDe ? "Wählen Sie einen Bereich" : "Elige un área para comenzar"}
-            </h4>
-            <p className="text-xs text-slate-500 max-w-xs mx-auto mb-4">
-              {isCa 
-                ? "Prem qualsevol dels 4 blocs superiors per veure les seves iniciatives en format compacte." 
-                : isEn 
-                ? "Tap any of the 4 top blocks to view its initiatives in compact view." 
-                : isDe 
-                ? "Tippen Sie auf einen der 4 oberen Blöcke, um die Initiativen kompakt zu sehen." 
-                : "Pulsa cualquiera de los 4 bloques superiores para ver sus iniciativas en formato compacto."}
-            </p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {Object.entries(customAreaLabels).map(([key, label]) => (
-                <button
-                  key={key}
-                  onClick={() => handleBloqueClick(key)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 cursor-pointer ${
-                    AREA_THEMES[key as AreaId].light.pillActive
-                  }`}
-                >
-                  <div className={`w-2 h-2 rounded-full ${areaDotClasses[key]}`} />
-                  {label}
-                </button>
-              ))}
-            </div>
           </div>
         )}
 
-        {/* Rejilla de Tarjetas (en móvil se ocultan si no hay filtro activo para evitar saturar) */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 items-stretch ${
-          !areaFilter && !categoriaFilter ? 'hidden md:grid' : ''
-        }`}>
-          <AnimatePresence mode="popLayout">
+        {/* Guía / Prompt inicial cuando no hay nada seleccionado (Tanto en Móvil como en Desktop) */}
+        {!areaFilter && !categoriaFilter && (
+          <motion.div 
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="w-full bg-white border border-slate-200/90 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 text-center shadow-lg shadow-slate-200/40 relative overflow-hidden"
+          >
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-slate-900 text-white flex items-center justify-center mx-auto mb-4 md:mb-5 shadow-lg shadow-slate-900/10">
+              <Layers className="w-6 h-6 md:w-8 md:h-8 text-emerald-400" />
+            </div>
+            <h4 className="text-base sm:text-xl md:text-2xl font-black text-slate-900 mb-2 leading-snug">
+              {isCa 
+                ? "Tria una àrea estratègica per explorar les seves iniciatives" 
+                : isEn 
+                ? "Select a strategic area to explore its initiatives" 
+                : isDe 
+                ? "Wählen Sie einen Bereich, um die Initiativen zu erkunden" 
+                : "Elige un área estratégica para explorar sus iniciativas"}
+            </h4>
+            <p className="text-xs sm:text-sm md:text-base text-slate-500 max-w-2xl mx-auto mb-6 md:mb-8 leading-relaxed font-normal">
+              {isCa 
+                ? "El catàleg conté 150 solucions modulars dissenyades per a Son Garrit i Ca'n Ros. Selecciona un bloc per veure les seves fitxes tècniques, casos de negoci i fulls de ruta d'implantació." 
+                : isEn 
+                ? "The catalog contains 150 modular solutions designed for Son Garrit and Ca'n Ros. Select a block to view technical sheets, business cases, and roadmaps." 
+                : isDe 
+                ? "Der Katalog enthält 150 modulare Lösungen für Son Garrit und Ca'n Ros. Wählen Sie einen Block, um Datenblätter, Business Cases und Roadmaps anzuzeigen." 
+                : "El catálogo contiene 150 soluciones modulares diseñadas para Son Garrit y Ca'n Ros. Selecciona un bloque para ver sus fichas técnicas, casos de negocio y hojas de ruta."}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 md:gap-4 max-w-4xl mx-auto">
+              {Object.entries(customAreaLabels).map(([key, label]) => {
+                const count = allPropuestas.filter(p => p.area === key).length;
+                const theme = AREA_THEMES[key as AreaId]?.light;
+                return (
+                  <button
+                    key={key}
+                    onClick={() => handleBloqueClick(key)}
+                    className={`p-3.5 sm:p-4 md:p-5 rounded-xl md:rounded-2xl border transition-all flex flex-col items-center text-center gap-1.5 md:gap-2 cursor-pointer group shadow-2xs hover:shadow-md hover:scale-[1.02] ${
+                      theme ? `${theme.badge} ${theme.borderHover}` : 'bg-white border-slate-200'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2.5 h-2.5 rounded-full ${areaDotClasses[key]}`} />
+                      <span className="font-bold text-xs sm:text-sm text-slate-900">{label}</span>
+                    </div>
+                    <span className="text-[11px] md:text-xs font-semibold text-slate-500">
+                      {count} {isCa ? "iniciatives" : isEn ? "initiatives" : isDe ? "Initiativen" : "iniciativas"}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Rejilla de Tarjetas (Visible solo cuando se selecciona un filtro) */}
+        {(areaFilter || categoriaFilter) && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 items-stretch">
+            <AnimatePresence mode="popLayout">
             {filtered.map((idea) => {
               return (
                 <motion.div
@@ -513,6 +534,7 @@ export function BuscadorSoluciones() {
             })}
           </AnimatePresence>
         </div>
+      )}
 
         {/* Modal Flotante Expandido (Teletransportado a document.body para quedar 100% por encima del navbar) */}
         {mounted && typeof document !== "undefined" && createPortal(
