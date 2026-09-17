@@ -6,7 +6,7 @@
     "perfil": "Role",
     "bloques": "Structure",
     "areas": "Areas",
-    "prototipos": "Prototypes",
+    "prototipos": "Assistant",
     "viabilidad": "Viability",
     "cierre": "Next Steps",
     "catalogo": "150 Ideas →",
@@ -142,9 +142,9 @@
     "a15Desc": "Various support processes (cleaning, maintenance)."
   },
   "prototipos": {
-    "title": "Daily operations in",
-    "highlight": "action",
-    "desc": "Fully functional interactive prototypes. Click, test, and experience what you'll see every morning."
+    "title": "Transformation",
+    "highlight": "Assistant.",
+    "desc": "Tell me what business challenge you need to solve today. Our search engine will cross-reference your problem with the 150 initiatives in the plan to give you exact solutions."
   },
   "alertaStock": {
     "title": "Critical Stock Alert",

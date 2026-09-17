@@ -17,8 +17,7 @@ import { EsquemaEmpresa } from "@/components/layout/EsquemaEmpresa";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 import { Explorador } from "@/components/home/Explorador";
-import { AlertaStock } from "@/components/prototipos/AlertaStock";
-import { ComparadorTarifas } from "@/components/prototipos/ComparadorTarifas";
+import { BuscadorSoluciones } from "@/components/prototipos/BuscadorSoluciones";
 
 /* ─── Helper: animated card ─── */
 function FadeCard({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -322,7 +321,7 @@ export default function Home() {
         
       </Section>
 
-      {/* ─── SECCIÓN 8: MINI-PROTOTIPOS ─── */}
+      {/* ─── SECCIÓN 8: BUSCADOR DE SOLUCIONES (PROTOTIPOS) ─── */}
       <Section id="prototipos" className="bg-gradient-to-b from-slate-950 to-slate-900" dark>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
@@ -332,10 +331,9 @@ export default function Home() {
             {tProto("desc")}
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          <AlertaStock />
-          <ComparadorTarifas />
-        </div>
+        
+        <BuscadorSoluciones />
+        
       </Section>
 
       {/* ─── SECCIÓN 9: VIABILIDAD ─── */}

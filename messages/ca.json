@@ -6,7 +6,7 @@
     "perfil": "Perfil",
     "bloques": "Estructura",
     "areas": "Àrees",
-    "prototipos": "Prototips",
+    "prototipos": "Assistent",
     "viabilidad": "Viabilitat",
     "cierre": "Tancament",
     "catalogo": "150 Idees →",
@@ -142,9 +142,9 @@
     "a15Desc": "Processos de suport diversos (neteja, manteniment)."
   },
   "prototipos": {
-    "title": "Així es veurà en el",
-    "highlight": "dia a dia",
-    "desc": "Prototips funcionals. Feu clic. Proveu. Això és el que veureu al vostre mòbil o pantalla cada matí."
+    "title": "Assistent de",
+    "highlight": "Transformació.",
+    "desc": "Digues quin repte de negoci necessites resoldre avui. El nostre cercador creuarà el teu problema amb les 150 iniciatives del pla per donar-te solucions exactes."
   },
   "alertaStock": {
     "title": "Alerta d'Estoc Crític",

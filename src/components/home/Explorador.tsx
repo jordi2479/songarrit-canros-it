@@ -113,9 +113,6 @@ export function Explorador() {
                       <div className="relative z-10 flex items-center justify-between">
                         <div>
                           <h4 className={`font-bold ${isActive ? 'text-blue-100' : 'text-slate-200'}`}>{area.titulo}</h4>
-                          <div className="flex items-center gap-2 mt-1 opacity-70">
-                            <span className="text-[10px] font-mono text-blue-400">{area.propuestas.length} ideas</span>
-                          </div>
                         </div>
                         <Target className={`w-5 h-5 ${isActive ? 'text-blue-400' : 'text-slate-600'} group-hover:text-blue-400 transition-colors`} />
                       </div>

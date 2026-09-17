@@ -6,7 +6,7 @@
     "perfil": "Profil",
     "bloques": "Struktur",
     "areas": "Bereiche",
-    "prototipos": "Prototypen",
+    "prototipos": "Assistent",
     "viabilidad": "Machbarkeit",
     "cierre": "Nächste Schritte",
     "catalogo": "150 Ideen →",
@@ -142,9 +142,9 @@
     "a15Desc": "Verschiedene Unterstützungsprozesse (Reinigung, Wartung)."
   },
   "prototipos": {
-    "title": "So sieht der",
-    "highlight": "Arbeitsalltag aus",
-    "desc": "Funktionale Prototypen. Klicken und ausprobieren. Das ist die Ansicht auf Ihrem Smartphone oder Bildschirm jeden Morgen."
+    "title": "Transformations",
+    "highlight": "Assistent.",
+    "desc": "Sagen Sie mir, welche geschäftliche Herausforderung Sie heute lösen müssen. Unsere Suchmaschine gleicht Ihr Problem mit den 150 Initiativen des Plans ab, um Ihnen genaue Lösungen zu bieten."
   },
   "alertaStock": {
     "title": "Kritische Bestandsmeldung",

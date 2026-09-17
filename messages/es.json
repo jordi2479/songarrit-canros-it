@@ -6,7 +6,7 @@
     "perfil": "Perfil",
     "bloques": "Estructura",
     "areas": "Áreas",
-    "prototipos": "Prototipos",
+    "prototipos": "Asistente",
     "viabilidad": "Viabilidad",
     "cierre": "Cierre",
     "catalogo": "150 Ideas →",
@@ -142,9 +142,9 @@
     "a15Desc": "Procesos de soporte varios (limpieza, mantenimiento)."
   },
   "prototipos": {
-    "title": "Así se verá en el",
-    "highlight": "día a día",
-    "desc": "Prototipos funcionales. Haced clic. Probad. Esto es lo que veréis en vuestro móvil o pantalla cada mañana."
+    "title": "Asistente de",
+    "highlight": "Transformación.",
+    "desc": "Dime qué reto de negocio necesitas resolver hoy. Nuestro buscador cruzará tu problema con las 150 iniciativas del plan para darte soluciones exactas."
   },
   "alertaStock": {
     "title": "Alerta de Stock Crítico",
