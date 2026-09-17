@@ -516,19 +516,19 @@ export function BuscadorSoluciones() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 md:p-8"
+              className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-6 md:p-8"
             >
               {/* Fondo desenfocado */}
               <div
                 onClick={() => setExpandedId(null)}
-                className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm cursor-pointer"
+                className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm cursor-pointer"
               />
 
-              {/* Caja Dossier Flotante (Mantiene la proporción apaisada en desktop y bottom-sheet en mobile) */}
+              {/* Caja Dossier Flotante (Mantiene la proporción apaisada en desktop y bottom-sheet en mobile con margen superior) */}
               <motion.div
                 layoutId={`card-container-${activeIdea.id}`}
                 transition={cardSpringTransition}
-                className="relative w-full max-w-lg md:max-w-4xl lg:max-w-5xl h-[92vh] sm:h-[88vh] md:h-[600px] lg:h-[620px] md:max-h-[88vh] bg-white border-t sm:border border-slate-200/90 rounded-t-3xl sm:rounded-3xl shadow-2xl shadow-slate-950/40 overflow-hidden flex flex-col z-10"
+                className="relative w-full max-w-lg md:max-w-4xl lg:max-w-5xl h-[85vh] sm:h-[88vh] md:h-[600px] lg:h-[620px] md:max-h-[88vh] bg-white border-t sm:border border-slate-200/90 rounded-t-3xl sm:rounded-3xl shadow-2xl shadow-slate-950/40 overflow-hidden flex flex-col z-10"
               >
                 {/* Indicador de arrastre táctil superior (Solo móvil) */}
                 <div className="sm:hidden w-full flex justify-center pt-2 pb-1 bg-white">
