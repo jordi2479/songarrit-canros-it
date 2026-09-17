@@ -52,30 +52,30 @@
     "mostradorItems": [
       {
         "title": "Understand the business from within",
-        "desc": "Serve the professional at the counter to know the catalog and demand firsthand."
+        "desc": "Serve the professional at the counter to know the **catalog and real demand** firsthand."
       },
       {
         "title": "Map the operations",
-        "desc": "Work in the warehouse to detect real bottlenecks in stock flows."
+        "desc": "Work in the warehouse to detect **real operational bottlenecks** in stock flows."
       },
       {
         "title": "Diagnose",
-        "desc": "Accurately identify which repetitive tasks are stealing sales time from managers."
+        "desc": "Accurately identify which repetitive tasks are **stealing valuable sales time** from managers."
       }
     ],
     "procesos": "50% AI Solutions",
     "procesosItems": [
       {
         "title": "Intelligent automation",
-        "desc": "Deploy AI Agents to take over data processing and mechanical tasks."
+        "desc": "Deploy **AI Agents** to take over data processing and mechanical tasks."
       },
       {
         "title": "Precision tools",
-        "desc": "Develop custom IT solutions that solve specific daily problems in the store."
+        "desc": "Develop **custom IT solutions** solving tangible day-to-day challenges in store."
       },
       {
         "title": "Data unification",
-        "desc": "Cross-reference and analyze information from Palma and Campos to facilitate decision-making for Management."
+        "desc": "Cross-reference and analyze data from **Palma and Campos** to facilitate decision-making for Management."
       }
     ]
   },

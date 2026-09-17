@@ -48,6 +48,21 @@ const colorClasses: Record<string, { card: string; badge: string; icon: string }
 /* ═══════════════════════════════════════════════════════════════════
    PAGE
    ═══════════════════════════════════════════════════════════════════ */
+function renderMarkdownBold(text: string) {
+  if (!text) return text;
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, idx) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={idx} className="text-slate-900 font-bold">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+}
+
 export default function Home() {
   const locale = useLocale();
   const tHero = useTranslations("hero");
@@ -234,11 +249,11 @@ export default function Home() {
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 md:mb-8 leading-tight text-slate-900">
             {tPerfil("title")}
           </h2>
-          <div className="text-xs sm:text-base md:text-2xl text-slate-600 mb-6 md:mb-16 max-w-4xl mx-auto leading-relaxed font-medium">
+          <div className="text-xs sm:text-base md:text-lg text-slate-600 mb-6 md:mb-12 max-w-3xl mx-auto leading-relaxed space-y-3">
             {tPerfil.rich("intro", {
-              bold: (chunks) => <strong className="text-slate-900 font-bold">{chunks}</strong>,
-              highlight: (chunks) => <span className="text-emerald-600 font-bold">{chunks}</span>,
-              p: (chunks) => <p className="mb-2 md:mb-6 last:mb-0">{chunks}</p>
+              bold: (chunks) => <strong className="text-slate-900 font-semibold">{chunks}</strong>,
+              highlight: (chunks) => <span className="text-emerald-600 font-semibold">{chunks}</span>,
+              p: (chunks) => <p>{chunks}</p>
             })}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-12">
@@ -255,7 +270,7 @@ export default function Home() {
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
                     <span>
                       <strong className="text-slate-900 font-bold">{item.title}</strong>
-                      <span className="hidden md:inline">: {item.desc}</span>
+                      <span className="hidden md:inline">: {renderMarkdownBold(item.desc)}</span>
                     </span>
                   </li>
                 ))}
@@ -274,7 +289,7 @@ export default function Home() {
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
                     <span>
                       <strong className="text-slate-900 font-bold">{item.title}</strong>
-                      <span className="hidden md:inline">: {item.desc}</span>
+                      <span className="hidden md:inline">: {renderMarkdownBold(item.desc)}</span>
                     </span>
                   </li>
                 ))}

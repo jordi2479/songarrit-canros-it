@@ -52,30 +52,30 @@
     "mostradorItems": [
       {
         "title": "Entendre el negoci des de dins",
-        "desc": "Atendre el professional al taulell per conèixer de primera mà el catàleg i la demanda."
+        "desc": "Atendre el professional al taulell per conèixer de primera mà el **catàleg i la demanda real**."
       },
       {
         "title": "Mapejar l'operativa",
-        "desc": "Treballar al magatzem per detectar els colls d'ampolla reals en els fluxos d'estoc."
+        "desc": "Treballar al magatzem per detectar els **colls d'ampolla reals** en els fluxos d'estoc."
       },
       {
         "title": "Diagnosticar",
-        "desc": "Identificar amb precisió quines tasques repetitives estan robant temps de venda als encarregats."
+        "desc": "Identificar amb precisió quines tasques repetitives estan **robant temps de venda** als encarregats."
       }
     ],
     "procesos": "50% Solucions amb IA",
     "procesosItems": [
       {
         "title": "Automatització intel·ligent",
-        "desc": "Desplegar Agents d'IA perquè assumeixin el processament de dades i tasques mecàniques."
+        "desc": "Desplegar **Agents d'IA** perquè assumeixin el processament de dades i tasques mecàniques."
       },
       {
         "title": "Eines de precisió",
-        "desc": "Desenvolupar solucions IT a mida que resolguin problemes concrets del dia a dia a la botiga."
+        "desc": "Desenvolupar **eines IT a mida** que resolguin problemes concrets del dia a dia a la botiga."
       },
       {
         "title": "Unificació de dades",
-        "desc": "Creuar i analitzar la informació de Palma i Campos per facilitar la presa de decisions a Direcció."
+        "desc": "Creuar i analitzar la informació de **Palma i Campos** per facilitar la presa de decisions a Direcció."
       }
     ]
   },

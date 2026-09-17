@@ -52,30 +52,30 @@
     "mostradorItems": [
       {
         "title": "Entender el negocio desde dentro",
-        "desc": "Atender al profesional en el mostrador para conocer de primera mano el catálogo y la demanda."
+        "desc": "Atender al profesional en el mostrador para conocer de primera mano el **catálogo y la demanda real**."
       },
       {
         "title": "Mapear la operativa",
-        "desc": "Trabajar en el almacén para detectar los cuellos de botella reales en los flujos de stock."
+        "desc": "Trabajar en el almacén para detectar los **cuellos de botella reales** en los flujos de stock."
       },
       {
         "title": "Diagnosticar",
-        "desc": "Identificar con precisión qué tareas repetitivas están robando tiempo de venta a los encargados."
+        "desc": "Identificar con precisión qué tareas repetitivas están **robando tiempo de venta** a los encargados."
       }
     ],
     "procesos": "50% Soluciones con IA",
     "procesosItems": [
       {
         "title": "Automatización inteligente",
-        "desc": "Desplegar Agentes de IA para que asuman el procesamiento de datos y tareas mecánicas."
+        "desc": "Desplegar **Agentes de IA** para que asuman el procesamiento de datos y tareas mecánicas."
       },
       {
         "title": "Herramientas de precisión",
-        "desc": "Desarrollar soluciones IT a medida que resuelvan problemas concretos del día a día en la tienda."
+        "desc": "Desarrollar **herramientas IT a medida** que resuelvan problemas concretos del día a día en la tienda."
       },
       {
         "title": "Unificación de datos",
-        "desc": "Cruzar y analizar la información de Palma y Campos para facilitar la toma de decisiones a Dirección."
+        "desc": "Cruzar y analizar la información de **Palma y Campos** para facilitar la toma de decisiones a Dirección."
       }
     ]
   },

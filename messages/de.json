@@ -52,30 +52,30 @@
     "mostradorItems": [
       {
         "title": "Das Geschäft von innen verstehen",
-        "desc": "Den Profi am Schalter bedienen, um den Katalog und die Nachfrage aus erster Hand zu kennen."
+        "desc": "Den Profi am Schalter bedienen, um den **Katalog und die reale Nachfrage** aus erster Hand zu kennen."
       },
       {
         "title": "Die Abläufe kartieren",
-        "desc": "Im Lager arbeiten, um echte Engpässe in den Warenströmen zu erkennen."
+        "desc": "Im Lager arbeiten, um **echte operative Engpässe** in den Warenströmen zu erkennen."
       },
       {
         "title": "Diagnostizieren",
-        "desc": "Präzise identifizieren, welche sich wiederholenden Aufgaben den Managern Verkaufszeit rauben."
+        "desc": "Präzise identifizieren, welche Routineaufgaben den Managern **wertvolle Verkaufszeit rauben**."
       }
     ],
     "procesos": "50% KI-Lösungen",
     "procesosItems": [
       {
         "title": "Intelligente Automatisierung",
-        "desc": "KI-Agenten einsetzen, um Datenverarbeitung und mechanische Aufgaben zu übernehmen."
+        "desc": "**KI-Agenten** einsetzen, um Datenverarbeitung und mechanische Aufgaben zu übernehmen."
       },
       {
         "title": "Präzisionswerkzeuge",
-        "desc": "Maßgeschneiderte IT-Lösungen entwickeln, die spezifische tägliche Probleme im Geschäft lösen."
+        "desc": "**Maßgeschneiderte IT-Lösungen** entwickeln, die konkrete Alltagsprobleme im Geschäft lösen."
       },
       {
         "title": "Datenvereinheitlichung",
-        "desc": "Informationen aus Palma und Campos abgleichen und analysieren, um dem Management die Entscheidungsfindung zu erleichtern."
+        "desc": "Informationen aus **Palma und Campos** abgleichen und analysieren für fundierte Entscheidungen."
       }
     ]
   },
