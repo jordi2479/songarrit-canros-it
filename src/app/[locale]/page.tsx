@@ -198,19 +198,28 @@ export default function Home() {
               { antes: tSol("antes2"), despues: tSol("despues2"), delay: 0.15 },
               { antes: tSol("antes3"), despues: tSol("despues3"), delay: 0.3 },
             ].map((item, idx) => (
-              <FadeCard key={idx} delay={item.delay} className="rounded-xl md:rounded-2xl bg-slate-900 border border-slate-800 flex flex-col h-full min-h-0 md:min-h-[20rem] text-center">
-                <div className="p-3.5 md:p-6 flex flex-col justify-center md:justify-end items-center">
-                  <div className="text-slate-400 text-xs sm:text-sm md:text-base mb-1.5 md:mb-4">{item.antes}</div>
-                  <span className="flex items-center justify-center gap-1.5 md:gap-2 text-xs md:text-base font-black text-slate-500 uppercase tracking-wider md:tracking-widest">
+              <FadeCard key={idx} delay={item.delay} className="rounded-xl md:rounded-2xl bg-slate-900 border border-slate-800 flex flex-col h-full min-h-0 md:min-h-[22rem] text-center overflow-hidden">
+                {/* Mitad Superior: Antes (50% exacto en desktop) */}
+                <div className="p-3.5 md:p-6 flex-1 flex flex-col justify-center md:justify-between items-center gap-2 md:gap-4">
+                  <div className="text-slate-400 text-xs sm:text-sm md:text-base flex-1 flex items-center justify-center leading-relaxed">
+                    {item.antes}
+                  </div>
+                  <span className="flex items-center justify-center gap-1.5 md:gap-2 text-xs md:text-base font-black text-slate-500 uppercase tracking-wider md:tracking-widest shrink-0">
                     <XCircle className="w-3.5 h-3.5 md:w-5 md:h-5 text-rose-500" /> {tSol("antesTag")}
                   </span>
                 </div>
-                <div className="h-px bg-slate-800 w-full"></div>
-                <div className="p-3.5 md:p-6 flex flex-col justify-center md:justify-start items-center">
-                  <span className="flex items-center justify-center gap-1.5 md:gap-2 text-xs md:text-base font-black text-emerald-500 uppercase tracking-wider md:tracking-widest mb-1.5 md:mb-4">
-                    <CheckCircle2 className="w-3.5 h-3.5 md:w-5 md:h-5" /> {tSol("conIaTag")}
+
+                {/* Línea divisoria centrada perfectamente a la misma altura */}
+                <div className="h-px bg-slate-800 w-full shrink-0"></div>
+
+                {/* Mitad Inferior: Con IA (50% exacto en desktop) */}
+                <div className="p-3.5 md:p-6 flex-1 flex flex-col justify-center md:justify-between items-center gap-2 md:gap-4">
+                  <span className="flex items-center justify-center gap-1.5 md:gap-2 text-xs md:text-base font-black text-emerald-500 uppercase tracking-wider md:tracking-widest shrink-0">
+                    <CheckCircle2 className="w-3.5 h-3.5 md:w-5 md:h-5 text-emerald-500" /> {tSol("conIaTag")}
                   </span>
-                  <div className="text-white text-xs sm:text-sm md:text-base font-bold">{item.despues}</div>
+                  <div className="text-white text-xs sm:text-sm md:text-base font-bold flex-1 flex items-center justify-center leading-relaxed">
+                    {item.despues}
+                  </div>
                 </div>
               </FadeCard>
             ))}
