@@ -1,145 +1,110 @@
 import { Categoria } from '../../types';
 
 export const categoriaAREA14De: Categoria = {
-  "id": "area-14",
-  "area": "clientes",
-  "titulo": "Ventas & Atención",
-  "propuestas": [
-    {
-      "id": "14.01",
-      "titulo": "WhatsApp-Assistent",
-      "descripcion": "[DE] Asistente de WhatsApp que responde dudas de stock orientativo, precio con IVA, horario y cómo llegar para Ca'n Ros Campo...",
-      "descripcionLarga": "[DE] Asistente de WhatsApp que responde dudas de stock orientativo, precio con IVA, horario y cómo llegar para Ca'n Ros Campos, con apoyo de conocimiento de Son Garrit. Beneficia a mostrador en horas pico y a cliente que pregunta antes de desplazarse. Ejemplo: cliente escribe horario de sábado o precio de silicona neutra y recibe respuesta con precio, disponibilidad orientativa y dirección. Valoración: viable.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 dias",
-      "stack": "no-code",
-            "softwareRecomendado": ["WhatsApp Business","Google Gemini","Google Antigravity"],
-            "softwareOpcional": ["ERP/Kassensystem-Export (Preise/Bestand)","Claude Code","OpenCode Desktop"],
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "14.02",
-      "titulo": "Profi-Preise",
-      "descripcion": "[DE] Buscador interno para móvil de mostrador o tableta que entiende lenguaje coloquial en español y catalán y lleva a refere...",
-      "descripcionLarga": "[DE] Buscador interno para móvil de mostrador o tableta que entiende lenguaje coloquial en español y catalán y lleva a referencia y pasillo. Beneficia a dependiente novel y a cliente que pide alcayata o taco del 8 sin saber referencia exacta. Ejemplo: se escribe taco del 8 pared hueca y devuelve 2 referencias con pasillo y precio. Valoración: viable.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 dias",
-      "stack": "no-code",
-            "softwareRecomendado": ["ERP/Kassensystem-Export (Gewerbetarife)","Microsoft Excel (.xlsx)","WhatsApp Business"],
-            "softwareOpcional": ["Google NotebookLM","Google Antigravity"],
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "14.03",
-      "titulo": "Mehrsprachiger Support",
-      "descripcion": "[DE] Identificación de pieza por foto en mostrador que propone referencia exacta más segunda marca barata como alternativa. B...",
-      "descripcionLarga": "[DE] Identificación de pieza por foto en mostrador que propone referencia exacta más segunda marca barata como alternativa. Beneficia a cliente con bisagra, grifo o pieza rota sin referencia y reduce tiempo de mostrador. Ejemplo: foto de taco de persiana roto y respuesta con referencia exacta, compatible económico y aviso de verificar medida. Valoración: viable con apoyo.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-            "softwareRecomendado": ["Google Gemini","WhatsApp Business","Google Antigravity"],
-            "softwareOpcional": ["Claude","DeepL / Web"],
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "14.04",
-      "titulo": "[DE] Atención turista EN DE",
-      "descripcion": "[DE] Módulo de atención en inglés y alemán para turista y residente extranjero en Campos con medidas, adaptadores, pintura an...",
-      "descripcionLarga": "[DE] Módulo de atención en inglés y alemán para turista y residente extranjero en Campos con medidas, adaptadores, pintura antihumedad y cómo llegar. Beneficia a Ca'n Ros Campos en temporada y evita malentendidos por medidas o normativa. Ejemplo: cliente alemán pide adaptador y pintura para humedad por salitre y recibe explicación bilingüe con recomendación validada. Valoración: viable.",
-      "dificultad": "Media",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "14.05",
-      "titulo": "[DE] Presupuesto express mostrador",
-      "descripcion": "[DE] Generación de presupuesto en PDF desde dictado o foto de lista manuscrita en mostrador, con margen aplicado y caducidad....",
-      "descripcionLarga": "[DE] Generación de presupuesto en PDF desde dictado o foto de lista manuscrita en mostrador, con margen aplicado y caducidad. Beneficia a profesional que necesita precio rápido para obra y a mostrador que hoy suma a mano. Ejemplo: foto de lista con 12 líneas de tubo y accesorios y salida de PDF con total con IVA pendiente de firma de encargado. Valoración: viable con apoyo.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Alto",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "14.06",
-      "titulo": "[DE] Asesor por proyecto",
-      "descripcion": "[DE] Asesor paso a paso por proyecto tipo riego de 50 m2 o tarima de baño de 6 m2 que entrega pasos y lista completa de mater...",
-      "descripcionLarga": "[DE] Asesor paso a paso por proyecto tipo riego de 50 m2 o tarima de baño de 6 m2 que entrega pasos y lista completa de materiales. Beneficia a particular que compra por proyecto y aumenta ticket medio con lista cerrada. Ejemplo: riego por goteo con pasos de instalación, tubo, goteros, programador y filtro, todo pendiente de validar por dependiente. Valoración: viable.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "14.07",
-      "titulo": "[DE] No te olvides de complementos",
-      "descripcion": "[DE] Recordatorio de complementos olvidados como tacos, tornillería, silicona, EPI y broca adecuada al vender un producto pri...",
-      "descripcionLarga": "[DE] Recordatorio de complementos olvidados como tacos, tornillería, silicona, EPI y broca adecuada al vender un producto principal. Beneficia a cliente que evita segundo viaje y a tienda que eleva ticket sin presión comercial. Ejemplo: al vender espejo de baño propone tacos adecuados, broca y nivel, pendiente de aceptar por cliente en mostrador. Valoración: viable.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 1 30 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "14.08",
-      "titulo": "[DE] Guía uso y seguridad con QR en ticket",
-      "descripcion": "[DE] QR en ticket que abre guía breve de uso y seguridad del producto comprado. Beneficia a particular que monta en casa y re...",
-      "descripcionLarga": "[DE] QR en ticket que abre guía breve de uso y seguridad del producto comprado. Beneficia a particular que monta en casa y reduce devoluciones por mal uso. Ejemplo: taladro con QR a guía de broca adecuada, EPI y errores frecuentes, con aviso de leer ficha oficial. Valoración: viable.",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "14.09",
-      "titulo": "[DE] Postventa garantías con seguimiento",
-      "descripcion": "[DE] Seguimiento postventa con recordatorios y gestión de garantías con trazabilidad. Beneficia a cliente profesional y parti...",
-      "descripcionLarga": "[DE] Seguimiento postventa con recordatorios y gestión de garantías con trazabilidad. Beneficia a cliente profesional y particular que reclama y a tienda que evita papeles perdidos. Ejemplo: compra de hidro con recordatorio de mantenimiento y si falla abre caso con foto de ticket y número de serie. Valoración: viable con apoyo.",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "14.10",
-      "titulo": "[DE] Vendedor web 24h con upsell",
-      "descripcion": "[DE] Asistente de venta en las webs de Son Garrit y Ca'n Ros Campos que atiende 24h, recomienda y propone upsell con recogida...",
-      "descripcionLarga": "[DE] Asistente de venta en las webs de Son Garrit y Ca'n Ros Campos que atiende 24h, recomienda y propone upsell con recogida en tienda. Beneficia a cliente que compra fuera de horario y a grupo que mantiene marcas separadas con catálogo local. Ejemplo: cliente en web de Campos pide pintura exterior y recibe recomendación con imprimación y recogida al día siguiente pendiente de confirmar stock. Valoración: viable con apoyo.",
-      "dificultad": "Alta",
-      "riesgo": "Alto",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    }
-  ]
+    "id": "area-14",
+    "area": "clientes",
+    "titulo": "Verkauf & Service",
+    "propuestas": [
+        {
+            "id": "clientes-ventas-01",
+            "codigo": "clientes-ventas-01",
+            "titulo": "WhatsApp-Assistent",
+            "descripcion": "**Automatisierter WhatsApp-Service**, über den Kunden Öffnungszeiten und Warenverfügbarkeit rund um die Uhr abfragen können.",
+            "descripcionLarga": "Entlastet die Telefonleitungen zu den Stoßzeiten am Tresen. **Beantwortet wiederkehrende Kundenfragen per WhatsApp Business**: Samstag-Öffnungszeiten, Zementverfügbarkeit oder Anfahrt. Technische Fachfragen werden nahtlos an Fachberater weitergeleitet.",
+            "ejemplo": "Ein Kunde schreibt sonntags um 18:00 Uhr per WhatsApp: 'Habt ihr morgen um 7:30 Uhr offen und habt ihr Mörtel auf Lager?'. **Der Assistent antwortet sofort und bestätigt Zeiten und Bestand**, sodass der Kunde montags pünktlich erscheint.",
+            "viabilidad": "Ja, durch sichere entkoppelte Exporte und standardisierte Dokumentenverarbeitung.",
+            "dificultad": "Niedrig",
+            "riesgo": "Niedrig",
+            "beneficio": "Hoch",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 Tage",
+            "stack": "entkoppelte Analyse",
+            "softwareRecomendado": [
+                "WhatsApp Business",
+                "Google Antigravity",
+                "Meta Business Suite"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "ChatGPT / Gemini"
+            ],
+            "estado": "propuesta",
+            "area_id": "clientes",
+            "cat_id": "14",
+            "pasos": [
+                "**Bot-Einrichtung:** Standard-Antworten für die 5 häufigsten Kundenfragen: Öffnungszeiten, Feiertage, Anfahrt, Service.",
+                "**Bestandsabfrage:** Automatische Auskunft über Lagerbestände der 20 gefragtesten Baustoffe über die Lesekopie.",
+                "**Intelligente Weiterleitung:** Weitergabe von Angebotsanfragen oder Fachfragen an den zuständigen Verkaufsberater.",
+                "**Höfliche Hinweise:** Freundliche Information über persönliche Beratungszeiten bei Anfragen außerhalb der Öffnungszeiten."
+            ]
+        },
+        {
+            "id": "clientes-ventas-02",
+            "codigo": "clientes-ventas-02",
+            "titulo": "Handwerker-Tarif",
+            "descripcion": "**Einheitliche Rabattstaffeln für Handwerker** auf Basis exportierter Kataloge zur Vermeidung von Fehleingaben an der Kasse.",
+            "descripcionLarga": "Definiert feste Margen- und Rabattgrenzen je Handwerksgewerk (Sanitär, Elektro, Bau). **Wird vorab auf einer Exportkopie kalkuliert und simuliert**, bevor die sauberen Tarife in die Kassensysteme beider Filialen eingespielt werden.",
+            "ejemplo": "Ein Sanierungsbetrieb kauft regelmäßig Rohre und Armaturen. **Das System wendet automatisch seine vereinbarte Rabattstufe an (garantierte Marge 28%)**, ohne dass der Verkäufer Rabatte im Kopf berechnen muss.",
+            "viabilidad": "Ja, durch sichere entkoppelte Exporte und standardisierte Dokumentenverarbeitung.",
+            "dificultad": "Niedrig",
+            "riesgo": "Niedrig",
+            "beneficio": "Hoch",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 Tage",
+            "stack": "entkoppelte Analyse",
+            "softwareRecomendado": [
+                "Google Antigravity",
+                "Sicherer ERP/Kasse Datenabzug (CSV/Excel)",
+                "Microsoft Excel (.xlsx)"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "Import in ERP/Kasse (validiert)"
+            ],
+            "estado": "propuesta",
+            "area_id": "clientes",
+            "cat_id": "14",
+            "pasos": [
+                "**Preislisten-Export:** Export der aktuellen Einkaufs- und Verkaufspreislisten beider Häuser in eine Arbeitsdatei.",
+                "**Staffelmodellierung:** Definition von 3 Rabattstufen nach Gewerken unter Einhaltung der geforderten Mindestmargen.",
+                "**Margen-Simulation:** Überprüfung der Gesamtauswirkung auf die Marge vor endgültiger Freigabe der neuen Konditionen.",
+                "**Kasseneinspielung:** Import der freigegebenen Tarife in die Kassensoftware außerhalb der Geschäftszeiten."
+            ]
+        },
+        {
+            "id": "clientes-ventas-03",
+            "codigo": "clientes-ventas-03",
+            "titulo": "Mehrsprachiger Service",
+            "descripcion": "**Übersetzungshilfe am Verkaufstresen** zur fachlich sicheren Betreuung internationaler Residenten und Fincabesitzer auf Mallorca.",
+            "descripcionLarga": "Im Süden Mallorcas stammt ein erheblicher Teil der Bau- und Renovierungsausgaben von deutschen und britischen Eigentümern. **Hilft Verkäufern, Fachbegriffe in Echtzeit zu übersetzen** (Ventile, Bohrer, Poolpflege) oder Angebote in der Landessprache zu erstellen, **was wertvolle Verkäufe sichert**.",
+            "ejemplo": "Ein deutscher Hauseigentümer in Ca'n Ros erklärt auf Deutsch, dass er ein Übergangsstück für einen 1.000L-Wassertank sucht. **Der Verkäufer nutzt den Sprachassistenten und zeigt die passende Lösung mit Preis auf Deutsch am Bildschirm**.",
+            "viabilidad": "Ja, durch sichere entkoppelte Exporte und standardisierte Dokumentenverarbeitung.",
+            "dificultad": "Niedrig",
+            "riesgo": "Niedrig",
+            "beneficio": "Hoch",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 Tage",
+            "stack": "entkoppelte Analyse",
+            "softwareRecomendado": [
+                "Google Translate / DeepL",
+                "Google NotebookLM",
+                "Tresen-Tablet"
+            ],
+            "softwareOpcional": [
+                "ChatGPT / Gemini",
+                "Google Antigravity"
+            ],
+            "estado": "propuesta",
+            "area_id": "clientes",
+            "cat_id": "14",
+            "pasos": [
+                "**Eisenwaren-Glossar:** Erstellung eines Fachwörterbuchs der 100 gefragtesten Bauteile und Werkzeuge auf Deutsch, Englisch und Katalanisch.",
+                "**Tresen-Assistent:** Einrichtung von Schnellwahltasten für Sprachübersetzer auf dem Dienst-Tablet am Verkaufstresen.",
+                "**Zweisprachige Vorlagen:** Bereitstellung zweisprachiger Angebotsvorlagen für internationale Großkunden.",
+                "**Grundschulung:** Vermittlung wichtiger Begrüßungsformeln und Fachbegriffe an das Verkaufsteam."
+            ]
+        }
+    ]
 };

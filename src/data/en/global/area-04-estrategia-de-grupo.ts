@@ -1,145 +1,110 @@
 import { Categoria } from '../../types';
 
 export const categoriaAREA04En: Categoria = {
-  "id": "area-04",
-  "area": "global",
-  "titulo": "Estrategia de Grupo",
-  "propuestas": [
-    {
-      "id": "04.01",
-      "titulo": "Store Comparison",
-      "descripcion": "[EN] Informe único de una página que cada lunes compara Son Garrit Palma y Ca'n Ros Campos en ventas, ticket medio, caja y pu...",
-      "descripcionLarga": "[EN] Informe único de una página que cada lunes compara Son Garrit Palma y Ca'n Ros Campos en ventas, ticket medio, caja y puntos calientes de venta y rotura.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "pendiente",
-      "stack": "no-code",
-            "softwareRecomendado": ["Google Antigravity","ERP/POS Export (Palma + Campos)","Microsoft Excel"],
-            "softwareOpcional": ["Google Sheets","Claude Code","OpenCode Desktop"],
-      "veredicto": "",
-      "estado": "idea"
-    },
-    {
-      "id": "04.02",
-      "titulo": "Purchasing Rules",
-      "descripcion": "[EN] Matriz simple que fija qué se centraliza en grupo y qué queda en cada tienda, con proveedores y sistema sí y surtido y t...",
-      "descripcionLarga": "[EN] Matriz simple que fija qué se centraliza en grupo y qué queda en cada tienda, con proveedores y sistema sí y surtido y tono no.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "pendiente",
-      "stack": "no-code",
-            "softwareRecomendado": ["Google NotebookLM","Google Workspace / Docs"],
-            "softwareOpcional": ["Google Gemini","Claude","Microsoft Word"],
-      "veredicto": "",
-      "estado": "idea"
-    },
-    {
-      "id": "04.03",
-      "titulo": "Palma-Campos Demand",
-      "descripcion": "[EN] Agenda semanal de tres decisiones de grupo que el dueño recibe cada lunes a partir del informe comparado.",
-      "descripcionLarga": "[EN] Agenda semanal de tres decisiones de grupo que el dueño recibe cada lunes a partir del informe comparado.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "pendiente",
-      "stack": "no-code",
-            "softwareRecomendado": ["Google NotebookLM","ERP/POS Export (Product families)","Microsoft Excel"],
-            "softwareOpcional": ["Google Antigravity","ChatGPT Plus"],
-      "veredicto": "",
-      "estado": "idea"
-    },
-    {
-      "id": "04.04",
-      "titulo": "[EN] Comparador tiendas misma familia ciudad vs rural",
-      "descripcion": "[EN] Tabla que compara la misma familia de producto vendida en Palma ciudad frente a Campos rural para ajustar surtido sin co...",
-      "descripcionLarga": "[EN] Tabla que compara la misma familia de producto vendida en Palma ciudad frente a Campos rural para ajustar surtido sin copiar.",
-      "dificultad": "Media",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "pendiente",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "idea"
-    },
-    {
-      "id": "04.05",
-      "titulo": "[EN] Alertas desviación Ca'n Ros vs Son Garrit",
-      "descripcion": "[EN] Avisos automáticos cuando Ca'n Ros se desvía de su ritmo o de Son Garrit más allá del umbral que fija el dueño.",
-      "descripcionLarga": "[EN] Avisos automáticos cuando Ca'n Ros se desvía de su ritmo o de Son Garrit más allá del umbral que fija el dueño.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Alto",
-      "fase": "pendiente",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "idea"
-    },
-    {
-      "id": "04.06",
-      "titulo": "[EN] Archivo decisiones grupo",
-      "descripcion": "[EN] Archivo único donde queda por qué el grupo subió o bajó un precio, cambió un proveedor o movió un surtido.",
-      "descripcionLarga": "[EN] Archivo único donde queda por qué el grupo subió o bajó un precio, cambió un proveedor o movió un surtido.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "pendiente",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "idea"
-    },
-    {
-      "id": "04.07",
-      "titulo": "[EN] Calendario conjunto grupo obra turista payés",
-      "descripcion": "[EN] Calendario conjunto que separa el ritmo de Son Garrit obra y turista frente a Ca'n Ros payés y segunda residencia.",
-      "descripcionLarga": "[EN] Calendario conjunto que separa el ritmo de Son Garrit obra y turista frente a Ca'n Ros payés y segunda residencia.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "pendiente",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "idea"
-    },
-    {
-      "id": "04.08",
-      "titulo": "[EN] Objetivos separados por tienda + consolidado",
-      "descripcion": "[EN] Cuadro mensual con un objetivo separado para cada tienda y su suma consolidada de grupo, con seguimiento semanal de cump...",
-      "descripcionLarga": "[EN] Cuadro mensual con un objetivo separado para cada tienda y su suma consolidada de grupo, con seguimiento semanal de cumplimiento.",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "pendiente",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "idea"
-    },
-    {
-      "id": "04.09",
-      "titulo": "[EN] Parte voz 2 tiendas fusionado",
-      "descripcion": "[EN] Parte único diario que fusiona los partes de voz de 1 minuto de los encargados de Son Garrit y Ca'n Ros para el móvil de...",
-      "descripcionLarga": "[EN] Parte único diario que fusiona los partes de voz de 1 minuto de los encargados de Son Garrit y Ca'n Ros para el móvil del dueño.",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "pendiente",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "idea"
-    },
-    {
-      "id": "04.10",
-      "titulo": "[EN] Plan 90 días grupo sin matar identidad",
-      "descripcion": "[EN] Plan trimestral de grupo en 1 página con tres frentes por tienda y su hito común, que fija qué se hace en cada marca sin...",
-      "descripcionLarga": "[EN] Plan trimestral de grupo en 1 página con tres frentes por tienda y su hito común, que fija qué se hace en cada marca sin mezclarlas.",
-      "dificultad": "Alta",
-      "riesgo": "Alto",
-      "beneficio": "Medio",
-      "fase": "pendiente",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "idea"
-    }
-  ]
+    "id": "area-04",
+    "area": "global",
+    "titulo": "Group Strategy",
+    "propuestas": [
+        {
+            "id": "global-direccion-01",
+            "codigo": "global-direccion-01",
+            "titulo": "Store Benchmarking",
+            "descripcion": "**Side-by-side executive view** comparing both stores on one page to benchmark sales, average tickets, and categories without phone calls.",
+            "descripcionLarga": "Provides leadership with a unified group overview at a glance. **Consolidates sales data from Palma and Campos** under uniform weekly and register metrics. Highlights which store leads each product category and **allows cross-pollinating best sales practices between locations**.",
+            "ejemplo": "Every Monday at 9:15 AM, leadership reviews the comparative table: **Palma leads trade locksmithing tickets** while **Campos leads in agricultural machinery and exterior masonry**. A stockout in Campos is identified that Palma holds excess stock of.",
+            "viabilidad": "Sí con los dos CSV semanales exportados de cada tienda. Con apoyo puntual para estandarizar el formato de lectura entre ambos sistemas.",
+            "dificultad": "Medium",
+            "riesgo": "Low",
+            "beneficio": "High",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 days",
+            "stack": "decoupled analytics",
+            "softwareRecomendado": [
+                "Google Antigravity",
+                "Safe ERP/POS export dump (Palma + Campos)",
+                "Microsoft Excel"
+            ],
+            "softwareOpcional": [
+                "Google Sheets",
+                "Claude Code",
+                "OpenCode Desktop"
+            ],
+            "estado": "propuesta",
+            "area_id": "global",
+            "cat_id": "04",
+            "pasos": [
+                "**Unified extraction:** Export weekly sales and ticket logs from both POS systems in standardized format.",
+                "**Category alignment:** Map families so plumbing, paint, and hardware categories align under identical criteria.",
+                "**Comparison card:** Design 1-page executive scorecard tracking revenue growth, gross margin, and basket size.",
+                "**Synergy review:** Monthly review to spot product transfer opportunities and mutual commercial support."
+            ]
+        },
+        {
+            "id": "global-direccion-02",
+            "codigo": "global-direccion-02",
+            "titulo": "Purchasing Rules",
+            "descripcion": "**Written operational protocol** defining which purchases and processes are centralized group-wide and which retain full local autonomy.",
+            "descripcionLarga": "Eliminates friction between Palma and Campos store managers regarding procurement and floor merchandising. **Clearly specifies that volume manufacturer deals are negotiated jointly**, while **rural specialty stock in Campos and personal counter relationships remain 100% locally managed**.",
+            "ejemplo": "In a vendor review, the matrix defines that **fasteners and paint volume terms are negotiated centrally for top rebates**, while the Ca'n Ros manager **autonomously selects local agricultural spare parts** for farming clients.",
+            "viabilidad": "Sí. Trabajo documental y organizativo no-code con criterios consensuados por la dirección de ambas tiendas.",
+            "dificultad": "Low",
+            "riesgo": "Low",
+            "beneficio": "Medium",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 days",
+            "stack": "decoupled analytics",
+            "softwareRecomendado": [
+                "Google NotebookLM",
+                "Google Workspace / Docs"
+            ],
+            "softwareOpcional": [
+                "Google Gemini",
+                "Claude",
+                "Microsoft Word"
+            ],
+            "estado": "propuesta",
+            "area_id": "global",
+            "cat_id": "04",
+            "pasos": [
+                "**Decision mapping:** Catalog operational decisions: volume purchases, local vendors, retail pricing, and store hours.",
+                "**Responsibility matrix:** Document in writing which decisions require group consensus vs. complete store autonomy.",
+                "**Signed protocol:** Draft a clear 2-page operational guide approved by leadership of Son Garrit and Ca'n Ros.",
+                "**Annual audit:** Evaluate protocol effectiveness during annual leadership retreat to iron out operational friction."
+            ]
+        },
+        {
+            "id": "global-direccion-03",
+            "codigo": "global-direccion-03",
+            "titulo": "Palma-Campos Demand",
+            "descripcion": "**Cross-demand analytics** identifying purchasing pattern differences between urban Palma and rural Campos to optimize seasonal buying.",
+            "descripcionLarga": "Compares consumer behavior across both geographical environments. **Reveals weeks in advance when garden, heating, pruning, or remodeling seasons kick off** in rural settings vs. urban areas, stocking Ca'n Ros on time and **transferring seasonal surplus to Palma as demand shifts**.",
+            "ejemplo": "In mid-February, analytics reveal that **demand for shade netting and drip irrigation in Campos starts four weeks earlier** than in urban Palma. This allows **advancing bulk manufacturer orders to secure best tier pricing**.",
+            "viabilidad": "Yes, through safe decoupled exports and standardized document processing.",
+            "dificultad": "Medium",
+            "riesgo": "Low",
+            "beneficio": "High",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 days",
+            "stack": "decoupled analytics",
+            "softwareRecomendado": [
+                "Google Antigravity",
+                "Safe ERP/POS export dump (Palma + Campos)",
+                "Microsoft Excel"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "Google Sheets"
+            ],
+            "estado": "propuesta",
+            "area_id": "global",
+            "cat_id": "04",
+            "pasos": [
+                "**Seasonal history:** Analyze past 2 years weekly sales to pinpoint rural vs. urban seasonal lead times.",
+                "**Lead-time calendar:** Establish optimal procurement calendars per location according to actual local timing.",
+                "**Coordinated orders:** Pool manufacturer purchase orders with phased delivery schedules across both stores.",
+                "**Season rebalancing:** Transfer remaining seasonal stock between stores before campaign end to avoid dead capital."
+            ]
+        }
+    ]
 };

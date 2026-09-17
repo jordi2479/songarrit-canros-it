@@ -1,145 +1,111 @@
 import { Categoria } from '../../types';
 
 export const categoriaAREA11De: Categoria = {
-  "id": "area-11",
-  "area": "operativa",
-  "titulo": "Logística & Reparto",
-  "propuestas": [
-    {
-      "id": "11.01",
-      "titulo": "Lieferrouten-Planer",
-      "descripcion": "[DE] Propuesta de dos rutas semanales fijas que ordenan las entregas por zona (Campos, Sa Ràpita, Llucmajor, Porreres, Felani...",
-      "descripcionLarga": "[DE] Propuesta de dos rutas semanales fijas que ordenan las entregas por zona (Campos, Sa Ràpita, Llucmajor, Porreres, Felanitx, Santanyí) para evitar viajes sueltos. Beneficia al encargado y al repartidor porque concentra pedidos y reduce km en vacío. Ejemplo concreto: los pedidos de Campos y Sa Ràpita salen juntos el martes y los de Llucmajor y Porreres el jueves, con orden de parada validado en 1 clic. Valoración inicial: viable.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "Hoja de cálculo o documento de ruta más mapa web de consulta",
-            "softwareRecomendado": ["Google Maps / Routen","WhatsApp Business","ERP/Kassensystem-Export (Lieferungen)"],
-            "softwareOpcional": ["Microsoft Excel","Google Antigravity"],
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: proceso manual ordenado con plantilla, sin integración técnica. Hasta dónde llego: plantilla de ruta 2x semana, criterio por zonas y hoja del día lista para validar. Qué haría un especialista: optimización automática de rutas con software dedicado, solo si el volumen lo justifica.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "11.02",
-      "titulo": "Baustellen-Lieferungen",
-      "descripcion": "[DE] Circuito rápido para servir material urgente a obra avisando por WhatsApp cuando está preparado y con hora estimada. Ben...",
-      "descripcionLarga": "[DE] Circuito rápido para servir material urgente a obra avisando por WhatsApp cuando está preparado y con hora estimada. Beneficia al profesional de obra que no puede desplazarse y al mostrador que evita llamadas repetidas. Ejemplo concreto: pedido de 6 sacos y 2 botes para una obra, se prepara, se avisa por WhatsApp y se entrega en ruta o viaje expreso. Valoración inicial: viable.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "WhatsApp manual con plantillas más hoja de urgentes",
-            "softwareRecomendado": ["WhatsApp Business (Fotos/Standort)","ERP/Kassensystem-Export (Lieferscheine)"],
-            "softwareOpcional": ["Google Antigravity","Google Drive"],
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: plantillas manuales y validación humana, sin automatización. Hasta dónde llego: plantillas de aviso, hoja de registro de urgentes y criterio de priorización. Qué haría un especialista: integración de mensajería con sistema de pedidos, solo con RGPD resuelto y doble validación.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "11.03",
-      "titulo": "Frachtkosten-Rechner",
-      "descripcion": "[DE] Regla clara que define a partir de qué importe el porte es gratis y cuándo se cobra (la ficha plantea 15 euros como refe...",
-      "descripcionLarga": "[DE] Regla clara que define a partir de qué importe el porte es gratis y cuándo se cobra (la ficha plantea 15 euros como referencia a validar). Beneficia a mostrador y a clientes porque evita discusiones y portes a pérdida. Ejemplo concreto: pedido pequeño a Santanyí paga porte, pedido grande a Campos entra en porte gratis según umbral validado por el dueño. Valoración inicial: viable.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "Cartel interno y tabla simple en hoja, sin conexión a TPV",
-            "softwareRecomendado": ["Microsoft Excel","Google Antigravity","Next.js / Web"],
-            "softwareOpcional": ["Google Sheets","Claude Code"],
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: regla comercial en tabla visible, sin técnica. Hasta dónde llego: tabla de umbral por zona, cartel para mostrador y registro de excepciones. Qué haría un especialista: análisis de margen por zona con datos de ventas, si se quiere afinar el umbral.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "11.04",
-      "titulo": "[DE] Aviso llegada más foto prueba entrega",
-      "descripcion": "[DE] Aviso de llegada al cliente más foto como prueba de entrega en obra. Beneficia al cliente ausente y a tienda porque redu...",
-      "descripcionLarga": "[DE] Aviso de llegada al cliente más foto como prueba de entrega en obra. Beneficia al cliente ausente y a tienda porque reduce disputas por material no recibido. Ejemplo concreto: al dejar palet en obra se envía WhatsApp con foto del material descargado y hora. Valoración inicial: viable.",
-      "dificultad": "Media",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "Móvil actual más carpeta por día o por pedido",
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: procedimiento con móvil actual, sin desarrollo. Hasta dónde llego: procedimiento de aviso, plantilla de mensaje y estructura de archivo de fotos. Qué haría un especialista: asesoría RGPD para conservación de imágenes y, si se quiere, firma digital de albarán.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "11.05",
-      "titulo": "[DE] Bulto por obra o cliente",
-      "descripcion": "[DE] Preparación separada por bultos identificados por obra o cliente para no mezclar carga en furgoneta. Beneficia a almacén...",
-      "descripcionLarga": "[DE] Preparación separada por bultos identificados por obra o cliente para no mezclar carga en furgoneta. Beneficia a almacén y repartidor porque reduce errores y tiempo de descarga. Ejemplo concreto: cada obra lleva sus sacos flejados con etiqueta de obra y color del día de ruta. Valoración inicial: viable.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Alto",
-      "fase": "Fase 2 60-90 días",
-      "stack": "Etiquetas impresas o manuscritas más checklist en papel",
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: método físico con etiquetas, sin tecnología. Hasta dónde llego: modelo de etiqueta, checklist de carga y criterio de orden en furgoneta. Qué haría un especialista: no requiere; solo refuerzo de método en almacén si hay rotación de personal.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "11.06",
-      "titulo": "[DE] Recogida sobrante obra y abono",
-      "descripcion": "[DE] Recogida de material sobrante en obra con criterio de abono definido. Beneficia al buen cliente profesional y recupera v...",
-      "descripcionLarga": "[DE] Recogida de material sobrante en obra con criterio de abono definido. Beneficia al buen cliente profesional y recupera venta futura, pero toca dinero y devoluciones. Ejemplo concreto: se recogen sacos sin abrir en buen estado y se propone abono o vale según estado y plazo. Valoración inicial: viable con apoyo.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "Formulario simple de solicitud más tabla de criterio",
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: la parte logística es asumible, pero el abono toca dinero y fiscalidad. Hasta dónde llego: formulario de solicitud, tabla de criterio en borrador y circuito de validación. Qué haría un especialista: gestoría o asesor para el tratamiento del abono y conexión con TPV o facturación, con doble validación.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "11.07",
-      "titulo": "[DE] Control furgoneta",
-      "descripcion": "[DE] Registro simple de km, gasoil, ITV y mantenimiento de la furgoneta. Beneficia al dueño porque anticipa averías e ITV y o...",
-      "descripcionLarga": "[DE] Registro simple de km, gasoil, ITV y mantenimiento de la furgoneta. Beneficia al dueño porque anticipa averías e ITV y ordena el gasto del vehículo. Ejemplo concreto: hoja con km por ruta, litros por repostaje y aviso de próxima revisión. Valoración inicial: viable.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "Hoja de cálculo simple con recordatorios de calendario",
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: hoja y calendario, sin integración. Hasta dónde llego: plantilla de control, calendario de vencimientos e informe simple por mes. Qué haría un especialista: taller para plan de mantenimiento; solo si se quiere telemetría, proveedor dedicado.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "11.08",
-      "titulo": "[DE] Carga óptima",
-      "descripcion": "[DE] Criterio para cargar la furgoneta por peso y volumen y decidir cuándo hace falta un segundo viaje. Beneficia al repartid...",
-      "descripcionLarga": "[DE] Criterio para cargar la furgoneta por peso y volumen y decidir cuándo hace falta un segundo viaje. Beneficia al repartidor porque evita sobrecarga y viajes inseguros. Ejemplo concreto: peso abajo, frágil arriba, y si los bultos superan la capacidad se desdobla en dos viajes validados. Valoración inicial: viable con apoyo.",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "Checklist en papel más tabla de pesos orientativos",
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: el checklist manual es asumible, el cálculo automático no es fiable sin datos de peso y medidas. Hasta dónde llego: checklist de carga, tabla orientativa y criterio de segundo viaje. Qué haría un especialista: técnico en prevención o proveedor logístico para validar límites de carga si hay dudas de seguridad.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "11.09",
-      "titulo": "[DE] Tracking simple pro",
-      "descripcion": "[DE] Información al cliente del tipo ruta en curso con ventana estimada (ejemplo de la ficha: ruta 2, llegamos 12-13h). Benef...",
-      "descripcionLarga": "[DE] Información al cliente del tipo ruta en curso con ventana estimada (ejemplo de la ficha: ruta 2, llegamos 12-13h). Beneficia al profesional que espera en obra y reduce llamadas de seguimiento. Ejemplo concreto: mensaje a la salida de ruta con ventana de llegada por obra. Valoración inicial: viable con apoyo.",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "Mensajería manual con plantillas y ubicación en directo del móvil",
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: el aviso manual con ventana es asumible; un portal de tracking automático excede los recursos actuales. Hasta dónde llego: plantillas de ventana estimada, criterio de actualización y uso puntual de ubicación en directo. Qué haría un especialista: proveedor de seguimiento o desarrollo de avisos automáticos, solo si el volumen y el RGPD lo permiten.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "11.10",
-      "titulo": "[DE] Coste real reparto",
-      "descripcion": "[DE] Cálculo del coste real por reparto (gasoil más tiempo frente a margen) para detectar qué repartos pierden. Beneficia al ...",
-      "descripcionLarga": "[DE] Cálculo del coste real por reparto (gasoil más tiempo frente a margen) para detectar qué repartos pierden. Beneficia al dueño porque pone número a la decisión de portes y rutas. Ejemplo concreto: comparar dos repartos lejanos con poco margen y decidir agruparlos o aplicar porte. Valoración inicial: viable con apoyo.",
-      "dificultad": "Alta",
-      "riesgo": "Alto",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "Hoja de cálculo con fórmulas visibles",
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: puedo construir la plantilla y el método, pero el dato base no existe y el margen requiere validación. Hasta dónde llego: hoja de coste por reparto en borrador e informe mensual para decisión del dueño. Qué haría un especialista: asesor financiero o de operaciones para validar imputación de costes y margen, con doble validación.",
-      "estado": "validar-diseno"
-    }
-  ]
+    "id": "area-11",
+    "area": "operativa",
+    "titulo": "Logistik & Lieferung",
+    "propuestas": [
+        {
+            "id": "operativa-logistica-01",
+            "codigo": "operativa-logistica-01",
+            "titulo": "Liefer-Touren",
+            "descripcion": "**Effiziente Tourenplanung für Lieferfahrzeuge**, die Baustellenbelieferung und Warentransfers ohne Leerfahrten bündelt.",
+            "descripcionLarga": "Senkt Kraftstoffkosten und Fahrzeiten drastisch. Statt unkoordinierter Einzelfahrten **werden feste Liefertouren (Dienstag und Donnerstag) etabliert**. Das System ordnet Lieferstopps nach geografischen Zonen, um die Ladekapazität optimal zu nutzen.",
+            "ejemplo": "Dienstagmorgen startet der Transporter in Palma mit **12 Baustellenbestellungen für den Süden und 4 Umlagerungen für Ca'n Ros**. Die optimierte Route **spart 45 km Fahrstrecke und 40 Minuten Fahrzeit**.",
+            "viabilidad": "Ja, durch sichere entkoppelte Exporte und standardisierte Dokumentenverarbeitung.",
+            "dificultad": "Niedrig",
+            "riesgo": "Niedrig",
+            "beneficio": "Hoch",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 Tage",
+            "stack": "entkoppelte Analyse",
+            "softwareRecomendado": [
+                "Google Maps",
+                "Google Antigravity",
+                "WhatsApp Business"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "Microsoft Excel"
+            ],
+            "estado": "propuesta",
+            "area_id": "operativa",
+            "cat_id": "11",
+            "pasos": [
+                "**Digitaler Tourenzettel:** Bündelung aller bestätigten Baustellen-Lieferungen in einer digitalen Liste bis 18:00 Uhr am Vortag.",
+                "**Geografische Korridore:** Zusammenfassung der Lieferungen nach Zonen (Palma, Migjorn, Ostküste) zur Kilometerreduzierung.",
+                "**Lieferzeitfenster:** Zuordnung von Zeitfenstern (vormittags/nachmittags) mit automatischer SMS/WhatsApp-Kundenbenachrichtigung.",
+                "**Verbrauchs-Controlling:** Wöchentliche Prüfung der Tourzeiten und der durchschnittlichen Kraftstoffkosten je Stopp."
+            ]
+        },
+        {
+            "id": "operativa-logistica-02",
+            "codigo": "operativa-logistica-02",
+            "titulo": "Baustellen-Lieferung",
+            "descripcion": "**Automatische WhatsApp-Lieferbestätigung mit Foto** an den Bauleiter bei Abladung an der Baustelle als offizieller Nachweis.",
+            "descripcionLarga": "Beendet Streitigkeiten: 'Wo liegt der Zement? Wir haben nichts gesehen.' **Beim Abladen auf der Baustelle fotografiert der Fahrer das Material am Boden**. Das System sendet Foto und Uhrzeit automatisch als Beleg an den Bauleiter.",
+            "ejemplo": "Der Fahrer lädt um 11:20 Uhr 2 Paletten Mörtel und Baustahl in Ses Salines ab. **Er macht ein Foto; der Bauleiter erhält sofort das Bild mit Zeitstempel**, wodurch Reklamationen vermieden werden.",
+            "viabilidad": "Ja, durch sichere entkoppelte Exporte und standardisierte Dokumentenverarbeitung.",
+            "dificultad": "Niedrig",
+            "riesgo": "Niedrig",
+            "beneficio": "Hoch",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 Tage",
+            "stack": "entkoppelte Analyse",
+            "softwareRecomendado": [
+                "WhatsApp Business",
+                "Google Antigravity",
+                "Next.js / Web"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "Google Drive"
+            ],
+            "estado": "propuesta",
+            "area_id": "operativa",
+            "cat_id": "11",
+            "pasos": [
+                "**Fahrer-App:** Installation einer schlanken mobilen Webanwendung auf dem Diensthandy des Fahrers zur Belegquittierung.",
+                "**Fotopflicht:** Vorgabe, bei Abladung an der Baustelle neben der Unterschrift stets ein Kontrollfoto anzufertigen.",
+                "**Echtzeit-Synchronisierung:** Direkte Übermittlung des quittierten Lieferscheins an die Verwaltung bei Tourabschluss.",
+                "**Konfliktvermeidung:** Vollständige Beseitigung von Reklamationen über angeblich nicht angeliefertes Schwergut."
+            ]
+        },
+        {
+            "id": "operativa-logistica-03",
+            "codigo": "operativa-logistica-03",
+            "titulo": "Fracht-Rechner",
+            "descripcion": "**Automatische Frachtkosten-Regel am Tresen**, die anzeigt, wann Baustellenlieferung gratis rentabel ist und wann Fracht anfällt.",
+            "descripcionLarga": "Verhindert Verlustgeschäfte bei Kleinlieferungen, bei denen die Transportkosten die Handelsmarge übersteigen. **Prüft anhand von Entfernung und Deckungsbeitrag, ob freie Anlieferung rentabel ist** (z. B. Auftrag >300 € oder Marge >80 €) oder Fracht berechnet werden muss.",
+            "ejemplo": "Ein Kunde möchte eine Schubkarre und Schaufeln 14 km weit geliefert haben (Wert 65 €, Marge 18 €). Das System meldet: **'Marge unzureichend für Gratis-Lieferung; 15 € Fracht ansetzen oder Filialabholung vorschlagen'**.",
+            "viabilidad": "Ja, durch sichere entkoppelte Exporte und standardisierte Dokumentenverarbeitung.",
+            "dificultad": "Niedrig",
+            "riesgo": "Niedrig",
+            "beneficio": "Hoch",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 Tage",
+            "stack": "entkoppelte Analyse",
+            "softwareRecomendado": [
+                "Google Antigravity",
+                "Sicherer ERP/Kasse Datenabzug (CSV/Excel)",
+                "Microsoft Excel"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "Google Sheets"
+            ],
+            "estado": "propuesta",
+            "area_id": "operativa",
+            "cat_id": "11",
+            "pasos": [
+                "**Entfernungszonen:** Definition von Kilometerradien ab Palma und Campos (Zone 1: 0-10 km, Zone 2: 10-25 km, Zone 3: >25 km).",
+                "**Margen-Schwellen:** Festlegung der Mindestmarge je Lieferzone für die Gewährung frachtfreier Anlieferung.",
+                "**Kassen-Hinweis:** Automatische Anzeige der Frachtkosten-Empfehlung am Kassenbildschirm vor Bon-Abschluss.",
+                "**Transparente Tarife:** Gut sichtbare Platzierung der Transportkostentabelle am Verkaufstresen für Handwerker."
+            ]
+        }
+    ]
 };

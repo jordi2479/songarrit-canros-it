@@ -4,7 +4,6 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { Building2, Store, Users, Settings, ArrowRight, Zap, Target } from "lucide-react";
-import { Link } from "@/i18n/navigation";
 
 // Datasets
 import { catalogoCategorias } from "@/data/catalogo";
@@ -96,9 +95,9 @@ export function Explorador() {
                   const isDimmed = isHovering && !isActive;
 
                   return (
-                    <Link 
+                    <a 
                       key={area.id}
-                      href={`/catalogo?area=${area.titulo}`}
+                      href="#prototipos"
                       onMouseEnter={() => setHoveredLocal(area.id)}
                       onMouseLeave={() => setHoveredLocal(null)}
                       className={`block p-4 rounded-xl border transition-all duration-300 relative overflow-hidden group ${
@@ -118,7 +117,7 @@ export function Explorador() {
                         </div>
                         <Target className={`w-5 h-5 ${isActive ? 'text-indigo-400' : 'text-slate-600'} group-hover:text-indigo-400 transition-colors`} />
                       </div>
-                    </Link>
+                    </a>
                   );
                 })}
               </div>
@@ -214,9 +213,9 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
           const isDimmed = isHovering && !isActive;
 
           return (
-            <Link 
+            <a 
               key={area.id}
-              href={`/catalogo?area=${area.titulo}`}
+              href="#prototipos"
               onMouseEnter={() => setHovered(area.id)}
               onMouseLeave={() => setHovered(null)}
               className={`p-3 rounded-lg border transition-all duration-300 cursor-pointer flex justify-between items-center group ${
@@ -233,7 +232,7 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
                 </h4>
               </div>
               <Zap className={`w-3 h-3 flex-shrink-0 ${isActive ? iconColor : 'text-slate-600 opacity-0 group-hover:opacity-100'} transition-all`} />
-            </Link>
+            </a>
           );
         })}
       </div>

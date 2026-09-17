@@ -1,145 +1,110 @@
 import { Categoria } from '../../types';
 
 export const categoriaAREA12Ca: Categoria = {
-  "id": "area-12",
-  "area": "administracion",
-  "titulo": "Equipo & RRHH",
-  "propuestas": [
-    {
-      "id": "12.01",
-      "titulo": "Planificador de Torns",
-      "descripcion": "[CA] Asistente interno que responde dudas técnicas de mostrador con el surtido propio, del tipo qué broca para porcelánico o ...",
-      "descripcionLarga": "[CA] Asistente interno que responde dudas técnicas de mostrador con el surtido propio, del tipo qué broca para porcelánico o qué EPI para radial, indicando marca disponible en cada tienda.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 dias",
-      "stack": "no-code",
-            "softwareRecomendado": ["Microsoft Excel / Google Sheets","WhatsApp (Grups botiga)"],
-            "softwareOpcional": ["Google Calendar","Google Antigravity"],
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "12.02",
-      "titulo": "Guia d'Incorporació",
-      "descripcion": "[CA] Recorrido guiado de 7 días para temporeros que explica dónde está cada familia, cómo hacer presupuestos, devoluciones y ...",
-      "descripcionLarga": "[CA] Recorrido guiado de 7 días para temporeros que explica dónde está cada familia, cómo hacer presupuestos, devoluciones y caja, con el criterio de cada tienda.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 dias",
-      "stack": "no-code",
-            "softwareRecomendado": ["Google NotebookLM","Google Docs / PDF","WhatsApp"],
-            "softwareOpcional": ["Notion","Google Gemini"],
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "12.03",
-      "titulo": "Checklist de Manteniment",
-      "descripcion": "[CA] Plantilla de turnos que cubre sábados, verano, Sant Joan, fiestas y vacaciones con reglas simples por tienda.",
-      "descripcionLarga": "[CA] Plantilla de turnos que cubre sábados, verano, Sant Joan, fiestas y vacaciones con reglas simples por tienda.",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 dias",
-      "stack": "no-code",
-            "softwareRecomendado": ["Google Forms / Sheets","WhatsApp (Fotos incidències)"],
-            "softwareOpcional": ["Google Antigravity","Notion"],
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "12.04",
-      "titulo": "[CA] Parte diario por voz",
-      "descripcion": "[CA] Parte que el encargado dicta por voz al cierre y se convierte en tareas asignadas con responsable.",
-      "descripcionLarga": "[CA] Parte que el encargado dicta por voz al cierre y se convierte en tareas asignadas con responsable.",
-      "dificultad": "Media",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "12.05",
-      "titulo": "[CA] Checklist PRL",
-      "descripcion": "[CA] Lista de comprobación de prevención para andamios, EPIs y carretilla, con firma simple de quien revisa.",
-      "descripcionLarga": "[CA] Lista de comprobación de prevención para andamios, EPIs y carretilla, con firma simple de quien revisa.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Alto",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "12.06",
-      "titulo": "[CA] Clasificador para gestoría",
-      "descripcion": "[CA] Circuito que con foto rápida del ticket o factura lo clasifica en la carpeta mensual que luego revisa la gestoría.",
-      "descripcionLarga": "[CA] Circuito que con foto rápida del ticket o factura lo clasifica en la carpeta mensual que luego revisa la gestoría.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "12.07",
-      "titulo": "[CA] Buscador normativa",
-      "descripcion": "[CA] Buscador de consulta sobre normativa de fitosanitarios, gas, cemento y EPIs, limitado a informar sin decidir ventas. Sol...",
-      "descripcionLarga": "[CA] Buscador de consulta sobre normativa de fitosanitarios, gas, cemento y EPIs, limitado a informar sin decidir ventas. Solo consulta.",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "12.08",
-      "titulo": "[CA] Control caja y arqueo",
-      "descripcion": "[CA] Comparativa que cuadra el cierre de TPV frente al efectivo contado y marca diferencias para revisar, sin mover dinero.",
-      "descripcionLarga": "[CA] Comparativa que cuadra el cierre de TPV frente al efectivo contado y marca diferencias para revisar, sin mover dinero.",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "12.09",
-      "titulo": "[CA] Gestor incidencias tienda",
-      "descripcion": "[CA] Registro simple de incidencias de tienda como luz, gotera o persiana, con responsable y seguimiento hasta cierre.",
-      "descripcionLarga": "[CA] Registro simple de incidencias de tienda como luz, gotera o persiana, con responsable y seguimiento hasta cierre.",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "12.10",
-      "titulo": "[CA] Manual vivo",
-      "descripcion": "[CA] Base que recoge cada duda resuelta en tienda y la convierte en ficha reutilizable, separada por Son Garrit y Ca'n Ros Ca...",
-      "descripcionLarga": "[CA] Base que recoge cada duda resuelta en tienda y la convierte en ficha reutilizable, separada por Son Garrit y Ca'n Ros Campos.",
-      "dificultad": "Alta",
-      "riesgo": "Alto",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 dias",
-      "stack": "no-code",
-      "veredicto": "",
-      "estado": "validar-diseno"
-    }
-  ]
+    "id": "area-12",
+    "area": "administracion",
+    "titulo": "Equip & RRHH",
+    "propuestas": [
+        {
+            "id": "administracion-equipo-01",
+            "codigo": "administracion-equipo-01",
+            "titulo": "Planificador de Torns",
+            "descripcion": "**Calendari digital de torns** que equilibra vacances, festius i dissabtes garantint sempre personal veterà al mostrador.",
+            "descripcionLarga": "Acaba amb el caos de quadrants a Excel o en paper que generen descontentament entre companys. **Organitza la rotació dels dissabtes de forma equitativa**, anticipa els períodes de vacances d'estiu i **assegura que mai coincideixin de baixa dos especialistes de la mateixa família** de producte.",
+            "ejemplo": "En planificar l'agost, el sistema avisa que **el dissabte 16 quedarien a tenda només dos empleats joves sense cap perfil amb signatura per a fiacs**, proposant automàticament un canvi de torn compensat.",
+            "viabilidad": "Sí mediante cuadrante estructurado no-code accesible desde el móvil de cada empleado.",
+            "dificultad": "Baixa",
+            "riesgo": "Baix",
+            "beneficio": "Mitjà",
+            "acceso": "lectura",
+            "fase": "Fase 1 30 dies",
+            "stack": "anàlisi desacoblada",
+            "softwareRecomendado": [
+                "Google Calendar",
+                "Google Workspace",
+                "Microsoft Excel"
+            ],
+            "softwareOpcional": [
+                "WhatsApp Business",
+                "Google Sheets",
+                "Outlook"
+            ],
+            "estado": "propuesta",
+            "area_id": "administracion",
+            "cat_id": "12",
+            "pasos": [
+                "**Mínims per mostrador:** Definir el nombre mínim de dependents i mossos de magatzem requerits per tenda i franja horària.",
+                "**Quadrant accessible:** Publicar el calendari mensual amb 4 setmanes d'antelació en eina accessible des del mòbil.",
+                "**Permutes àgils:** Canal unificat per a sol·licituds de vacances i permutes de torns entre companys amb validació ràpida.",
+                "**Gestió d'imprevistos:** Protocol d'avís immediat davant baixes mèdiques per reorganitzar reforços sense buidar mostradors."
+            ]
+        },
+        {
+            "id": "administracion-equipo-02",
+            "codigo": "administracion-equipo-02",
+            "titulo": "Guia d'Incorporació",
+            "descripcion": "**Guia pas a pas de benvinguda** amb vídeos curts i checklist que fa operatiu un nou dependent en la seva primera setmana.",
+            "descripcionLarga": "Redueix el temps i la paciència que els encarregats veterans han de dedicar a ensenyar des de zero cada vegada que entra algú nou. **Estructura els primers 7 dies amb missions clares**: ubicació de famílies a passadissos, operativa de cobrament a TPV, política de fiacs i normes d'atenció a mostrador.",
+            "ejemplo": "El dependent nou en el seu segon dia completa el mòdul **'Com identificar cargoleria mètrica vs roscaxapa i tall de cadena a mida'**. Al final de la setmana **atén a mostrador amb soltesa bàsica sense dependre constantment dels seus companys**.",
+            "viabilidad": "Sí recopilando 10 vídeos breves grabados con el móvil en la propia tienda y una lista de verificación digital.",
+            "dificultad": "Baixa",
+            "riesgo": "Baix",
+            "beneficio": "Mitjà",
+            "acceso": "lectura",
+            "fase": "Fase 1 30 dies",
+            "stack": "anàlisi desacoblada",
+            "softwareRecomendado": [
+                "Google NotebookLM",
+                "Google Drive / Vídeos",
+                "Google Workspace"
+            ],
+            "softwareOpcional": [
+                "YouTube Ocult",
+                "WhatsApp Business",
+                "Notion"
+            ],
+            "estado": "propuesta",
+            "area_id": "administracion",
+            "cat_id": "12",
+            "pasos": [
+                "**Manual de benvinguda:** Preparar el dossier amb normes de tenda, prevenció de riscos, operativa bàsica de TPV i telèfons clau.",
+                "**Tutor assignat:** Assignar un tutor experimentat al nou empleat durant les seves primeres dues setmanes de feina.",
+                "**Itinerari formatiu:** Definir el recorregut d'aprenentatge: passadissos clau, cobrament, política de fiacs i atenció al professional.",
+                "**Entrevista als 15 dies:** Breu sessió amb l'encarregat de tenda per avaluar sensacions, aclarir dubtes i reforçar àrees."
+            ]
+        },
+        {
+            "id": "administracion-equipo-03",
+            "codigo": "administracion-equipo-03",
+            "titulo": "Llista de Manteniment",
+            "descripcion": "**Revisió periòdica de manteniment** des del mòbil de l'estat d'extintors, carretons elevadors, escales i seguretat de magatzem.",
+            "descripcionLarga": "Evita multes d'inspecció de treball i accidents laborals a magatzem. En lloc de carpetes oblidades de prevenció, **el responsable de magatzem dedica 5 minuts al mes a repassar al mòbil la llista de seguretat**: data d'extintors, estat de forquetes del carretó i desallotjament de sortides d'emergència.",
+            "ejemplo": "El primer dilluns de mes el mosso en cap comprova els 8 punts de seguretat a l'app del mòbil. Es detecta que **la revisió anual de l'extintor de pintura venç en 15 dies** i es cursa avís a l'empresa mantenidora automàticament.",
+            "viabilidad": "Sí mediante formulario móvil simple con archivo de registros para auditorías de prevención.",
+            "dificultad": "Baixa",
+            "riesgo": "Baix",
+            "beneficio": "Mitjà",
+            "acceso": "lectura",
+            "fase": "Fase 1 30 dies",
+            "stack": "anàlisi desacoblada",
+            "softwareRecomendado": [
+                "Google Forms / AppSheet",
+                "Google Drive",
+                "Google Workspace"
+            ],
+            "softwareOpcional": [
+                "WhatsApp Business",
+                "Microsoft Excel"
+            ],
+            "estado": "propuesta",
+            "area_id": "administracion",
+            "cat_id": "12",
+            "pasos": [
+                "**Inventari de seguretat:** Registrar totes les màquines i elements de seguretat amb la seva data de compra i termini de revisió reglamentària.",
+                "**Llista mensual mòbil:** Confeccionar una llista de verificació mensual amb punts clau: extintors, llums, escales i carretons.",
+                "**Revisió en 5 min:** Assignar la revisió física el primer dimarts de cada mes al responsable de seguretat de cada centre.",
+                "**Arxiu digital:** Arxivar els certificats i revisions oficials per superar amb solvència qualsevol inspecció laboral o de mútua."
+            ]
+        }
+    ]
 };

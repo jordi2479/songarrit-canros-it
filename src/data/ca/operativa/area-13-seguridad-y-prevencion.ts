@@ -1,145 +1,110 @@
 import { Categoria } from '../../types';
 
 export const categoriaAREA13Ca: Categoria = {
-  "id": "area-13",
-  "area": "operativa",
-  "titulo": "Seguridad & Prevención",
-  "propuestas": [
-    {
-      "id": "13.01",
-      "titulo": "Obertura i Tancament",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "no-code",
-            "softwareRecomendado": ["WhatsApp (Checklist fotogràfic)","Google Sheets"],
-            "softwareOpcional": ["Google Forms","Google Drive"],
-      "veredicto": "[CA] Puedo afrontarlo: Sí Motivo: Formulario con foto y archivo por fechas, sin integraciones ni dato sensible. Hasta dónde llego: Lista validada, formulario, archivo mensual y guía de 1 clic para validar. Qué haría un especialista: No aplica salvo revisión puntual de aseguradora si pide un formato concreto.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.02",
-      "titulo": "Auditor de Desquadraments",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "no-code",
-            "softwareRecomendado": ["Volcat des d'ERP/TPV (Arquejos caixa)","Microsoft Excel","Google Antigravity"],
-            "softwareOpcional": ["Claude Code","Google Sheets"],
-      "veredicto": "[CA] Puedo afrontarlo: Con apoyo Motivo: El método de revisión por eventos lo afronto yo, pero vídeo y vigilancia tocan dato sensible y norma. Hasta dónde llego: Procedimiento de acotar por evento, plantilla de registro e inventario de cámaras. Qué haría un especialista: Instalador para cámaras y gestoría o legal para carteles, accesos, plazos y base_legal.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.03",
-      "titulo": "Control de Mermes",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "no-code",
-            "softwareRecomendado": ["Volcat des d'ERP/TPV (Ajustos estoc)","Microsoft Excel","Google Antigravity"],
-            "softwareOpcional": ["Claude Code","OpenCode Desktop"],
-      "veredicto": "[CA] Puedo afrontarlo: Con apoyo Motivo: Diseño funcional y resumen semanal lo afronto, pero dinero y TPV exigen especialista y validación laboral. Hasta dónde llego: Estructura de resumen, reglas de patrón y circuito de validación en 1 clic. Qué haría un especialista: Técnico de TPV para el export y gestoría o legal para tratamiento del dato por empleado y base_legal.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.04",
-      "titulo": "[CA] Control accesos almacén",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Media",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "no-code",
-      "veredicto": "[CA] Puedo afrontarlo: Con apoyo Motivo: Registro y revisión semanal lo afronto, pero al tocar movimientos de plantilla pide validación legal. Hasta dónde llego: Criterio de registro, formulario, archivo semanal y guía de revisión. Qué haría un especialista: Gestoría o legal para validar el registro de personal y base_legal.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.05",
-      "titulo": "[CA] Detector diferencia inventario por referencia",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Alto",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[CA] Puedo afrontarlo: Con apoyo Motivo: Lógica de diferencias y priorización la afronto, pero stock real y ERP exigen especialista. Hasta dónde llego: Estructura de comparativa, reglas de causa y lista priorizada para contar. Qué haría un especialista: Técnico ERP para exports limpios y ajustes; dueño valida cada ajuste.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.06",
-      "titulo": "[CA] Control llaves y préstamos",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[CA] Puedo afrontarlo: Sí Motivo: Libro de préstamos con avisos, sin integraciones sensibles salvo dato de cliente pendiente de criterio. Hasta dónde llego: Inventario base, formulario, avisos de devolución y guía de mostrador. Qué haría un especialista: Gestoría o legal solo para validar foto de documento y fianza; aseguradora para furgoneta.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.07",
-      "titulo": "[CA] Devoluciones sospechosas",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[CA] Puedo afrontarlo: Con apoyo Motivo: Reglas de alerta y circuito de validación lo afronto, pero dinero y TPV exigen especialista. Hasta dónde llego: Reglas por umbral, aviso a encargado y registro de decisiones. Qué haría un especialista: Técnico TPV para el export; dueño fija umbrales y valida cada abono.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.08",
-      "titulo": "[CA] Parte seguro robo rotura",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[CA] Puedo afrontarlo: Sí Motivo: Plantilla documental con fotos y valor, sin integraciones; la validación es del dueño y la correduría. Hasta dónde llego: Plantilla de parte, carpeta por siniestro y guía de envío. Qué haría un especialista: Correduría para formato y plazos; gestoría si hay valoración contenciosa.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.09",
-      "titulo": "[CA] Orden EPI y extintores",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[CA] Puedo afrontarlo: Sí Motivo: Calendario con avisos lo afronto; las revisiones las hace mantenedor autorizado. Hasta dónde llego: Inventario base, calendario con avisos y guía de registro. Qué haría un especialista: Mantenedor autorizado y prevención para revisiones y base_legal pendiente de validar.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.10",
-      "titulo": "[CA] Formación anti-hurto sin criminalizar",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Alta",
-      "riesgo": "Alto",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[CA] Puedo afrontarlo: Con apoyo Motivo: Fichas y guiones los afronto, pero trato al cliente y norma piden validación externa. Hasta dónde llego: 3 a 5 fichas cortas, guion de actuación verbal y registro de sesiones. Qué haría un especialista: Formador o legal para validar guiones y límites de actuación.",
-      "estado": "validar-diseno"
-    }
-  ]
+    "id": "area-13",
+    "area": "operativa",
+    "titulo": "Seguretat & Prevenció",
+    "propuestas": [
+        {
+            "id": "operativa-seguridad-01",
+            "codigo": "operativa-seguridad-01",
+            "titulo": "Obertura i Tancament",
+            "descripcion": "**Verificació diària d'obertura i tancament** de portes, pati i alarma connectada en acabar la jornada amb foto enviada a direcció.",
+            "descripcionLarga": "Garanteix la tranquil·litat dels amos que el local queda 100% segur cada nit sense haver d'acudir-hi en persona. **L'empleat que tanca fa un recorregut de 2 minuts comprovant**: diners desats a caixa forta, pati de materials cadenat, maquinària desada i panell d'alarma activat.",
+            "ejemplo": "A les 19:45 l'encarregat de tancament completa el checklist al mòbil i **treu foto del panell de l'alarma en verd i la cancel·la del pati bloquejada**. Els socis a Palma **reben la confirmació immediata de tenda tancada i segura**.",
+            "viabilidad": "Sí mediante bot simple de mensajería o formulario móvil sin coste de equipamiento adicional.",
+            "dificultad": "Baixa",
+            "riesgo": "Baix",
+            "beneficio": "Mitjà",
+            "acceso": "lectura",
+            "fase": "Fase 1 30 dies",
+            "stack": "anàlisi desacoblada",
+            "softwareRecomendado": [
+                "WhatsApp Business",
+                "Google Forms",
+                "Google Drive"
+            ],
+            "softwareOpcional": [
+                "Telegram",
+                "AppSheet"
+            ],
+            "estado": "propuesta",
+            "area_id": "operativa",
+            "cat_id": "13",
+            "pasos": [
+                "**Checklist de tancament:** Dissenyar el formulari de 4 punts clau: diners a caixa forta, pati cadenat, maquinària sota clau i alarma activa.",
+                "**Foto obligatòria:** Adjuntar fotografia del teclat de l'alarma armada i porta principal bloquejada en enviar el checklist.",
+                "**Notificació a socis:** Recepció d'un avís breu al mòbil de gerència amb hora exacta i nom del responsable de tancament.",
+                "**Històric d'obertures:** Registrar obertures fora d'horari per auditar accessos extraordinaris al local."
+            ]
+        },
+        {
+            "id": "operativa-seguridad-02",
+            "codigo": "operativa-seguridad-02",
+            "titulo": "Auditor de Desquadraments",
+            "descripcion": "**Traçabilitat de desquadraments en efectiu** que aïlla si les diferències ocorren en un calaix concret o en canvis de torn.",
+            "descripcionLarga": "Evita tensions i sospites infundades dins la plantilla davant faltes de diners al calaix. **Registra de forma individualitzada el quadrat a l'inici i final de cada torn**. Si es produeix un desquadrament reiterat, identifica el patró (horari, lloc o torn) de forma objectiva amb dades contrastables.",
+            "ejemplo": "Durant dues setmanes es detecten **petites diferències de 10-20 € en efectiu els dissabtes al matí**. L'informe creua les dades i conclou que **el desquadrament es deu a un error sistemàtic en una moneda de canvi a l'inici del torn**, no a sostracció.",
+            "viabilidad": "Sí mediante registro de turnos en la hoja de cierre de caja diaria.",
+            "dificultad": "Baixa",
+            "riesgo": "Baix",
+            "beneficio": "Alt",
+            "acceso": "lectura",
+            "fase": "Fase 1 30 dies",
+            "stack": "anàlisi desacoblada",
+            "softwareRecomendado": [
+                "Google Antigravity",
+                "Volcat segur des d'ERP/TPV (CSV/Excel)",
+                "Microsoft Excel"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "Google Sheets"
+            ],
+            "estado": "propuesta",
+            "area_id": "operativa",
+            "cat_id": "13",
+            "pasos": [
+                "**Arqueig per torn:** Implantar l'arqueig cec obligatori cada vegada que un dependent cedeix la caixa a un company.",
+                "**Registre individual:** Associar cada moviment i cobrament a l'usuari identificat al TPV.",
+                "**Semàfor de desviacions:** Alertar a gerència únicament quan un mateix lloc acumuli 3 diferències consecutives.",
+                "**Revisió pedagògica:** Comentar les desviacions amb l'empleat per corregir errors de canvi sense crear mal clima laboral."
+            ]
+        },
+        {
+            "id": "operativa-seguridad-03",
+            "codigo": "operativa-seguridad-03",
+            "titulo": "Control de Mermes",
+            "descripcion": "**Pla de recompte de 5 articles al dia** d'alt valor per detectar furts o pèrdues sense paralitzar la tenda per fer inventaris.",
+            "descripcionLarga": "A ferreteria el furt de referències petites però cares (broques de cobalt, discs de diamant, alicates aïllades, cadenats) dessagna el marge sense que ningú se n'adoni fins a l'inventari anual. **Aquest sistema selecciona cada matí 5 referències aleatòries perquè l'encarregat compti les unitats en 3 minuts**.",
+            "ejemplo": "El dimecres el sistema demana comptar els cadenats de seguretat d'alta gamma a vitrina. **Teòricament n'hi hauria d'haver 12 i n'hi ha 9**. La discrepància es detecta en la mateixa setmana en què va ocórrer, **permetent revisar tiquets o ajustar la seguretat de l'expositor**.",
+            "viabilidad": "Sí mediante generador de listas de muestreo diario sobre artículos tipo A y B de riesgo.",
+            "dificultad": "Baixa",
+            "riesgo": "Baix",
+            "beneficio": "Alt",
+            "acceso": "lectura",
+            "fase": "Fase 1 30 dies",
+            "stack": "anàlisi desacoblada",
+            "softwareRecomendado": [
+                "Google Antigravity",
+                "Volcat segur des d'ERP/TPV (CSV/Excel)",
+                "Microsoft Excel"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "WhatsApp Business"
+            ],
+            "estado": "propuesta",
+            "area_id": "operativa",
+            "cat_id": "13",
+            "pasos": [
+                "**Selecció d'articles sensibles:** Identificar les 100 referències de major valor o susceptibilitat de furt a sala de vendes.",
+                "**Avís matinal aleatori:** Enviar cada matí una llista de 5 articles aleatoris al terminal de l'encarregat per al seu recompte.",
+                "**Registre en 3 minuts:** Introduir l'estoc físic real comptat al sistema per contrastar amb l'inventari teòric.",
+                "**Acció preventiva:** Reubicar a vitrines amb clau o instal·lar alarmes físiques en les referències que presentin merma repetida."
+            ]
+        }
+    ]
 };

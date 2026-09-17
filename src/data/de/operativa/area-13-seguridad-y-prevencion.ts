@@ -1,145 +1,110 @@
 import { Categoria } from '../../types';
 
 export const categoriaAREA13De: Categoria = {
-  "id": "area-13",
-  "area": "operativa",
-  "titulo": "Seguridad & Prevención",
-  "propuestas": [
-    {
-      "id": "13.01",
-      "titulo": "Ladenöffnung & Schließung",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "no-code",
-            "softwareRecomendado": ["WhatsApp (Foto-Checkliste)","Google Sheets"],
-            "softwareOpcional": ["Google Forms","Google Drive"],
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: Formulario con foto y archivo por fechas, sin integraciones ni dato sensible. Hasta dónde llego: Lista validada, formulario, archivo mensual y guía de 1 clic para validar. Qué haría un especialista: No aplica salvo revisión puntual de aseguradora si pide un formato concreto.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.02",
-      "titulo": "Kassendifferenz-Prüfung",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "no-code",
-            "softwareRecomendado": ["ERP/Kassensystem-Export (Kassenabgleich)","Microsoft Excel","Google Antigravity"],
-            "softwareOpcional": ["Claude Code","Google Sheets"],
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: El método de revisión por eventos lo afronto yo, pero vídeo y vigilancia tocan dato sensible y norma. Hasta dónde llego: Procedimiento de acotar por evento, plantilla de registro e inventario de cámaras. Qué haría un especialista: Instalador para cámaras y gestoría o legal para carteles, accesos, plazos y base_legal.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.03",
-      "titulo": "Schwund-Kontrolle",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Baja",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "no-code",
-            "softwareRecomendado": ["ERP/Kassensystem-Export (Bestandskorrekturen)","Microsoft Excel","Google Antigravity"],
-            "softwareOpcional": ["Claude Code","OpenCode Desktop"],
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: Diseño funcional y resumen semanal lo afronto, pero dinero y TPV exigen especialista y validación laboral. Hasta dónde llego: Estructura de resumen, reglas de patrón y circuito de validación en 1 clic. Qué haría un especialista: Técnico de TPV para el export y gestoría o legal para tratamiento del dato por empleado y base_legal.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.04",
-      "titulo": "[DE] Control accesos almacén",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Media",
-      "riesgo": "Bajo",
-      "beneficio": "Alto",
-      "fase": "Fase 1 30 días",
-      "stack": "no-code",
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: Registro y revisión semanal lo afronto, pero al tocar movimientos de plantilla pide validación legal. Hasta dónde llego: Criterio de registro, formulario, archivo semanal y guía de revisión. Qué haría un especialista: Gestoría o legal para validar el registro de personal y base_legal.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.05",
-      "titulo": "[DE] Detector diferencia inventario por referencia",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Alto",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: Lógica de diferencias y priorización la afronto, pero stock real y ERP exigen especialista. Hasta dónde llego: Estructura de comparativa, reglas de causa y lista priorizada para contar. Qué haría un especialista: Técnico ERP para exports limpios y ajustes; dueño valida cada ajuste.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.06",
-      "titulo": "[DE] Control llaves y préstamos",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: Libro de préstamos con avisos, sin integraciones sensibles salvo dato de cliente pendiente de criterio. Hasta dónde llego: Inventario base, formulario, avisos de devolución y guía de mostrador. Qué haría un especialista: Gestoría o legal solo para validar foto de documento y fianza; aseguradora para furgoneta.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.07",
-      "titulo": "[DE] Devoluciones sospechosas",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Media",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: Reglas de alerta y circuito de validación lo afronto, pero dinero y TPV exigen especialista. Hasta dónde llego: Reglas por umbral, aviso a encargado y registro de decisiones. Qué haría un especialista: Técnico TPV para el export; dueño fija umbrales y valida cada abono.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.08",
-      "titulo": "[DE] Parte seguro robo rotura",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: Plantilla documental con fotos y valor, sin integraciones; la validación es del dueño y la correduría. Hasta dónde llego: Plantilla de parte, carpeta por siniestro y guía de envío. Qué haría un especialista: Correduría para formato y plazos; gestoría si hay valoración contenciosa.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.09",
-      "titulo": "[DE] Orden EPI y extintores",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Alta",
-      "riesgo": "Medio",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[DE] Puedo afrontarlo: Sí Motivo: Calendario con avisos lo afronto; las revisiones las hace mantenedor autorizado. Hasta dónde llego: Inventario base, calendario con avisos y guía de registro. Qué haría un especialista: Mantenedor autorizado y prevención para revisiones y base_legal pendiente de validar.",
-      "estado": "validar-diseno"
-    },
-    {
-      "id": "13.10",
-      "titulo": "[DE] Formación anti-hurto sin criminalizar",
-      "descripcion": "",
-      "descripcionLarga": "",
-      "dificultad": "Alta",
-      "riesgo": "Alto",
-      "beneficio": "Medio",
-      "fase": "Fase 2 60-90 días",
-      "stack": "no-code",
-      "veredicto": "[DE] Puedo afrontarlo: Con apoyo Motivo: Fichas y guiones los afronto, pero trato al cliente y norma piden validación externa. Hasta dónde llego: 3 a 5 fichas cortas, guion de actuación verbal y registro de sesiones. Qué haría un especialista: Formador o legal para validar guiones y límites de actuación.",
-      "estado": "validar-diseno"
-    }
-  ]
+    "id": "area-13",
+    "area": "operativa",
+    "titulo": "Sicherheit & Prävention",
+    "propuestas": [
+        {
+            "id": "operativa-seguridad-01",
+            "codigo": "operativa-seguridad-01",
+            "titulo": "Öffnung & Schließung",
+            "descripcion": "**Tägliche Prüfliste bei Ladenöffnung und Feierabend** für Tore, Hof und Alarmanlage mit Fotobestätigung an die Inhaber.",
+            "descripcionLarga": "Gibt den Eigentümern die Gewissheit, dass das Gebäude nachts 100% gesichert ist, ohne persönlich anwesend sein zu müssen. **Der Schließende absolviert einen 2-Minuten-Rundgang**: Kassenbestand im Tresor, Materialhof abgeschlossen, Maschinen gesichert und Alarm scharf.",
+            "ejemplo": "Um 19:45 Uhr füllt der Schließende die Checkliste aus und **fotografiert das grüne Bedienfeld der Alarmanlage sowie das Hoftor**. Die Partner in Palma **erhalten sofort die Bestätigung, dass die Filiale sicher verschlossen ist**.",
+            "viabilidad": "Ja, durch sichere entkoppelte Exporte und standardisierte Dokumentenverarbeitung.",
+            "dificultad": "Niedrig",
+            "riesgo": "Niedrig",
+            "beneficio": "Mittel",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 Tage",
+            "stack": "entkoppelte Analyse",
+            "softwareRecomendado": [
+                "WhatsApp Business",
+                "Google Forms",
+                "Google Drive"
+            ],
+            "softwareOpcional": [
+                "Telegram",
+                "AppSheet"
+            ],
+            "estado": "propuesta",
+            "area_id": "operativa",
+            "cat_id": "13",
+            "pasos": [
+                "**Schließ-Checkliste:** 4-Punkte-Prüfung: Bargeld im Safe, Hoftor verriegelt, Mietgeräte weggeschlossen, Alarm scharf.",
+                "**Fotopflicht:** Beifügen von Fotos des scharf geschalteten Alarms und der verriegelten Haupttür beim Absenden.",
+                "**Benachrichtigung:** Kurze Benachrichtigung auf das Smartphone der Geschäftsleitung mit Uhrzeit und Name des Mitarbeiters.",
+                "**Zutrittsprotokoll:** Erfassung von Öffnungen außerhalb der Geschäftszeiten zur Nachvollziehbarkeit außergewöhnlicher Zugänge."
+            ]
+        },
+        {
+            "id": "operativa-seguridad-02",
+            "codigo": "operativa-seguridad-02",
+            "titulo": "Differenzen-Auditor",
+            "descripcion": "**Nachvollziehbarkeit von Kassendifferenzen**, die erkennt, ob Abweichungen an einer Kasse oder beim Schichtwechsel entstehen.",
+            "descripcionLarga": "Vermeidet Spannungen und Misstrauen im Team bei Kassenfehlbeträgen. **Erfasst das Kassenergebnis bei jedem Schichtwechsel individuell**. Treten wiederholt Differenzen auf, wird das Muster (Uhrzeit, Kasse oder Schicht) objektiv analysiert.",
+            "ejemplo": "Über zwei Wochen fallen samstagmorgens **wiederkehrende Differenzen von 10-20 € in bar auf**. Die Analyse zeigt, dass **die Differenz auf einen Zählfehler beim Wechselgeld zurückzuführen ist**, nicht auf Entwendung.",
+            "viabilidad": "Ja, durch sichere entkoppelte Exporte und standardisierte Dokumentenverarbeitung.",
+            "dificultad": "Niedrig",
+            "riesgo": "Niedrig",
+            "beneficio": "Hoch",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 Tage",
+            "stack": "entkoppelte Analyse",
+            "softwareRecomendado": [
+                "Google Antigravity",
+                "Sicherer ERP/Kasse Datenabzug (CSV/Excel)",
+                "Microsoft Excel"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "Google Sheets"
+            ],
+            "estado": "propuesta",
+            "area_id": "operativa",
+            "cat_id": "13",
+            "pasos": [
+                "**Schicht-Zählung:** Verbindlicher Blindabschluss jedes Mal, wenn ein Kassierer die Kasse an einen Kollegen übergibt.",
+                "**Benutzer-Zuordnung:** Protokollierung aller Kassiervorgänge und Rabatte zum angemeldeten Benutzer am Terminal.",
+                "**Abweichungs-Alarm:** Benachrichtigung der Leitung nur dann, wenn dieselbe Kasse an drei Tagen hintereinander abweicht.",
+                "**Klärendes Gespräch:** Sachliche Besprechung von Abweichungen mit dem Personal zur Behebung von Rechenfehlern."
+            ]
+        },
+        {
+            "id": "operativa-seguridad-03",
+            "codigo": "operativa-seguridad-03",
+            "titulo": "Schwund-Kontrolle",
+            "descripcion": "**Tägliche Zählung von 5 hochpreisigen Artikeln**, um Diebstahl und Schwund ohne Komplettinventur sofort zu erkennen.",
+            "descripcionLarga": "Im Eisenwarenhandel schmälert der Diebstahl kleiner, hochpreisiger Artikel (Diamantscheiben, Bohrer, Schlösser) unbemerkt die Marge bis zur Jahresinventur. **Das Tool wählt täglich 5 Zufallsartikel aus, die der Leiter in 3 Minuten nachzählt**.",
+            "ejemplo": "Am Mittwoch fordert das System auf, die Sicherheits-Vorhängeschlösser in der Vitrine zu zählen. **Sollbestand ist 12, gezählt werden 9**. Die Differenz fällt in der Woche auf, in der sie passierte, **sodass Kassenbons oder Vitrinenschlösser sofort geprüft werden**.",
+            "viabilidad": "Ja, durch sichere entkoppelte Exporte und standardisierte Dokumentenverarbeitung.",
+            "dificultad": "Niedrig",
+            "riesgo": "Niedrig",
+            "beneficio": "Hoch",
+            "acceso": "lectura",
+            "fase": "Phase 1 30 Tage",
+            "stack": "entkoppelte Analyse",
+            "softwareRecomendado": [
+                "Google Antigravity",
+                "Sicherer ERP/Kasse Datenabzug (CSV/Excel)",
+                "Microsoft Excel"
+            ],
+            "softwareOpcional": [
+                "Claude Code",
+                "OpenCode Desktop",
+                "WhatsApp Business"
+            ],
+            "estado": "propuesta",
+            "area_id": "operativa",
+            "cat_id": "13",
+            "pasos": [
+                "**Risikoartikel-Auswahl:** Festlegung der 100 diebstahlgefährdetsten Artikel nach Warenwert und Handlichkeit.",
+                "**Täglicher Zufallsbericht:** Jeden Morgen Übermittlung von 5 Artikeln an das Terminal des Filialleiters zur Zählung.",
+                "**3-Minuten-Erfassung:** Direkteingabe des tatsächlichen Bestands im System zum Soll-Ist-Abgleich.",
+                "**Sicherungsmaßnahmen:** Einsortierung in Schauvitrinen oder Anbringung von Warensicherungen bei wiederkehrendem Schwund."
+            ]
+        }
+    ]
 };

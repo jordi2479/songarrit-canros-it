@@ -79,12 +79,6 @@ export function Navbar() {
 
         {/* Right actions (ALWAYS visible on all screens) */}
         <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-          <Link
-            href="/catalogo"
-            className="px-3.5 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold rounded-full transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40"
-          >
-            {t("catalogo")}
-          </Link>
           <LanguageSwitcher />
         </div>
       </div>

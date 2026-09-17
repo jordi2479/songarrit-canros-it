@@ -1,2 +1,2 @@
 export * from './types';
-export { catalogoCategorias as catalogoCategoriasDe } from './es';
+export { catalogoCategoriasDe } from './de';
