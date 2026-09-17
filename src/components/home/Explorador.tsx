@@ -41,34 +41,38 @@ export function Explorador() {
     return catalogoCategorias;
   }, [locale]);
 
-  const [hoveredLocal, setHoveredLocal] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+
+  const activeId = hoveredId || selectedId;
 
   const adminAreas = areas.filter(a => a.area === 'administracion');
   const clientesAreas = areas.filter(a => a.area === 'clientes');
   const operativaAreas = areas.filter(a => a.area === 'operativa');
   const globalAreas = areas.filter(a => a.area === 'global');
 
-  // Si pasamos el ratón por una global, mostramos qué locales la alimentan
+  // Si pasamos el ratón o seleccionamos una global, mostramos qué locales la alimentan
   const getActiveGlobals = () => {
-    if (!hoveredLocal) return [];
-    // Si estamos haciendo hover sobre un global, es él mismo
-    if (globalAreas.find(a => a.id === hoveredLocal)) return [hoveredLocal];
-    return sinapsis[hoveredLocal] || globalAreas.map(a => a.id); // si no hay mapeo, brilla todo
+    if (!activeId) return [];
+    if (globalAreas.find(a => a.id === activeId)) return [activeId];
+    return sinapsis[activeId] || globalAreas.map(a => a.id);
   };
 
   const getActiveLocals = () => {
-    if (!hoveredLocal) return [];
-    // Si hacemos hover sobre local, es él mismo
-    if (!globalAreas.find(a => a.id === hoveredLocal)) return [hoveredLocal];
-    // Si hacemos hover sobre global, buscamos los locales que lo apuntan
+    if (!activeId) return [];
+    if (!globalAreas.find(a => a.id === activeId)) return [activeId];
     return Object.entries(sinapsis)
-      .filter(([localId, globalIds]) => globalIds.includes(hoveredLocal))
+      .filter(([localId, globalIds]) => globalIds.includes(activeId))
       .map(([localId]) => localId);
   };
 
   const activeGlobals = getActiveGlobals();
   const activeLocals = getActiveLocals();
-  const isHovering = hoveredLocal !== null;
+  const isInteracting = activeId !== null;
+
+  const toggleSelect = (id: string) => {
+    setSelectedId(prev => (prev === id ? null : id));
+  };
 
   return (
     <div className="w-full relative max-w-7xl mx-auto py-6 md:py-10 px-3 sm:px-4">
@@ -78,9 +82,9 @@ export function Explorador() {
         <div className="w-full md:w-[45%] flex flex-col justify-center relative z-10">
           <div className="relative">
             {/* Efecto de aura centralizado cuando interactúas */}
-            <div className={`absolute inset-0 bg-indigo-500/5 blur-[100px] rounded-full transition-opacity duration-700 pointer-events-none ${isHovering ? 'opacity-100' : 'opacity-0'}`} />
+            <div className={`absolute inset-0 bg-indigo-500/5 blur-[100px] rounded-full transition-opacity duration-700 pointer-events-none ${isInteracting ? 'opacity-100' : 'opacity-0'}`} />
             
-            <div className={`p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 transition-all duration-500 ${isHovering ? 'border-indigo-500/40 bg-slate-900/80 shadow-2xl shadow-indigo-500/10' : 'border-slate-800 bg-slate-900/50'}`}>
+            <div className={`p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 transition-all duration-500 ${isInteracting ? 'border-indigo-500/40 bg-slate-900/80 shadow-2xl shadow-indigo-500/10' : 'border-slate-800 bg-slate-900/50'}`}>
               <div className="flex items-center gap-3 mb-4 md:mb-8 pb-3 md:pb-4 border-b border-slate-800">
                 <Building2 className="w-6 h-6 md:w-8 md:h-8 text-indigo-400" />
                 <div>
@@ -92,22 +96,23 @@ export function Explorador() {
               <div className="grid grid-cols-1 gap-2.5 md:gap-3">
                 {globalAreas.map((area) => {
                   const isActive = activeGlobals.includes(area.id);
-                  const isDimmed = isHovering && !isActive;
+                  const isDimmed = isInteracting && !isActive;
+                  const isPinned = selectedId === area.id;
 
                   return (
                     <button 
                       key={area.id}
                       type="button"
-                      onClick={() => setHoveredLocal(hoveredLocal === area.id ? null : area.id)}
-                      onMouseEnter={() => setHoveredLocal(area.id)}
-                      onMouseLeave={() => setHoveredLocal(null)}
+                      onClick={() => toggleSelect(area.id)}
+                      onMouseEnter={() => setHoveredId(area.id)}
+                      onMouseLeave={() => setHoveredId(null)}
                       className={`w-full text-left block p-3 md:p-4 rounded-xl border transition-all duration-300 relative overflow-hidden group cursor-pointer ${
                         isActive 
                           ? 'bg-indigo-500/20 border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.3)] scale-[1.02] z-10' 
                           : isDimmed
                             ? 'bg-slate-900 border-slate-800 opacity-40 grayscale'
                             : 'bg-slate-950/80 border-slate-800 hover:border-slate-700'
-                      }`}
+                      } ${isPinned ? 'ring-2 ring-indigo-400 ring-offset-2 ring-offset-slate-900' : ''}`}
                     >
                       {isActive && (
                         <motion.div layoutId="glowGlobal" className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0" />
@@ -144,14 +149,14 @@ export function Explorador() {
           
           <motion.div 
             animate={{ 
-              scale: isHovering ? 1.2 : 1, 
-              opacity: isHovering ? 1 : 0.3,
-              boxShadow: isHovering ? "0 0 40px rgba(59,130,246,0.5)" : "0 0 0px rgba(59,130,246,0)"
+              scale: isInteracting ? 1.2 : 1, 
+              opacity: isInteracting ? 1 : 0.3,
+              boxShadow: isInteracting ? "0 0 40px rgba(59,130,246,0.5)" : "0 0 0px rgba(59,130,246,0)"
             }}
             className="w-12 h-12 bg-slate-900 border-2 border-blue-500/50 rounded-full flex items-center justify-center z-10 relative overflow-hidden"
           >
             <motion.div 
-              animate={{ x: isHovering ? [ 20, -20 ] : 0, opacity: isHovering ? [0, 1, 0] : 0.5 }}
+              animate={{ x: isInteracting ? [ 20, -20 ] : 0, opacity: isInteracting ? [0, 1, 0] : 0.5 }}
               transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
               className="absolute inset-0 flex items-center justify-center"
             >
@@ -159,7 +164,7 @@ export function Explorador() {
                 <path d="m15 18-6-6 6-6"/>
               </svg>
             </motion.div>
-            {!isHovering && (
+            {!isInteracting && (
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400/50">
                 <path d="m15 18-6-6 6-6"/>
               </svg>
@@ -174,30 +179,36 @@ export function Explorador() {
             icon={Store} 
             areaId="administracion" 
             areas={adminAreas} 
-            hoveredLocal={hoveredLocal}
-            setHovered={setHoveredLocal}
+            selectedId={selectedId}
+            onToggleSelect={toggleSelect}
+            hoveredId={hoveredId}
+            setHovered={setHoveredId}
             activeLocals={activeLocals}
-            isHovering={isHovering}
+            isInteracting={isInteracting}
           />
           <LocalBlock 
             title={t("clientes")} 
             icon={Users} 
             areaId="clientes" 
             areas={clientesAreas} 
-            hoveredLocal={hoveredLocal}
-            setHovered={setHoveredLocal}
+            selectedId={selectedId}
+            onToggleSelect={toggleSelect}
+            hoveredId={hoveredId}
+            setHovered={setHoveredId}
             activeLocals={activeLocals}
-            isHovering={isHovering}
+            isInteracting={isInteracting}
           />
           <LocalBlock 
             title={t("operativa")} 
             icon={Settings} 
             areaId="operativa" 
             areas={operativaAreas} 
-            hoveredLocal={hoveredLocal}
-            setHovered={setHoveredLocal}
+            selectedId={selectedId}
+            onToggleSelect={toggleSelect}
+            hoveredId={hoveredId}
+            setHovered={setHoveredId}
             activeLocals={activeLocals}
-            isHovering={isHovering}
+            isInteracting={isInteracting}
           />
         </div>
 
@@ -207,12 +218,22 @@ export function Explorador() {
 }
 
 // Subcomponente para los bloques locales
-function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered, activeLocals, isHovering }: any) {
+function LocalBlock({ 
+  title, 
+  icon: Icon, 
+  areaId, 
+  areas, 
+  selectedId, 
+  onToggleSelect, 
+  setHovered, 
+  activeLocals, 
+  isInteracting 
+}: any) {
   const theme = AREA_THEMES[areaId as AreaId]?.dark;
   const iconColor = theme?.baseText || 'text-slate-400';
 
   return (
-    <div className={`p-4 sm:p-5 md:p-6 rounded-2xl md:rounded-3xl border transition-all duration-500 bg-slate-900/50 ${isHovering ? 'border-slate-800' : 'border-slate-800'}`}>
+    <div className={`p-4 sm:p-5 md:p-6 rounded-2xl md:rounded-3xl border transition-all duration-500 bg-slate-900/50 ${isInteracting ? 'border-slate-800' : 'border-slate-800'}`}>
       <div className="flex items-center gap-2 mb-3 md:mb-4">
         <Icon className={`w-4 h-4 md:w-5 md:h-5 ${iconColor}`} />
         <h3 className="font-bold text-slate-300 uppercase tracking-wider text-xs md:text-sm">{title}</h3>
@@ -221,13 +242,14 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         {areas.map((area: any) => {
           const isActive = activeLocals.includes(area.id);
-          const isDimmed = isHovering && !isActive;
+          const isDimmed = isInteracting && !isActive;
+          const isPinned = selectedId === area.id;
 
           return (
             <button 
               key={area.id}
               type="button"
-              onClick={() => setHovered(hoveredLocal === area.id ? null : area.id)}
+              onClick={() => onToggleSelect(area.id)}
               onMouseEnter={() => setHovered(area.id)}
               onMouseLeave={() => setHovered(null)}
               className={`w-full text-left p-2.5 sm:p-3 rounded-lg border transition-all duration-300 cursor-pointer flex justify-between items-center group ${
@@ -236,7 +258,7 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
                   : isDimmed
                     ? 'bg-slate-900 border-slate-800/50 opacity-30 grayscale'
                     : 'bg-slate-950 border-slate-800 hover:border-slate-700'
-              }`}
+              } ${isPinned ? 'ring-2 ring-blue-400 ring-offset-2 ring-offset-slate-900' : ''}`}
             >
               <div>
                 <h4 className={`text-xs font-bold leading-tight ${isActive ? 'text-white' : 'text-slate-300'}`}>
