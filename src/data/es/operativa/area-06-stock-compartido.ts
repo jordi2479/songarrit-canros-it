@@ -8,12 +8,12 @@ export const categoriaAREA06: Categoria = {
         {
             "id": "operativa-stock-01",
             "codigo": "operativa-stock-01",
-            "titulo": "Visor de existencias en tiempo real entre Palma y Campos",
-            "descripcion": "Consulta ágil desde el mostrador de Campos para saber si un artículo agotado está disponible en el almacén de Palma antes de perder la venta.",
-            "descripcionLarga": "Elimina las llamadas telefónicas entre mostradores para consultar stock. Cuando un instalador o particular solicita una herramienta o pieza que no está en la balda de Campos, el empleado introduce el código o nombre y ve al instante si hay existencias en Son Garrit Palma, con cuántas unidades y si están reservadas.",
-            "ejemplo": "Un cliente en Campos necesita con urgencia una bomba sumergible de 1,5 CV de 420 € que está agotada en tienda. El dependiente consulta el visor en la pantalla del TPV, comprueba que Palma tiene 2 unidades en almacén y confirma la venta ofreciéndosela para la mañana siguiente.",
-            "viabilidad": "Sí mediante exportación o sincronización de lectura de existencias diarias entre ambos almacenes. No escribe ni altera el inventario real.",
-            "veredicto": "Sí mediante exportación o sincronización de lectura de existencias diarias entre ambos almacenes. No escribe ni altera el inventario real.",
+            "titulo": "Visor de existencias cruzadas sobre réplica desacoplada",
+            "descripcion": "Consulta ágil de stock entre Palma y Campos sobre una copia sincronizada periódicamente, sin tocar ni ralentizar las bases de datos de cobro de las tiendas.",
+            "descripcionLarga": "Permite consultar el catálogo y existencias de la otra tienda a través de una copia desacoplada (réplica de solo lectura o volcado periódico en la nube). Si la conexión a internet o el visor fallan, los TPVs de Palma y Campos siguen cobrando con total normalidad y sin ninguna dependencia técnica.",
+            "ejemplo": "Un cliente en Campos necesita una bomba sumergible de 1,5 CV de 420 € agotada en balda. El dependiente consulta el visor en una pestaña del navegador (que lee la copia de stock), comprueba que en el almacén de Palma hay 2 unidades y confirma la venta ofreciéndosela para la mañana siguiente.",
+            "viabilidad": "Sí mediante volcado programado periódico (ej. al cierre o cada 3 horas) a una base de datos externa de consulta. Las cajas de las tiendas nunca reciben peticiones externas ni sufren bloqueos.",
+            "veredicto": "Sí mediante volcado programado periódico (ej. al cierre o cada 3 horas) a una base de datos externa de consulta. Las cajas de las tiendas nunca reciben peticiones externas ni sufren bloqueos.",
             "facilidad": "Medio",
             "riesgo": "Bajo",
             "beneficio": "Alto",
@@ -24,21 +24,21 @@ export const categoriaAREA06: Categoria = {
             "area_id": "operativa",
             "cat_id": "stock",
             "pasos": [
-                "Habilitar una vista de consulta web interna ligera o acceso remoto seguro entre las bases de datos de ambos TPVs.",
-                "Crear una interfaz de búsqueda ultrarrápida por código de barras, referencia de fabricante o descripción parcial.",
-                "Probar el sistema en mostradores con tiempos de respuesta inferiores a 3 segundos durante la atención al cliente.",
-                "Instruir a los dependientes para consultar siempre el stock del grupo antes de decir \"no nos queda\"."
+                "Configurar la exportación periódica programada de stock a un repositorio o base de datos externa de consulta.",
+                "Montar una interfaz de búsqueda web ligera y rápida para el personal de mostrador.",
+                "Comprobar que una caída del visor o de la red externa no afecta en nada a la operativa de cobro del TPV local.",
+                "Instruir al equipo para consultar la copia cruzada antes de comunicar una falta al cliente."
             ]
         },
         {
             "id": "operativa-stock-02",
             "codigo": "operativa-stock-02",
             "titulo": "Gestor de reservas cruzadas para la ruta de reparto interna",
-            "descripcion": "Sistema de apartado que bloquea material en una tienda para subirlo a la furgoneta de la ruta matinal hacia la otra tienda.",
-            "descripcionLarga": "Evita que el material comprometido para una tienda se venda en el mostrador de la otra antes de que el repartidor lo cargue. Cuando Campos confirma una venta con stock de Palma, el sistema genera una etiqueta de reserva con el nombre del cliente y fecha de entrega para que el mozo lo aparte en la zona de expedición.",
-            "ejemplo": "A las 17:00 Campos reserva 3 rollos de malla electrofundida de Palma. En Son Garrit se imprime una orden en almacén con aviso visual: \"Reservado para Ca'n Ros Campos — Ruta mañana 9h\". Al día siguiente a primera hora el cliente retira su pedido en Campos.",
-            "viabilidad": "Sí mediante hoja o sistema ligero de reservas compartidas. Con apoyo puntual para coordinar aviso a almacén sin tocar el ERP principal.",
-            "veredicto": "Sí mediante hoja o sistema ligero de reservas compartidas. Con apoyo puntual para coordinar aviso a almacén sin tocar el ERP principal.",
+            "descripcion": "Sistema ligero de apartado que registra reservas entre tiendas en un panel independiente sin alterar el inventario en caliente del ERP.",
+            "descripcionLarga": "Evita que el material comprometido para una tienda se venda en el mostrador de la otra antes de que el repartidor lo cargue. Funciona como un tablero digital independiente: cuando Campos anota una reserva con stock de Palma, se imprime una orden física de apartado para el mozo de almacén sin bloquear transacciones de venta en el TPV.",
+            "ejemplo": "A las 17:00 Campos anota la reserva de 3 rollos de malla electrofundida de Palma en el panel web. En el almacén de Son Garrit se imprime la etiqueta: \"Reservado Ca'n Ros Campos — Ruta 9h\". Al día siguiente el cliente recoge su material sin errores.",
+            "viabilidad": "Sí mediante panel web desacoplado. No requiere modificar las tablas del ERP central; el ajuste de stock se asienta como un traspaso habitual confirmado.",
+            "veredicto": "Sí mediante panel web desacoplado. No requiere modificar las tablas del ERP central; el ajuste de stock se asienta como un traspaso habitual confirmado.",
             "facilidad": "Medio",
             "riesgo": "Bajo",
             "beneficio": "Alto",
@@ -49,10 +49,10 @@ export const categoriaAREA06: Categoria = {
             "area_id": "operativa",
             "cat_id": "stock",
             "pasos": [
-                "Establecer el protocolo documental: albarán interno de traspaso entre centros con código de origen y destino.",
-                "Fijar las frecuencias y puntos de encuentro de la furgoneta de enlace entre Palma y Campos (ej. martes y jueves).",
-                "Etiquetar los bultos reservados con el nombre del cliente final para su entrega inmediata al llegar.",
-                "Integrar el ajuste de existencias en el inventario de origen y destino mediante confirmación por código QR."
+                "Crear un tablero web sencillo de reservas accesible desde el navegador de mostrador.",
+                "Definir la rutina de almacén: impresión automática o manual de la etiqueta de apartado para la furgoneta.",
+                "Fijar las frecuencias de salida de la ruta entre Palma y Campos (ej. martes y jueves a primera hora).",
+                "Registrar el traspaso formal en el TPV de destino únicamente cuando la mercancía ha sido descargada físicamente."
             ]
         },
         {

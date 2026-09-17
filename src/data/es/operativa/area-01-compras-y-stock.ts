@@ -12,8 +12,8 @@ export const categoriaAREA01: Categoria = {
             "descripcion": "Borrador automático de pedido semanal que calcula cantidades óptimas según ventas recientes y stock mínimo, evitando roturas sin sobrecargar almacén.",
             "descripcionLarga": "Calcula semanalmente la propuesta de compra para proveedores habituales cruzando la rotación de los últimos 30 a 90 días con las existencias reales. Elimina el tiempo que el encargado dedica a revisar estanterías con libreta y evita pedidos de memoria. El responsable de tienda revisa la lista en 10 minutos, ajusta si lo considera y valida el pedido con un solo clic.",
             "ejemplo": "Cada lunes a las 8:30 el encargado de compras recibe una propuesta con 18 referencias necesarias (cemento, discos de corte, tacos del 6). Se marcan en rojo dos referencias con riesgo inminente de rotura y se propone la cantidad exacta para cubrir dos semanas sin sobredimensionar el almacén.",
-            "viabilidad": "Sí con la exportación semanal de ventas y stock actual desde el TPV/ERP. No requiere conexión directa de escritura; el sistema entrega el borrador ordenado para confirmación humana.",
-            "veredicto": "Sí con la exportación semanal de ventas y stock actual desde el TPV/ERP. No requiere conexión directa de escritura; el sistema entrega el borrador ordenado para confirmación humana.",
+            "viabilidad": "Sí mediante copia exportada semanal de ventas y stock actual desde el TPV/ERP. No requiere conexión directa de escritura; el sistema entrega el borrador ordenado para confirmación humana.",
+            "veredicto": "Sí mediante copia exportada semanal de ventas y stock actual desde el TPV/ERP. No requiere conexión directa de escritura; el sistema entrega el borrador ordenado para confirmación humana.",
             "facilidad": "Medio",
             "riesgo": "Bajo",
             "beneficio": "Alto",
@@ -33,12 +33,12 @@ export const categoriaAREA01: Categoria = {
         {
             "id": "operativa-compras-02",
             "codigo": "operativa-compras-02",
-            "titulo": "Alerta de rotura crítica y aviso instantáneo en mostrador",
-            "descripcion": "Notificación inmediata cuando un producto de alta rotación llega a cero existencias, activando la búsqueda de sustitutos o reposición urgente.",
-            "descripcionLarga": "Detecta en el mismo momento del cobro si una referencia clave (tipo A de ventas) se queda sin stock en estantería. Envía un aviso discreto al equipo de mostrador indicando si queda mercancía en el altillo, en la otra tienda del grupo o sugiriendo la referencia sustituta equivalente para no perder la venta del profesional.",
-            "ejemplo": "Al cobrar en caja la última bolsa de anclaje químico de 300ml, salta una alerta en pantalla: stock agotado en mostrador. Informa al empleado de que en Ca'n Ros Campos quedan 8 botes en trastienda y sugiere al cliente la marca equivalente disponible en estantería.",
-            "viabilidad": "Sí a partir del fichero diario de movimientos de stock. Sin integración profunda al inicio; opera mediante alertas programadas de umbral mínimo.",
-            "veredicto": "Sí a partir del fichero diario de movimientos de stock. Sin integración profunda al inicio; opera mediante alertas programadas de umbral mínimo.",
+            "titulo": "Informe matinal de roturas críticas sobre volcado de cierre",
+            "descripcion": "Detección matinal de referencias de alta rotación agotadas a partir de la copia del cierre diario, activando reposición antes de abrir la tienda.",
+            "descripcionLarga": "Trabaja sobre la copia exportada del cierre diario del TPV, sin tocar las cajas ni los sistemas en caliente. Analiza a primera hora las referencias clave (tipo A de ventas) que han quedado a cero existencias y entrega al encargado una lista limpia de reposición o alternativas disponibles en la otra tienda antes de que entren los primeros clientes.",
+            "ejemplo": "A las 7:30 de la mañana, el encargado abre el informe generado desde la copia de ventas del día anterior: detecta que se agotó el anclaje químico de 300ml en Palma, pero en Ca'n Ros Campos quedan 8 botes en el volcado de almacén. Se coordina el traspaso antes de levantar la persiana.",
+            "viabilidad": "Sí mediante lectura de la exportación del cierre diario de ventas. Cero riesgo para las cajas: la herramienta opera de forma 100% desacoplada del sistema de cobro en tienda.",
+            "veredicto": "Sí mediante lectura de la exportación del cierre diario de ventas. Cero riesgo para las cajas: la herramienta opera de forma 100% desacoplada del sistema de cobro en tienda.",
             "facilidad": "Alto",
             "riesgo": "Bajo",
             "beneficio": "Alto",
@@ -49,10 +49,10 @@ export const categoriaAREA01: Categoria = {
             "area_id": "operativa",
             "cat_id": "compras",
             "pasos": [
-                "Filtrar en el sistema las 50 referencias de Categoría A (más vendidas y de mayor margen bruto).",
-                "Activar una regla automática diaria que detecte existencias iguales o inferiores al stock de seguridad.",
-                "Elaborar la tabla de equivalencias técnicas directas (marcas sustitutas homologadas).",
-                "Publicar el canal de aviso ágil para mostrador que alerte del agotamiento y señale alternativas en la otra tienda."
+                "Configurar la exportación automática o manual del fichero de ventas/cierre al finalizar la jornada.",
+                "Procesar la copia de datos fuera del horario comercial para identificar referencias con stock cero.",
+                "Generar el informe matinal con sustitutos homologados y existencias en la tienda vecina.",
+                "Validación en 5 minutos por el encargado de almacén antes de la apertura de persiana."
             ]
         },
         {

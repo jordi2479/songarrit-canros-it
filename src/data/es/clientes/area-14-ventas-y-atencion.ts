@@ -33,12 +33,12 @@ export const categoriaAREA14: Categoria = {
         {
             "id": "clientes-ventas-02",
             "codigo": "clientes-ventas-02",
-            "titulo": "Generador exprés de presupuestos para profesionales de obra",
-            "descripcion": "Herramienta ágil para redactar presupuestos de materiales en PDF en 3 minutos y enviarlos al WhatsApp del contratista en el acto.",
-            "descripcionLarga": "Acaba con la fuga de ventas que se produce cuando un profesional pide precio de una lista de 15 materiales y se le dice \"déjame el teléfono y te lo preparo luego\". El dependiente introduce las referencias y cantidades en una plantilla ágil y el sistema genera el presupuesto en PDF con PVP profesional y validez de 15 días listo para enviar.",
-            "ejemplo": "Un fontanero pide precio para instalar 80 metros de tubo multicapa, codos y llaves de paso. El dependiente genera el presupuesto oficial en 2 minutos desde el terminal y se lo envía al WhatsApp antes de que el profesional salga por la puerta.",
-            "viabilidad": "Sí mediante plantilla ágil conectada a la lista de precios y referencias vigentes.",
-            "veredicto": "Sí mediante plantilla ágil conectada a la lista de precios y referencias vigentes.",
+            "titulo": "Tarifa profesional unificada y condiciones especiales por gremio",
+            "descripcion": "Estructuración homogénea de descuentos para profesionales sobre catálogo exportado, evitando errores manuales en el mostrador.",
+            "descripcionLarga": "Define reglas claras de margen y descuentos por gremio (fontanería, electricidad, construcción). Se trabaja y simula sobre una copia de tarifas exportada para verificar el margen resultante antes de validar el fichero final para su carga en las cajas.",
+            "ejemplo": "Un autónomo de reformas compra habitualmente tubería y grifería. El sistema aplica automáticamente su tramo de tarifa profesional pactado (margen garantizado del 28%), evitando que el dependiente tenga que calcular descuentos de cabeza o pedir autorización verbal.",
+            "viabilidad": "Sí mediante elaboración de tabla de tarifas validada sobre copia Excel/CSV antes de cargar el fichero maestro en el TPV.",
+            "veredicto": "Sí mediante elaboración de tabla de tarifas validada sobre copia Excel/CSV antes de cargar el fichero maestro en el TPV.",
             "facilidad": "Alto",
             "riesgo": "Bajo",
             "beneficio": "Alto",
@@ -49,10 +49,10 @@ export const categoriaAREA14: Categoria = {
             "area_id": "clientes",
             "cat_id": "ventas",
             "pasos": [
-                "Estructurar las 3 tarifas profesionales del grupo vinculadas al volumen de compra o gremio del profesional.",
-                "Cargar las tarifas netas en el TPV para que al teclear el NIF se aplique el precio correcto sin margen de error humano.",
-                "Bloquear descuentos manuales no autorizados en caja que puedan erosionar el margen mínimo fijado.",
-                "Auditar mensualmente las ventas con descuento especial para comprobar que se cumplen las directrices de rentabilidad."
+                "Exportar la lista actual de precios de coste y venta a una copia de trabajo.",
+                "Modelar los 3 tramos de descuento por volumen y gremio garantizando el margen bruto mínimo.",
+                "Validar el fichero resultante con la dirección comercial antes de cualquier actualización.",
+                "Cargar la tarifa definitiva en el TPV fuera de horario comercial mediante el procedimiento oficial de importación."
             ]
         },
         {
