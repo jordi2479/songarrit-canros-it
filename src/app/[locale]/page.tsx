@@ -340,9 +340,13 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
             {tCategorias("title")} <span className="text-blue-400">{tCategorias("highlight")}</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            {tCategorias("desc")}
-          </p>
+          <div className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            {tCategorias.rich("desc", {
+              bold: (chunks) => <strong className="text-white font-semibold">{chunks}</strong>,
+              highlight: (chunks) => <span className="text-blue-400 font-semibold">{chunks}</span>,
+              p: (chunks) => <p>{chunks}</p>
+            })}
+          </div>
         </div>
         
         <Explorador />

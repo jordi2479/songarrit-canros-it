@@ -32,29 +32,59 @@ export function ModeloImplantacion() {
           {
             id: "H1",
             title: "Fonaments i Cultura",
-            goal: "Preparar el terreny operatiu i mental.",
-            shortGoal: "Identitat unificada i capacitació bàsica sense fricció.",
-            marca: "Unificació d'identitat i auditoria de percepció.",
-            ia: "Capacitació bàsica de l'equip i estructuració de dades.",
-            trigger: "L'equip assimila la identitat i perd la por tecnològica."
+            goal: (
+              <>Preparar el <strong className="text-white font-semibold">terreny operatiu i mental</strong> per a la digitalització.</>
+            ),
+            shortGoal: (
+              <>Identitat <strong className="text-white font-semibold">unificada</strong> i capacitació sense fricció.</>
+            ),
+            marca: (
+              <>Unificació d'<strong className="text-white font-semibold">identitat de Grup</strong> i auditoria de percepció.</>
+            ),
+            ia: (
+              <>Capacitació de l'equip i <strong className="text-white font-semibold">estructuració de dades</strong>.</>
+            ),
+            trigger: (
+              <>L'equip <strong className="text-amber-400 font-semibold">assimila la identitat</strong> i perd la por tecnològica.</>
+            )
           },
           {
             id: "H2",
             title: "Desplegament sota Demanda",
-            goal: "Injeccions d'eficiència sense aturar la botiga.",
-            shortGoal: "Eines modulars directes al taulell.",
-            marca: "Llançament de campanyes i fidelització PRO unificada.",
-            ia: "Implementació de solucions del catàleg segons colls d'ampolla.",
-            trigger: "Les eines inicials flueixen soles i generen estalvi real."
+            goal: (
+              <>Injeccions d'<strong className="text-white font-semibold">eficiència directa</strong> sense aturar la botiga.</>
+            ),
+            shortGoal: (
+              <>Eines <strong className="text-white font-semibold">modulars</strong> directes al taulell.</>
+            ),
+            marca: (
+              <>Llançament de campanyes i <strong className="text-white font-semibold">fidelització PRO unificada</strong>.</>
+            ),
+            ia: (
+              <>Implementació de solucions segons <strong className="text-white font-semibold">colls d'ampolla</strong>.</>
+            ),
+            trigger: (
+              <>Les eines <strong className="text-amber-400 font-semibold">flueixen soles</strong> i generen estalvi real.</>
+            )
           },
           {
             id: "H3",
             title: "Sinergia Global",
-            goal: "Escalabilitat de Grup (Son Garrit + Ca'n Ros).",
-            shortGoal: "Compres centralitzades i estoc compartit entre botigues.",
-            marca: "Posicionament dominant el mercat local com a Grup.",
-            ia: "Automatització creuada (compres centralitzades, estoc compartit).",
-            trigger: "Visió completa i unificada assolida."
+            goal: (
+              <>Escalabilitat total de Grup <strong className="text-white font-semibold">(Son Garrit + Ca'n Ros)</strong>.</>
+            ),
+            shortGoal: (
+              <><strong className="text-white font-semibold">Compres centralitzades</strong> i estoc compartit.</>
+            ),
+            marca: (
+              <>Posicionament dominant el mercat local com a <strong className="text-white font-semibold">Grup</strong>.</>
+            ),
+            ia: (
+              <>Automatització creuada (<strong className="text-white font-semibold">compres i estoc compartit</strong>).</>
+            ),
+            trigger: (
+              <><strong className="text-amber-400 font-semibold">Visió 360° unificada</strong> assolida.</>
+            )
           }
         ]
       };
@@ -79,29 +109,59 @@ export function ModeloImplantacion() {
           {
             id: "H1",
             title: "Foundations & Culture",
-            goal: "Preparing operational and cultural grounds.",
-            shortGoal: "Unified identity and frictionless basic training.",
-            marca: "Identity unification and perception audit.",
-            ia: "Basic team training and data structuring.",
-            trigger: "Team embraces identity and gains confidence in technology."
+            goal: (
+              <>Preparing <strong className="text-white font-semibold">operational & mental ground</strong> for digital adoption.</>
+            ),
+            shortGoal: (
+              <><strong className="text-white font-semibold">Unified identity</strong> and frictionless basic training.</>
+            ),
+            marca: (
+              <>Unification of <strong className="text-white font-semibold">Group identity</strong> and perception audit.</>
+            ),
+            ia: (
+              <>Team enablement and <strong className="text-white font-semibold">data structuring</strong>.</>
+            ),
+            trigger: (
+              <>Team <strong className="text-amber-400 font-semibold">embraces identity</strong> and gains tech confidence.</>
+            )
           },
           {
             id: "H2",
             title: "On-Demand Deployment",
-            goal: "Efficiency injections without stopping store flow.",
-            shortGoal: "Modular tools directly serving counter and warehouse.",
-            marca: "Campaign launch and unified PRO customer loyalty.",
-            ia: "Catalog solution implementation targeted at bottlenecks.",
-            trigger: "Initial tools run smoothly and generate tangible savings."
+            goal: (
+              <><strong className="text-white font-semibold">Direct efficiency injections</strong> without interrupting retail flow.</>
+            ),
+            shortGoal: (
+              <><strong className="text-white font-semibold">Modular tools</strong> directly serving the counter.</>
+            ),
+            marca: (
+              <>Campaign rollout and <strong className="text-white font-semibold">unified PRO loyalty</strong>.</>
+            ),
+            ia: (
+              <>Catalog solutions implemented targeting <strong className="text-white font-semibold">key bottlenecks</strong>.</>
+            ),
+            trigger: (
+              <>Initial tools <strong className="text-amber-400 font-semibold">run smoothly</strong> and generate proven savings.</>
+            )
           },
           {
             id: "H3",
             title: "Global Synergy",
-            goal: "Group scalability (Son Garrit + Ca'n Ros).",
-            shortGoal: "Centralized purchasing and shared stock between stores.",
-            marca: "Market leadership positioning as a unified Group.",
-            ia: "Cross-store automation (central purchases, live shared inventory).",
-            trigger: "Full unified Group vision accomplished."
+            goal: (
+              <>Full Group scalability <strong className="text-white font-semibold">(Son Garrit + Ca'n Ros)</strong>.</>
+            ),
+            shortGoal: (
+              <><strong className="text-white font-semibold">Centralized purchasing</strong> & shared inventory.</>
+            ),
+            marca: (
+              <>Dominant market positioning as a united <strong className="text-white font-semibold">Group</strong>.</>
+            ),
+            ia: (
+              <>Cross-store automation (<strong className="text-white font-semibold">central purchases, live inventory</strong>).</>
+            ),
+            trigger: (
+              <><strong className="text-amber-400 font-semibold">Full unified 360° vision</strong> accomplished.</>
+            )
           }
         ]
       };
@@ -126,29 +186,59 @@ export function ModeloImplantacion() {
           {
             id: "H1",
             title: "Fundamente & Kultur",
-            goal: "Operatives und mentales Fundament schaffen.",
-            shortGoal: "Einheitliche Identität und reibungslose Basisschulung.",
-            marca: "Markenvereinheitlichung und Wahrnehmungsaudit.",
-            ia: "Grundlagenschulung des Teams und Datenstrukturierung.",
-            trigger: "Das Team verinnerlicht die Identität und gewinnt IT-Sicherheit."
+            goal: (
+              <><strong className="text-white font-semibold">Operatives und mentales Fundament</strong> für Digitalisierung schaffen.</>
+            ),
+            shortGoal: (
+              <><strong className="text-white font-semibold">Einheitliche Identität</strong> und reibungslose Schulung.</>
+            ),
+            marca: (
+              <>Vereinheitlichung der <strong className="text-white font-semibold">Gruppen-Identität</strong> und Audit.</>
+            ),
+            ia: (
+              <>Grundlagenschulung des Teams und <strong className="text-white font-semibold">Datenstrukturierung</strong>.</>
+            ),
+            trigger: (
+              <>Das Team <strong className="text-amber-400 font-semibold">verinnerlicht die Identität</strong> und gewinnt IT-Sicherheit.</>
+            )
           },
           {
             id: "H2",
             title: "Bedarfsorientierte Bereitstellung",
-            goal: "Effizienzsprünge ohne Unterbrechung des Ladenbetriebs.",
-            shortGoal: "Modulare Werkzeuge direkt für Verkauf und Lager.",
-            marca: "Kampagnenstart und einheitliche PRO-Kundenbindung.",
-            ia: "Implementierung gezielter Kataloglösungen bei Engpässen.",
-            trigger: "Erste Tools laufen reibungslos und sparen messbar Zeit/Kosten."
+            goal: (
+              <><strong className="text-white font-semibold">Direkte Effizienzsprünge</strong> ohne Unterbrechung des Betriebs.</>
+            ),
+            shortGoal: (
+              <><strong className="text-white font-semibold">Modulare Werkzeuge</strong> direkt für Theke & Lager.</>
+            ),
+            marca: (
+              <>Kampagnenstart und <strong className="text-white font-semibold">einheitliche PRO-Kundenbindung</strong>.</>
+            ),
+            ia: (
+              <>Gezielte Kataloglösungen zur Beseitigung von <strong className="text-white font-semibold">Engpässen</strong>.</>
+            ),
+            trigger: (
+              <>Erste Tools <strong className="text-amber-400 font-semibold">laufen reibungslos</strong> und sparen messbar Zeit.</>
+            )
           },
           {
             id: "H3",
             title: "Globale Synergie",
-            goal: "Gruppenskalierbarkeit (Son Garrit + Ca'n Ros).",
-            shortGoal: "Zentraleinkauf und geteilter Bestand zwischen den Filialen.",
-            marca: "Marktbeherrschende Positionierung als vereinte Gruppe.",
-            ia: "Filialübergreifende Automatisierung (Zentrallager, Bestandsabgleich).",
-            trigger: "Vollständige, einheitliche Gruppen-Vision erreicht."
+            goal: (
+              <>Vollständige Gruppenskalierbarkeit <strong className="text-white font-semibold">(Son Garrit + Ca'n Ros)</strong>.</>
+            ),
+            shortGoal: (
+              <><strong className="text-white font-semibold">Zentraleinkauf</strong> und geteilter Bestand.</>
+            ),
+            marca: (
+              <>Marktbeherrschende Positionierung als vereinte <strong className="text-white font-semibold">Gruppe</strong>.</>
+            ),
+            ia: (
+              <>Filialübergreifende Automatisierung (<strong className="text-white font-semibold">Zentrallager, Bestandsabgleich</strong>).</>
+            ),
+            trigger: (
+              <><strong className="text-amber-400 font-semibold">Vollständige 360°-Vision</strong> erfolgreich etabliert.</>
+            )
           }
         ]
       };
@@ -173,29 +263,59 @@ export function ModeloImplantacion() {
         {
           id: "H1",
           title: "Cimientos & Cultura",
-          goal: "Preparar el terreno operativo y mental.",
-          shortGoal: "Identidad unificada y capacitación básica sin fricción.",
-          marca: "Unificación de identidad y auditoría de percepción.",
-          ia: "Capacitación básica del equipo y estructuración de datos.",
-          trigger: "El equipo asimila la identidad y pierde el miedo tecnológico."
+          goal: (
+            <>Preparar el <strong className="text-white font-semibold">terreno operativo y mental</strong> para la digitalización.</>
+          ),
+          shortGoal: (
+            <>Identidad <strong className="text-white font-semibold">unificada</strong> y capacitación sin fricción.</>
+          ),
+          marca: (
+            <>Unificación de <strong className="text-white font-semibold">identidad de Grupo</strong> y auditoría de percepción.</>
+          ),
+          ia: (
+            <>Capacitación del equipo y <strong className="text-white font-semibold">estructuración de datos</strong>.</>
+          ),
+          trigger: (
+            <>El equipo <strong className="text-amber-400 font-semibold">asimila la identidad</strong> y pierde el miedo tecnológico.</>
+          )
         },
         {
           id: "H2",
           title: "Despliegue bajo Demanda",
-          goal: "Inyecciones de eficiencia sin parar la tienda.",
-          shortGoal: "Herramientas modulares directas al mostrador.",
-          marca: "Lanzamiento de campañas y fidelización PRO unificada.",
-          ia: "Implementación de soluciones del catálogo según cuellos de botella.",
-          trigger: "Las herramientas iniciales fluyen solas y generan ahorro real."
+          goal: (
+            <>Inyecciones de <strong className="text-white font-semibold">eficiencia directa</strong> sin detener la tienda.</>
+          ),
+          shortGoal: (
+            <>Herramientas <strong className="text-white font-semibold">modulares</strong> directas al mostrador.</>
+          ),
+          marca: (
+            <>Lanzamiento de campañas y <strong className="text-white font-semibold">fidelización PRO unificada</strong>.</>
+          ),
+          ia: (
+            <>Implementación de soluciones según <strong className="text-white font-semibold">cuellos de botella</strong>.</>
+          ),
+          trigger: (
+            <>Las herramientas <strong className="text-amber-400 font-semibold">fluyen solas</strong> y generan ahorro real.</>
+          )
         },
         {
           id: "H3",
           title: "Sinergia Global",
-          goal: "Escalabilidad de Grupo (Son Garrit + Ca'n Ros).",
-          shortGoal: "Compras centralizadas y stock compartido entre tiendas.",
-          marca: "Posicionamiento dominando el mercado local como Grupo.",
-          ia: "Automatización cruzada (compras centralizadas, stock compartido).",
-          trigger: "Visión completa y unificada alcanzada."
+          goal: (
+            <>Escalabilidad total de Grupo <strong className="text-white font-semibold">(Son Garrit + Ca'n Ros)</strong>.</>
+          ),
+          shortGoal: (
+            <><strong className="text-white font-semibold">Compras centralizadas</strong> y stock compartido.</>
+          ),
+          marca: (
+            <>Posicionamiento dominando el mercado local como <strong className="text-white font-semibold">Grupo</strong>.</>
+          ),
+          ia: (
+            <>Automatización cruzada (<strong className="text-white font-semibold">compras y stock compartido</strong>).</>
+          ),
+          trigger: (
+            <><strong className="text-amber-400 font-semibold">Visión 360° unificada</strong> consolidada.</>
+          )
         }
       ]
     };
