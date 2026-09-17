@@ -1,0 +1,139 @@
+import { Categoria } from '../../types';
+
+export const categoriaAREA12De: Categoria = {
+  "id": "area-12",
+  "area": "administracion",
+  "titulo": "Equipo & RRHH",
+  "propuestas": [
+    {
+      "id": "12.01",
+      "titulo": "[DE] Copiloto experto interno",
+      "descripcion": "[DE] Asistente interno que responde dudas técnicas de mostrador con el surtido propio, del tipo qué broca para porcelánico o ...",
+      "descripcionLarga": "[DE] Asistente interno que responde dudas técnicas de mostrador con el surtido propio, del tipo qué broca para porcelánico o qué EPI para radial, indicando marca disponible en cada tienda.",
+      "facilidad": "Alto",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "Fase 1 30 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    },
+    {
+      "id": "12.02",
+      "titulo": "[DE] Onboarding 7 días temporeros",
+      "descripcion": "[DE] Recorrido guiado de 7 días para temporeros que explica dónde está cada familia, cómo hacer presupuestos, devoluciones y ...",
+      "descripcionLarga": "[DE] Recorrido guiado de 7 días para temporeros que explica dónde está cada familia, cómo hacer presupuestos, devoluciones y caja, con el criterio de cada tienda.",
+      "facilidad": "Alto",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "Fase 1 30 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    },
+    {
+      "id": "12.03",
+      "titulo": "[DE] Planificador turnos",
+      "descripcion": "[DE] Plantilla de turnos que cubre sábados, verano, Sant Joan, fiestas y vacaciones con reglas simples por tienda.",
+      "descripcionLarga": "[DE] Plantilla de turnos que cubre sábados, verano, Sant Joan, fiestas y vacaciones con reglas simples por tienda.",
+      "facilidad": "Alto",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "Fase 1 30 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    },
+    {
+      "id": "12.04",
+      "titulo": "[DE] Parte diario por voz",
+      "descripcion": "[DE] Parte que el encargado dicta por voz al cierre y se convierte en tareas asignadas con responsable.",
+      "descripcionLarga": "[DE] Parte que el encargado dicta por voz al cierre y se convierte en tareas asignadas con responsable.",
+      "facilidad": "Medio",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "Fase 1 30 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    },
+    {
+      "id": "12.05",
+      "titulo": "[DE] Checklist PRL",
+      "descripcion": "[DE] Lista de comprobación de prevención para andamios, EPIs y carretilla, con firma simple de quien revisa.",
+      "descripcionLarga": "[DE] Lista de comprobación de prevención para andamios, EPIs y carretilla, con firma simple de quien revisa.",
+      "facilidad": "Medio",
+      "riesgo": "Medio",
+      "beneficio": "Alto",
+      "fase": "Fase 2 60-90 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    },
+    {
+      "id": "12.06",
+      "titulo": "[DE] Clasificador para gestoría",
+      "descripcion": "[DE] Circuito que con foto rápida del ticket o factura lo clasifica en la carpeta mensual que luego revisa la gestoría.",
+      "descripcionLarga": "[DE] Circuito que con foto rápida del ticket o factura lo clasifica en la carpeta mensual que luego revisa la gestoría.",
+      "facilidad": "Medio",
+      "riesgo": "Medio",
+      "beneficio": "Medio",
+      "fase": "Fase 2 60-90 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    },
+    {
+      "id": "12.07",
+      "titulo": "[DE] Buscador normativa",
+      "descripcion": "[DE] Buscador de consulta sobre normativa de fitosanitarios, gas, cemento y EPIs, limitado a informar sin decidir ventas. Sol...",
+      "descripcionLarga": "[DE] Buscador de consulta sobre normativa de fitosanitarios, gas, cemento y EPIs, limitado a informar sin decidir ventas. Solo consulta.",
+      "facilidad": "Medio",
+      "riesgo": "Medio",
+      "beneficio": "Medio",
+      "fase": "Fase 2 60-90 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    },
+    {
+      "id": "12.08",
+      "titulo": "[DE] Control caja y arqueo",
+      "descripcion": "[DE] Comparativa que cuadra el cierre de TPV frente al efectivo contado y marca diferencias para revisar, sin mover dinero.",
+      "descripcionLarga": "[DE] Comparativa que cuadra el cierre de TPV frente al efectivo contado y marca diferencias para revisar, sin mover dinero.",
+      "facilidad": "Bajo",
+      "riesgo": "Medio",
+      "beneficio": "Medio",
+      "fase": "Fase 2 60-90 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    },
+    {
+      "id": "12.09",
+      "titulo": "[DE] Gestor incidencias tienda",
+      "descripcion": "[DE] Registro simple de incidencias de tienda como luz, gotera o persiana, con responsable y seguimiento hasta cierre.",
+      "descripcionLarga": "[DE] Registro simple de incidencias de tienda como luz, gotera o persiana, con responsable y seguimiento hasta cierre.",
+      "facilidad": "Bajo",
+      "riesgo": "Medio",
+      "beneficio": "Medio",
+      "fase": "Fase 2 60-90 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    },
+    {
+      "id": "12.10",
+      "titulo": "[DE] Manual vivo",
+      "descripcion": "[DE] Base que recoge cada duda resuelta en tienda y la convierte en ficha reutilizable, separada por Son Garrit y Ca'n Ros Ca...",
+      "descripcionLarga": "[DE] Base que recoge cada duda resuelta en tienda y la convierte en ficha reutilizable, separada por Son Garrit y Ca'n Ros Campos.",
+      "facilidad": "Bajo",
+      "riesgo": "Alto",
+      "beneficio": "Medio",
+      "fase": "Fase 2 60-90 dias",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "validar-diseno"
+    }
+  ]
+};

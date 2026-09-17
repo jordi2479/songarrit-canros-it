@@ -1,0 +1,139 @@
+import { Categoria } from '../../types';
+
+export const categoriaAREA01Ca: Categoria = {
+  "id": "area-01",
+  "area": "operativa",
+  "titulo": "Compras & Stock",
+  "propuestas": [
+    {
+      "id": "01.01",
+      "titulo": "[CA] Propuesta pedido semanal",
+      "descripcion": "[CA] Propuesta semanal de qué pedir en Ca'n Ros según ventas 90 días y stock.",
+      "descripcionLarga": "[CA] Propuesta semanal de qué pedir en Ca'n Ros según ventas 90 días y stock.",
+      "facilidad": "Alto",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    },
+    {
+      "id": "01.02",
+      "titulo": "[CA] Alerta rotura crítica",
+      "descripcion": "[CA] Aviso cuando un top-100 de Ca'n Ros queda a menos de 7 días de venta.",
+      "descripcionLarga": "[CA] Aviso cuando un top-100 de Ca'n Ros queda a menos de 7 días de venta.",
+      "facilidad": "Alto",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    },
+    {
+      "id": "01.03",
+      "titulo": "[CA] Revisor factura vs albarán",
+      "descripcion": "[CA] Compara PDF factura proveedor con albarán y pedido, marca cobros de más.",
+      "descripcionLarga": "[CA] Compara PDF factura proveedor con albarán y pedido, marca cobros de más.",
+      "facilidad": "Alto",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    },
+    {
+      "id": "01.04",
+      "titulo": "[CA] Reclamador retrasos y errores",
+      "descripcion": "[CA] Deja borrador de reclamación al proveedor por retraso o error, sin enviar solo.",
+      "descripcionLarga": "[CA] Deja borrador de reclamación al proveedor por retraso o error, sin enviar solo.",
+      "facilidad": "Alto",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    },
+    {
+      "id": "01.05",
+      "titulo": "[CA] Comparador de proveedores",
+      "descripcion": "[CA] Compara misma referencia en 2-3 tarifas con portes incluidos.",
+      "descripcionLarga": "[CA] Compara misma referencia en 2-3 tarifas con portes incluidos.",
+      "facilidad": "Medio",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    },
+    {
+      "id": "01.06",
+      "titulo": "[CA] Optimizador de portes",
+      "descripcion": "[CA] Agrupa líneas para llegar a mínimo y no pagar portes.",
+      "descripcionLarga": "[CA] Agrupa líneas para llegar a mínimo y no pagar portes.",
+      "facilidad": "Medio",
+      "riesgo": "Bajo",
+      "beneficio": "Alto",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    },
+    {
+      "id": "01.07",
+      "titulo": "[CA] Detector sobrestock muerto",
+      "descripcion": "[CA] Detecta lo que no rota en 6-12 meses y propone liquidar/pack/devolver.",
+      "descripcionLarga": "[CA] Detecta lo que no rota en 6-12 meses y propone liquidar/pack/devolver.",
+      "facilidad": "Medio",
+      "riesgo": "Medio",
+      "beneficio": "Medio",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    },
+    {
+      "id": "01.08",
+      "titulo": "[CA] Previsión estacional Campos",
+      "descripcion": "[CA] Refuerza piscina/pintura en mayo-junio y antihumedad en otoño según histórico.",
+      "descripcionLarga": "[CA] Refuerza piscina/pintura en mayo-junio y antihumedad en otoño según histórico.",
+      "facilidad": "Bajo",
+      "riesgo": "Medio",
+      "beneficio": "Medio",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    },
+    {
+      "id": "01.09",
+      "titulo": "[CA] Control caducidades",
+      "descripcion": "[CA] Avisa 60/30 días antes de caducidad de químicos, pinturas y tacos.",
+      "descripcionLarga": "[CA] Avisa 60/30 días antes de caducidad de químicos, pinturas y tacos.",
+      "facilidad": "Medio",
+      "riesgo": "Medio",
+      "beneficio": "Medio",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    },
+    {
+      "id": "01.10",
+      "titulo": "[CA] Score de proveedor",
+      "descripcion": "[CA] Puntúa proveedor por puntualidad, fallos y precio para negociar.",
+      "descripcionLarga": "[CA] Puntúa proveedor por puntualidad, fallos y precio para negociar.",
+      "facilidad": "Bajo",
+      "riesgo": "Medio",
+      "beneficio": "Medio",
+      "fase": "pendiente",
+      "stack": "no-code",
+      "veredicto": "",
+      "estado": "idea"
+    }
+  ]
+};
