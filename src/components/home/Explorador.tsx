@@ -95,12 +95,13 @@ export function Explorador() {
                   const isDimmed = isHovering && !isActive;
 
                   return (
-                    <a 
+                    <button 
                       key={area.id}
-                      href="#prototipos"
+                      type="button"
+                      onClick={() => setHoveredLocal(hoveredLocal === area.id ? null : area.id)}
                       onMouseEnter={() => setHoveredLocal(area.id)}
                       onMouseLeave={() => setHoveredLocal(null)}
-                      className={`block p-3 md:p-4 rounded-xl border transition-all duration-300 relative overflow-hidden group ${
+                      className={`w-full text-left block p-3 md:p-4 rounded-xl border transition-all duration-300 relative overflow-hidden group cursor-pointer ${
                         isActive 
                           ? 'bg-indigo-500/20 border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.3)] scale-[1.02] z-10' 
                           : isDimmed
@@ -117,7 +118,7 @@ export function Explorador() {
                         </div>
                         <Target className={`w-4 h-4 md:w-5 md:h-5 ${isActive ? 'text-indigo-400' : 'text-slate-600'} group-hover:text-indigo-400 transition-colors`} />
                       </div>
-                    </a>
+                    </button>
                   );
                 })}
               </div>
@@ -223,12 +224,13 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
           const isDimmed = isHovering && !isActive;
 
           return (
-            <a 
+            <button 
               key={area.id}
-              href="#prototipos"
+              type="button"
+              onClick={() => setHovered(hoveredLocal === area.id ? null : area.id)}
               onMouseEnter={() => setHovered(area.id)}
               onMouseLeave={() => setHovered(null)}
-              className={`p-2.5 sm:p-3 rounded-lg border transition-all duration-300 cursor-pointer flex justify-between items-center group ${
+              className={`w-full text-left p-2.5 sm:p-3 rounded-lg border transition-all duration-300 cursor-pointer flex justify-between items-center group ${
                 isActive 
                   ? `${theme?.badge} ${theme?.border} ${theme?.glow}` 
                   : isDimmed
@@ -242,7 +244,7 @@ function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered
                 </h4>
               </div>
               <Zap className={`w-3 h-3 flex-shrink-0 ${isActive ? iconColor : 'text-slate-600 opacity-0 group-hover:opacity-100'} transition-all`} />
-            </a>
+            </button>
           );
         })}
       </div>
