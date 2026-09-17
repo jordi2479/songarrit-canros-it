@@ -27,11 +27,11 @@
     "titleEnd": "con el motor de una sola?",
     "intro": "Comprar Ca'n Ros fue el movimiento correcto para crecer. Sin embargo, detrás del mostrador estamos trabajando el doble para mantenerlo a flote. Los métodos que funcionaban para una tienda ahora son un embudo: un \"desorden silencioso\" que nos roba horas de venta.",
     "pain1Title": "Vivir apagando fuegos",
-    "pain1Desc": "El día a día se va en urgencias: persiguiendo un albarán que no cuadra o buscando material perdido, en lugar de poder organizar la tienda o planificar.",
+    "pain1Desc": "El día a día se va en urgencias: persiguiendo un **albarán que no cuadra** o buscando material perdido, en lugar de poder **organizar la tienda o planificar**.",
     "pain2Title": "Cruzar datos a mano",
-    "pain2Desc": "Comparar tarifas y stock entre Palma y Campos a base de memoria y hojas de cálculo. Es un trabajo agotador, propenso a errores y que frena la agilidad.",
+    "pain2Desc": "Comparar tarifas y stock entre Palma y Campos a base de **memoria y hojas de cálculo**. Es un trabajo agotador que **frena la agilidad**.",
     "pain3Title": "Ventas perdidas por descontrol",
-    "pain3Desc": "No se vende todo lo que se debería por pura desorganización. Roturas de stock que no se apuntan, productos desordenados y falta de procesos claros cuestan dinero a diario."
+    "pain3Desc": "No se vende todo lo que se debería por desorganización. **Roturas de stock no registradas** y falta de procesos claros **cuestan dinero a diario**."
   },
   "solucion": {
     "title1": "Automatizar lo invisible.",

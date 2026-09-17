@@ -26,12 +26,12 @@
     "highlight": "2 Geschäfte",
     "titleEnd": "mit dem Motor von einem führt?",
     "intro": "Der Kauf von Ca'n Ros war der richtige Schritt für das Wachstum. Hinter der Ladentheke arbeiten wir jedoch doppelt so hart, um es über Wasser zu halten. Die Methoden, die für ein Geschäft funktionierten, sind jetzt ein Engpass: eine 'stille Unordnung', die uns Verkaufsstunden raubt.",
-    "pain1Title": "Leben im ständigen Krisenmodus",
-    "pain1Desc": "Der Alltag geht für Notfälle drauf: einem fehlerhaften Lieferschein hinterherjagen oder nach verlorenem Material suchen, anstatt das Geschäft zu organisieren oder zu planen.",
-    "pain2Title": "Datenabgleich von Hand",
-    "pain2Desc": "Tarife und Lagerbestände zwischen Palma und Campos aus dem Gedächtnis und mit Tabellenkalkulationen vergleichen. Das ist anstrengende, fehleranfällige Arbeit, die die Agilität bremst.",
-    "pain3Title": "Entgangene Umsätze durch Kontrollverlust",
-    "pain3Desc": "Aufgrund reiner Desorganisation wird nicht alles verkauft, was verkauft werden sollte. Nicht erfasste Engpässe, unordentliche Produkte und fehlende klare Prozesse kosten täglich Geld."
+    "pain1Title": "Ständiges Feuerlöschen",
+    "pain1Desc": "Der Alltag vergeht in Notfällen: **unstimmigen Lieferscheinen** hinterherlaufen oder Material suchen, statt den **Laden zu organisieren oder zu planen**.",
+    "pain2Title": "Manuelle Datenabgleiche",
+    "pain2Desc": "Preise und Bestände zwischen Palma und Campos per **Gedächtnis und Tabellen** vergleichen. Das ist ermüdend und **bremst die Agilität**.",
+    "pain3Title": "Umsatzverluste durch Unordnung",
+    "pain3Desc": "Verkäufe gehen verloren durch mangelnde Organisation. **Unbemerkte Fehlbestände** und fehlende Prozesse **kosten täglich bares Geld**."
   },
   "solucion": {
     "title1": "Das Unsichtbare automatisieren.",

@@ -26,12 +26,12 @@
     "highlight": "2 stores",
     "titleEnd": "with the engine of one?",
     "intro": "Buying Ca'n Ros was the right move for growth. However, behind the counter, we are working twice as hard to keep it afloat. The methods that worked for one store are now a bottleneck: a 'silent disorder' that steals our sales hours.",
-    "pain1Title": "Living putting out fires",
-    "pain1Desc": "Day-to-day work is lost to emergencies: chasing a mismatched delivery note or looking for lost material, instead of organizing the store or planning.",
-    "pain2Title": "Cross-referencing data by hand",
-    "pain2Desc": "Comparing prices and stock between Palma and Campos using memory and spreadsheets. It is exhausting work, prone to errors, and slows down agility.",
-    "pain3Title": "Lost sales due to lack of control",
-    "pain3Desc": "Not everything that should be sold is sold due to pure disorganization. Unrecorded stockouts, messy products, and a lack of clear processes cost money daily."
+    "pain1Title": "Constant firefighting",
+    "pain1Desc": "Daily routine is trapped in emergencies: chasing **unbalanced delivery notes** or misplaced goods instead of **organizing the store or planning**.",
+    "pain2Title": "Manual data crossing",
+    "pain2Desc": "Comparing prices and stock between Palma and Campos by **sheer memory and spreadsheets**. A tedious process that **kills agility**.",
+    "pain3Title": "Lost sales from disorganization",
+    "pain3Desc": "Sales are lost simply due to lack of order. **Unrecorded stockouts** and missing clear workflows **cost revenue daily**."
   },
   "solucion": {
     "title1": "Automate the invisible.",

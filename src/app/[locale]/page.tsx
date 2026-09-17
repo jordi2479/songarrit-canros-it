@@ -189,7 +189,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 text-sm md:text-base mb-0.5 md:mb-1">{item.title}</h3>
-                    <p className="text-slate-600 text-xs md:text-sm line-clamp-2 md:line-clamp-none">{item.desc}</p>
+                    <p className="text-slate-600 text-xs md:text-sm leading-relaxed">{renderMarkdownBold(item.desc)}</p>
                   </div>
                 </div>
               </FadeCard>
@@ -340,11 +340,11 @@ export default function Home() {
 
       {/* ─── SECCIÓN 6: LAS 4 ÁREAS ─── */}
       <Section id="areas" className="bg-slate-50">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-900 leading-tight">
+        <div className="text-center mb-6 md:mb-12">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-2 md:mb-4 text-slate-900 leading-tight">
             {tAreas("title")} <span className="text-emerald-600">{tAreas("highlight")}</span>
           </h2>
-          <div className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed space-y-3">
+          <div className="text-xs sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto mb-6 md:mb-10 leading-relaxed space-y-2 md:space-y-3">
             {tAreas.rich("desc", {
               p: (chunks) => <p>{chunks}</p>,
               bold: (chunks) => <strong className="text-slate-900 font-bold">{chunks}</strong>,
@@ -357,11 +357,11 @@ export default function Home() {
 
       {/* ─── SECCIÓN 7: ZOOM CATEGORÍAS ─── */}
       <Section id="categorias" dark>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
+        <div className="text-center mb-6 md:mb-16">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-2 md:mb-4 leading-tight">
             {tCategorias("title")} <span className="text-blue-400">{tCategorias("highlight")}</span>
           </h2>
-          <div className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <div className="text-xs sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
             {tCategorias.rich("desc", {
               bold: (chunks) => <strong className="text-white font-semibold">{chunks}</strong>,
               highlight: (chunks) => <span className="text-blue-400 font-semibold">{chunks}</span>,
@@ -376,11 +376,11 @@ export default function Home() {
 
       {/* ─── SECCIÓN 8: BUSCADOR DE PROPUESTAS ─── */}
       <Section id="propuestas" className="bg-slate-50">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
-            {tPropuestas("title")} <span className="text-emerald-500">{tPropuestas("highlight")}</span>
+        <div className="text-center mb-6 md:mb-16">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-2 md:mb-4 leading-tight text-slate-900">
+            {tPropuestas("title")} <span className="text-emerald-600">{tPropuestas("highlight")}</span>
           </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+          <p className="text-xs sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {tPropuestas("desc")}
           </p>
         </div>
