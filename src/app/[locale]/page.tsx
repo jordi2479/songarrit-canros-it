@@ -347,11 +347,11 @@ export default function Home() {
 
       {/* ─── SECCIÓN 9: MODELO DE IMPLANTACIÓN ─── */}
       <Section id="implantacion" dark>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
+        <div className="text-center mb-6 md:mb-16">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-2 md:mb-4 leading-tight">
             {tViab("title")} <span className="text-blue-400">{tViab("highlight")}</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xs sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto">
             {tViab("desc")}
           </p>
         </div>
@@ -362,16 +362,21 @@ export default function Home() {
 
       {/* ─── SECCIÓN 10: VIABILIDAD (Negocio) ─── */}
       <Section id="viabilidad" dark className="bg-gradient-to-b from-slate-950 to-emerald-950">
-        <div className="text-center mb-16">
-          <div className="flex justify-center items-center gap-2 mb-6">
-            <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
+        <div className="text-center mb-6 md:mb-16">
+          <div className="flex justify-center items-center gap-2 mb-3 md:mb-6">
+            <span className="px-2.5 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
               Filosofía de Ejecución
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-white leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 md:mb-6 text-white leading-tight">
             Transformación Orgánica y <span className="text-emerald-400">Segura</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          {/* Móvil: Directo y claro */}
+          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed md:hidden font-normal">
+            Premisa innegociable: <strong className="text-white">no interrumpir la operativa diaria</strong>. Inyecciones tecnológicas modulares probadas en el mostrador: <strong className="text-emerald-400">si no facilita el trabajo inmediato, se descarta.</strong>
+          </p>
+          {/* Desktop: Párrafo completo */}
+          <p className="hidden md:block text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
             La premisa innegociable de este plan es <strong className="text-white">no interrumpir ni desestabilizar la operativa diaria</strong> de las tiendas. 
             No aplicamos revoluciones teóricas. El desarrollo se plantea mediante inyecciones tecnológicas modulares que se prueban y validan directamente en el mostrador. 
             <strong className="text-emerald-400"> Si una solución no facilita el trabajo del equipo de forma inmediata, se descarta.</strong>
