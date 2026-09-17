@@ -83,20 +83,55 @@ export function BuscadorSoluciones() {
 
   const valoresPorMetrica = {
     beneficio: [
-      { id: 'alto', label: t("alto"), dot: 'bg-emerald-500', active: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-      { id: 'medio', label: t("medio"), dot: 'bg-amber-500', active: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-      { id: 'bajo', label: t("bajo"), dot: 'bg-red-500', active: 'bg-red-500/20 text-red-400 border-red-500/30' }
+      { id: 'alto', label: t("alto"), dot: 'bg-emerald-500', active: 'bg-emerald-50 text-emerald-700 border-emerald-300 font-bold' },
+      { id: 'medio', label: t("medio"), dot: 'bg-amber-500', active: 'bg-amber-50 text-amber-700 border-amber-300 font-bold' },
+      { id: 'bajo', label: t("bajo"), dot: 'bg-red-500', active: 'bg-red-50 text-red-700 border-red-300 font-bold' }
     ],
     riesgo: [
-      { id: 'bajo', label: t("bajo"), dot: 'bg-emerald-500', active: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-      { id: 'medio', label: t("medio"), dot: 'bg-amber-500', active: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-      { id: 'alto', label: t("alto"), dot: 'bg-red-500', active: 'bg-red-500/20 text-red-400 border-red-500/30' }
+      { id: 'bajo', label: t("bajo"), dot: 'bg-emerald-500', active: 'bg-emerald-50 text-emerald-700 border-emerald-300 font-bold' },
+      { id: 'medio', label: t("medio"), dot: 'bg-amber-500', active: 'bg-amber-50 text-amber-700 border-amber-300 font-bold' },
+      { id: 'alto', label: t("alto"), dot: 'bg-red-500', active: 'bg-red-50 text-red-700 border-red-300 font-bold' }
     ],
     facilidad: [
-      { id: 'alto', label: t("alto"), dot: 'bg-emerald-500', active: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-      { id: 'medio', label: t("medio"), dot: 'bg-amber-500', active: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-      { id: 'bajo', label: t("bajo"), dot: 'bg-red-500', active: 'bg-red-500/20 text-red-400 border-red-500/30' }
+      { id: 'alto', label: t("alto"), dot: 'bg-emerald-500', active: 'bg-emerald-50 text-emerald-700 border-emerald-300 font-bold' },
+      { id: 'medio', label: t("medio"), dot: 'bg-amber-500', active: 'bg-amber-50 text-amber-700 border-amber-300 font-bold' },
+      { id: 'bajo', label: t("bajo"), dot: 'bg-red-500', active: 'bg-red-50 text-red-700 border-red-300 font-bold' }
     ]
+  };
+
+  const areaBadgeClasses: Record<string, string> = {
+    global: "bg-indigo-50 text-indigo-700 border-indigo-200/80",
+    administracion: "bg-sky-50 text-sky-700 border-sky-200/80",
+    clientes: "bg-amber-50 text-amber-800 border-amber-200/80",
+    operativa: "bg-emerald-50 text-emerald-800 border-emerald-200/80",
+  };
+
+  const areaBorderHover: Record<string, string> = {
+    global: "hover:border-indigo-300 hover:shadow-indigo-100/60",
+    administracion: "hover:border-sky-300 hover:shadow-sky-100/60",
+    clientes: "hover:border-amber-300 hover:shadow-amber-100/60",
+    operativa: "hover:border-emerald-300 hover:shadow-emerald-100/60",
+  };
+
+  const getRiesgoBadge = (val: string) => {
+    const v = val?.toLowerCase();
+    if (v === "bajo") return "text-emerald-700 bg-emerald-50 border-emerald-200/80";
+    if (v === "medio") return "text-amber-700 bg-amber-50 border-amber-200/80";
+    return "text-red-700 bg-red-50 border-red-200/80";
+  };
+
+  const getBeneficioBadge = (val: string) => {
+    const v = val?.toLowerCase();
+    if (v === "alto") return "text-emerald-700 bg-emerald-50 border-emerald-200/80";
+    if (v === "medio") return "text-amber-700 bg-amber-50 border-amber-200/80";
+    return "text-red-700 bg-red-50 border-red-200/80";
+  };
+  
+  const getFacilidadBadge = (val: string) => {
+    const v = val?.toLowerCase();
+    if (v === "alta" || v === "alto") return "text-blue-700 bg-blue-50 border-blue-200/80";
+    if (v === "media" || v === "medio") return "text-violet-700 bg-violet-50 border-violet-200/80";
+    return "text-slate-700 bg-slate-100 border-slate-200/80";
   };
 
   const areasParaBloque = useMemo(() => {
@@ -123,27 +158,6 @@ export function BuscadorSoluciones() {
       return matchSearch && matchBloque && matchArea && matchMetrica;
     });
   }, [search, areaFilter, categoriaFilter, metricaFilter, metricaValorFilter, allPropuestas]);
-
-  const getRiesgoBadge = (val: string) => {
-    const v = val?.toLowerCase();
-    if (v === "bajo") return "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
-    if (v === "medio") return "text-amber-400 bg-amber-500/10 border-amber-500/20";
-    return "text-red-400 bg-red-500/10 border-red-500/20";
-  };
-
-  const getBeneficioBadge = (val: string) => {
-    const v = val?.toLowerCase();
-    if (v === "alto") return "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
-    if (v === "medio") return "text-amber-400 bg-amber-500/10 border-amber-500/20";
-    return "text-red-400 bg-red-500/10 border-red-500/20";
-  };
-  
-  const getFacilidadBadge = (val: string) => {
-    const v = val?.toLowerCase();
-    if (v === "alta" || v === "alto") return "text-blue-400 bg-blue-500/10 border-blue-500/20";
-    if (v === "media" || v === "medio") return "text-violet-400 bg-violet-500/10 border-violet-500/20";
-    return "text-slate-400 bg-slate-500/10 border-slate-500/20";
-  };
 
   const handleBloqueClick = (key: string) => {
     if (areaFilter === key) {
@@ -179,28 +193,28 @@ export function BuscadorSoluciones() {
     <div className="w-full max-w-6xl mx-auto flex flex-col gap-6">
       
       {/* BLOQUE 1: CONSOLA DE FILTRADO Y BÚSQUEDA */}
-      <div className="w-full bg-slate-900/95 text-white border border-slate-800 rounded-3xl shadow-xl p-5 md:p-6 backdrop-blur-sm">
+      <div className="w-full bg-white text-slate-900 border border-slate-200/90 rounded-3xl shadow-lg shadow-slate-200/50 p-5 md:p-6">
         
         {/* Cabecera del Panel */}
         <div className="flex items-center justify-between gap-4 mb-5">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
               <SlidersHorizontal className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-white font-bold text-base md:text-lg leading-tight">
+              <h3 className="text-slate-900 font-bold text-base md:text-lg leading-tight">
                 Consola de Filtros
               </h3>
-              <p className="text-xs text-slate-400">Selecciona por área operativa o perfil analítico</p>
+              <p className="text-xs text-slate-500">Selecciona por área operativa o perfil analítico</p>
             </div>
           </div>
           
           {hasActiveFilters && (
             <button
               onClick={clearAllFilters}
-              className="px-3 py-1.5 text-xs text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-xl border border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer shadow-sm"
+              className="px-3 py-1.5 text-xs text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-xl border border-slate-200 transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
             >
-              <X className="w-3.5 h-3.5 text-red-400" />
+              <X className="w-3.5 h-3.5 text-red-500" />
               <span>Limpiar filtros</span>
             </button>
           )}
@@ -208,16 +222,16 @@ export function BuscadorSoluciones() {
 
         {/* Barra de Búsqueda */}
         <div className="relative mb-4">
-          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
+          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
             placeholder={t("buscar")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-9 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all shadow-inner"
+            className="w-full pl-10 pr-9 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 transition-all shadow-xs"
           />
           {search && (
-            <button onClick={() => setSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white cursor-pointer">
+            <button onClick={() => setSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer">
               <X className="w-4 h-4" />
             </button>
           )}
@@ -227,7 +241,7 @@ export function BuscadorSoluciones() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           
           {/* 1. Macro-Área & Subcategorías */}
-          <div className="bg-slate-950/60 p-3 rounded-2xl border border-slate-800/80 flex flex-col gap-2.5">
+          <div className="bg-slate-50/80 p-3 rounded-2xl border border-slate-200/80 flex flex-col gap-2.5">
             <div className="flex flex-wrap gap-1.5 items-center">
               <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mr-1">Área:</span>
               {Object.entries(customAreaLabels).map(([key, label]) => (
@@ -236,8 +250,8 @@ export function BuscadorSoluciones() {
                   onClick={() => handleBloqueClick(key)}
                   className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                     areaFilter === key
-                      ? "bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20"
-                      : "bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-700/60"
+                      ? "bg-slate-900 text-white font-bold shadow-sm"
+                      : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-xs"
                   }`}
                 >
                   {label}
@@ -253,17 +267,17 @@ export function BuscadorSoluciones() {
                   exit={{ opacity: 0, height: 0 }}
                   className="overflow-hidden"
                 >
-                  <div className="flex flex-wrap gap-1.5 items-center pt-2.5 border-t border-slate-800/80">
-                    <Layers className="w-3.5 h-3.5 text-slate-500 hidden sm:block" />
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 mr-1">Categorías:</span>
+                  <div className="flex flex-wrap gap-1.5 items-center pt-2.5 border-t border-slate-200">
+                    <Layers className="w-3.5 h-3.5 text-slate-400 hidden sm:block" />
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mr-1">Categorías:</span>
                     {areasParaBloque.map((areaNombre) => (
                       <button
                         key={areaNombre}
                         onClick={() => setCategoriaFilter(categoriaFilter === areaNombre ? null : areaNombre)}
                         className={`px-2.5 py-0.5 rounded-md text-[11px] font-medium transition-all cursor-pointer ${
                           categoriaFilter === areaNombre
-                            ? "bg-blue-500/20 text-blue-300 border border-blue-500/40 font-semibold"
-                            : "bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-800"
+                            ? "bg-emerald-600 text-white font-semibold shadow-xs"
+                            : "bg-white text-slate-600 hover:bg-slate-100 hover:text-slate-900 border border-slate-200"
                         }`}
                       >
                         {areaNombre}
@@ -276,7 +290,7 @@ export function BuscadorSoluciones() {
           </div>
 
           {/* 2. Métricas & Niveles */}
-          <div className="bg-slate-950/60 p-3 rounded-2xl border border-slate-800/80 flex flex-col gap-2.5">
+          <div className="bg-slate-50/80 p-3 rounded-2xl border border-slate-200/80 flex flex-col gap-2.5">
             <div className="flex flex-wrap gap-1.5 items-center">
               <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mr-1">Métrica:</span>
               {metricaBotones.map((btn) => (
@@ -285,11 +299,11 @@ export function BuscadorSoluciones() {
                   onClick={() => handleMetricaClick(btn.id as any)}
                   className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                     metricaFilter === btn.id
-                      ? "bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20"
-                      : "bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-700/60"
+                      ? "bg-slate-900 text-white font-bold shadow-xs"
+                      : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-xs"
                   }`}
                 >
-                  <btn.icon className={`w-3.5 h-3.5 ${metricaFilter === btn.id ? "text-white" : "text-slate-400"}`} />
+                  <btn.icon className={`w-3.5 h-3.5 ${metricaFilter === btn.id ? "text-white" : "text-slate-500"}`} />
                   {btn.label}
                 </button>
               ))}
@@ -303,8 +317,8 @@ export function BuscadorSoluciones() {
                   exit={{ opacity: 0, height: 0 }}
                   className="overflow-hidden"
                 >
-                  <div className="flex flex-wrap gap-1.5 items-center pt-2.5 border-t border-slate-800/80">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 mr-1">Nivel:</span>
+                  <div className="flex flex-wrap gap-1.5 items-center pt-2.5 border-t border-slate-200">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mr-1">Nivel:</span>
                     {valoresPorMetrica[metricaFilter].map((val) => (
                       <button
                         key={val.id}
@@ -312,7 +326,7 @@ export function BuscadorSoluciones() {
                         className={`px-2 py-0.5 rounded-md text-[11px] font-medium transition-all flex items-center gap-1.5 cursor-pointer border ${
                           metricaValorFilter === val.id
                             ? val.active
-                            : "bg-slate-900 text-slate-400 border-slate-800 hover:bg-slate-800 hover:text-slate-200"
+                            : "bg-white text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900"
                         }`}
                       >
                         <span className={`w-1.5 h-1.5 rounded-full ${val.dot}`}></span>
@@ -329,18 +343,18 @@ export function BuscadorSoluciones() {
 
       </div>
 
-      {/* BLOQUE 2: MURAL DE INICIATIVAS (SIN CONTENEDOR CERRADO) */}
+      {/* BLOQUE 2: MURAL DE INICIATIVAS */}
       <div className="w-full flex flex-col gap-4">
         
         {/* Barra de Estado de Resultados */}
         <div className="flex items-center justify-between px-1">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">
               Iniciativas Encontradas
             </span>
           </div>
-          <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
             {filtered.length} {filtered.length === 1 ? 'iniciativa' : 'iniciativas'}
           </span>
         </div>
@@ -358,44 +372,48 @@ export function BuscadorSoluciones() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
                   onClick={() => setExpandedId(idea.id)}
-                  className="bg-slate-900/90 border border-slate-800/80 hover:border-emerald-500/50 hover:bg-slate-900 transition-all rounded-2xl overflow-hidden flex flex-col justify-between p-4 md:p-5 cursor-pointer group select-none shadow-sm hover:shadow-xl hover:shadow-emerald-950/20"
+                  className={`bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-lg transition-all rounded-2xl overflow-hidden flex flex-col justify-between p-4 md:p-5 cursor-pointer group select-none shadow-xs ${
+                    areaBorderHover[idea.area] || ''
+                  }`}
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-2.5">
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="px-2 py-0.5 bg-slate-800 text-slate-300 rounded-md text-[10px] font-bold uppercase tracking-wider">
+                        <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
+                          areaBadgeClasses[idea.area] || 'bg-slate-100 text-slate-700 border-slate-200'
+                        }`}>
                           {customAreaLabels[idea.area] || idea.area}
                         </span>
-                        <span className="px-2 py-0.5 bg-slate-800/60 text-slate-400 rounded-md text-[10px] font-medium tracking-wide border border-slate-700/50">
+                        <span className="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-md text-[10px] font-medium tracking-wide border border-slate-200/80">
                           {idea.categoriaTitulo}
                         </span>
                         {idea.acceso && (
                           <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
                             idea.acceso === 'escritura'
-                              ? 'bg-amber-950/40 text-amber-400 border-amber-800/50'
-                              : 'bg-cyan-950/40 text-cyan-400 border-cyan-800/50'
+                              ? 'bg-amber-50 text-amber-800 border-amber-200'
+                              : 'bg-sky-50 text-sky-700 border-sky-200'
                           }`}>
                             {idea.acceso === 'escritura' ? 'Escritura' : 'Lectura'}
                           </span>
                         )}
                       </div>
                       
-                      <div className="text-slate-500 group-hover:text-emerald-400 transition-colors p-1 flex-shrink-0">
+                      <div className="text-slate-400 group-hover:text-slate-700 transition-colors p-1 flex-shrink-0">
                         <Maximize2 className="w-3.5 h-3.5" />
                       </div>
                     </div>
 
-                    <h4 className="font-bold text-sm md:text-base text-white group-hover:text-emerald-300 transition-colors leading-snug mb-2">
+                    <h4 className="font-bold text-sm md:text-base text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug mb-2">
                       {idea.titulo}
                     </h4>
                     
-                    <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">
+                    <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
                       {idea.descripcion}
                     </p>
                   </div>
 
                   {/* Métricas Inferiores */}
-                  <div className="flex items-center gap-1.5 pt-3 mt-4 border-t border-slate-800/70 flex-wrap">
+                  <div className="flex items-center gap-1.5 pt-3 mt-4 border-t border-slate-100 flex-wrap">
                     <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getBeneficioBadge(idea.beneficio)}`}>
                       <BarChart className="w-3 h-3" />
                       <span>{idea.beneficio}</span>
@@ -425,7 +443,7 @@ export function BuscadorSoluciones() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setExpandedId(null)}
-                className="fixed inset-0 bg-slate-950/85 backdrop-blur-md"
+                className="fixed inset-0 bg-slate-950/60 backdrop-blur-md"
               />
 
               {/* Caja Modal Flotante */}
@@ -434,35 +452,37 @@ export function BuscadorSoluciones() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.94, y: 16 }}
                 transition={{ type: "spring", duration: 0.32, bounce: 0.1 }}
-                className="relative w-full max-w-3xl max-h-[88vh] bg-slate-900 border border-slate-700/80 rounded-3xl shadow-2xl shadow-emerald-950/60 overflow-hidden flex flex-col z-10"
+                className="relative w-full max-w-3xl max-h-[88vh] bg-white border border-slate-200 rounded-3xl shadow-2xl shadow-slate-950/30 overflow-hidden flex flex-col z-10"
               >
                 {/* Header modal */}
-                <div className="p-6 pb-4 border-b border-slate-800 flex items-start justify-between gap-4">
+                <div className="p-6 pb-4 border-b border-slate-100 flex items-start justify-between gap-4 bg-white">
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="px-2.5 py-0.5 bg-slate-800 text-slate-200 rounded-md text-[11px] font-bold uppercase tracking-wider">
+                      <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider border ${
+                        areaBadgeClasses[activeIdea.area] || 'bg-slate-100 text-slate-700 border-slate-200'
+                      }`}>
                         {customAreaLabels[activeIdea.area] || activeIdea.area}
                       </span>
-                      <span className="px-2.5 py-0.5 bg-slate-800/80 text-slate-300 rounded-md text-[11px] font-medium tracking-wide border border-slate-700">
+                      <span className="px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-md text-[11px] font-medium tracking-wide border border-slate-200">
                         {activeIdea.categoriaTitulo}
                       </span>
                       {activeIdea.acceso && (
                         <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider border ${
                           activeIdea.acceso === 'escritura'
-                            ? 'bg-amber-950/50 text-amber-300 border-amber-800/60'
-                            : 'bg-cyan-950/50 text-cyan-300 border-cyan-800/60'
+                            ? 'bg-amber-50 text-amber-800 border-amber-200'
+                            : 'bg-sky-50 text-sky-700 border-sky-200'
                         }`}>
                           {activeIdea.acceso === 'escritura' ? 'Escritura en sistemas' : 'Solo lectura'}
                         </span>
                       )}
                     </div>
-                    <h3 className="text-xl md:text-2xl font-black text-white leading-tight">
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900 leading-tight">
                       {activeIdea.titulo}
                     </h3>
                   </div>
                   <button
                     onClick={() => setExpandedId(null)}
-                    className="p-2 text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-full transition-colors cursor-pointer flex-shrink-0"
+                    className="p-2 text-slate-400 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors cursor-pointer flex-shrink-0"
                     title="Cerrar (Esc)"
                   >
                     <X className="w-5 h-5" />
@@ -470,58 +490,58 @@ export function BuscadorSoluciones() {
                 </div>
 
                 {/* Dashboard de Métricas en el Modal */}
-                <div className="px-6 py-3 bg-slate-950/60 border-b border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div className="px-6 py-3 bg-slate-50/80 border-b border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
                   <div className="flex items-center gap-4 flex-wrap">
-                    <div className="flex items-center gap-1.5 text-slate-300">
-                      <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Beneficio:</span>
+                    <div className="flex items-center gap-1.5 text-slate-600">
+                      <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Beneficio:</span>
                       <span className={`font-bold flex items-center gap-1 ${getBeneficioBadge(activeIdea.beneficio)} px-2 py-0.5 rounded-md border text-[11px]`}>
                         <BarChart className="w-3 h-3" /> {activeIdea.beneficio}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-slate-300">
-                      <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Riesgo:</span>
+                    <div className="flex items-center gap-1.5 text-slate-600">
+                      <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Riesgo:</span>
                       <span className={`font-bold flex items-center gap-1 ${getRiesgoBadge(activeIdea.riesgo)} px-2 py-0.5 rounded-md border text-[11px]`}>
                         <ShieldAlert className="w-3 h-3" /> {activeIdea.riesgo}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-slate-300">
-                      <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Facilidad:</span>
+                    <div className="flex items-center gap-1.5 text-slate-600">
+                      <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Facilidad:</span>
                       <span className={`font-bold flex items-center gap-1 ${getFacilidadBadge(activeIdea.facilidad)} px-2 py-0.5 rounded-md border text-[11px]`}>
                         <Activity className="w-3 h-3" /> {activeIdea.facilidad}
                       </span>
                     </div>
                   </div>
-                  <span className="text-[11px] font-mono text-slate-500">{activeIdea.id}</span>
+                  <span className="text-[11px] font-mono text-slate-400">{activeIdea.id}</span>
                 </div>
 
                 {/* Contenido scrolleable */}
-                <div className="p-6 overflow-y-auto space-y-6">
+                <div className="p-6 overflow-y-auto space-y-5 bg-white">
                   <div>
-                    <h5 className="text-xs text-emerald-400 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
-                      <Zap className="w-4 h-4" /> Resumen Ejecutivo
+                    <h5 className="text-xs text-emerald-700 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+                      <Zap className="w-4 h-4 text-emerald-600" /> Resumen Ejecutivo
                     </h5>
-                    <p className="text-sm md:text-base text-slate-200 leading-relaxed whitespace-pre-wrap">
+                    <p className="text-sm md:text-base text-slate-700 leading-relaxed whitespace-pre-wrap">
                       {activeIdea.descripcionLarga || activeIdea.descripcion}
                     </p>
                   </div>
 
                   {activeIdea.ejemplo && (
-                    <div className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 shadow-inner">
-                      <h5 className="text-xs text-cyan-400 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
-                        <Activity className="w-4 h-4" /> Caso de uso
+                    <div className="bg-sky-50/50 p-5 rounded-2xl border border-sky-100">
+                      <h5 className="text-xs text-sky-800 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+                        <Activity className="w-4 h-4 text-sky-600" /> Caso de uso
                       </h5>
-                      <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">
+                      <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">
                         {activeIdea.ejemplo}
                       </p>
                     </div>
                   )}
 
                   {(activeIdea.viabilidad || activeIdea.veredicto) && (
-                    <div className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 shadow-inner">
-                      <h5 className="text-xs text-amber-400 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
-                        <HardHat className="w-4 h-4" /> Viabilidad Técnica & Operativa
+                    <div className="bg-amber-50/50 p-5 rounded-2xl border border-amber-100">
+                      <h5 className="text-xs text-amber-900 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+                        <HardHat className="w-4 h-4 text-amber-600" /> Viabilidad Técnica & Operativa
                       </h5>
-                      <p className="text-sm text-slate-400 leading-relaxed font-mono whitespace-pre-wrap">
+                      <p className="text-sm text-slate-700 leading-relaxed font-mono whitespace-pre-wrap text-xs">
                         {activeIdea.viabilidad || activeIdea.veredicto}
                       </p>
                     </div>
@@ -529,11 +549,11 @@ export function BuscadorSoluciones() {
                 </div>
 
                 {/* Footer Modal */}
-                <div className="p-4 px-6 border-t border-slate-800 bg-slate-950/40 flex items-center justify-between">
-                  <span className="text-xs text-slate-500">Pulsa ESC o fuera para cerrar</span>
+                <div className="p-4 px-6 border-t border-slate-100 bg-slate-50 flex items-center justify-between">
+                  <span className="text-xs text-slate-400">Pulsa ESC o fuera para cerrar</span>
                   <button
                     onClick={() => setExpandedId(null)}
-                    className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold transition-colors cursor-pointer"
+                    className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold transition-colors cursor-pointer"
                   >
                     Cerrar
                   </button>
@@ -544,12 +564,12 @@ export function BuscadorSoluciones() {
         </AnimatePresence>
 
         {filtered.length === 0 && (
-          <div className="text-center py-16 bg-slate-900/40 border border-slate-800 rounded-2xl">
-            <Sparkles className="w-10 h-10 text-slate-600 mx-auto mb-3" />
-            <p className="text-slate-400 text-sm font-medium">No se encontraron soluciones con esos filtros.</p>
+          <div className="text-center py-16 bg-white border border-slate-200 rounded-2xl shadow-xs">
+            <Sparkles className="w-10 h-10 text-slate-400 mx-auto mb-3" />
+            <p className="text-slate-600 text-sm font-medium">No se encontraron soluciones con esos filtros.</p>
             <button 
               onClick={clearAllFilters} 
-              className="mt-3 text-emerald-400 hover:text-emerald-300 text-xs font-bold underline underline-offset-4 cursor-pointer"
+              className="mt-3 text-emerald-600 hover:text-emerald-700 text-xs font-bold underline underline-offset-4 cursor-pointer"
             >
               Restablecer todos los filtros
             </button>
