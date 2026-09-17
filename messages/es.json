@@ -224,6 +224,27 @@
     "limites": "Límites / Riesgos",
     "reqEspecialista": "Requiere especialista externo",
     "implementable": "Implementable internamente",
-    "sinResultados": "No se encontraron ideas con esos filtros."
+    "sinResultados": "No se encontraron ideas con esos filtros.",
+    "beneficio": "Beneficio",
+    "riesgo": "Riesgo",
+    "facilidad": "Facilidad",
+    "alto": "Alto",
+    "medio": "Medio",
+    "bajo": "Bajo",
+    "area_1": "Compras & Stock",
+    "area_2": "Finanzas Locales",
+    "area_3": "Dirección de Tienda",
+    "area_4": "Estrategia de Grupo",
+    "area_5": "Compras Centralizadas",
+    "area_6": "Stock Compartido",
+    "area_7": "Finanzas de Grupo",
+    "area_8": "Identidad de Marca",
+    "area_9": "Marketing & Fidelización",
+    "area_10": "Cultura & Conocimiento",
+    "area_11": "Logística & Reparto",
+    "area_12": "Equipo & RRHH",
+    "area_13": "Seguridad & Prevención",
+    "area_14": "Ventas & Atención",
+    "area_15": "Operaciones de Tienda"
   }
 }
