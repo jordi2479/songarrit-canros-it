@@ -242,85 +242,149 @@ export function BuscadorSoluciones() {
     <div className="w-full max-w-6xl mx-auto flex flex-col gap-6">
       
       {/* BLOQUE 1: NAVEGACIÓN Y FILTROS VISUALES */}
-      <div className="w-full flex flex-col gap-6 bg-white border border-slate-200/90 rounded-3xl shadow-lg shadow-slate-200/50 p-6 md:p-8">
+      <div className="w-full flex flex-col gap-4 md:gap-6 bg-white border border-slate-200/90 rounded-2xl md:rounded-3xl shadow-lg shadow-slate-200/50 p-4 sm:p-6 md:p-8">
         
         {/* Cabecera del Panel */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-md">
-              <Layers className="w-5 h-5" />
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 md:gap-3">
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-md shrink-0">
+              <Layers className="w-4 h-4 md:w-5 md:h-5" />
             </div>
             <div>
-              <h3 className="text-slate-900 font-bold text-lg leading-tight">
+              <h3 className="text-slate-900 font-bold text-base md:text-lg leading-tight">
                 Mapa de Iniciativas
               </h3>
-              <p className="text-xs text-slate-500 font-medium mt-0.5">Explora las soluciones por área y categoría</p>
+              <p className="text-[11px] md:text-xs text-slate-500 font-medium hidden sm:block mt-0.5">Explora las soluciones por área y categoría</p>
             </div>
           </div>
           
           {(areaFilter || categoriaFilter) && (
             <button
               onClick={() => { setAreaFilter(null); setCategoriaFilter(null); }}
-              className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-50 hover:bg-slate-100 rounded-xl border border-slate-200 transition-colors flex items-center gap-2 cursor-pointer shadow-sm self-start md:self-auto"
+              className="px-3 py-1.5 md:px-4 md:py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-50 hover:bg-slate-100 rounded-xl border border-slate-200 transition-colors flex items-center gap-1.5 cursor-pointer shadow-2xs shrink-0"
             >
-              <X className="w-4 h-4 text-red-500" />
-              <span>Restablecer vista</span>
+              <X className="w-3.5 h-3.5 text-red-500" />
+              <span>{isCa ? "Restablir" : isEn ? "Reset" : isDe ? "Zurücksetzen" : "Restablecer"}</span>
             </button>
           )}
         </div>
 
         <div className="w-full h-px bg-slate-100"></div>
 
-        {/* 1. Macro-Áreas (Toggles) */}
-        <div className="flex flex-wrap gap-3 items-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mr-2 hidden sm:block">Áreas:</span>
-          {Object.entries(customAreaLabels).map(([key, label]) => {
-            const isActive = areaFilter === key;
-            return (
-              <button
-                key={key}
-                onClick={() => handleBloqueClick(key)}
-                className={`px-4 py-2 rounded-xl text-sm font-bold border transition-all cursor-pointer flex items-center gap-2 ${
-                  isActive
-                    ? AREA_THEMES[key as AreaId].light.pillActive
-                    : "bg-white text-slate-600 hover:bg-slate-50 border-slate-200 hover:border-slate-300 shadow-xs"
-                }`}
-              >
-                <div className={`w-2.5 h-2.5 rounded-full ${areaDotClasses[key]}`} />
-                {label}
-              </button>
-            )
-          })}
+        {/* VISTA MOBILE (< md): Fila de Chips deslizable + Dropdown nativo */}
+        <div className="flex flex-col gap-3 md:hidden">
+          {/* Fila scroll horizontal para Bloques */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 -mx-1 px-1">
+            <button
+              onClick={() => { setAreaFilter(null); setCategoriaFilter(null); }}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 transition-all border ${
+                !areaFilter 
+                  ? 'bg-slate-900 text-white border-slate-900 shadow-2xs' 
+                  : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
+              }`}
+            >
+              {isCa ? "Totes" : isEn ? "All" : isDe ? "Alle" : "Todas"}
+            </button>
+            {Object.entries(customAreaLabels).map(([key, label]) => {
+              const isActive = areaFilter === key;
+              return (
+                <button
+                  key={key}
+                  onClick={() => handleBloqueClick(key)}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold border shrink-0 transition-all flex items-center gap-1.5 ${
+                    isActive
+                      ? AREA_THEMES[key as AreaId].light.pillActive
+                      : "bg-white text-slate-600 border-slate-200 shadow-2xs hover:bg-slate-50"
+                  }`}
+                >
+                  <div className={`w-2 h-2 rounded-full ${areaDotClasses[key]}`} />
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Selector desplegable estilizado para Categorías */}
+          <div className="relative">
+            <select
+              value={categoriaFilter || ""}
+              onChange={(e) => setCategoriaFilter(e.target.value ? e.target.value : null)}
+              className="w-full appearance-none bg-slate-50 hover:bg-slate-100 text-slate-800 text-xs font-semibold py-2.5 pl-3.5 pr-8 rounded-xl border border-slate-200/90 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-colors cursor-pointer shadow-2xs"
+            >
+              <option value="">
+                {areaFilter 
+                  ? (isCa ? `Totes les categories de ${customAreaLabels[areaFilter] || areaFilter}` : isEn ? `All categories in ${customAreaLabels[areaFilter] || areaFilter}` : isDe ? `Alle Kategorien in ${customAreaLabels[areaFilter] || areaFilter}` : `Todas las categorías de ${customAreaLabels[areaFilter] || areaFilter}`)
+                  : (isCa ? "Totes les categories (15)" : isEn ? "All categories (15)" : isDe ? "Alle Kategorien (15)" : "Todas las categorías (15)")
+                }
+              </option>
+              {localizedCatalogoAreas
+                .filter(cat => !areaFilter || cat.area === areaFilter)
+                .map(cat => (
+                  <option key={cat.id} value={cat.titulo}>
+                    {cat.titulo}
+                  </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-400">
+              <ChevronDown className="w-3.5 h-3.5" />
+            </div>
+          </div>
         </div>
 
-        {/* 2. Categorías (Nube fluida) */}
-        <div className="flex flex-wrap gap-2.5 items-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mr-2 hidden sm:block">Categorías:</span>
-          {localizedCatalogoAreas.map(cat => {
-            const isActiveArea = areaFilter === cat.area;
-            const isFaded = areaFilter && !isActiveArea;
-            const isSelectedCat = categoriaFilter === cat.titulo;
-            const theme = AREA_THEMES[cat.area as AreaId]?.light;
+        {/* VISTA DESKTOP (>= md): Exactamente idéntica a la actual */}
+        <div className="hidden md:flex md:flex-col md:gap-6">
+          {/* 1. Macro-Áreas (Toggles) */}
+          <div className="flex flex-wrap gap-3 items-center">
+            <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mr-2">Áreas:</span>
+            {Object.entries(customAreaLabels).map(([key, label]) => {
+              const isActive = areaFilter === key;
+              return (
+                <button
+                  key={key}
+                  onClick={() => handleBloqueClick(key)}
+                  className={`px-4 py-2 rounded-xl text-sm font-bold border transition-all cursor-pointer flex items-center gap-2 ${
+                    isActive
+                      ? AREA_THEMES[key as AreaId].light.pillActive
+                      : "bg-white text-slate-600 hover:bg-slate-50 border-slate-200 hover:border-slate-300 shadow-xs"
+                  }`}
+                >
+                  <div className={`w-2.5 h-2.5 rounded-full ${areaDotClasses[key]}`} />
+                  {label}
+                </button>
+              )
+            })}
+          </div>
 
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setCategoriaFilter(isSelectedCat ? null : cat.titulo)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-300 cursor-pointer ${
-                  isSelectedCat
-                    ? `shadow-md ${theme?.badge}` 
-                    : isFaded
-                      ? 'bg-slate-50 text-slate-400 border-slate-100 opacity-40 grayscale hover:opacity-70'
-                      : isActiveArea
-                        ? `bg-white shadow-xs ${theme?.baseText} border-slate-300 hover:${theme?.baseBorder}`
-                        : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300 shadow-xs'
-                }`}
-              >
-                {cat.titulo}
-              </button>
-            )
-          })}
+          {/* 2. Categorías (Nube fluida) */}
+          <div className="flex flex-wrap gap-2.5 items-center">
+            <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mr-2">Categorías:</span>
+            {localizedCatalogoAreas.map(cat => {
+              const isActiveArea = areaFilter === cat.area;
+              const isFaded = areaFilter && !isActiveArea;
+              const isSelectedCat = categoriaFilter === cat.titulo;
+              const theme = AREA_THEMES[cat.area as AreaId]?.light;
+
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setCategoriaFilter(isSelectedCat ? null : cat.titulo)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-300 cursor-pointer ${
+                    isSelectedCat
+                      ? `shadow-md ${theme?.badge}` 
+                      : isFaded
+                        ? 'bg-slate-50 text-slate-400 border-slate-100 opacity-40 grayscale hover:opacity-70'
+                        : isActiveArea
+                          ? `bg-white shadow-xs ${theme?.baseText} border-slate-300 hover:${theme?.baseBorder}`
+                          : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300 shadow-xs'
+                  }`}
+                >
+                  {cat.titulo}
+                </button>
+              )
+            })}
+          </div>
         </div>
+
       </div>
 
       {/* BLOQUE 2: MURAL DE INICIATIVAS */}
