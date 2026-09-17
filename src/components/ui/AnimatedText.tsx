@@ -10,25 +10,37 @@ type AnimatedTextProps = {
 };
 
 export function AnimatedText({ text, className = "", delay = 0, as: Tag = "h1" }: AnimatedTextProps) {
-  const words = text.split(" ");
+  const lines = text.split("\n");
+  let totalWordIndex = 0;
 
   return (
     <Tag className={className}>
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          className="inline-block mr-[0.3em]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.5,
-            delay: delay + i * 0.08,
-            ease: [0.25, 0.46, 0.45, 0.94],
-          }}
-        >
-          {word}
-        </motion.span>
-      ))}
+      {lines.map((line, lineIdx) => {
+        const words = line.split(" ").filter(Boolean);
+        return (
+          <span key={lineIdx} className="block">
+            {words.map((word, wordIdx) => {
+              const currentDelay = delay + totalWordIndex * 0.08;
+              totalWordIndex++;
+              return (
+                <motion.span
+                  key={wordIdx}
+                  className="inline-block mr-[0.3em] last:mr-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: currentDelay,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
+                >
+                  {word}
+                </motion.span>
+              );
+            })}
+          </span>
+        );
+      })}
     </Tag>
   );
 }

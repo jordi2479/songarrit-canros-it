@@ -139,7 +139,7 @@ export default function Home() {
           </motion.div>
           <AnimatedText
             text={tHero("title")}
-            className="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] mb-8"
+            className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6 md:mb-8"
             delay={0.4}
           />
           <motion.div
