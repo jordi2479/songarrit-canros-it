@@ -1,4 +1,4 @@
-export type BloqueId = 'global' | 'administracion' | 'clientes' | 'operativa';
+export type AreaId = 'global' | 'administracion' | 'clientes' | 'operativa';
 
 export interface Propuesta {
   id: string;
@@ -14,17 +14,17 @@ export interface Propuesta {
   estado: string;
 }
 
-export interface Area {
+export interface Categoria {
   id: string;
-  bloque: BloqueId;
+  area: AreaId;
   titulo: string;
   propuestas: Propuesta[];
 }
 
-export const catalogoAreasCa: Area[] = [
+export const catalogoCategoriasCa: Categoria[] = [
   {
     "id": "area-01",
-    "bloque": "operativa",
+    "area": "operativa",
     "titulo": "Compras & Stock",
     "propuestas": [
       {
@@ -161,7 +161,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-02",
-    "bloque": "administracion",
+    "area": "administracion",
     "titulo": "Finanzas Locales",
     "propuestas": [
       {
@@ -298,7 +298,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-03",
-    "bloque": "administracion",
+    "area": "administracion",
     "titulo": "Dirección de Tienda",
     "propuestas": [
       {
@@ -435,7 +435,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-04",
-    "bloque": "global",
+    "area": "global",
     "titulo": "Estrategia de Grupo",
     "propuestas": [
       {
@@ -572,7 +572,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-05",
-    "bloque": "global",
+    "area": "global",
     "titulo": "Compras Centralizadas",
     "propuestas": [
       {
@@ -709,7 +709,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-06",
-    "bloque": "operativa",
+    "area": "operativa",
     "titulo": "Stock Compartido",
     "propuestas": [
       {
@@ -846,7 +846,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-07",
-    "bloque": "global",
+    "area": "global",
     "titulo": "Finanzas de Grupo",
     "propuestas": [
       {
@@ -983,7 +983,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-08",
-    "bloque": "global",
+    "area": "global",
     "titulo": "Identidad de Marca",
     "propuestas": [
       {
@@ -1120,7 +1120,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-09",
-    "bloque": "clientes",
+    "area": "clientes",
     "titulo": "Marketing & Fidelización",
     "propuestas": [
       {
@@ -1257,7 +1257,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-10",
-    "bloque": "global",
+    "area": "global",
     "titulo": "Cultura & Conocimiento",
     "propuestas": [
       {
@@ -1394,7 +1394,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-11",
-    "bloque": "operativa",
+    "area": "operativa",
     "titulo": "Logística & Reparto",
     "propuestas": [
       {
@@ -1531,7 +1531,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-12",
-    "bloque": "administracion",
+    "area": "administracion",
     "titulo": "Equipo & RRHH",
     "propuestas": [
       {
@@ -1668,7 +1668,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-13",
-    "bloque": "operativa",
+    "area": "operativa",
     "titulo": "Seguridad & Prevención",
     "propuestas": [
       {
@@ -1805,7 +1805,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-14",
-    "bloque": "clientes",
+    "area": "clientes",
     "titulo": "Ventas & Atención",
     "propuestas": [
       {
@@ -1942,7 +1942,7 @@ export const catalogoAreasCa: Area[] = [
   },
   {
     "id": "area-15",
-    "bloque": "operativa",
+    "area": "operativa",
     "titulo": "Operaciones de Tienda",
     "propuestas": [
       {

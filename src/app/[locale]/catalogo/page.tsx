@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, Filter, ChevronDown, ChevronUp, ArrowLeft, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
-import { catalogoAreas } from "@/data/catalogo";
-import { catalogoAreasEn } from "@/data/catalogo_en";
-import { catalogoAreasCa } from "@/data/catalogo_ca";
-import { catalogoAreasDe } from "@/data/catalogo_de";
+import { catalogoCategorias } from "@/data/catalogo";
+import { catalogoCategoriasEn } from "@/data/catalogo_en";
+import { catalogoCategoriasCa } from "@/data/catalogo_ca";
+import { catalogoCategoriasDe } from "@/data/catalogo_de";
 
 export default function Catalogo() {
   const t = useTranslations("catalogo");
@@ -16,8 +16,8 @@ export default function Catalogo() {
   const [search, setSearch] = useState("");
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   // Nivel 1 - Estructura
-  const [bloqueFilter, setBloqueFilter] = useState<string | null>(null);
   const [areaFilter, setAreaFilter] = useState<string | null>(null);
+  const [categoriaFilter, setCategoriaFilter] = useState<string | null>(null);
   
   // Nivel 1 - Analítica
   const [metricaFilter, setMetricaFilter] = useState<'beneficio' | 'riesgo' | 'facilidad' | null>(null);
@@ -26,10 +26,10 @@ export default function Catalogo() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const localizedCatalogoAreas = useMemo(() => {
-    if (locale === 'en') return catalogoAreasEn;
-    if (locale === 'ca') return catalogoAreasCa;
-    if (locale === 'de') return catalogoAreasDe;
-    return catalogoAreas;
+    if (locale === 'en') return catalogoCategoriasEn;
+    if (locale === 'ca') return catalogoCategoriasCa;
+    if (locale === 'de') return catalogoCategoriasDe;
+    return catalogoCategorias;
   }, [locale]);
 
   const allPropuestas = useMemo(() => {
@@ -38,15 +38,15 @@ export default function Catalogo() {
       area.propuestas.forEach(prop => {
         list.push({
           ...prop,
-          areaTitulo: area.titulo,
-          bloque: area.bloque
+          categoriaTitulo: area.titulo,
+          bloque: area.area
         });
       });
     });
     return list;
   }, [localizedCatalogoAreas]);
 
-  const customBloqueLabels: Record<string, string> = {
+  const customAreaLabels: Record<string, string> = {
     global: t("grupo"), 
     administracion: t("nucleo"), 
     clientes: t("clientes"), 
@@ -78,19 +78,19 @@ export default function Catalogo() {
   };
 
   const areasParaBloque = useMemo(() => {
-    if (!bloqueFilter) return [];
-    return localizedCatalogoAreas.filter(a => a.bloque === bloqueFilter).map(a => a.titulo);
-  }, [bloqueFilter, localizedCatalogoAreas]);
+    if (!areaFilter) return [];
+    return localizedCatalogoAreas.filter(a => a.area === areaFilter).map(a => a.titulo);
+  }, [areaFilter, localizedCatalogoAreas]);
 
   const filtered = useMemo(() => {
     return allPropuestas.filter((idea) => {
       const matchSearch = search === "" ||
         idea.titulo.toLowerCase().includes(search.toLowerCase()) ||
         idea.descripcion.toLowerCase().includes(search.toLowerCase()) ||
-        idea.areaTitulo.toLowerCase().includes(search.toLowerCase());
+        idea.categoriaTitulo.toLowerCase().includes(search.toLowerCase());
         
-      const matchBloque = !bloqueFilter || idea.bloque === bloqueFilter;
-      const matchArea = !areaFilter || idea.areaTitulo === areaFilter;
+      const matchBloque = !areaFilter || idea.area === areaFilter;
+      const matchArea = !categoriaFilter || idea.categoriaTitulo === categoriaFilter;
       
       const matchMetrica = !metricaValorFilter || (
         metricaFilter === 'beneficio' ? idea.beneficio?.toLowerCase() === metricaValorFilter :
@@ -100,7 +100,7 @@ export default function Catalogo() {
       
       return matchSearch && matchBloque && matchArea && matchMetrica;
     });
-  }, [search, bloqueFilter, areaFilter, metricaFilter, metricaValorFilter, allPropuestas]);
+  }, [search, areaFilter, categoriaFilter, metricaFilter, metricaValorFilter, allPropuestas]);
 
   const getRiesgoTextColor = (val: string) => {
     if (val?.toLowerCase() === "alto") return "text-red-500";
@@ -124,12 +124,12 @@ export default function Catalogo() {
   const getBeneficioColor = getBeneficioTextColor;
 
   const handleBloqueClick = (key: string) => {
-    if (bloqueFilter === key) {
-      setBloqueFilter(null);
+    if (areaFilter === key) {
       setAreaFilter(null);
+      setCategoriaFilter(null);
     } else {
-      setBloqueFilter(key);
-      setAreaFilter(null);
+      setAreaFilter(key);
+      setCategoriaFilter(null);
     }
   };
 
@@ -172,7 +172,7 @@ export default function Catalogo() {
             <button 
               onClick={() => setIsFiltersOpen(!isFiltersOpen)}
               className={`md:hidden flex items-center justify-center px-4 rounded-xl border transition-colors ${
-                isFiltersOpen || bloqueFilter || metricaFilter || areaFilter || metricaValorFilter
+                isFiltersOpen || areaFilter || metricaFilter || categoriaFilter || metricaValorFilter
                   ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
                   : 'bg-slate-900 border-slate-800 text-slate-400'
               }`}
@@ -188,12 +188,12 @@ export default function Catalogo() {
             <div className="bg-slate-900/30 p-3 rounded-xl border border-slate-800/50 flex flex-col gap-3">
               <div className="flex flex-wrap gap-2 items-center">
                 <Filter className="w-3.5 h-3.5 text-slate-500 mr-1 hidden md:block" />
-                {Object.entries(customBloqueLabels).map(([key, label]) => (
+                {Object.entries(customAreaLabels).map(([key, label]) => (
                   <button
                     key={key}
                     onClick={() => handleBloqueClick(key)}
                     className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                      bloqueFilter === key
+                      areaFilter === key
                         ? "bg-blue-500 text-white border border-blue-400"
                         : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
                     }`}
@@ -204,7 +204,7 @@ export default function Catalogo() {
               </div>
               
               <AnimatePresence>
-                {bloqueFilter && areasParaBloque.length > 0 && (
+                {areaFilter && areasParaBloque.length > 0 && (
                   <motion.div 
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
@@ -217,9 +217,9 @@ export default function Catalogo() {
                       {areasParaBloque.map((areaNombre) => (
                         <button
                           key={areaNombre}
-                          onClick={() => setAreaFilter(areaFilter === areaNombre ? null : areaNombre)}
+                          onClick={() => setCategoriaFilter(categoriaFilter === areaNombre ? null : areaNombre)}
                           className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all cursor-pointer ${
-                            areaFilter === areaNombre
+                            categoriaFilter === areaNombre
                               ? "bg-blue-500/20 text-blue-400 border border-blue-500/50"
                               : "bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-800"
                           }`}
@@ -306,10 +306,10 @@ export default function Catalogo() {
                 >
                   <div className="flex items-center gap-2 w-full sm:w-auto">
                     <span className="px-2 py-0.5 bg-slate-800 text-slate-400 rounded text-[10px] font-bold uppercase tracking-wider flex-shrink-0">
-                      {customBloqueLabels[idea.bloque] || idea.bloque}
+                      {customAreaLabels[idea.area] || idea.area}
                     </span>
                     <span className="px-2 py-0.5 bg-slate-800/50 text-slate-400 rounded text-[10px] font-bold uppercase tracking-wider flex-shrink-0 border border-slate-700/50">
-                      {idea.areaTitulo}
+                      {idea.categoriaTitulo}
                     </span>
                   </div>
                   

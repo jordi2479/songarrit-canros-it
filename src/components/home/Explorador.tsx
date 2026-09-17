@@ -7,10 +7,10 @@ import { Building2, Store, Users, Settings, ArrowRight, Zap, Target } from "luci
 import { Link } from "@/i18n/navigation";
 
 // Datasets
-import { catalogoAreas } from "@/data/catalogo";
-import { catalogoAreasEn } from "@/data/catalogo_en";
-import { catalogoAreasCa } from "@/data/catalogo_ca";
-import { catalogoAreasDe } from "@/data/catalogo_de";
+import { catalogoCategorias } from "@/data/catalogo";
+import { catalogoCategoriasEn } from "@/data/catalogo_en";
+import { catalogoCategoriasCa } from "@/data/catalogo_ca";
+import { catalogoCategoriasDe } from "@/data/catalogo_de";
 
 // Mapa de sinapsis: Área Local ID -> Array de Áreas Globales ID
 const sinapsis: Record<string, string[]> = {
@@ -34,18 +34,18 @@ export function Explorador() {
   const locale = useLocale();
 
   const areas = useMemo(() => {
-    if (locale === 'en') return catalogoAreasEn;
-    if (locale === 'ca') return catalogoAreasCa;
-    if (locale === 'de') return catalogoAreasDe;
-    return catalogoAreas;
+    if (locale === 'en') return catalogoCategoriasEn;
+    if (locale === 'ca') return catalogoCategoriasCa;
+    if (locale === 'de') return catalogoCategoriasDe;
+    return catalogoCategorias;
   }, [locale]);
 
   const [hoveredLocal, setHoveredLocal] = useState<string | null>(null);
 
-  const adminAreas = areas.filter(a => a.bloque === 'administracion');
-  const clientesAreas = areas.filter(a => a.bloque === 'clientes');
-  const operativaAreas = areas.filter(a => a.bloque === 'operativa');
-  const globalAreas = areas.filter(a => a.bloque === 'global');
+  const adminAreas = areas.filter(a => a.area === 'administracion');
+  const clientesAreas = areas.filter(a => a.area === 'clientes');
+  const operativaAreas = areas.filter(a => a.area === 'operativa');
+  const globalAreas = areas.filter(a => a.area === 'global');
 
   // Si pasamos el ratón por una global, mostramos qué locales la alimentan
   const getActiveGlobals = () => {
