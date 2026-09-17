@@ -25,7 +25,7 @@ export function Section({ id, children, className = "", dark = false, gradient }
     <section
       ref={ref}
       id={id}
-      className={`relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 py-24 overflow-hidden ${bg} ${dark ? "text-white" : "text-slate-900"} ${className}`}
+      className={`relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 py-24 overflow-hidden scroll-mt-24 ${bg} ${dark ? "text-white" : "text-slate-900"} ${className}`}
     >
       <motion.div
         className="w-full max-w-6xl mx-auto relative z-10"

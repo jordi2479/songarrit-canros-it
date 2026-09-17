@@ -41,14 +41,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navItems]);
 
-  const handleNavClick = (href: string) => {
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -99,10 +91,9 @@ export function Navbar() {
         {navItems.map((item) => {
           const isActive = activeSection === item.href.replace("#", "");
           return (
-            <button
+            <a
               key={item.href}
-              type="button"
-              onClick={() => handleNavClick(item.href)}
+              href={item.href}
               className={`whitespace-nowrap px-3 py-1 rounded-full text-[11px] font-semibold transition-all flex-shrink-0 cursor-pointer ${
                 isActive
                   ? "bg-emerald-500/25 text-emerald-300 border border-emerald-400/40 shadow-sm"
@@ -110,7 +101,7 @@ export function Navbar() {
               }`}
             >
               {item.label}
-            </button>
+            </a>
           );
         })}
       </div>
