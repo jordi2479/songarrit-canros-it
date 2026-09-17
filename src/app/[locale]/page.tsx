@@ -128,16 +128,14 @@ export default function Home() {
             delay={0.4}
           />
           <motion.p
-            className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            <span>{tHero("subtitle")}</span>
-            <span className="block mt-1 text-slate-300">
-              {tHero("groupPrefix")}{" "}
-              <strong className="text-white font-semibold">{tHero("brand")}</strong>
-            </span>
+            <strong className="text-white font-bold tracking-tight">
+              {tHero("groupPrefix")} {tHero("brand")}
+            </strong>
           </motion.p>
           <ScrollIndicator targetId="problema" />
         </div>
