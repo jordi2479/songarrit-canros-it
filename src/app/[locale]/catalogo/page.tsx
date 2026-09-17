@@ -2,26 +2,24 @@
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Filter, ChevronDown, ChevronUp, ArrowLeft, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity, CheckCircle2 } from "lucide-react";
+import { Search, Filter, ChevronDown, ChevronUp, ArrowLeft, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity, Wrench, CheckCircle2, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { catalogoCategorias } from "@/data/catalogo";
 import { catalogoCategoriasEn } from "@/data/catalogo_en";
 import { catalogoCategoriasCa } from "@/data/catalogo_ca";
 import { catalogoCategoriasDe } from "@/data/catalogo_de";
+import { AREA_THEMES } from "@/data/areaColors";
+import { AreaId } from "@/data/types";
 
 export default function Catalogo() {
   const t = useTranslations("catalogo");
   const locale = useLocale();
-  const [search, setSearch] = useState("");
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  
   // Nivel 1 - Estructura
   const [areaFilter, setAreaFilter] = useState<string | null>(null);
   const [categoriaFilter, setCategoriaFilter] = useState<string | null>(null);
-  
-  // Nivel 1 - Analítica
-  const [metricaFilter, setMetricaFilter] = useState<'beneficio' | 'riesgo' | 'facilidad' | null>(null);
-  const [metricaValorFilter, setMetricaValorFilter] = useState<string | null>(null);
   
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -39,7 +37,7 @@ export default function Catalogo() {
         list.push({
           ...prop,
           categoriaTitulo: area.titulo,
-          bloque: area.area
+          area: area.area // Fixing this property mapping
         });
       });
     });
@@ -53,71 +51,48 @@ export default function Catalogo() {
     operativa: t("operativa"),
   };
 
-  const metricaBotones = [
-    { id: 'beneficio', label: t("beneficio"), icon: BarChart },
-    { id: 'riesgo', label: t("riesgo"), icon: ShieldAlert },
-    { id: 'facilidad', label: t("facilidad"), icon: Activity }
-  ];
-
-  const valoresPorMetrica = {
-    beneficio: [
-      { id: 'alto', label: t("alto"), dot: 'bg-emerald-500', active: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-      { id: 'medio', label: t("medio"), dot: 'bg-amber-500', active: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-      { id: 'bajo', label: t("bajo"), dot: 'bg-red-500', active: 'bg-red-500/20 text-red-400 border-red-500/30' }
-    ],
-    riesgo: [
-      { id: 'bajo', label: t("bajo"), dot: 'bg-emerald-500', active: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-      { id: 'medio', label: t("medio"), dot: 'bg-amber-500', active: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-      { id: 'alto', label: t("alto"), dot: 'bg-red-500', active: 'bg-red-500/20 text-red-400 border-red-500/30' }
-    ],
-    facilidad: [
-      { id: 'alto', label: t("alto"), dot: 'bg-emerald-500', active: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-      { id: 'medio', label: t("medio"), dot: 'bg-amber-500', active: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-      { id: 'bajo', label: t("bajo"), dot: 'bg-red-500', active: 'bg-red-500/20 text-red-400 border-red-500/30' }
-    ]
+  const areaDotClasses: Record<string, string> = {
+    global: AREA_THEMES.global.dot,
+    administracion: AREA_THEMES.administracion.dot,
+    clientes: AREA_THEMES.clientes.dot,
+    operativa: AREA_THEMES.operativa.dot,
   };
 
-  const areasParaBloque = useMemo(() => {
-    if (!areaFilter) return [];
-    return localizedCatalogoAreas.filter(a => a.area === areaFilter).map(a => a.titulo);
-  }, [areaFilter, localizedCatalogoAreas]);
+  const areaBadgeClasses: Record<string, string> = {
+    global: AREA_THEMES.global.dark.badge,
+    administracion: AREA_THEMES.administracion.dark.badge,
+    clientes: AREA_THEMES.clientes.dark.badge,
+    operativa: AREA_THEMES.operativa.dark.badge,
+  };
 
   const filtered = useMemo(() => {
     return allPropuestas.filter((idea) => {
-      const matchSearch = search === "" ||
-        idea.titulo.toLowerCase().includes(search.toLowerCase()) ||
-        idea.descripcion.toLowerCase().includes(search.toLowerCase()) ||
-        idea.categoriaTitulo.toLowerCase().includes(search.toLowerCase());
-        
       const matchBloque = !areaFilter || idea.area === areaFilter;
       const matchArea = !categoriaFilter || idea.categoriaTitulo === categoriaFilter;
       
-      const matchMetrica = !metricaValorFilter || (
-        metricaFilter === 'beneficio' ? idea.beneficio?.toLowerCase() === metricaValorFilter :
-        metricaFilter === 'riesgo' ? idea.riesgo?.toLowerCase() === metricaValorFilter :
-        metricaFilter === 'facilidad' ? idea.facilidad?.toLowerCase() === metricaValorFilter : true
-      );
-      
-      return matchSearch && matchBloque && matchArea && matchMetrica;
+      return matchBloque && matchArea;
     });
-  }, [search, areaFilter, categoriaFilter, metricaFilter, metricaValorFilter, allPropuestas]);
+  }, [areaFilter, categoriaFilter, allPropuestas]);
 
   const getRiesgoTextColor = (val: string) => {
-    if (val?.toLowerCase() === "alto") return "text-red-500";
-    if (val?.toLowerCase() === "medio") return "text-amber-500";
-    return "text-emerald-500";
+    const v = val?.toLowerCase();
+    if (v === "bajo") return "text-emerald-400";
+    if (v === "medio") return "text-amber-400";
+    return "text-red-400"; // Alto riesgo = Rojo
   };
 
   const getBeneficioTextColor = (val: string) => {
-    if (val?.toLowerCase() === "alto") return "text-emerald-500";
-    if (val?.toLowerCase() === "medio") return "text-amber-500";
-    return "text-red-500";
+    const v = val?.toLowerCase();
+    if (v === "alto") return "text-emerald-400";
+    if (v === "medio") return "text-amber-400";
+    return "text-red-400";
   };
   
-  const getFacilidadTextColor = (val: string) => {
-    if (val?.toLowerCase() === "alto") return "text-emerald-500";
-    if (val?.toLowerCase() === "medio") return "text-amber-500";
-    return "text-red-500";
+  const getDificultadTextColor = (val?: string) => {
+    const v = val?.toLowerCase();
+    if (v === "alta" || v === "alto") return "text-red-400"; // Alta dificultad = Rojo
+    if (v === "media" || v === "medio") return "text-amber-400";
+    return "text-emerald-400"; // Baja dificultad = Verde
   };
 
   const getRiesgoColor = getRiesgoTextColor;
@@ -130,16 +105,6 @@ export default function Catalogo() {
     } else {
       setAreaFilter(key);
       setCategoriaFilter(null);
-    }
-  };
-
-  const handleMetricaClick = (key: 'beneficio' | 'riesgo' | 'facilidad') => {
-    if (metricaFilter === key) {
-      setMetricaFilter(null);
-      setMetricaValorFilter(null);
-    } else {
-      setMetricaFilter(key);
-      setMetricaValorFilter(null);
     }
   };
 
@@ -157,130 +122,90 @@ export default function Catalogo() {
             </span>
           </div>
 
-          {/* Search and Mobile Filter Toggle */}
-          <div className="flex gap-3 mb-4">
-            <div className="relative flex-1">
-              <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
-              <input
-                type="text"
-                placeholder={t("buscar")}
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all shadow-inner"
-              />
-            </div>
-            <button 
-              onClick={() => setIsFiltersOpen(!isFiltersOpen)}
-              className={`md:hidden flex items-center justify-center px-4 rounded-xl border transition-colors ${
-                isFiltersOpen || areaFilter || metricaFilter || categoriaFilter || metricaValorFilter
-                  ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
-                  : 'bg-slate-900 border-slate-800 text-slate-400'
-              }`}
+          {/* 1. Macro-Áreas (Toggles) */}
+          <div className="flex flex-wrap gap-3 items-center mb-5 mt-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-slate-500 mr-2 hidden sm:block">Áreas:</span>
+            {Object.entries(customAreaLabels).map(([key, label]) => {
+              const isActive = areaFilter === key;
+              return (
+                <button
+                  key={key}
+                  onClick={() => handleBloqueClick(key)}
+                  className={`px-4 py-2 rounded-xl text-sm font-bold border transition-all cursor-pointer flex items-center gap-2 ${
+                  isActive
+                    ? AREA_THEMES[key as AreaId].dark.pillActive
+                    : "bg-slate-900/50 text-slate-400 border-slate-800 hover:bg-slate-800 hover:text-slate-300"
+                }`}
+              >
+                <div className={`w-2.5 h-2.5 rounded-full ${areaDotClasses[key]}`} />
+                {label}
+              </button>
+            )
+          })}
+          
+          {(areaFilter || categoriaFilter) && (
+            <button
+              onClick={() => { setAreaFilter(null); setCategoriaFilter(null); }}
+              className="ml-auto px-4 py-2 text-xs font-semibold text-slate-400 hover:text-white bg-slate-900/50 hover:bg-slate-800 rounded-xl border border-slate-800 transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
             >
-              <Filter className="w-5 h-5" />
+              <X className="w-4 h-4 text-red-500" />
+              <span className="hidden sm:inline">Restablecer</span>
             </button>
+          )}
+        </div>
+
+        {/* 2. Categorías (Nube fluida) */}
+        <div className="flex flex-wrap gap-2.5 items-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-slate-500 mr-2 hidden sm:block">Categorías:</span>
+          {localizedCatalogoAreas.map(cat => {
+            const isActiveArea = areaFilter === cat.area;
+            const isFaded = areaFilter && !isActiveArea;
+            const isSelectedCat = categoriaFilter === cat.titulo;
+            const theme = AREA_THEMES[cat.area as AreaId]?.dark;
+
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setCategoriaFilter(isSelectedCat ? null : cat.titulo)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-300 cursor-pointer ${
+                  isSelectedCat
+                    ? `shadow-md ${theme?.badge}` 
+                    : isFaded
+                      ? 'bg-slate-900/20 text-slate-600 border-slate-800/50 opacity-40 grayscale hover:opacity-70'
+                      : isActiveArea
+                        ? `bg-slate-900/50 ${theme?.border} ${theme?.bgHover} ${theme?.baseText}`
+                        : 'bg-slate-900/50 text-slate-400 border-slate-800 hover:bg-slate-800 hover:text-slate-300'
+                }`}
+              >
+                {cat.titulo}
+              </button>
+            )
+          })}
           </div>
 
-          {/* Filters Container */}
-          <div className={`md:flex flex-col gap-3 ${isFiltersOpen ? 'flex' : 'hidden'}`}>
+          {/* 3. Leyenda de Métricas (Iconos) */}
+          <div className="mt-5 pt-5 border-t border-slate-800/50 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Leyenda:</span>
             
-            {/* Grupo: Bloques y Áreas */}
-            <div className="bg-slate-900/30 p-3 rounded-xl border border-slate-800/50 flex flex-col gap-3">
-              <div className="flex flex-wrap gap-2 items-center">
-                <Filter className="w-3.5 h-3.5 text-slate-500 mr-1 hidden md:block" />
-                {Object.entries(customAreaLabels).map(([key, label]) => (
-                  <button
-                    key={key}
-                    onClick={() => handleBloqueClick(key)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                      areaFilter === key
-                        ? "bg-blue-500 text-white border border-blue-400"
-                        : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
+            <div className="flex items-center gap-2 bg-slate-900/60 px-2.5 py-1.5 rounded-xl border border-slate-800">
+              <div className="w-5 h-5 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300">
+                <BarChart className="w-3 h-3" />
               </div>
-              
-              <AnimatePresence>
-                {areaFilter && areasParaBloque.length > 0 && (
-                  <motion.div 
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="flex flex-wrap gap-2 items-center pt-2 border-t border-slate-800/50">
-                      <Layers className="w-3.5 h-3.5 text-slate-500 hidden sm:block" />
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-1">Áreas:</span>
-                      {areasParaBloque.map((areaNombre) => (
-                        <button
-                          key={areaNombre}
-                          onClick={() => setCategoriaFilter(categoriaFilter === areaNombre ? null : areaNombre)}
-                          className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all cursor-pointer ${
-                            categoriaFilter === areaNombre
-                              ? "bg-blue-500/20 text-blue-400 border border-blue-500/50"
-                              : "bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-800"
-                          }`}
-                        >
-                          {areaNombre}
-                        </button>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <span className="text-xs font-semibold text-slate-300">{t("beneficio")}</span>
             </div>
 
-            {/* Grupo: Métricas y Niveles */}
-            <div className="bg-slate-900/30 p-3 rounded-xl border border-slate-800/50 flex flex-col gap-3">
-              <div className="flex flex-wrap gap-2 items-center">
-                <span className="text-xs uppercase font-bold text-slate-500 mr-1 hidden md:block">Métricas:</span>
-                {metricaBotones.map((btn) => (
-                  <button
-                    key={btn.id}
-                    onClick={() => handleMetricaClick(btn.id as any)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
-                      metricaFilter === btn.id
-                        ? "bg-emerald-500 text-white border border-emerald-400"
-                        : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
-                    }`}
-                  >
-                    <btn.icon className={`w-3.5 h-3.5 ${metricaFilter === btn.id ? "text-white" : "text-slate-500"}`} />
-                    {btn.label}
-                  </button>
-                ))}
+            <div className="flex items-center gap-2 bg-slate-900/60 px-2.5 py-1.5 rounded-xl border border-slate-800">
+              <div className="w-5 h-5 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300">
+                <ShieldAlert className="w-3 h-3" />
               </div>
-              
-              <AnimatePresence>
-                {metricaFilter && (
-                  <motion.div 
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="flex flex-wrap gap-2 items-center pt-2 border-t border-slate-800/50">
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-1">Nivel:</span>
-                      {valoresPorMetrica[metricaFilter].map((val) => (
-                        <button
-                          key={val.id}
-                          onClick={() => setMetricaValorFilter(metricaValorFilter === val.id ? null : val.id)}
-                          className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
-                            metricaValorFilter === val.id
-                              ? val.active
-                              : "bg-slate-900 text-slate-400 border-slate-800 hover:bg-slate-800 hover:text-slate-200"
-                          }`}
-                        >
-                          <span className={`w-1.5 h-1.5 rounded-full ${val.dot}`}></span>
-                          {val.label}
-                        </button>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <span className="text-xs font-semibold text-slate-300">{t("riesgo")}</span>
+            </div>
+
+            <div className="flex items-center gap-2 bg-slate-900/60 px-2.5 py-1.5 rounded-xl border border-slate-800">
+              <div className="w-5 h-5 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300">
+                <Wrench className="w-3 h-3" />
+              </div>
+              <span className="text-xs font-semibold text-slate-300">{t("dificultad")}</span>
             </div>
           </div>
         </div>
@@ -337,9 +262,9 @@ export default function Catalogo() {
                         <span className="text-[10px] font-bold uppercase tracking-wider">{idea.riesgo}</span>
                       </div>
                       <span className="w-px h-3 bg-slate-700/50"></span>
-                      <div title={`Facilidad: ${idea.facilidad}`} className={`flex items-center gap-1.5 ${getFacilidadTextColor(idea.facilidad)}`}>
-                        <Activity className="w-3.5 h-3.5" />
-                        <span className="text-[10px] font-bold uppercase tracking-wider">{idea.facilidad}</span>
+                      <div title={`Dificultad: ${idea.dificultad || idea.facilidad}`} className={`flex items-center gap-1.5 ${getDificultadTextColor(idea.dificultad || idea.facilidad)}`}>
+                        <Wrench className="w-3.5 h-3.5" />
+                        <span className="text-[10px] font-bold uppercase tracking-wider">{idea.dificultad || idea.facilidad}</span>
                       </div>
                     </div>
 
@@ -424,13 +349,15 @@ export default function Catalogo() {
                           </div>
                           <div>
                             <h4 className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Riesgo / Fricción</h4>
-                            <p className="text-sm font-bold flex items-center gap-2 text-slate-300">
+                            <p className={`text-sm font-bold flex items-center gap-2 ${getRiesgoColor(idea.riesgo)}`}>
                               <ShieldAlert className="w-4 h-4" /> {idea.riesgo}
                             </p>
                           </div>
                           <div>
-                            <h4 className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Facilidad Técnica</h4>
-                            <p className="text-sm text-slate-300">{idea.facilidad}</p>
+                            <h4 className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Dificultad Técnica</h4>
+                            <p className={`text-sm font-bold flex items-center gap-2 ${getDificultadTextColor(idea.dificultad || idea.facilidad)}`}>
+                              <Wrench className="w-4 h-4" /> {idea.dificultad || idea.facilidad}
+                            </p>
                           </div>
                         </div>
 

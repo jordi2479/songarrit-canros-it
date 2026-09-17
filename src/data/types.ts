@@ -6,7 +6,8 @@ export interface Propuesta {
   titulo: string;
   descripcion: string;
   descripcionLarga: string;
-  facilidad: string;
+  dificultad?: string;
+  facilidad?: string;
   riesgo: string;
   beneficio: string;
   acceso?: 'lectura' | 'escritura';

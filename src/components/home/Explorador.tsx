@@ -11,6 +11,8 @@ import { catalogoCategorias } from "@/data/catalogo";
 import { catalogoCategoriasEn } from "@/data/catalogo_en";
 import { catalogoCategoriasCa } from "@/data/catalogo_ca";
 import { catalogoCategoriasDe } from "@/data/catalogo_de";
+import { AREA_THEMES } from "@/data/areaColors";
+import { AreaId } from "@/data/types";
 
 // Mapa de sinapsis: Área Local ID -> Array de Áreas Globales ID
 const sinapsis: Record<string, string[]> = {
@@ -77,14 +79,14 @@ export function Explorador() {
         <div className="w-full md:w-[45%] flex flex-col justify-center relative z-10">
           <div className="relative">
             {/* Efecto de aura centralizado cuando interactúas */}
-            <div className={`absolute inset-0 bg-blue-500/5 blur-[100px] rounded-full transition-opacity duration-700 pointer-events-none ${isHovering ? 'opacity-100' : 'opacity-0'}`} />
+            <div className={`absolute inset-0 bg-indigo-500/5 blur-[100px] rounded-full transition-opacity duration-700 pointer-events-none ${isHovering ? 'opacity-100' : 'opacity-0'}`} />
             
-            <div className={`p-8 rounded-3xl border-2 transition-all duration-500 ${isHovering ? 'border-blue-500/40 bg-slate-900/80 shadow-2xl shadow-blue-500/10' : 'border-slate-800 bg-slate-900/50'}`}>
+            <div className={`p-8 rounded-3xl border-2 transition-all duration-500 ${isHovering ? 'border-indigo-500/40 bg-slate-900/80 shadow-2xl shadow-indigo-500/10' : 'border-slate-800 bg-slate-900/50'}`}>
               <div className="flex items-center gap-3 mb-8 pb-4 border-b border-slate-800">
-                <Building2 className="w-8 h-8 text-blue-400" />
+                <Building2 className="w-8 h-8 text-indigo-400" />
                 <div>
                   <h3 className="text-2xl font-black text-white uppercase tracking-tight">{t("grupo")}</h3>
-                  <p className="text-sm text-blue-400 font-semibold tracking-wider">ESTRATEGIA CENTRAL</p>
+                  <p className="text-sm text-indigo-400 font-semibold tracking-wider">ESTRATEGIA CENTRAL</p>
                 </div>
               </div>
 
@@ -101,20 +103,20 @@ export function Explorador() {
                       onMouseLeave={() => setHoveredLocal(null)}
                       className={`block p-4 rounded-xl border transition-all duration-300 relative overflow-hidden group ${
                         isActive 
-                          ? 'bg-blue-500/20 border-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.3)] scale-[1.02] z-10' 
+                          ? 'bg-indigo-500/20 border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.3)] scale-[1.02] z-10' 
                           : isDimmed
                             ? 'bg-slate-900 border-slate-800 opacity-40 grayscale'
                             : 'bg-slate-950/80 border-slate-800 hover:border-slate-700'
                       }`}
                     >
                       {isActive && (
-                        <motion.div layoutId="glowGlobal" className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0" />
+                        <motion.div layoutId="glowGlobal" className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0" />
                       )}
                       <div className="relative z-10 flex items-center justify-between">
                         <div>
-                          <h4 className={`font-bold ${isActive ? 'text-blue-100' : 'text-slate-200'}`}>{area.titulo}</h4>
+                          <h4 className={`font-bold ${isActive ? 'text-indigo-100' : 'text-slate-200'}`}>{area.titulo}</h4>
                         </div>
-                        <Target className={`w-5 h-5 ${isActive ? 'text-blue-400' : 'text-slate-600'} group-hover:text-blue-400 transition-colors`} />
+                        <Target className={`w-5 h-5 ${isActive ? 'text-indigo-400' : 'text-slate-600'} group-hover:text-indigo-400 transition-colors`} />
                       </div>
                     </Link>
                   );
@@ -160,7 +162,7 @@ export function Explorador() {
           <LocalBlock 
             title={t("nucleo")} 
             icon={Store} 
-            color="emerald" 
+            areaId="administracion" 
             areas={adminAreas} 
             hoveredLocal={hoveredLocal}
             setHovered={setHoveredLocal}
@@ -170,7 +172,7 @@ export function Explorador() {
           <LocalBlock 
             title={t("clientes")} 
             icon={Users} 
-            color="violet" 
+            areaId="clientes" 
             areas={clientesAreas} 
             hoveredLocal={hoveredLocal}
             setHovered={setHoveredLocal}
@@ -180,7 +182,7 @@ export function Explorador() {
           <LocalBlock 
             title={t("operativa")} 
             icon={Settings} 
-            color="amber" 
+            areaId="operativa" 
             areas={operativaAreas} 
             hoveredLocal={hoveredLocal}
             setHovered={setHoveredLocal}
@@ -195,11 +197,14 @@ export function Explorador() {
 }
 
 // Subcomponente para los bloques locales
-function LocalBlock({ title, icon: Icon, color, areas, hoveredLocal, setHovered, activeLocals, isHovering }: any) {
+function LocalBlock({ title, icon: Icon, areaId, areas, hoveredLocal, setHovered, activeLocals, isHovering }: any) {
+  const theme = AREA_THEMES[areaId as AreaId]?.dark;
+  const iconColor = theme?.baseText || 'text-slate-400';
+
   return (
     <div className={`p-6 rounded-3xl border transition-all duration-500 bg-slate-900/50 ${isHovering ? 'border-slate-800' : 'border-slate-800'}`}>
       <div className="flex items-center gap-2 mb-4">
-        <Icon className={`w-5 h-5 text-${color}-400`} />
+        <Icon className={`w-5 h-5 ${iconColor}`} />
         <h3 className="font-bold text-slate-300 uppercase tracking-wider text-sm">{title}</h3>
       </div>
       
@@ -216,7 +221,7 @@ function LocalBlock({ title, icon: Icon, color, areas, hoveredLocal, setHovered,
               onMouseLeave={() => setHovered(null)}
               className={`p-3 rounded-lg border transition-all duration-300 cursor-pointer flex justify-between items-center group ${
                 isActive 
-                  ? `bg-${color}-500/20 border-${color}-400/50 shadow-[0_0_15px_rgba(0,0,0,0.2)]` 
+                  ? `${theme?.badge} ${theme?.border} ${theme?.glow}` 
                   : isDimmed
                     ? 'bg-slate-900 border-slate-800/50 opacity-30 grayscale'
                     : 'bg-slate-950 border-slate-800 hover:border-slate-700'
@@ -227,7 +232,7 @@ function LocalBlock({ title, icon: Icon, color, areas, hoveredLocal, setHovered,
                   {area.titulo}
                 </h4>
               </div>
-              <Zap className={`w-3 h-3 flex-shrink-0 ${isActive ? `text-${color}-400` : 'text-slate-600 opacity-0 group-hover:opacity-100'} transition-all`} />
+              <Zap className={`w-3 h-3 flex-shrink-0 ${isActive ? iconColor : 'text-slate-600 opacity-0 group-hover:opacity-100'} transition-all`} />
             </Link>
           );
         })}
