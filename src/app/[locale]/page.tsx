@@ -13,6 +13,7 @@ import {
 import { useTranslations } from "next-intl";
 import { Section } from "@/components/layout/Section";
 import { Navbar } from "@/components/layout/Navbar";
+import { EsquemaEmpresa } from "@/components/layout/EsquemaEmpresa";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 import { AlertaStock } from "@/components/prototipos/AlertaStock";
@@ -256,68 +257,53 @@ export default function Home() {
 
       {/* ─── SECCIÓN 5: LAS 3 GARANTÍAS ─── */}
       <Section id="garantias" dark>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-16 text-center leading-tight">
-          {tGarantias("title")}<br/><span className="text-emerald-400">{tGarantias("highlight")}</span>
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight">
+            {tGarantias("title")}<br/><span className="text-emerald-400">{tGarantias("highlight")}</span>
+          </h2>
+          <p className="text-lg md:text-xl text-slate-400 leading-relaxed font-normal">
+            {tGarantias("desc")}
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {[
             { icon: Shield, title: tGarantias("g1Title"), desc: tGarantias("g1Desc"), color: "emerald" },
             { icon: Handshake, title: tGarantias("g2Title"), desc: tGarantias("g2Desc"), color: "blue" },
             { icon: RotateCcw, title: tGarantias("g3Title"), desc: tGarantias("g3Desc"), color: "amber" },
           ].map((g, i) => (
-            <FadeCard key={g.title} delay={i * 0.15} className={`p-8 rounded-2xl bg-slate-900 border border-slate-800 text-center`}>
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 ${
-                g.color === "emerald" ? "bg-emerald-500/10 text-emerald-400" :
-                g.color === "blue" ? "bg-blue-500/10 text-blue-400" :
-                "bg-amber-500/10 text-amber-400"
-              }`}>
-                <g.icon className="w-7 h-7" />
+            <FadeCard key={g.title} delay={i * 0.15} className="p-8 rounded-2xl bg-slate-900 border border-slate-800 text-center flex flex-col justify-between">
+              <div>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 ${
+                  g.color === "emerald" ? "bg-emerald-500/10 text-emerald-400" :
+                  g.color === "blue" ? "bg-blue-500/10 text-blue-400" :
+                  "bg-amber-500/10 text-amber-400"
+                }`}>
+                  <g.icon className="w-7 h-7" />
+                </div>
+                <h3 className="font-bold text-white mb-3 text-lg">{g.title}</h3>
               </div>
-              <h3 className="font-bold text-white mb-3 text-lg">{g.title}</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">{g.desc}</p>
+              <p className="text-sm text-slate-400 leading-relaxed mt-2">{g.desc}</p>
             </FadeCard>
           ))}
         </div>
       </Section>
 
       {/* ─── SECCIÓN 6: LOS 4 BLOQUES ─── */}
-      <Section id="bloques">
-        <div className="text-center mb-16">
+      <Section id="bloques" className="bg-slate-50">
+        <div className="text-center mb-10">
+          <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 font-bold text-xs tracking-widest uppercase mb-4">
+            {tBloques("badge")}
+          </span>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-900 leading-tight">
             {tBloques("title")} <span className="text-emerald-600">{tBloques("highlight")}</span>
           </h2>
-          <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-            {tBloques("desc")}
-          </p>
+          <div className="text-lg md:text-xl text-slate-500 max-w-4xl mx-auto mb-6 leading-relaxed">
+            {tBloques.rich("desc", {
+              bold: (chunks) => <strong className="text-slate-800 font-bold">{chunks}</strong>
+            })}
+          </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          {bloques.map((b, i) => {
-            const c = colorClasses[b.color];
-            return (
-              <FadeCard key={b.id} delay={i * 0.1} className={`p-8 rounded-2xl bg-white border-2 ${c.card} shadow-sm hover:shadow-lg transition-all cursor-default group`}>
-                <div className="flex items-center gap-4 mb-5">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${c.badge}`}>
-                    <b.icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className={`text-[10px] font-black uppercase tracking-widest ${c.icon}`}>{b.id}</span>
-                    <h3 className="text-xl font-black text-slate-900">{b.nombre}</h3>
-                  </div>
-                </div>
-                <p className="text-slate-500 text-sm mb-5">{b.desc}</p>
-                <div className="space-y-2">
-                  {b.areas.map((a) => (
-                    <div key={a.num} className="flex items-center gap-3 text-sm text-slate-600 py-1.5 px-3 rounded-lg hover:bg-slate-50 transition-colors">
-                      <a.icon className="w-4 h-4 text-slate-400" />
-                      <span className="font-mono text-xs text-slate-400">{a.num}</span>
-                      <span>{a.nombre}</span>
-                    </div>
-                  ))}
-                </div>
-              </FadeCard>
-            );
-          })}
-        </div>
+        <EsquemaEmpresa />
       </Section>
 
       {/* ─── SECCIÓN 7: ZOOM ÁREAS ─── */}
@@ -330,22 +316,26 @@ export default function Home() {
             {tAreas("desc")}
           </p>
         </div>
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-3">
-          {bloques.flatMap((b) =>
-            b.areas.map((a, i) => {
-              const c = colorClasses[b.color];
-              return (
-                <FadeCard key={a.num} delay={i * 0.05} className={`p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all text-center group cursor-default`}>
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-2 ${c.badge}`}>
-                    <a.icon className="w-4 h-4" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {bloques.map((b, bIdx) => (
+            <div key={b.id} className="flex flex-col gap-3">
+              <div className={`flex items-center gap-3 mb-2 pb-2 border-b ${b.id === 'B1' ? 'border-blue-500/20' : b.id === 'B2' ? 'border-emerald-500/20' : b.id === 'B3' ? 'border-violet-500/20' : 'border-amber-500/20'}`}>
+                <b.icon className={`w-5 h-5 ${b.id === 'B1' ? 'text-blue-400' : b.id === 'B2' ? 'text-emerald-400' : b.id === 'B3' ? 'text-violet-400' : 'text-amber-400'}`} />
+                <h3 className="font-bold text-white">{b.nombre}</h3>
+              </div>
+              {b.areas.map((a, i) => (
+                <FadeCard key={a.num} delay={bIdx * 0.1 + i * 0.05} className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all group">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 text-slate-500 font-mono text-[10px]">{a.num}</div>
+                    <div>
+                      <h4 className="text-sm text-slate-200 font-bold mb-1">{a.nombre}</h4>
+                      <p className="text-xs text-slate-400 leading-relaxed">{tAreas(`a${a.num}Desc` as any)}</p>
+                    </div>
                   </div>
-                  <span className="font-mono text-[10px] text-slate-500 block">{a.num}</span>
-                  <span className="text-xs text-slate-300 font-medium block mt-1">{a.nombre}</span>
-                  <span className="text-[10px] text-slate-600 mt-2 block">{tBloques("proyectos")}</span>
                 </FadeCard>
-              );
-            })
-          )}
+              ))}
+            </div>
+          ))}
         </div>
         <div className="text-center mt-12">
           <Link href="/catalogo" className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm rounded-xl transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40">

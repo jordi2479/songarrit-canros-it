@@ -43,58 +43,103 @@
     "despues3": "🤖 Versandfertiger Entwurf"
   },
   "perfil": {
-    "title": "Das Hybrid-Profil",
-    "subtitle": "Eine Agentur baut ein hübsches Dashboard. Aber",
-    "subtitleBold": "sie weiß nicht, was ein Schwerlast-Verbundanker ist",
-    "mostrador": "50% Verkauf & Theke",
-    "mostradorItems": ["Kassieren und Fachhandwerker beraten", "Regale auffüllen und Lager organisieren", "Sortiment und Kundschaft aus erster Hand kennen", "Echte operative Engpässe im Alltag erkennen"],
-    "procesos": "50% Prozesse & IT",
-    "procesosItems": ["Benachrichtigungen und Dashboards automatisieren", "Maßgeschneiderte interne Tools entwickeln", "Externe Spezialisten koordinieren", "Standortübergreifende Daten analysieren"]
+    "title": "Der Wert des Hybrid-Profils",
+    "intro": "<p>Der größte Fehler von Unternehmen ist es, <bold>diejenigen, die Technologie entwickeln</bold>, von denen zu trennen, die täglich darunter leiden. Mein Vorschlag ist nicht, ein weiterer Verkäufer oder ein in einem Büro eingesperrter Techniker zu sein.</p><p>Mein Ziel ist es, <highlight>die Brücke zwischen beiden Welten zu sein</highlight>:</p><p>Jemand, der in der Lage ist, <bold>das Problem vor Ort zu erkennen</bold>, und mit den technischen Fähigkeiten, <bold>es durch maßgeschneiderte Tools zu lösen</bold>.</p>",
+    "mostrador": "50% Analyse im Geschäft",
+    "mostradorItems": [
+      {
+        "title": "Das Geschäft von innen verstehen",
+        "desc": "Den Profi am Schalter bedienen, um den Katalog und die Nachfrage aus erster Hand zu kennen."
+      },
+      {
+        "title": "Die Abläufe kartieren",
+        "desc": "Im Lager arbeiten, um echte Engpässe in den Warenströmen zu erkennen."
+      },
+      {
+        "title": "Diagnostizieren",
+        "desc": "Präzise identifizieren, welche sich wiederholenden Aufgaben den Managern Verkaufszeit rauben."
+      }
+    ],
+    "procesos": "50% KI-Lösungen",
+    "procesosItems": [
+      {
+        "title": "Intelligente Automatisierung",
+        "desc": "KI-Agenten einsetzen, um Datenverarbeitung und mechanische Aufgaben zu übernehmen."
+      },
+      {
+        "title": "Präzisionswerkzeuge",
+        "desc": "Maßgeschneiderte IT-Lösungen entwickeln, die spezifische tägliche Probleme im Geschäft lösen."
+      },
+      {
+        "title": "Datenvereinheitlichung",
+        "desc": "Informationen aus Palma und Campos abgleichen und analysieren, um dem Management die Entscheidungsfindung zu erleichtern."
+      }
+    ]
   },
   "garantias": {
-    "title": "Drei unverrückbare",
-    "highlight": "Garantien",
-    "g1Title": "Das System schlägt vor, die Geschäftsführung entscheidet",
-    "g1Desc": "Nichts wird ohne Ihren Klick ausgeführt. Automatisierungen erstellen ausschließlich Entwürfe.",
-    "g2Title": "Kritisches liegt in den Händen von Fachexperten",
-    "g2Desc": "Kassensysteme, ERP und Banken werden von zertifizierten Partnern betreut. Ich koordiniere die Logik, nicht den sensiblen Kerncode.",
-    "g3Title": "100% Reversibel",
-    "g3Desc": "Sollte etwas nicht passen, ist es in einer Minute deaktiviert. Das Geschäft läuft wie gewohnt weiter. Kein Risiko."
+    "title": "Drei Garantien",
+    "highlight": "für absolute Sicherheit",
+    "desc": "Technologie soll Agilität bringen, niemals Unsicherheit. Jede Automatisierung folgt einem klaren Prinzip: Sicherheit, Kontrolle und null Reibung für die Geschäftsführung.",
+    "g1Title": "Das System unterstützt, Sie entscheiden",
+    "g1Desc": "Kein Prozess läuft eigenständig. Die Technologie liefert Vorschläge und Entwürfe; die Freigabe liegt immer bei Ihnen.",
+    "g2Title": "Kritische Kernsysteme bleiben unberührt",
+    "g2Desc": "ERP, Kasse und Banken werden von zertifizierten Partnern betreut. Ich schaffe Automatisierungs- und Logikebenen, ohne den Kern zu verändern.",
+    "g3Title": "100% Reversibel und risikofrei",
+    "g3Desc": "Jedes Tool lässt sich in Sekunden aktivieren oder deaktivieren. Der Betrieb wird nie gestört oder abhängig gemacht."
   },
   "bloques": {
-    "title": "150 Ideen in",
-    "highlight": "4 Säulen",
-    "desc": "Strukturierte Aufteilung aller Vorhaben. Vom Makrobereich (Gruppe) bis zum Mikrobereich (Theke).",
-    "b1": "Gruppe",
-    "b1Desc": "Synergien Palma + Campos",
-    "b2": "Kern",
-    "b2Desc": "Internes Management Ca'n Ros",
+    "title": "Architektur der",
+    "highlight": "Umsetzung",
+    "desc": "Der gesamte Arbeitsplan ist nach der tatsächlichen Unternehmensstruktur organisiert. Oben vereint eine <bold>Globale Zentrale</bold> die Strategie und Ressourcen beider Baumärkte. Unten operiert jedes Geschäft auf drei identischen Säulen (<bold>Verwaltung, Kunden und Betrieb</bold>). Um maximale Sicherheit zu gewährleisten, wird jede Innovation zunächst in der Umgebung von Ca'n Ros implementiert und erst nach erwiesener Wirksamkeit auf Son Garrit übertragen.",
+    "b1": "Global",
+    "b1Desc": "Synergien, Finanzen und Strategie",
+    "b2": "Verwaltung",
+    "b2Desc": "Management, Backoffice und lokale Finanzen",
     "b3": "Kunden",
-    "b3Desc": "Theke, Marketing und Vertrieb",
+    "b3Desc": "Schalter, Marketing und Vertrieb",
     "b4": "Betrieb",
-    "b4Desc": "Logistik, Personal und Sicherheit",
-    "proyectos": "10 Projekte"
+    "b4Desc": "Logistik, Team und Sicherheit",
+    "proyectos": "10 Projekte",
+    "badge": "Organisationsstruktur",
+    "b2Sub": "Rechnungsstellung, Finanzen und lokale Kontrolle",
+    "b3Sub": "Einkaufserlebnis und Marketing",
+    "b4Sub": "Waren- und Teammanagement"
   },
   "areas": {
     "title": "15 Bereiche.",
-    "highlight": "Je 10 konkrete Vorhaben.",
-    "desc": "Jeder Bereich des Unternehmens mit 10 umsetzbaren Ideen analysiert. Vom Einkauf bei Ca'n Ros bis zur Tourenplanung des Lieferwagens.",
-    "cta": "Alle 150 Ideen entdecken",
-    "a01": "Einkauf & Bestand",
-    "a02": "Filialfinanzen",
+    "highlight": "Je 10 Ideen.",
+    "desc": "Für jeden Geschäftsbereich wurden 10 konkrete Vorschläge analysiert. Von den Einkäufen bei Ca'n Ros bis zur Route des Lieferwagens.",
+    "cta": "Entdecken Sie die 150 Ideen",
+    "a01": "Einkauf und Lager",
+    "a02": "Finanzen Geschäft",
     "a03": "Filialleitung",
-    "a04": "Unternehmensführung",
+    "a04": "Gruppenleitung",
     "a05": "Zentraler Einkauf",
-    "a06": "Gemeinsamer Bestand",
-    "a07": "Konzern-Treasury",
+    "a06": "Gemeinsames Lager",
+    "a07": "Gruppenfinanzen",
     "a08": "Lokale Marken",
-    "a09": "Marketing & Reputation",
-    "a10": "Wissenstransfer Palma→Campos",
-    "a11": "Baustellen-Lieferung",
-    "a12": "Personal & Verwaltung",
-    "a13": "Sicherheit & Kontrolle",
-    "a14": "Kundenservice & WhatsApp",
-    "a15": "Zusatzservices & Werkstatt"
+    "a09": "Marketing und Reputation",
+    "a10": "Know-How Palma→Campos",
+    "a11": "Baustellenlieferung",
+    "a12": "Team und Verwaltung",
+    "a13": "Sicherheit und Kontrolle",
+    "a14": "Kundendienst und WhatsApp",
+    "a15": "Hilfsbetriebe",
+    "a01Desc": "Automatisierung von Prognosen und Warnungen zur Vermeidung von Engpässen.",
+    "a02Desc": "Lokale Kassenkontrolle, Abstimmungen und tägliche Rechnungsstellung.",
+    "a03Desc": "Dashboard und exklusive KPIs für die Leistung des Geschäfts.",
+    "a04Desc": "Allgemeine Strategie und Überwachung der Holding.",
+    "a05Desc": "Mengenverhandlung und Lieferantenvereinheitlichung.",
+    "a06Desc": "Lagersichtbarkeit in Echtzeit zwischen den Geschäften.",
+    "a07Desc": "Globale Kontrolle von Cashflow und Rentabilität.",
+    "a08Desc": "Positionierung und differenziertes Marketing nach Bereich.",
+    "a09Desc": "Akquise, Kundenbindung und digitale Präsenz.",
+    "a10Desc": "Transfer effizienter Prozesse von Palma nach Campos.",
+    "a11Desc": "Routenoptimierung und Lieferverfolgung.",
+    "a12Desc": "Schichtmanagement, Gehaltsabrechnung und Mitarbeiterproduktivität.",
+    "a13Desc": "Diebstahlprävention, Zugangskontrolle und Videoüberwachung.",
+    "a14Desc": "Automatisierte Weiterleitung wiederkehrender Angebote.",
+    "a15Desc": "Verschiedene Unterstützungsprozesse (Reinigung, Wartung)."
   },
   "prototipos": {
     "title": "So sieht der",
@@ -168,8 +213,8 @@
     "de": "von",
     "ideas": "Ideen",
     "buscar": "Nach Titel, Bereich oder Stichwort suchen...",
-    "grupo": "Gruppe",
-    "nucleo": "Kern",
+    "grupo": "Global",
+    "nucleo": "Administración",
     "clientes": "Kunden",
     "operativa": "Betrieb",
     "facil": "Einfach / Intern",

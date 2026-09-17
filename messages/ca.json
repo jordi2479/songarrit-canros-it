@@ -43,37 +43,67 @@
     "despues3": "🤖 Esborrany a punt per enviar"
   },
   "perfil": {
-    "title": "El Perfil Híbrid",
-    "subtitle": "Una agència munta un panell bonic. Però",
-    "subtitleBold": "no sap què és un tac químic",
-    "mostrador": "50% Taulell",
-    "mostradorItems": ["Cobrar i atendre el professional", "Reposar i ordenar magatzem", "Conèixer el catàleg de primera mà", "Detectar els colls d'ampolla reals"],
-    "procesos": "50% Processos",
-    "procesosItems": ["Automatitzar alertes i quadres de comandament", "Dissenyar eines a mida", "Coordinar l'especialista extern", "Analitzar dades de les dues botigues"]
+    "title": "El valor del Perfil Híbrid",
+    "intro": "<p>El major error de les empreses és <bold>separar els qui dissenyen la tecnologia</bold> dels qui la pateixen diàriament. La meva proposta no és ser un venedor més ni un tècnic tancat en una oficina.</p><p>El meu objectiu és <highlight>ser el pont entre tots dos mons</highlight>:</p><p>Algú capaç de <bold>detectar el problema sobre el terreny</bold>, i amb la capacitat tècnica per <bold>solucionar-lo creant eines a mida</bold>.</p>",
+    "mostrador": "50% Anàlisi a Botiga",
+    "mostradorItems": [
+      {
+        "title": "Entendre el negoci des de dins",
+        "desc": "Atendre el professional al taulell per conèixer de primera mà el catàleg i la demanda."
+      },
+      {
+        "title": "Mapejar l'operativa",
+        "desc": "Treballar al magatzem per detectar els colls d'ampolla reals en els fluxos d'estoc."
+      },
+      {
+        "title": "Diagnosticar",
+        "desc": "Identificar amb precisió quines tasques repetitives estan robant temps de venda als encarregats."
+      }
+    ],
+    "procesos": "50% Solucions amb IA",
+    "procesosItems": [
+      {
+        "title": "Automatització intel·ligent",
+        "desc": "Desplegar Agents d'IA perquè assumeixin el processament de dades i tasques mecàniques."
+      },
+      {
+        "title": "Eines de precisió",
+        "desc": "Desenvolupar solucions IT a mida que resolguin problemes concrets del dia a dia a la botiga."
+      },
+      {
+        "title": "Unificació de dades",
+        "desc": "Creuar i analitzar la informació de Palma i Campos per facilitar la presa de decisions a Direcció."
+      }
+    ]
   },
   "garantias": {
     "title": "Tres garanties",
-    "highlight": "inviolables",
-    "g1Title": "Proposa el sistema, disposa la Direcció",
-    "g1Desc": "Res no s'executa sense el vostre clic d'aprovació. Les automatitzacions només generen esborranys.",
-    "g2Title": "El sensible, amb especialista",
-    "g2Desc": "TPV, ERP i banc els toca un professional certificat. Jo coordino la lògica, no el codi crític.",
-    "g3Title": "100% Reversible",
-    "g3Desc": "Si alguna cosa no funciona, s'apaga en un minut. El negoci continua igual que avui. Zero dany."
+    "highlight": "de tranquil·litat",
+    "desc": "La tecnologia està per sumar agilitat, mai per generar incertesa. Tota automatització es dissenya amb un únic criteri: seguretat, control i zero fricció per a la Direcció.",
+    "g1Title": "El sistema assisteix, vosaltres decidiu",
+    "g1Desc": "Cap procés s'executa de manera autònoma. La tecnologia genera propostes i esborranys; la validació final sempre és vostra.",
+    "g2Title": "Intocables els sistemes crítics",
+    "g2Desc": "L'ERP, el TPV i la banca els gestionen els seus proveïdors certificats. Jo aporto capes d'automatització i intel·ligència, sense alterar el nucli.",
+    "g3Title": "100% Reversible i sense risc",
+    "g3Desc": "Qualsevol eina implementada es pot activar o desactivar en segons. El negoci mai no s'atura ni depèn d'una sola solució."
   },
   "bloques": {
-    "title": "150 idees en",
-    "highlight": "4 pilars",
-    "desc": "Tota la feina organitzada en blocs estructurals. Del macro (el grup) al micro (el taulell).",
-    "b1": "Grup",
-    "b1Desc": "Sinergies Palma + Campos",
-    "b2": "Nucli",
-    "b2Desc": "Gestió interna Ca'n Ros",
+    "title": "Arquitectura d'",
+    "highlight": "Implantació",
+    "desc": "Tot el pla de treball s'organitza seguint l'estructura real de l'empresa. A dalt, una <bold>Central Global</bold> que unifica l'estratègia i els recursos de totes dues ferreteries. A baix, cada botiga opera sobre tres pilars idèntics (<bold>Administració, Clients i Operativa</bold>). Per garantir la màxima seguretat, qualsevol innovació s'implanta primer en l'entorn de Ca'n Ros i, només després de provar-ne l'eficàcia, es clona a Son Garrit.",
+    "b1": "Global",
+    "b1Desc": "Sinergies, Tresoreria i Estratègia",
+    "b2": "Administració",
+    "b2Desc": "Gestió, Backoffice i Finances Locals",
     "b3": "Clients",
     "b3Desc": "Taulell, màrqueting i vendes",
     "b4": "Operativa",
     "b4Desc": "Logística, equip i seguretat",
-    "proyectos": "10 projectes"
+    "proyectos": "10 projectes",
+    "badge": "Estructura Organitzativa",
+    "b2Sub": "Facturació, finances i control local",
+    "b3Sub": "Experiència de compra i màrqueting",
+    "b4Sub": "Gestió de mercaderia i equip"
   },
   "areas": {
     "title": "15 àrees.",
@@ -94,7 +124,22 @@
     "a12": "Equip i Administració",
     "a13": "Seguretat i Control",
     "a14": "Atenció i WhatsApp",
-    "a15": "Operacions Auxiliars"
+    "a15": "Operacions Auxiliars",
+    "a01Desc": "Automatització de previsió i alertes per evitar trencaments.",
+    "a02Desc": "Control de caixa local, quadraments i facturació diària.",
+    "a03Desc": "Quadre de comandament i KPIs exclusius del rendiment del local.",
+    "a04Desc": "Estratègia general i supervisió del hòlding.",
+    "a05Desc": "Negociació per volum i unificació de proveïdors.",
+    "a06Desc": "Visibilitat en temps real del magatzem entre botigues.",
+    "a07Desc": "Control global del flux de caixa i rendibilitat.",
+    "a08Desc": "Posicionament i màrqueting diferenciat per zona.",
+    "a09Desc": "Captació, fidelització i presència digital.",
+    "a10Desc": "Transferència de processos eficients de Palma a Campos.",
+    "a11Desc": "Optimització de rutes i seguiment de lliuraments.",
+    "a12Desc": "Gestió de torns, nòmines i productivitat del personal.",
+    "a13Desc": "Prevenció de furts, accessos i videovigilància.",
+    "a14Desc": "Canalització automatitzada de pressupostos recurrents.",
+    "a15Desc": "Processos de suport diversos (neteja, manteniment)."
   },
   "prototipos": {
     "title": "Així es veurà en el",
@@ -168,8 +213,8 @@
     "de": "de",
     "ideas": "idees",
     "buscar": "Cercar per títol, àrea o descripció...",
-    "grupo": "Grup",
-    "nucleo": "Nucli",
+    "grupo": "Global",
+    "nucleo": "Administración",
     "clientes": "Clients",
     "operativa": "Operativa",
     "facil": "Fàcil / Intern",
