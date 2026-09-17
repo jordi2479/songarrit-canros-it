@@ -86,13 +86,13 @@ export function EsquemaEmpresa() {
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600"></div>
             <div className="text-center mb-4 md:mb-8 relative z-10">
               <span className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 bg-emerald-100 text-emerald-700 text-[10px] md:text-xs font-black uppercase tracking-wider md:tracking-widest rounded-full mb-2 md:mb-4">
-                Laboratorio Inicial
+                {tBloques("labBadge")}
               </span>
               <div className="flex justify-center items-center gap-2 md:gap-3 mb-1 md:mb-2">
                 <Store className="w-5 h-5 md:w-6 md:h-6 text-emerald-600" />
                 <h4 className="text-xl md:text-2xl font-black text-slate-900">Ca'n Ros</h4>
               </div>
-              <p className="text-slate-500 text-xs md:text-sm">Donde implementamos y testeamos</p>
+              <p className="text-slate-500 text-xs md:text-sm">{tBloques("labDesc")}</p>
             </div>
             
             <div className="flex flex-col gap-2 md:gap-3 relative z-10">
@@ -134,7 +134,7 @@ export function EsquemaEmpresa() {
               transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
               className="bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full shadow-md shadow-emerald-500/20 flex items-center gap-1.5"
             >
-              <span>⬇️ Clonación y Despliegue</span>
+              <span>{tBloques("clonacionBadge")}</span>
             </motion.div>
             <div className="w-0.5 h-3 bg-emerald-500/40" />
           </div>
@@ -148,7 +148,7 @@ export function EsquemaEmpresa() {
               transition={{ delay: 1.5, duration: 0.5 }}
               className="bg-emerald-500 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg shadow-emerald-500/20"
             >
-              Clonación
+              {tBloques("clonacionDesktop")}
             </motion.div>
             <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <motion.path 
@@ -170,13 +170,13 @@ export function EsquemaEmpresa() {
           <motion.div variants={itemVariants} className="bg-slate-50/50 border-2 border-slate-200 border-dashed rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 relative opacity-85 transition-opacity hover:opacity-100">
             <div className="text-center mb-4 md:mb-8 relative z-10">
               <span className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 bg-slate-200 text-slate-600 text-[10px] md:text-xs font-black uppercase tracking-wider md:tracking-widest rounded-full mb-2 md:mb-4">
-                Destino Expansión
+                {tBloques("expansionBadge")}
               </span>
               <div className="flex justify-center items-center gap-2 md:gap-3 mb-1 md:mb-2">
                 <Store className="w-5 h-5 md:w-6 md:h-6 text-slate-500" />
                 <h4 className="text-xl md:text-2xl font-black text-slate-700">Son Garrit</h4>
               </div>
-              <p className="text-slate-500 text-xs md:text-sm">Réplica del modelo de éxito</p>
+              <p className="text-slate-500 text-xs md:text-sm">{tBloques("expansionDesc")}</p>
             </div>
             
             <div className="flex flex-col gap-2 md:gap-3 relative z-10">

@@ -106,13 +106,21 @@
     "badge": "Organizational Structure",
     "b2Sub": "Invoicing, finance and local control",
     "b3Sub": "Shopping experience and marketing",
-    "b4Sub": "Merchandise and team management"
+    "b4Sub": "Merchandise and team management",
+    "labBadge": "Initial Lab",
+    "labDesc": "Where we implement and test",
+    "clonacionBadge": "⬇️ Cloning & Rollout",
+    "clonacionDesktop": "Cloning",
+    "expansionBadge": "Expansion Target",
+    "expansionDesc": "Replication of the success model"
   },
   "areas": {
     "title": "Transformation Map.",
     "highlight": "Local & Global Synergy.",
     "desc": "Success does not lie in optimizing isolated departments, but in connecting them. Discover how the tactical operations of the stores directly feed the strategy and strength of the Group.",
     "cta": "Explore the 150 ideas",
+    "estrategiaCentral": "CENTRAL STRATEGY",
+    "sinergiasBadge": "Global ↔ Local Synergies",
     "a01": "Purchasing and Stock",
     "a02": "Store Finances",
     "a03": "Store Management",

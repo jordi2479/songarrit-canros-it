@@ -106,13 +106,21 @@
     "badge": "Estructura Organizativa",
     "b2Sub": "Facturación, finanzas y control local",
     "b3Sub": "Experiencia de compra y marketing",
-    "b4Sub": "Gestión de mercancía y equipo"
+    "b4Sub": "Gestión de mercancía y equipo",
+    "labBadge": "Laboratorio Inicial",
+    "labDesc": "Donde implementamos y testeamos",
+    "clonacionBadge": "⬇️ Clonación y Despliegue",
+    "clonacionDesktop": "Clonación",
+    "expansionBadge": "Destino Expansión",
+    "expansionDesc": "Réplica del modelo de éxito"
   },
   "areas": {
     "title": "Mapa de Transformación.",
     "highlight": "Sinergia Local y Global.",
     "desc": "El éxito no reside en optimizar departamentos aislados, sino en conectarlos. Descubre cómo las operaciones tácticas de las tiendas alimentan directamente la estrategia y fortaleza del Grupo.",
     "cta": "Explorar las 150 ideas",
+    "estrategiaCentral": "ESTRATEGIA CENTRAL",
+    "sinergiasBadge": "Sinergias Global ↔ Local",
     "a01": "Compras y Stock",
     "a02": "Finanzas Tienda",
     "a03": "Dirección Tienda",

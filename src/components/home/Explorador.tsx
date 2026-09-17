@@ -32,6 +32,7 @@ const sinapsis: Record<string, string[]> = {
 
 export function Explorador() {
   const t = useTranslations("catalogo");
+  const tAreas = useTranslations("areas");
   const locale = useLocale();
 
   const areas = useMemo(() => {
@@ -89,7 +90,7 @@ export function Explorador() {
                 <Building2 className="w-6 h-6 md:w-8 md:h-8 text-indigo-400" />
                 <div>
                   <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight">{t("grupo")}</h3>
-                  <p className="text-xs md:text-sm text-indigo-400 font-semibold tracking-wider">ESTRATEGIA CENTRAL</p>
+                  <p className="text-xs md:text-sm text-indigo-400 font-semibold tracking-wider">{tAreas("estrategiaCentral")}</p>
                 </div>
               </div>
 
@@ -136,7 +137,7 @@ export function Explorador() {
           <div className="w-0.5 h-3 bg-blue-500/40" />
           <div className="bg-blue-500/10 text-blue-400 border border-blue-500/30 text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
             <Zap className="w-3 h-3 text-blue-400 animate-pulse" />
-            <span>Sinergias Global ↔ Local</span>
+            <span>{tAreas("sinergiasBadge")}</span>
           </div>
           <div className="w-0.5 h-3 bg-blue-500/40" />
         </div>

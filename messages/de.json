@@ -106,13 +106,21 @@
     "badge": "Organisationsstruktur",
     "b2Sub": "Rechnungsstellung, Finanzen und lokale Kontrolle",
     "b3Sub": "Einkaufserlebnis und Marketing",
-    "b4Sub": "Waren- und Teammanagement"
+    "b4Sub": "Waren- und Teammanagement",
+    "labBadge": "Initiales Labor",
+    "labDesc": "Wo wir implementieren und testen",
+    "clonacionBadge": "⬇️ Klonung & Bereitstellung",
+    "clonacionDesktop": "Klonung",
+    "expansionBadge": "Expansionsziel",
+    "expansionDesc": "Replikation des Erfolgsmodells"
   },
   "areas": {
     "title": "Transformationskarte.",
     "highlight": "Lokale & Globale Synergie.",
     "desc": "Erfolg liegt nicht in der Optimierung isolierter Abteilungen, sondern in deren Vernetzung. Entdecken Sie, wie die taktischen Abläufe der Filialen direkt die Strategie und Stärke der Gruppe speisen.",
     "cta": "Entdecken Sie die 150 Ideen",
+    "estrategiaCentral": "ZENTRALE STRATEGIE",
+    "sinergiasBadge": "Globale ↔ Lokale Synergien",
     "a01": "Einkauf und Lager",
     "a02": "Finanzen Geschäft",
     "a03": "Filialleitung",

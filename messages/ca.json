@@ -106,13 +106,21 @@
     "badge": "Estructura Organitzativa",
     "b2Sub": "Facturació, finances i control local",
     "b3Sub": "Experiència de compra i màrqueting",
-    "b4Sub": "Gestió de mercaderia i equip"
+    "b4Sub": "Gestió de mercaderia i equip",
+    "labBadge": "Laboratori Inicial",
+    "labDesc": "On implementem i testegem",
+    "clonacionBadge": "⬇️ Clonació i Desplegament",
+    "clonacionDesktop": "Clonació",
+    "expansionBadge": "Destinació Expansió",
+    "expansionDesc": "Rèplica del model d'èxit"
   },
   "areas": {
     "title": "Mapa de Transformació.",
     "highlight": "Sinergia Local i Global.",
     "desc": "L'èxit no resideix en optimitzar departaments aïllats, sinó en connectar-los. Descobreix com les operacions tàctiques de les botigues alimenten directament l'estratègia i fortalesa del Grup.",
     "cta": "Explorar les 150 idees",
+    "estrategiaCentral": "ESTRATÈGIA CENTRAL",
+    "sinergiasBadge": "Sinèrgies Global ↔ Local",
     "a01": "Compres i Estoc",
     "a02": "Finances Botiga",
     "a03": "Direcció Botiga",
