@@ -143,15 +143,15 @@ export default function Home() {
             delay={0.4}
           />
           <motion.div
-            className="mt-2 text-2xl sm:text-3xl md:text-4xl tracking-tight"
+            className="mt-3 tracking-tight leading-tight"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.8 }}
           >
-            <span className="font-semibold text-slate-300">
-              {tHero("groupPrefix")}{" "}
+            <span className="block font-semibold text-slate-300 text-lg sm:text-xl md:text-2xl mb-1">
+              {tHero("groupPrefix")}
             </span>
-            <span className="font-black text-white">
+            <span className="block font-black text-white text-2xl sm:text-3xl md:text-4xl">
               {tHero("brand")}
             </span>
           </motion.div>
