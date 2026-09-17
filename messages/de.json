@@ -4,9 +4,9 @@
     "problema": "Problem",
     "solucion": "Lösung",
     "perfil": "Profil",
-    "bloques": "Bereiche",
-    "areas": "Kategorien",
-    "prototipos": "Vorschläge",
+    "areas": "Bereiche",
+    "categorias": "Kategorien",
+    "propuestas": "Vorschläge",
     "viabilidad": "Machbarkeit",
     "catalogo": "150 Ideen →",
     "brand": "Son Garrit + Ca'n Ros",
@@ -90,7 +90,7 @@
     "g3Title": "100% Reversibel und risikofrei",
     "g3Desc": "Jedes Tool lässt sich in Sekunden aktivieren oder deaktivieren. Der Betrieb wird nie gestört oder abhängig gemacht."
   },
-  "bloques": {
+  "areas": {
     "title": "Struktur der",
     "highlight": "Bereiche.",
     "desc": "<p>Der Arbeitsplan bildet die reale Struktur der Gruppe ab: eine <bold>Globale Zentrale</bold> zur Strategiebündelung und <bold>drei taktische Säulen</bold> in jedem Geschäft.</p><p><italic>Sicherheitsgarantie:</italic> Jede Innovation wird zuerst als Pilot bei <bold>Ca'n Ros</bold> validiert und nach erfolgreichem Test auf <bold>Son Garrit</bold> übertragen.</p>",
@@ -114,7 +114,7 @@
     "expansionBadge": "Expansionsziel",
     "expansionDesc": "Replikation des Erfolgsmodells"
   },
-  "areas": {
+  "categorias": {
     "title": "Karte der",
     "highlight": "Kategorien.",
     "desc": "Erfolg liegt nicht in der Optimierung isolierter Abteilungen, sondern in deren Vernetzung. Entdecken Sie, wie die taktischen Abläufe der Filialen direkt die Strategie und Stärke der Gruppe speisen.",
@@ -152,7 +152,7 @@
     "a14Desc": "Automatisierte Weiterleitung wiederkehrender Angebote.",
     "a15Desc": "Verschiedene Unterstützungsprozesse (Reinigung, Wartung)."
   },
-  "prototipos": {
+  "propuestas": {
     "title": "Katalog der",
     "highlight": "Vorschläge.",
     "desc": "Jede betriebliche Herausforderung bei Son Garrit und Ca'n Ros hat bereits eine geplante Antwort. Durchsuchen Sie jeden Bereich oder jedes tägliche Problem, um die genaue Initiative zu finden, die dafür mit Technologie und KI entwickelt wurde."

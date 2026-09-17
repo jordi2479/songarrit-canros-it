@@ -4,9 +4,9 @@
     "problema": "The Problem",
     "solucion": "The Solution",
     "perfil": "Role",
-    "bloques": "Areas",
-    "areas": "Categories",
-    "prototipos": "Proposals",
+    "areas": "Areas",
+    "categorias": "Categories",
+    "propuestas": "Proposals",
     "viabilidad": "Viability",
     "catalogo": "150 Ideas →",
     "brand": "Son Garrit + Ca'n Ros",
@@ -90,7 +90,7 @@
     "g3Title": "100% Reversible and risk-free",
     "g3Desc": "Any implemented tool can be toggled on or off in seconds. Operations never stop or depend on a single tool."
   },
-  "bloques": {
+  "areas": {
     "title": "Structure of",
     "highlight": "Areas.",
     "desc": "<p>The work plan replicates the group's real structure: a <bold>Global Central</bold> to unify strategy and <bold>three tactical pillars</bold> in each store.</p><p><italic>Safety guarantee:</italic> any innovation is first validated as a pilot at <bold>Ca'n Ros</bold> and, once proven, deployed to <bold>Son Garrit</bold>.</p>",
@@ -114,7 +114,7 @@
     "expansionBadge": "Expansion Target",
     "expansionDesc": "Replication of the success model"
   },
-  "areas": {
+  "categorias": {
     "title": "Map of",
     "highlight": "Categories.",
     "desc": "Success does not lie in optimizing isolated departments, but in connecting them. Discover how the tactical operations of the stores directly feed the strategy and strength of the Group.",
@@ -152,7 +152,7 @@
     "a14Desc": "Automated channeling of recurring quotes.",
     "a15Desc": "Various support processes (cleaning, maintenance)."
   },
-  "prototipos": {
+  "propuestas": {
     "title": "Catalog of",
     "highlight": "Proposals.",
     "desc": "Every operational challenge at Son Garrit and Ca'n Ros already has a planned response. Search any daily issue or department to find the exact initiative designed to solve it with technology and AI."

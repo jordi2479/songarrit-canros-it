@@ -4,9 +4,9 @@
     "problema": "Problema",
     "solucion": "Solució",
     "perfil": "Perfil",
-    "bloques": "Àrees",
-    "areas": "Categories",
-    "prototipos": "Propostes",
+    "areas": "Àrees",
+    "categorias": "Categories",
+    "propuestas": "Propostes",
     "viabilidad": "Viabilitat",
     "catalogo": "150 Idees →",
     "brand": "Son Garrit + Ca'n Ros",
@@ -90,7 +90,7 @@
     "g3Title": "100% Reversible i sense risc",
     "g3Desc": "Qualsevol eina implementada es pot activar o desactivar en segons. El negoci mai no s'atura ni depèn d'una sola solució."
   },
-  "bloques": {
+  "areas": {
     "title": "Estructura d'",
     "highlight": "Àrees.",
     "desc": "<p>El pla de treball replica l'estructura real del grup: una <bold>Central Global</bold> per unificar estratègia i <bold>tres pilars tàctics</bold> a cada botiga.</p><p><italic>Garantia de seguretat:</italic> qualsevol innovació es valida primer com a pilot a <bold>Ca'n Ros</bold> i, un cop provada, es desplega a <bold>Son Garrit</bold>.</p>",
@@ -114,7 +114,7 @@
     "expansionBadge": "Destinació Expansió",
     "expansionDesc": "Rèplica del model d'èxit"
   },
-  "areas": {
+  "categorias": {
     "title": "Mapa de",
     "highlight": "Categories.",
     "desc": "L'èxit no resideix en optimitzar departaments aïllats, sinó en connectar-los. Descobreix com les operacions tàctiques de les botigues alimenten directament l'estratègia i fortalesa del Grup.",
@@ -152,7 +152,7 @@
     "a14Desc": "Canalització automatitzada de pressupostos recurrents.",
     "a15Desc": "Processos de suport diversos (neteja, manteniment)."
   },
-  "prototipos": {
+  "propuestas": {
     "title": "Catàleg de",
     "highlight": "Propostes.",
     "desc": "Cada repte operatiu de Son Garrit i Ca'n Ros ja té una resposta planificada. Consulta qualsevol àrea o problema diari per veure la iniciativa exacta dissenyada per solucionar-lo amb tecnologia i IA."

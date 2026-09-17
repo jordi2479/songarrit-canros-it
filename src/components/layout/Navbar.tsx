@@ -16,9 +16,9 @@ export function Navbar() {
     { href: "#problema", label: t("problema") },
     { href: "#solucion", label: t("solucion") },
     { href: "#perfil", label: t("perfil") },
-    { href: "#bloques", label: t("bloques") },
     { href: "#areas", label: t("areas") },
-    { href: "#prototipos", label: t("prototipos") },
+    { href: "#categorias", label: t("categorias") },
+    { href: "#propuestas", label: t("propuestas") },
     { href: "#implantacion", label: t("implantacion") },
     { href: "#viabilidad", label: t("viabilidad") },
   ];

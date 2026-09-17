@@ -4,9 +4,9 @@
     "problema": "Problema",
     "solucion": "Solución",
     "perfil": "Perfil",
-    "bloques": "Áreas",
-    "areas": "Categorías",
-    "prototipos": "Propuestas",
+    "areas": "Áreas",
+    "categorias": "Categorías",
+    "propuestas": "Propuestas",
     "viabilidad": "Viabilidad",
     "catalogo": "150 Ideas →",
     "brand": "Son Garrit + Ca'n Ros",
@@ -90,7 +90,7 @@
     "g3Title": "100% Reversible y sin riesgo",
     "g3Desc": "Cualquier herramienta implementada se puede activar o desactivar en segundos. El negocio nunca se detiene ni depende de una sola solución."
   },
-  "bloques": {
+  "areas": {
     "title": "Estructura de",
     "highlight": "Áreas.",
     "desc": "<p>El plan de trabajo replica la estructura real del grupo: una <bold>Central Global</bold> para unificar estrategia y <bold>tres pilares tácticos</bold> en cada tienda.</p><p><italic>Garantía de seguridad:</italic> cualquier innovación se valida primero como piloto en <bold>Ca'n Ros</bold> y, una vez probada, se despliega en <bold>Son Garrit</bold>.</p>",
@@ -114,7 +114,7 @@
     "expansionBadge": "Destino Expansión",
     "expansionDesc": "Réplica del modelo de éxito"
   },
-  "areas": {
+  "categorias": {
     "title": "Mapa de",
     "highlight": "Categorías.",
     "desc": "El éxito no reside en optimizar departamentos aislados, sino en conectarlos. Descubre cómo las operaciones tácticas de las tiendas alimentan directamente la estrategia y fortaleza del Grupo.",
@@ -152,7 +152,7 @@
     "a14Desc": "Canalización automatizada de presupuestos recurrentes.",
     "a15Desc": "Procesos de soporte varios (limpieza, mantenimiento)."
   },
-  "prototipos": {
+  "propuestas": {
     "title": "Catálogo de",
     "highlight": "Propuestas.",
     "desc": "Cada reto operativo de Son Garrit y Ca'n Ros ya tiene una respuesta planificada. Consulta cualquier área o problema diario para ver la iniciativa exacta diseñada para solucionarlo con tecnología e IA."

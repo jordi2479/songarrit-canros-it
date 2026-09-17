@@ -5,7 +5,7 @@ import { Building2, Store, Users, Package } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export function EsquemaEmpresa() {
-  const tBloques = useTranslations("bloques");
+  const tAreas = useTranslations("areas");
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -38,8 +38,8 @@ export function EsquemaEmpresa() {
             <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-4 shadow-sm">
               <Building2 className="w-5 h-5 md:w-6 md:h-6" />
             </div>
-            <h4 className="text-xl sm:text-2xl font-black text-white mb-1 md:mb-2">{tBloques("b1")}</h4>
-            <p className="text-slate-400 text-xs sm:text-sm">{tBloques("b1Desc")}</p>
+            <h4 className="text-xl sm:text-2xl font-black text-white mb-1 md:mb-2">{tAreas("b1")}</h4>
+            <p className="text-slate-400 text-xs sm:text-sm">{tAreas("b1Desc")}</p>
           </div>
         </motion.div>
 
@@ -86,13 +86,13 @@ export function EsquemaEmpresa() {
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
             <div className="text-center mb-4 md:mb-8 relative z-10">
               <span className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 bg-emerald-100 text-emerald-800 text-[10px] md:text-xs font-black uppercase tracking-wider md:tracking-widest rounded-full mb-2 md:mb-4 border border-emerald-200">
-                {tBloques("labBadge")}
+                {tAreas("labBadge")}
               </span>
               <div className="flex justify-center items-center gap-2 md:gap-3 mb-1 md:mb-2">
                 <Store className="w-5 h-5 md:w-6 md:h-6 text-emerald-600" />
                 <h4 className="text-xl md:text-2xl font-black text-slate-900">Ca'n Ros</h4>
               </div>
-              <p className="text-slate-500 text-xs md:text-sm">{tBloques("labDesc")}</p>
+              <p className="text-slate-500 text-xs md:text-sm">{tAreas("labDesc")}</p>
             </div>
             
             <div className="flex flex-col gap-1.5 md:gap-3 relative z-10">
@@ -102,8 +102,8 @@ export function EsquemaEmpresa() {
                    <Store className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b2")}</h5>
-                  <p className="hidden md:block text-xs text-slate-500">{tBloques("b2Sub")}</p>
+                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm md:text-base leading-tight">{tAreas("b2")}</h5>
+                  <p className="hidden md:block text-xs text-slate-500">{tAreas("b2Sub")}</p>
                 </div>
               </div>
 
@@ -113,8 +113,8 @@ export function EsquemaEmpresa() {
                    <Users className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b3")}</h5>
-                  <p className="hidden md:block text-xs text-slate-500">{tBloques("b3Sub")}</p>
+                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm md:text-base leading-tight">{tAreas("b3")}</h5>
+                  <p className="hidden md:block text-xs text-slate-500">{tAreas("b3Sub")}</p>
                 </div>
               </div>
 
@@ -124,8 +124,8 @@ export function EsquemaEmpresa() {
                    <Package className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b4")}</h5>
-                  <p className="hidden md:block text-xs text-slate-500">{tBloques("b4Sub")}</p>
+                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm md:text-base leading-tight">{tAreas("b4")}</h5>
+                  <p className="hidden md:block text-xs text-slate-500">{tAreas("b4Sub")}</p>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export function EsquemaEmpresa() {
               transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
               className="bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full shadow-md shadow-emerald-500/20 flex items-center gap-1.5"
             >
-              <span>{tBloques("clonacionBadge")}</span>
+              <span>{tAreas("clonacionBadge")}</span>
             </motion.div>
             <div className="w-0.5 h-3 bg-emerald-500/40" />
           </div>
@@ -153,7 +153,7 @@ export function EsquemaEmpresa() {
               transition={{ delay: 1.5, duration: 0.5 }}
               className="bg-emerald-500 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg shadow-emerald-500/20"
             >
-              {tBloques("clonacionDesktop")}
+              {tAreas("clonacionDesktop")}
             </motion.div>
             <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <motion.path 
@@ -175,13 +175,13 @@ export function EsquemaEmpresa() {
           <motion.div variants={itemVariants} className="bg-slate-50/50 border-2 border-slate-200 border-dashed rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 relative opacity-85 transition-opacity hover:opacity-100">
             <div className="text-center mb-4 md:mb-8 relative z-10">
               <span className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 bg-slate-200 text-slate-600 text-[10px] md:text-xs font-black uppercase tracking-wider md:tracking-widest rounded-full mb-2 md:mb-4">
-                {tBloques("expansionBadge")}
+                {tAreas("expansionBadge")}
               </span>
               <div className="flex justify-center items-center gap-2 md:gap-3 mb-1 md:mb-2">
                 <Store className="w-5 h-5 md:w-6 md:h-6 text-slate-500" />
                 <h4 className="text-xl md:text-2xl font-black text-slate-700">Son Garrit</h4>
               </div>
-              <p className="text-slate-500 text-xs md:text-sm">{tBloques("expansionDesc")}</p>
+              <p className="text-slate-500 text-xs md:text-sm">{tAreas("expansionDesc")}</p>
             </div>
             
             <div className="flex flex-col gap-1.5 md:gap-3 relative z-10">
@@ -191,8 +191,8 @@ export function EsquemaEmpresa() {
                    <Store className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-700 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b2")}</h5>
-                  <p className="hidden md:block text-xs text-slate-400">{tBloques("b2Sub")}</p>
+                  <h5 className="font-bold text-slate-700 text-xs sm:text-sm md:text-base leading-tight">{tAreas("b2")}</h5>
+                  <p className="hidden md:block text-xs text-slate-400">{tAreas("b2Sub")}</p>
                 </div>
               </div>
 
@@ -202,8 +202,8 @@ export function EsquemaEmpresa() {
                    <Users className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-700 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b3")}</h5>
-                  <p className="hidden md:block text-xs text-slate-400">{tBloques("b3Sub")}</p>
+                  <h5 className="font-bold text-slate-700 text-xs sm:text-sm md:text-base leading-tight">{tAreas("b3")}</h5>
+                  <p className="hidden md:block text-xs text-slate-400">{tAreas("b3Sub")}</p>
                 </div>
               </div>
 
@@ -213,8 +213,8 @@ export function EsquemaEmpresa() {
                    <Package className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-700 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b4")}</h5>
-                  <p className="hidden md:block text-xs text-slate-400">{tBloques("b4Sub")}</p>
+                  <h5 className="font-bold text-slate-700 text-xs sm:text-sm md:text-base leading-tight">{tAreas("b4")}</h5>
+                  <p className="hidden md:block text-xs text-slate-400">{tAreas("b4Sub")}</p>
                 </div>
               </div>
             </div>

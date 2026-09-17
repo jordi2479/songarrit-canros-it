@@ -55,50 +55,50 @@ export default function Home() {
   const tSol = useTranslations("solucion");
   const tPerfil = useTranslations("perfil");
   const tGarantias = useTranslations("garantias");
-  const tBloques = useTranslations("bloques");
   const tAreas = useTranslations("areas");
-  const tProto = useTranslations("prototipos");
+  const tCategorias = useTranslations("categorias");
+  const tPropuestas = useTranslations("propuestas");
   const tViab = useTranslations("viabilidad");
   const tCierre = useTranslations("cierre");
 
   const bloques = [
     {
-      id: "B1", nombre: tBloques("b1"), icon: Building2, color: "blue",
-      desc: tBloques("b1Desc"),
+      id: "B1", nombre: tAreas("b1"), icon: Building2, color: "blue",
+      desc: tAreas("b1Desc"),
       areas: [
-        { num: "04", nombre: tAreas("a04"), icon: Compass },
-        { num: "05", nombre: tAreas("a05"), icon: ShoppingCart },
-        { num: "06", nombre: tAreas("a06"), icon: Package },
-        { num: "07", nombre: tAreas("a07"), icon: CreditCard },
-        { num: "08", nombre: tAreas("a08"), icon: Sparkles },
+        { num: "04", nombre: tCategorias("a04"), icon: Compass },
+        { num: "05", nombre: tCategorias("a05"), icon: ShoppingCart },
+        { num: "06", nombre: tCategorias("a06"), icon: Package },
+        { num: "07", nombre: tCategorias("a07"), icon: CreditCard },
+        { num: "08", nombre: tCategorias("a08"), icon: Sparkles },
       ],
     },
     {
-      id: "B2", nombre: tBloques("b2"), icon: Store, color: "emerald",
-      desc: tBloques("b2Desc"),
+      id: "B2", nombre: tAreas("b2"), icon: Store, color: "emerald",
+      desc: tAreas("b2Desc"),
       areas: [
-        { num: "01", nombre: tAreas("a01"), icon: ShoppingCart },
-        { num: "02", nombre: tAreas("a02"), icon: CreditCard },
-        { num: "03", nombre: tAreas("a03"), icon: LayoutDashboard },
+        { num: "01", nombre: tCategorias("a01"), icon: ShoppingCart },
+        { num: "02", nombre: tCategorias("a02"), icon: CreditCard },
+        { num: "03", nombre: tCategorias("a03"), icon: LayoutDashboard },
       ],
     },
     {
-      id: "B3", nombre: tBloques("b3"), icon: Users, color: "violet",
-      desc: tBloques("b3Desc"),
+      id: "B3", nombre: tAreas("b3"), icon: Users, color: "violet",
+      desc: tAreas("b3Desc"),
       areas: [
-        { num: "09", nombre: tAreas("a09"), icon: TrendingUp },
-        { num: "10", nombre: tAreas("a10"), icon: UserCog },
-        { num: "14", nombre: tAreas("a14"), icon: MessageSquare },
+        { num: "09", nombre: tCategorias("a09"), icon: TrendingUp },
+        { num: "10", nombre: tCategorias("a10"), icon: UserCog },
+        { num: "14", nombre: tCategorias("a14"), icon: MessageSquare },
       ],
     },
     {
-      id: "B4", nombre: tBloques("b4"), icon: Settings, color: "amber",
-      desc: tBloques("b4Desc"),
+      id: "B4", nombre: tAreas("b4"), icon: Settings, color: "amber",
+      desc: tAreas("b4Desc"),
       areas: [
-        { num: "11", nombre: tAreas("a11"), icon: Truck },
-        { num: "12", nombre: tAreas("a12"), icon: UserCog },
-        { num: "13", nombre: tAreas("a13"), icon: Lock },
-        { num: "15", nombre: tAreas("a15"), icon: Wrench },
+        { num: "11", nombre: tCategorias("a11"), icon: Truck },
+        { num: "12", nombre: tCategorias("a12"), icon: UserCog },
+        { num: "13", nombre: tCategorias("a13"), icon: Lock },
+        { num: "15", nombre: tCategorias("a15"), icon: Wrench },
       ],
     },
   ];
@@ -316,14 +316,14 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ─── SECCIÓN 6: LOS 4 BLOQUES ─── */}
-      <Section id="bloques" className="bg-slate-50">
+      {/* ─── SECCIÓN 6: LAS 4 ÁREAS ─── */}
+      <Section id="areas" className="bg-slate-50">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-900 leading-tight">
-            {tBloques("title")} <span className="text-emerald-600">{tBloques("highlight")}</span>
+            {tAreas("title")} <span className="text-emerald-600">{tAreas("highlight")}</span>
           </h2>
           <div className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed space-y-3">
-            {tBloques.rich("desc", {
+            {tAreas.rich("desc", {
               p: (chunks) => <p>{chunks}</p>,
               bold: (chunks) => <strong className="text-slate-900 font-bold">{chunks}</strong>,
               italic: (chunks) => <span className="text-slate-500 font-medium italic">{chunks}</span>
@@ -333,14 +333,14 @@ export default function Home() {
         <EsquemaEmpresa />
       </Section>
 
-      {/* ─── SECCIÓN 7: ZOOM ÁREAS ─── */}
-      <Section id="areas" dark>
+      {/* ─── SECCIÓN 7: ZOOM CATEGORÍAS ─── */}
+      <Section id="categorias" dark>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
-            {tAreas("title")} <span className="text-blue-400">{tAreas("highlight")}</span>
+            {tCategorias("title")} <span className="text-blue-400">{tCategorias("highlight")}</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            {tAreas("desc")}
+            {tCategorias("desc")}
           </p>
         </div>
         
@@ -348,14 +348,14 @@ export default function Home() {
         
       </Section>
 
-      {/* ─── SECCIÓN 8: BUSCADOR DE SOLUCIONES (PROTOTIPOS) ─── */}
-      <Section id="prototipos" className="bg-slate-50">
+      {/* ─── SECCIÓN 8: BUSCADOR DE PROPUESTAS ─── */}
+      <Section id="propuestas" className="bg-slate-50">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
-            {tProto("title")} <span className="text-emerald-500">{tProto("highlight")}</span>
+            {tPropuestas("title")} <span className="text-emerald-500">{tPropuestas("highlight")}</span>
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            {tProto("desc")}
+            {tPropuestas("desc")}
           </p>
         </div>
         
