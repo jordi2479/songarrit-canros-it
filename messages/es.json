@@ -44,7 +44,7 @@
   },
   "perfil": {
     "title": "El valor del Perfil Híbrido",
-    "intro": "<p>El mayor error de las empresas es <bold>separar a quienes diseñan la tecnología</bold> de quienes la sufren a diario. Mi propuesta no es ser un vendedor más ni un técnico encerrado en una oficina.</p><p>Mi objetivo es <highlight>ser el puente entre ambos mundos</highlight>:</p><p>Alguien capaz de <bold>detectar el problema</bold> manchándose las manos en el mostrador, y con la capacidad técnica para <bold>solucionarlo creando herramientas a medida</bold>.</p>",
+    "intro": "<p>El mayor error de las empresas es <bold>separar a quienes diseñan la tecnología</bold> de quienes la sufren a diario. Mi propuesta no es ser un vendedor más ni un técnico encerrado en una oficina.</p><p>Mi objetivo es <highlight>ser el puente entre ambos mundos</highlight>:</p><p>Alguien capaz de <bold>detectar el problema sobre el terreno</bold>, y con la capacidad técnica para <bold>solucionarlo creando herramientas a medida</bold>.</p>",
     "mostrador": "50% Análisis en Tienda",
     "mostradorItems": [
       {
