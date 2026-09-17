@@ -311,7 +311,7 @@ export default function Home() {
       <Section id="areas" dark>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
-            {tAreas("title")} <span className="text-emerald-400">{tAreas("highlight")}</span>
+            {tAreas("title")} <span className="text-blue-400">{tAreas("highlight")}</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
             {tAreas("desc")}
