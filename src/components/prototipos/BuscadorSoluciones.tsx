@@ -516,7 +516,7 @@ export function BuscadorSoluciones() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8"
+              className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 md:p-8"
             >
               {/* Fondo desenfocado */}
               <div
@@ -524,36 +524,50 @@ export function BuscadorSoluciones() {
                 className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm cursor-pointer"
               />
 
-              {/* Caja Dossier Flotante (Mantiene la proporción apaisada de la tarjeta original) */}
+              {/* Caja Dossier Flotante (Mantiene la proporción apaisada en desktop y bottom-sheet en mobile) */}
               <motion.div
                 layoutId={`card-container-${activeIdea.id}`}
                 transition={cardSpringTransition}
-                className="relative w-full max-w-lg md:max-w-4xl lg:max-w-5xl h-[88vh] md:h-[600px] lg:h-[620px] md:max-h-[88vh] bg-white border border-slate-200/90 rounded-3xl shadow-2xl shadow-slate-950/40 overflow-hidden flex flex-col z-10"
+                className="relative w-full max-w-lg md:max-w-4xl lg:max-w-5xl h-[92vh] sm:h-[88vh] md:h-[600px] lg:h-[620px] md:max-h-[88vh] bg-white border-t sm:border border-slate-200/90 rounded-t-3xl sm:rounded-3xl shadow-2xl shadow-slate-950/40 overflow-hidden flex flex-col z-10"
               >
+                {/* Indicador de arrastre táctil superior (Solo móvil) */}
+                <div className="sm:hidden w-full flex justify-center pt-2 pb-1 bg-white">
+                  <div className="w-10 h-1 bg-slate-200 rounded-full" />
+                </div>
+
                 {/* Cabecera del Dossier */}
-                <div className="p-5 md:px-7 pb-3.5 border-b border-slate-100 bg-white shrink-0">
-                  <div className="space-y-1.5">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider border ${
+                <div className="p-4 sm:p-5 md:px-7 pb-3 md:pb-3.5 border-b border-slate-100 bg-white shrink-0 flex items-start justify-between gap-3">
+                  <div className="space-y-1 md:space-y-1.5 flex-1 min-w-0">
+                    <div className="flex items-center gap-1.5 md:gap-2 flex-wrap">
+                      <span className={`px-2 md:px-2.5 py-0.5 rounded-md text-[10px] md:text-[11px] font-bold uppercase tracking-wider border ${
                         areaBadgeClasses[activeIdea.area] || 'bg-slate-100 text-slate-700 border-slate-200'
                       }`}>
                         {customAreaLabels[activeIdea.area] || activeIdea.area}
                       </span>
-                      <span className="px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-md text-[11px] font-medium tracking-wide border border-slate-200">
+                      <span className="px-2 md:px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-md text-[10px] md:text-[11px] font-medium tracking-wide border border-slate-200">
                         {activeIdea.categoriaTitulo}
                       </span>
                     </div>
                     <motion.h3
                       layoutId={`card-title-${activeIdea.id}`}
                       transition={cardSpringTransition}
-                      className="text-lg md:text-2xl font-bold text-slate-900 leading-snug"
+                      className="text-base sm:text-lg md:text-2xl font-bold text-slate-900 leading-snug truncate sm:whitespace-normal"
                     >
                       {activeIdea.titulo}
                     </motion.h3>
                   </div>
+
+                  {/* Botón de cerrar superior rápido (Cruz) */}
+                  <button
+                    onClick={() => setExpandedId(null)}
+                    className="p-1.5 rounded-full text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer shrink-0"
+                    aria-label="Cerrar ficha"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
 
-                {/* Contenedor interior del dossier que se revela suavemente mientras la carta se abre */}
+                {/* Contenedor interior del dossier que se revela suavemente */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -563,12 +577,12 @@ export function BuscadorSoluciones() {
                 >
 
                 {/* Pestañas estilo Carpeta Clasificadora / Dossier */}
-                <div className="flex items-end px-5 md:px-7 pt-2.5 bg-slate-100/90 border-b border-slate-200 gap-2 select-none shrink-0 overflow-hidden no-scrollbar">
+                <div className="flex items-end px-3 sm:px-5 md:px-7 pt-2 bg-slate-100/90 border-b border-slate-200 gap-1 sm:gap-2 select-none shrink-0 overflow-x-auto no-scrollbar">
                   <button
                     onClick={() => setActiveTab('accion')}
-                    className={`px-4 py-2.5 rounded-t-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer relative border-t border-x ${
+                    className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-t-xl text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1.5 sm:gap-2 cursor-pointer relative border-t border-x shrink-0 ${
                       activeTab === 'accion'
-                        ? 'bg-white text-slate-900 border-slate-200 -mb-px pb-3 shadow-xs'
+                        ? 'bg-white text-slate-900 border-slate-200 -mb-px pb-2.5 sm:pb-3 shadow-xs'
                         : 'bg-slate-200/50 text-slate-500 border-transparent hover:text-slate-800 hover:bg-slate-200/80'
                     }`}
                   >
@@ -578,9 +592,9 @@ export function BuscadorSoluciones() {
                   
                   <button
                     onClick={() => setActiveTab('negocio')}
-                    className={`px-4 py-2.5 rounded-t-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer relative border-t border-x ${
+                    className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-t-xl text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1.5 sm:gap-2 cursor-pointer relative border-t border-x shrink-0 ${
                       activeTab === 'negocio'
-                        ? 'bg-white text-slate-900 border-slate-200 -mb-px pb-3 shadow-xs'
+                        ? 'bg-white text-slate-900 border-slate-200 -mb-px pb-2.5 sm:pb-3 shadow-xs'
                         : 'bg-slate-200/50 text-slate-500 border-transparent hover:text-slate-800 hover:bg-slate-200/80'
                     }`}
                   >
@@ -590,9 +604,9 @@ export function BuscadorSoluciones() {
 
                   <button
                     onClick={() => setActiveTab('tecnica')}
-                    className={`px-4 py-2.5 rounded-t-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer relative border-t border-x ${
+                    className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-t-xl text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1.5 sm:gap-2 cursor-pointer relative border-t border-x shrink-0 ${
                       activeTab === 'tecnica'
-                        ? 'bg-white text-slate-900 border-slate-200 -mb-px pb-3 shadow-xs'
+                        ? 'bg-white text-slate-900 border-slate-200 -mb-px pb-2.5 sm:pb-3 shadow-xs'
                         : 'bg-slate-200/50 text-slate-500 border-transparent hover:text-slate-800 hover:bg-slate-200/80'
                     }`}
                   >
@@ -602,52 +616,52 @@ export function BuscadorSoluciones() {
                 </div>
 
                 {/* Barra de Métricas Semáforo */}
-                <div className="px-5 md:px-7 py-2 bg-slate-50 border-b border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs shrink-0">
-                  <div className="flex items-center gap-3.5 flex-wrap">
-                    <div className="flex items-center gap-1.5 text-slate-600">
-                      <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">{t("beneficio")}:</span>
-                      <span className={`font-bold flex items-center gap-1 ${getBeneficioBadge(activeIdea.beneficio)} px-2 py-0.5 rounded-md border text-[10px]`}>
-                        <BarChart className="w-3 h-3" /> {activeIdea.beneficio}
+                <div className="px-3 sm:px-5 md:px-7 py-1.5 md:py-2 bg-slate-50 border-b border-slate-100 flex flex-wrap items-center justify-between gap-2 md:gap-3 text-xs shrink-0">
+                  <div className="flex items-center gap-2 sm:gap-3.5 flex-wrap">
+                    <div className="flex items-center gap-1 text-slate-600">
+                      <span className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider">{t("beneficio")}:</span>
+                      <span className={`font-bold flex items-center gap-1 ${getBeneficioBadge(activeIdea.beneficio)} px-1.5 sm:px-2 py-0.5 rounded-md border text-[9px] sm:text-[10px]`}>
+                        <BarChart className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> {activeIdea.beneficio}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-slate-600">
-                      <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">{t("riesgo")}:</span>
-                      <span className={`font-bold flex items-center gap-1 ${getRiesgoBadge(activeIdea.riesgo)} px-2 py-0.5 rounded-md border text-[10px]`}>
-                        <ShieldAlert className="w-3 h-3" /> {activeIdea.riesgo}
+                    <div className="flex items-center gap-1 text-slate-600">
+                      <span className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider">{t("riesgo")}:</span>
+                      <span className={`font-bold flex items-center gap-1 ${getRiesgoBadge(activeIdea.riesgo)} px-1.5 sm:px-2 py-0.5 rounded-md border text-[9px] sm:text-[10px]`}>
+                        <ShieldAlert className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> {activeIdea.riesgo}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-slate-600">
-                      <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">{t("dificultad")}:</span>
-                      <span className={`font-bold flex items-center gap-1 ${getDificultadBadge(activeIdea.dificultad || activeIdea.facilidad)} px-2 py-0.5 rounded-md border text-[10px]`}>
-                        <Wrench className="w-3 h-3" /> {activeIdea.dificultad || activeIdea.facilidad}
+                    <div className="flex items-center gap-1 text-slate-600">
+                      <span className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider">{t("dificultad")}:</span>
+                      <span className={`font-bold flex items-center gap-1 ${getDificultadBadge(activeIdea.dificultad || activeIdea.facilidad)} px-1.5 sm:px-2 py-0.5 rounded-md border text-[9px] sm:text-[10px]`}>
+                        <Wrench className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> {activeIdea.dificultad || activeIdea.facilidad}
                       </span>
                     </div>
                   </div>
-                  <span className="text-[11px] font-mono font-medium text-slate-400 hidden sm:inline">{activeIdea.id}</span>
+                  <span className="text-[10px] sm:text-[11px] font-mono font-medium text-slate-400 hidden sm:inline">{activeIdea.id}</span>
                 </div>
 
                 {/* Cuerpo del Dossier (Layout apaisado en 2 columnas según pestaña) */}
-                <div className="p-5 md:p-7 overflow-y-auto no-scrollbar bg-white flex-1">
+                <div className="p-4 sm:p-5 md:p-7 overflow-y-auto no-scrollbar bg-white flex-1">
                   
-                  {/* PESTAÑA 1: PLAN DE ACCIÓN (2 Columnas Apaisadas - Cero Scroll) */}
+                  {/* PESTAÑA 1: PLAN DE ACCIÓN */}
                   {activeTab === 'accion' && (
                     <motion.div
                       key="accion"
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 items-stretch h-full"
+                      className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-stretch h-full"
                     >
                       {/* Columna Izquierda: Objetivo Ejecutivo */}
-                      <div className="md:col-span-5 flex flex-col justify-between gap-4 bg-slate-50 border border-slate-200/90 rounded-2xl p-5 shadow-2xs">
-                        <div className="space-y-3">
+                      <div className="md:col-span-5 flex flex-col justify-between gap-3 sm:gap-4 bg-slate-50 border border-slate-200/90 rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-2xs">
+                        <div className="space-y-2 sm:space-y-3">
                           <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                             <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-800">
                               {uiText.objetivoEjecutivo}
                             </span>
                           </div>
-                          <p className="text-base md:text-lg font-bold text-slate-900 leading-snug">
+                          <p className="text-sm sm:text-base md:text-lg font-bold text-slate-900 leading-snug">
                             <FormattedText text={activeIdea.descripcion} />
                           </p>
                           <p className="text-xs text-slate-600 leading-relaxed pt-1">
@@ -655,7 +669,7 @@ export function BuscadorSoluciones() {
                           </p>
                         </div>
 
-                        <div className="pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs">
+                        <div className="pt-2.5 sm:pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs">
                           <span className="text-slate-500">{uiText.verAccion}</span>
                           <button
                             onClick={() => setActiveTab('negocio')}
@@ -667,7 +681,7 @@ export function BuscadorSoluciones() {
                       </div>
 
                       {/* Columna Derecha: Hoja de Ruta de 4 Pasos */}
-                      <div className="md:col-span-7 flex flex-col justify-between space-y-3">
+                      <div className="md:col-span-7 flex flex-col justify-between space-y-2 sm:space-y-3">
                         <div className="flex items-center justify-between pb-1">
                           <h4 className="text-xs text-slate-700 uppercase tracking-widest font-bold flex items-center gap-2">
                             <CheckCircle2 className="w-4 h-4 text-emerald-600" /> {uiText.hojaRuta}
@@ -676,10 +690,10 @@ export function BuscadorSoluciones() {
                         </div>
 
                         {activeIdea.pasos && (
-                          <div className="grid gap-2.5">
+                          <div className="grid gap-2 sm:gap-2.5">
                             {activeIdea.pasos.map((paso: string, idx: number) => (
-                              <div key={idx} className="flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-200/80 shadow-2xs hover:border-slate-300 transition-colors">
-                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs flex items-center justify-center border border-emerald-200 mt-0.5">
+                              <div key={idx} className="flex items-start gap-2.5 sm:gap-3 bg-white p-2.5 sm:p-3 rounded-lg sm:rounded-xl border border-slate-200/80 shadow-2xs hover:border-slate-300 transition-colors">
+                                <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs flex items-center justify-center border border-emerald-200 mt-0.5">
                                   {idx + 1}
                                 </span>
                                 <p className="text-xs md:text-sm text-slate-700 leading-relaxed font-normal">
@@ -693,19 +707,19 @@ export function BuscadorSoluciones() {
                     </motion.div>
                   )}
 
-                  {/* PESTAÑA 2: CASO DE NEGOCIO (Opción A: Problema en Tienda vs. Retorno ROI) */}
+                  {/* PESTAÑA 2: CASO DE NEGOCIO */}
                   {activeTab === 'negocio' && (
                     <motion.div
                       key="negocio"
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 h-full items-stretch"
+                      className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 h-full items-stretch"
                     >
                       {/* Columna 1: El Problema en Tienda */}
-                      <div className="bg-rose-50/40 p-5 rounded-2xl border border-rose-200/80 shadow-2xs flex flex-col justify-between">
+                      <div className="bg-rose-50/40 p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-rose-200/80 shadow-2xs flex flex-col justify-between">
                         <div>
-                          <div className="flex items-center gap-2 mb-3">
+                          <div className="flex items-center gap-2 mb-2.5 sm:mb-3">
                             <span className="w-2 h-2 rounded-full bg-rose-500"></span>
                             <h5 className="text-xs text-rose-900 uppercase tracking-widest font-bold flex items-center gap-2">
                               <AlertCircle className="w-4 h-4 text-rose-600" /> {uiText.situacionActual}
@@ -715,16 +729,16 @@ export function BuscadorSoluciones() {
                             <FormattedText text={activeIdea.ejemplo || activeIdea.descripcion} boldClassName="font-bold text-rose-950" />
                           </p>
                         </div>
-                        <div className="pt-3 border-t border-rose-200/60 text-[11px] text-rose-800 font-medium flex items-center gap-1.5">
+                        <div className="pt-2.5 sm:pt-3 border-t border-rose-200/60 text-[11px] text-rose-800 font-medium flex items-center gap-1.5 mt-3">
                           <Store className="w-3.5 h-3.5 text-rose-600 shrink-0" />
                           <span>{uiText.friccionText}</span>
                         </div>
                       </div>
 
                       {/* Columna 2: Impacto y Retorno (ROI) */}
-                      <div className="bg-emerald-50/40 p-5 rounded-2xl border border-emerald-200/80 shadow-2xs flex flex-col justify-between">
+                      <div className="bg-emerald-50/40 p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-emerald-200/80 shadow-2xs flex flex-col justify-between">
                         <div>
-                          <div className="flex items-center gap-2 mb-3">
+                          <div className="flex items-center gap-2 mb-2.5 sm:mb-3">
                             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                             <h5 className="text-xs text-emerald-900 uppercase tracking-widest font-bold flex items-center gap-2">
                               <TrendingUp className="w-4 h-4 text-emerald-600" /> {uiText.impactoRoi}
@@ -734,7 +748,7 @@ export function BuscadorSoluciones() {
                             <FormattedText text={activeIdea.descripcionLarga || activeIdea.descripcion} boldClassName="font-bold text-emerald-950" />
                           </p>
                         </div>
-                        <div className="pt-3 border-t border-emerald-200/60 text-[11px] text-emerald-800 font-medium flex items-center justify-between">
+                        <div className="pt-2.5 sm:pt-3 border-t border-emerald-200/60 text-[11px] text-emerald-800 font-medium flex items-center justify-between mt-3">
                           <span>{uiText.beneficioEstimado} <strong>{activeIdea.beneficio}</strong></span>
                           <span className="text-[10px] uppercase font-bold text-emerald-700 bg-emerald-100/60 px-2 py-0.5 rounded">{uiText.retornoDirecto}</span>
                         </div>
@@ -742,27 +756,27 @@ export function BuscadorSoluciones() {
                     </motion.div>
                   )}
 
-                  {/* PESTAÑA 3: VIABILIDAD TÉCNICA (2 Columnas Apaisadas) */}
+                  {/* PESTAÑA 3: VIABILIDAD TÉCNICA */}
                   {activeTab === 'tecnica' && (
                     <motion.div
                       key="tecnica"
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 h-full items-start"
+                      className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 h-full items-start"
                     >
                       {/* Columna Izquierda: Arquitectura & Desacoplamiento */}
                       {(activeIdea.viabilidad || activeIdea.veredicto) && (
-                        <div className="md:col-span-6 bg-sky-50/40 p-5 rounded-2xl border border-sky-200/80 shadow-2xs flex flex-col justify-between">
+                        <div className="md:col-span-6 bg-sky-50/40 p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-sky-200/80 shadow-2xs flex flex-col justify-between">
                           <div>
-                            <h5 className="text-xs text-sky-900 uppercase tracking-widest font-bold mb-3 flex items-center gap-2">
+                            <h5 className="text-xs text-sky-900 uppercase tracking-widest font-bold mb-2.5 sm:mb-3 flex items-center gap-2">
                               <HardHat className="w-4 h-4 text-sky-600" /> {uiText.arquitectura}
                             </h5>
                             <p className="text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-wrap font-normal">
                               <FormattedText text={activeIdea.viabilidad || activeIdea.veredicto} boldClassName="font-bold text-sky-950" />
                             </p>
                           </div>
-                          <div className="mt-4 pt-3 border-t border-sky-200/60 text-[11px] text-sky-800 font-semibold flex items-center gap-1.5">
+                          <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-sky-200/60 text-[11px] text-sky-800 font-semibold flex items-center gap-1.5">
                             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                             {uiText.aislamientoGarantizado}
                           </div>
@@ -770,12 +784,12 @@ export function BuscadorSoluciones() {
                       )}
 
                       {/* Columna Derecha: Ecosistema de Software & Herramientas */}
-                      <div className="md:col-span-6 flex flex-col gap-3">
+                      <div className="md:col-span-6 flex flex-col gap-2.5 sm:gap-3">
                         
                         {/* Software Recomendado */}
                         {activeIdea.softwareRecomendado && activeIdea.softwareRecomendado.length > 0 && (
-                          <div className="bg-slate-50/90 p-4 rounded-2xl border border-slate-200/90 shadow-2xs">
-                            <div className="flex items-center justify-between gap-2 mb-2.5">
+                          <div className="bg-slate-50/90 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200/90 shadow-2xs">
+                            <div className="flex items-center justify-between gap-2 mb-2">
                               <span className="text-[10px] text-slate-700 uppercase font-bold tracking-wider flex items-center gap-1.5">
                                 <Cpu className="w-3.5 h-3.5 text-emerald-600" /> {uiText.softwareRecomendado}
                               </span>
@@ -787,7 +801,7 @@ export function BuscadorSoluciones() {
                               {activeIdea.softwareRecomendado.map((soft: string, sIdx: number) => (
                                 <span
                                   key={sIdx}
-                                  className="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 shadow-2xs flex items-center gap-1.5"
+                                  className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-white border border-slate-200 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-800 shadow-2xs flex items-center gap-1.5"
                                 >
                                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                                   {soft}
@@ -799,15 +813,15 @@ export function BuscadorSoluciones() {
 
                         {/* Software Opcional / Alternativas */}
                         {activeIdea.softwareOpcional && activeIdea.softwareOpcional.length > 0 && (
-                          <div className="bg-slate-50/60 p-3.5 rounded-2xl border border-slate-200/70 shadow-2xs">
-                            <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block mb-2">
+                          <div className="bg-slate-50/60 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl border border-slate-200/70 shadow-2xs">
+                            <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block mb-1.5">
                               {uiText.softwareOpcional}
                             </span>
                             <div className="flex flex-wrap gap-1.5">
                               {activeIdea.softwareOpcional.map((soft: string, sIdx: number) => (
                                 <span
                                   key={sIdx}
-                                  className="px-2 py-0.5 bg-slate-100/80 border border-slate-200/60 rounded-md text-[11px] font-medium text-slate-600"
+                                  className="px-2 py-0.5 bg-slate-100/80 border border-slate-200/60 rounded-md text-[10px] sm:text-[11px] font-medium text-slate-600"
                                 >
                                   {soft}
                                 </span>
@@ -817,9 +831,9 @@ export function BuscadorSoluciones() {
                         )}
 
                         {/* Tipo de Integración con ERP/TPV */}
-                        <div className="bg-slate-50/60 px-4 py-2.5 rounded-xl border border-slate-200/80 flex items-center justify-between text-xs">
-                          <span className="text-slate-500 text-[11px] font-medium">{uiText.integracionTienda}</span>
-                          <span className="font-bold text-slate-800 text-[11px]">
+                        <div className="bg-slate-50/60 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-slate-200/80 flex items-center justify-between text-xs">
+                          <span className="text-slate-500 text-[10px] sm:text-[11px] font-medium">{uiText.integracionTienda}</span>
+                          <span className="font-bold text-slate-800 text-[10px] sm:text-[11px]">
                             {activeIdea.acceso === 'escritura' ? uiText.escrituraLabel : uiText.lecturaLabel}
                           </span>
                         </div>
@@ -831,11 +845,11 @@ export function BuscadorSoluciones() {
                 </div>
 
                 {/* Footer del Dossier */}
-                <div className="p-3.5 px-6 border-t border-slate-100 bg-slate-50/90 flex items-center justify-between shrink-0">
-                  <span className="text-xs text-slate-400">{uiText.escCerrar}</span>
+                <div className="p-3 sm:p-3.5 px-4 sm:px-6 border-t border-slate-100 bg-slate-50/90 flex items-center justify-between shrink-0">
+                  <span className="text-xs text-slate-400 hidden sm:inline">{uiText.escCerrar}</span>
                   <button
                     onClick={() => setExpandedId(null)}
-                    className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold transition-colors cursor-pointer shadow-xs"
+                    className="w-full sm:w-auto px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold transition-colors cursor-pointer shadow-xs text-center"
                   >
                     {uiText.cerrarFicha}
                   </button>
