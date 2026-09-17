@@ -144,35 +144,35 @@ export default function Home() {
 
       {/* ─── SECCIÓN 2: EL PROBLEMA ─── */}
       <Section id="problema">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 md:mb-8 leading-tight">
               {tProb("title")}{" "}
               <span className="text-emerald-500">{tProb("highlight")}</span>{" "}
               {tProb("titleEnd")}
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-base md:text-lg text-slate-600 leading-relaxed">
               {tProb("intro")}
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-2.5 md:space-y-4">
             {[
               { icon: Flame, title: tProb("pain1Title"), desc: tProb("pain1Desc"), color: "red" as const },
               { icon: BarChart3, title: tProb("pain2Title"), desc: tProb("pain2Desc"), color: "amber" as const },
               { icon: Clock, title: tProb("pain3Title"), desc: tProb("pain3Desc"), color: "blue" as const },
             ].map((item, i) => (
-              <FadeCard key={item.title} delay={i * 0.15} className={`p-6 rounded-2xl border bg-slate-50 ${
+              <FadeCard key={item.title} delay={i * 0.15} className={`p-3.5 sm:p-5 md:p-6 rounded-xl md:rounded-2xl border bg-slate-50 ${
                 item.color === "red" ? "border-red-200" : item.color === "amber" ? "border-amber-200" : "border-blue-200"
               }`}>
-                <div className="flex items-start gap-4">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className={`w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0 ${
                     item.color === "red" ? "bg-red-100 text-red-500" : item.color === "amber" ? "bg-amber-100 text-amber-500" : "bg-blue-100 text-blue-500"
                   }`}>
-                    <item.icon className="w-5 h-5" />
+                    <item.icon className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 mb-1">{item.title}</h3>
-                    <p className="text-slate-600 text-sm">{item.desc}</p>
+                    <h3 className="font-bold text-slate-900 text-sm md:text-base mb-0.5 md:mb-1">{item.title}</h3>
+                    <p className="text-slate-600 text-xs md:text-sm line-clamp-2 md:line-clamp-none">{item.desc}</p>
                   </div>
                 </div>
               </FadeCard>
@@ -184,32 +184,32 @@ export default function Home() {
       {/* ─── SECCIÓN 3: LA SOLUCIÓN ─── */}
       <Section id="solucion" dark>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8 leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 md:mb-8 leading-tight">
             {tSol("title1")}<br/>
             <span className="text-emerald-400">{tSol("title2")}</span>
           </h2>
-          <p className="text-xl text-slate-400 leading-relaxed mb-16">
+          <p className="text-xs sm:text-base md:text-xl text-slate-400 leading-relaxed mb-6 md:mb-16">
             {tSol("desc")}
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
             {[
               { antes: tSol("antes1"), despues: tSol("despues1"), delay: 0 },
               { antes: tSol("antes2"), despues: tSol("despues2"), delay: 0.15 },
               { antes: tSol("antes3"), despues: tSol("despues3"), delay: 0.3 },
             ].map((item, idx) => (
-              <FadeCard key={idx} delay={item.delay} className="rounded-2xl bg-slate-900 border border-slate-800 flex flex-col h-full min-h-[20rem] text-center">
-                <div className="flex-1 p-6 flex flex-col justify-end items-center">
-                  <div className="text-slate-400 text-base mb-4">{item.antes}</div>
-                  <span className="flex items-center justify-center gap-2 text-base font-black text-slate-500 uppercase tracking-widest">
-                    <XCircle className="w-5 h-5" /> {tSol("antesTag")}
+              <FadeCard key={idx} delay={item.delay} className="rounded-xl md:rounded-2xl bg-slate-900 border border-slate-800 flex flex-col h-full min-h-0 md:min-h-[20rem] text-center">
+                <div className="p-3.5 md:p-6 flex flex-col justify-center md:justify-end items-center">
+                  <div className="text-slate-400 text-xs sm:text-sm md:text-base mb-1.5 md:mb-4">{item.antes}</div>
+                  <span className="flex items-center justify-center gap-1.5 md:gap-2 text-xs md:text-base font-black text-slate-500 uppercase tracking-wider md:tracking-widest">
+                    <XCircle className="w-3.5 h-3.5 md:w-5 md:h-5 text-rose-500" /> {tSol("antesTag")}
                   </span>
                 </div>
                 <div className="h-px bg-slate-800 w-full"></div>
-                <div className="flex-1 p-6 flex flex-col justify-start items-center">
-                  <span className="flex items-center justify-center gap-2 text-base font-black text-emerald-500 uppercase tracking-widest mb-4">
-                    <CheckCircle2 className="w-5 h-5" /> {tSol("conIaTag")}
+                <div className="p-3.5 md:p-6 flex flex-col justify-center md:justify-start items-center">
+                  <span className="flex items-center justify-center gap-1.5 md:gap-2 text-xs md:text-base font-black text-emerald-500 uppercase tracking-wider md:tracking-widest mb-1.5 md:mb-4">
+                    <CheckCircle2 className="w-3.5 h-3.5 md:w-5 md:h-5" /> {tSol("conIaTag")}
                   </span>
-                  <div className="text-white text-base font-bold">{item.despues}</div>
+                  <div className="text-white text-xs sm:text-sm md:text-base font-bold">{item.despues}</div>
                 </div>
               </FadeCard>
             ))}
@@ -220,43 +220,51 @@ export default function Home() {
       {/* ─── SECCIÓN 4: EL PERFIL HÍBRIDO ─── */}
       <Section id="perfil" className="bg-gradient-to-b from-white to-emerald-50/30">
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8 leading-tight text-slate-900">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 md:mb-8 leading-tight text-slate-900">
             {tPerfil("title")}
           </h2>
-          <div className="text-xl md:text-2xl text-slate-600 mb-16 max-w-4xl mx-auto leading-relaxed font-medium">
+          <div className="text-xs sm:text-base md:text-2xl text-slate-600 mb-6 md:mb-16 max-w-4xl mx-auto leading-relaxed font-medium">
             {tPerfil.rich("intro", {
               bold: (chunks) => <strong className="text-slate-900 font-bold">{chunks}</strong>,
               highlight: (chunks) => <span className="text-emerald-600 font-bold">{chunks}</span>,
-              p: (chunks) => <p className="mb-6 last:mb-0">{chunks}</p>
+              p: (chunks) => <p className="mb-2 md:mb-6 last:mb-0">{chunks}</p>
             })}
           </div>
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <FadeCard delay={0} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 text-left flex flex-col justify-start">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
-                  <Store className="w-6 h-6" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-12">
+            <FadeCard delay={0} className="p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl bg-white border border-slate-200 shadow-md shadow-slate-200/50 text-left flex flex-col justify-start">
+              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-6">
+                <div className="w-9 h-9 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-lg md:rounded-xl flex items-center justify-center shrink-0">
+                  <Store className="w-4 h-4 md:w-6 md:h-6" />
                 </div>
-                <h3 className="text-xl font-black text-slate-900 leading-tight">{tPerfil("mostrador")}</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-black text-slate-900 leading-tight">{tPerfil("mostrador")}</h3>
               </div>
-              <ul className="space-y-3 text-slate-600 text-sm">
+              <ul className="space-y-1.5 md:space-y-3 text-slate-600 text-xs md:text-sm">
                 {mostradorItems.map((item, i) => (
-                  <li key={i}>
-                    <strong className="text-slate-900">{item.title}:</strong> {item.desc}
+                  <li key={i} className="flex items-start gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+                    <span>
+                      <strong className="text-slate-900 font-bold">{item.title}</strong>
+                      <span className="hidden md:inline">: {item.desc}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
             </FadeCard>
-            <FadeCard delay={0.2} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 text-left flex flex-col justify-start">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center shrink-0">
-                  <LayoutDashboard className="w-6 h-6" />
+            <FadeCard delay={0.2} className="p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl bg-white border border-slate-200 shadow-md shadow-slate-200/50 text-left flex flex-col justify-start">
+              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-6">
+                <div className="w-9 h-9 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-lg md:rounded-xl flex items-center justify-center shrink-0">
+                  <LayoutDashboard className="w-4 h-4 md:w-6 md:h-6" />
                 </div>
-                <h3 className="text-xl font-black text-slate-900 leading-tight">{tPerfil("procesos")}</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-black text-slate-900 leading-tight">{tPerfil("procesos")}</h3>
               </div>
-              <ul className="space-y-3 text-slate-600 text-sm">
+              <ul className="space-y-1.5 md:space-y-3 text-slate-600 text-xs md:text-sm">
                 {procesosItems.map((item, i) => (
-                  <li key={i}>
-                    <strong className="text-slate-900">{item.title}:</strong> {item.desc}
+                  <li key={i} className="flex items-start gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                    <span>
+                      <strong className="text-slate-900 font-bold">{item.title}</strong>
+                      <span className="hidden md:inline">: {item.desc}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -267,32 +275,32 @@ export default function Home() {
 
       {/* ─── SECCIÓN 5: LAS 3 GARANTÍAS ─── */}
       <Section id="garantias" dark>
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight">
+        <div className="text-center max-w-3xl mx-auto mb-6 md:mb-16">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-2 md:mb-6 leading-tight">
             {tGarantias("title")}<br/><span className="text-emerald-400">{tGarantias("highlight")}</span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-400 leading-relaxed font-normal">
+          <p className="text-xs sm:text-base md:text-xl text-slate-400 leading-relaxed font-normal">
             {tGarantias("desc")}
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
           {[
             { icon: Shield, title: tGarantias("g1Title"), desc: tGarantias("g1Desc"), color: "emerald" },
             { icon: Handshake, title: tGarantias("g2Title"), desc: tGarantias("g2Desc"), color: "blue" },
             { icon: RotateCcw, title: tGarantias("g3Title"), desc: tGarantias("g3Desc"), color: "amber" },
           ].map((g, i) => (
-            <FadeCard key={g.title} delay={i * 0.15} className="p-8 rounded-2xl bg-slate-900 border border-slate-800 text-center flex flex-col justify-between">
+            <FadeCard key={g.title} delay={i * 0.15} className="p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl bg-slate-900 border border-slate-800 text-center flex flex-col justify-between">
               <div>
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 ${
+                <div className={`w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-2 md:mb-5 ${
                   g.color === "emerald" ? "bg-emerald-500/10 text-emerald-400" :
                   g.color === "blue" ? "bg-blue-500/10 text-blue-400" :
                   "bg-amber-500/10 text-amber-400"
                 }`}>
-                  <g.icon className="w-7 h-7" />
+                  <g.icon className="w-5 h-5 md:w-7 md:h-7" />
                 </div>
-                <h3 className="font-bold text-white mb-3 text-lg">{g.title}</h3>
+                <h3 className="font-bold text-white mb-1 md:mb-3 text-sm sm:text-base md:text-lg">{g.title}</h3>
               </div>
-              <p className="text-sm text-slate-400 leading-relaxed mt-2">{g.desc}</p>
+              <p className="text-xs md:text-sm text-slate-400 leading-relaxed line-clamp-2 md:line-clamp-none mt-1 md:mt-2">{g.desc}</p>
             </FadeCard>
           ))}
         </div>

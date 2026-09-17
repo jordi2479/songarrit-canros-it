@@ -95,32 +95,32 @@ export function EsquemaEmpresa() {
               <p className="text-slate-500 text-xs md:text-sm">{tBloques("labDesc")}</p>
             </div>
             
-            <div className="flex flex-col gap-2 md:gap-3 relative z-10">
-              <div className="bg-white border border-emerald-100 rounded-xl p-3 md:p-4 flex items-center gap-3 md:gap-4 shadow-sm">
-                <div className="bg-slate-100 text-slate-600 w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center shrink-0">
-                   <Store className="w-3.5 h-3.5 md:w-4 md:h-4" />
+            <div className="flex flex-col gap-1.5 md:gap-3 relative z-10">
+              <div className="bg-white border border-emerald-100 rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
+                <div className="bg-slate-100 text-slate-600 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+                   <Store className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-900 text-sm md:text-base">{tBloques("b2")}</h5>
-                  <p className="text-xs text-slate-500">{tBloques("b2Sub")}</p>
+                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b2")}</h5>
+                  <p className="hidden md:block text-xs text-slate-500">{tBloques("b2Sub")}</p>
                 </div>
               </div>
-              <div className="bg-white border border-emerald-100 rounded-xl p-3 md:p-4 flex items-center gap-3 md:gap-4 shadow-sm">
-                <div className="bg-slate-100 text-slate-600 w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center shrink-0">
-                   <Users className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              <div className="bg-white border border-emerald-100 rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
+                <div className="bg-slate-100 text-slate-600 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+                   <Users className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-900 text-sm md:text-base">{tBloques("b3")}</h5>
-                  <p className="text-xs text-slate-500">{tBloques("b3Sub")}</p>
+                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b3")}</h5>
+                  <p className="hidden md:block text-xs text-slate-500">{tBloques("b3Sub")}</p>
                 </div>
               </div>
-              <div className="bg-white border border-emerald-100 rounded-xl p-3 md:p-4 flex items-center gap-3 md:gap-4 shadow-sm">
-                <div className="bg-slate-100 text-slate-600 w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center shrink-0">
-                   <Package className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              <div className="bg-white border border-emerald-100 rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
+                <div className="bg-slate-100 text-slate-600 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+                   <Package className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-900 text-sm md:text-base">{tBloques("b4")}</h5>
-                  <p className="text-xs text-slate-500">{tBloques("b4Sub")}</p>
+                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b4")}</h5>
+                  <p className="hidden md:block text-xs text-slate-500">{tBloques("b4Sub")}</p>
                 </div>
               </div>
             </div>
@@ -179,32 +179,32 @@ export function EsquemaEmpresa() {
               <p className="text-slate-500 text-xs md:text-sm">{tBloques("expansionDesc")}</p>
             </div>
             
-            <div className="flex flex-col gap-2 md:gap-3 relative z-10">
-              <div className="bg-white/50 border border-slate-200 border-dashed rounded-xl p-3 md:p-4 flex items-center gap-3 md:gap-4 shadow-sm">
-                <div className="bg-slate-200/50 text-slate-400 w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center shrink-0">
-                   <Store className="w-3.5 h-3.5 md:w-4 md:h-4" />
+            <div className="flex flex-col gap-1.5 md:gap-3 relative z-10">
+              <div className="bg-white/50 border border-slate-200 border-dashed rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
+                <div className="bg-slate-200/50 text-slate-400 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+                   <Store className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-600 text-sm md:text-base">{tBloques("b2")}</h5>
-                  <p className="text-xs text-slate-400">{tBloques("b2Sub")}</p>
+                  <h5 className="font-bold text-slate-600 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b2")}</h5>
+                  <p className="hidden md:block text-xs text-slate-400">{tBloques("b2Sub")}</p>
                 </div>
               </div>
-              <div className="bg-white/50 border border-slate-200 border-dashed rounded-xl p-3 md:p-4 flex items-center gap-3 md:gap-4 shadow-sm">
-                <div className="bg-slate-200/50 text-slate-400 w-7 h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
-                   <Users className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              <div className="bg-white/50 border border-slate-200 border-dashed rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
+                <div className="bg-slate-200/50 text-slate-400 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+                   <Users className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-600 text-sm md:text-base">{tBloques("b3")}</h5>
-                  <p className="text-xs text-slate-400">{tBloques("b3Sub")}</p>
+                  <h5 className="font-bold text-slate-600 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b3")}</h5>
+                  <p className="hidden md:block text-xs text-slate-400">{tBloques("b3Sub")}</p>
                 </div>
               </div>
-              <div className="bg-white/50 border border-slate-200 border-dashed rounded-xl p-3 md:p-4 flex items-center gap-3 md:gap-4 shadow-sm">
-                <div className="bg-slate-200/50 text-slate-400 w-7 h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
-                   <Package className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              <div className="bg-white/50 border border-slate-200 border-dashed rounded-lg md:rounded-xl p-2.5 sm:p-3 md:p-4 flex items-center gap-2.5 md:gap-4 shadow-2xs">
+                <div className="bg-slate-200/50 text-slate-400 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-md md:rounded-lg flex items-center justify-center shrink-0">
+                   <Package className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
                 <div>
-                  <h5 className="font-bold text-slate-600 text-sm md:text-base">{tBloques("b4")}</h5>
-                  <p className="text-xs text-slate-400">{tBloques("b4Sub")}</p>
+                  <h5 className="font-bold text-slate-600 text-xs sm:text-sm md:text-base leading-tight">{tBloques("b4")}</h5>
+                  <p className="hidden md:block text-xs text-slate-400">{tBloques("b4Sub")}</p>
                 </div>
               </div>
             </div>
