@@ -7,7 +7,7 @@ export const categoriaAREA09Ca: Categoria = {
   "propuestas": [
     {
       "id": "09.01",
-      "titulo": "[CA] Respuesta resenas Google ES/CA/EN/DE con alerta en 1-2 estrellas",
+      "titulo": "Gestor de Ressenyes",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA09Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Business Profile","Google Gemini / ChatGPT","Google Antigravity"],
+            "softwareOpcional": ["Claude","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "09.02",
-      "titulo": "[CA] Captador resenas con QR en ticket post-compra",
+      "titulo": "Campanyes Estacionals",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA09Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Instagram / Xarxes","Google Gemini / ChatGPT"],
+            "softwareOpcional": ["Photoshop / Canva","Meta Ads"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "09.03",
-      "titulo": "[CA] Posts hiperlocales payes pre-lluvias piscina",
+      "titulo": "Liquidació de Sobrestoc",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA09Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Volcat des d'ERP/TPV (Immobilitzat)","WhatsApp Business","Photoshop / Canva"],
+            "softwareOpcional": ["Microsoft Excel","Google Antigravity"],
       "veredicto": "",
       "estado": "idea"
     },

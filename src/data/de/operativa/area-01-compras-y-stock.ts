@@ -7,7 +7,7 @@ export const categoriaAREA01De: Categoria = {
   "propuestas": [
     {
       "id": "01.01",
-      "titulo": "[DE] Propuesta pedido semanal",
+      "titulo": "Bestellmanager",
       "descripcion": "[DE] Propuesta semanal de qué pedir en Ca'n Ros según ventas 90 días y stock.",
       "descripcionLarga": "[DE] Propuesta semanal de qué pedir en Ca'n Ros según ventas 90 días y stock.",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA01De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/Kassensystem-Export (CSV/Excel)","Microsoft Excel (.xlsx)"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop","ERP/Kassensystem-Import (CSV)"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "01.02",
-      "titulo": "[DE] Alerta rotura crítica",
+      "titulo": "Ausverkaufs-Radar",
       "descripcion": "[DE] Aviso cuando un top-100 de Ca'n Ros queda a menos de 7 días de venta.",
       "descripcionLarga": "[DE] Aviso cuando un top-100 de Ca'n Ros queda a menos de 7 días de venta.",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA01De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/Kassensystem-Export (CSV)","WhatsApp Business"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop","Outlook / E-Mail"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "01.03",
-      "titulo": "[DE] Revisor factura vs albarán",
+      "titulo": "Lieferschein-Auditor",
       "descripcion": "[DE] Compara PDF factura proveedor con albarán y pedido, marca cobros de más.",
       "descripcionLarga": "[DE] Compara PDF factura proveedor con albarán y pedido, marca cobros de más.",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA01De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google NotebookLM","ERP/Kassensystem-Export (Excel/PDF)","Microsoft Excel"],
+            "softwareOpcional": ["Google Antigravity","Claude","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },

@@ -7,7 +7,7 @@ export const categoriaAREA08En: Categoria = {
   "propuestas": [
     {
       "id": "08.01",
-      "titulo": "[EN] Plantillas compartidas, tono separado Son Garrit ciudad vs Ca'n Ros pueblo",
+      "titulo": "Local Brand Identity",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA08En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Workspace / Docs","Instagram / Meta Business"],
+            "softwareOpcional": ["Photoshop / Canva","Google Gemini"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "08.02",
-      "titulo": "[EN] Reseñas separadas Google, informe conjunto sí",
+      "titulo": "Google Maps Listings",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA08En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Business Profile (Maps)","Google Gemini / ChatGPT","WhatsApp Business"],
+            "softwareOpcional": ["Photoshop / Canva","Instagram"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "08.03",
-      "titulo": "[EN] Webs separadas, trastienda común stock y catálogo uno",
+      "titulo": "Group Pro Account",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA08En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["ERP/POS Export (Pro price tier)","WhatsApp Business","Microsoft Excel"],
+            "softwareOpcional": ["Google Antigravity","Outlook / Email"],
       "veredicto": "",
       "estado": "idea"
     },

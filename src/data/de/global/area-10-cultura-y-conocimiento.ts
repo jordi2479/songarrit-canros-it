@@ -7,7 +7,7 @@ export const categoriaAREA10De: Categoria = {
   "propuestas": [
     {
       "id": "10.01",
-      "titulo": "[DE] Base conocimiento común por chat",
+      "titulo": "Technischer Produktberater",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA10De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","Google NotebookLM (Handbücher)","WhatsApp Business"],
+            "softwareOpcional": ["Google Gemini","Claude Code","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "10.02",
-      "titulo": "[DE] Quién sabe qué en el grupo",
+      "titulo": "Experten-Verzeichnis",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA10De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Google Sheets / Docs","Google Antigravity"],
+            "softwareOpcional": ["Notion","Google Workspace"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "10.03",
-      "titulo": "[DE] Onboarding Ca'n Ros con vídeos 3 min Son Garrit",
+      "titulo": "Saisonale Aushilfen",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA10De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp","Google Workspace / Sheets"],
+            "softwareOpcional": ["Microsoft Excel","Google Calendar"],
       "veredicto": "",
       "estado": "idea"
     },

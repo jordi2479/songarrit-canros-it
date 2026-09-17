@@ -7,7 +7,7 @@ export const categoriaAREA13En: Categoria = {
   "propuestas": [
     {
       "id": "13.01",
-      "titulo": "[EN] Checklist cierre con foto",
+      "titulo": "Store Open & Close",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA13En: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 días",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp (Photo checklist)","Google Sheets"],
+            "softwareOpcional": ["Google Forms","Google Drive"],
       "veredicto": "[EN] Puedo afrontarlo: Sí Motivo: Formulario con foto y archivo por fechas, sin integraciones ni dato sensible. Hasta dónde llego: Lista validada, formulario, archivo mensual y guía de 1 clic para validar. Qué haría un especialista: No aplica salvo revisión puntual de aseguradora si pide un formato concreto.",
       "estado": "validar-diseno"
     },
     {
       "id": "13.02",
-      "titulo": "[EN] Resumen vídeo solo eventos",
+      "titulo": "Cash Discrepancy Audit",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA13En: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 días",
       "stack": "no-code",
+            "softwareRecomendado": ["ERP/POS Export (Cash count)","Microsoft Excel","Google Antigravity"],
+            "softwareOpcional": ["Claude Code","Google Sheets"],
       "veredicto": "[EN] Puedo afrontarlo: Con apoyo Motivo: El método de revisión por eventos lo afronto yo, pero vídeo y vigilancia tocan dato sensible y norma. Hasta dónde llego: Procedimiento de acotar por evento, plantilla de registro e inventario de cámaras. Qué haría un especialista: Instalador para cámaras y gestoría o legal para carteles, accesos, plazos y base_legal.",
       "estado": "validar-diseno"
     },
     {
       "id": "13.03",
-      "titulo": "[EN] Diferencia caja por turno y empleado",
+      "titulo": "Shrinkage Control",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA13En: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 días",
       "stack": "no-code",
+            "softwareRecomendado": ["ERP/POS Export (Stock adjustments)","Microsoft Excel","Google Antigravity"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop"],
       "veredicto": "[EN] Puedo afrontarlo: Con apoyo Motivo: Diseño funcional y resumen semanal lo afronto, pero dinero y TPV exigen especialista y validación laboral. Hasta dónde llego: Estructura de resumen, reglas de patrón y circuito de validación en 1 clic. Qué haría un especialista: Técnico de TPV para el export y gestoría o legal para tratamiento del dato por empleado y base_legal.",
       "estado": "validar-diseno"
     },

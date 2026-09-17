@@ -7,7 +7,7 @@ export const categoriaAREA11En: Categoria = {
   "propuestas": [
     {
       "id": "11.01",
-      "titulo": "[EN] Ruta 2x semana",
+      "titulo": "Delivery Routes",
       "descripcion": "[EN] Propuesta de dos rutas semanales fijas que ordenan las entregas por zona (Campos, Sa Ràpita, Llucmajor, Porreres, Felani...",
       "descripcionLarga": "[EN] Propuesta de dos rutas semanales fijas que ordenan las entregas por zona (Campos, Sa Ràpita, Llucmajor, Porreres, Felanitx, Santanyí) para evitar viajes sueltos. Beneficia al encargado y al repartidor porque concentra pedidos y reduce km en vacío. Ejemplo concreto: los pedidos de Campos y Sa Ràpita salen juntos el martes y los de Llucmajor y Porreres el jueves, con orden de parada validado en 1 clic. Valoración inicial: viable.",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA11En: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 días",
       "stack": "Hoja de cálculo o documento de ruta más mapa web de consulta",
+            "softwareRecomendado": ["Google Maps / Routes","WhatsApp Business","ERP/POS Export (Deliveries)"],
+            "softwareOpcional": ["Microsoft Excel","Google Antigravity"],
       "veredicto": "[EN] Puedo afrontarlo: Sí Motivo: proceso manual ordenado con plantilla, sin integración técnica. Hasta dónde llego: plantilla de ruta 2x semana, criterio por zonas y hoja del día lista para validar. Qué haría un especialista: optimización automática de rutas con software dedicado, solo si el volumen lo justifica.",
       "estado": "validar-diseno"
     },
     {
       "id": "11.02",
-      "titulo": "[EN] Urgente a obra por WhatsApp",
+      "titulo": "Jobsite Deliveries",
       "descripcion": "[EN] Circuito rápido para servir material urgente a obra avisando por WhatsApp cuando está preparado y con hora estimada. Ben...",
       "descripcionLarga": "[EN] Circuito rápido para servir material urgente a obra avisando por WhatsApp cuando está preparado y con hora estimada. Beneficia al profesional de obra que no puede desplazarse y al mostrador que evita llamadas repetidas. Ejemplo concreto: pedido de 6 sacos y 2 botes para una obra, se prepara, se avisa por WhatsApp y se entrega en ruta o viaje expreso. Valoración inicial: viable.",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA11En: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 días",
       "stack": "WhatsApp manual con plantillas más hoja de urgentes",
+            "softwareRecomendado": ["WhatsApp Business (Photos/Location)","ERP/POS Export (Delivery notes)"],
+            "softwareOpcional": ["Google Antigravity","Google Drive"],
       "veredicto": "[EN] Puedo afrontarlo: Sí Motivo: plantillas manuales y validación humana, sin automatización. Hasta dónde llego: plantillas de aviso, hoja de registro de urgentes y criterio de priorización. Qué haría un especialista: integración de mensajería con sistema de pedidos, solo con RGPD resuelto y doble validación.",
       "estado": "validar-diseno"
     },
     {
       "id": "11.03",
-      "titulo": "[EN] Mínimo porte gratis",
+      "titulo": "Shipping Threshold Calculator",
       "descripcion": "[EN] Regla clara que define a partir de qué importe el porte es gratis y cuándo se cobra (la ficha plantea 15 euros como refe...",
       "descripcionLarga": "[EN] Regla clara que define a partir de qué importe el porte es gratis y cuándo se cobra (la ficha plantea 15 euros como referencia a validar). Beneficia a mostrador y a clientes porque evita discusiones y portes a pérdida. Ejemplo concreto: pedido pequeño a Santanyí paga porte, pedido grande a Campos entra en porte gratis según umbral validado por el dueño. Valoración inicial: viable.",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA11En: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 días",
       "stack": "Cartel interno y tabla simple en hoja, sin conexión a TPV",
+            "softwareRecomendado": ["Microsoft Excel","Google Antigravity","Next.js / Web"],
+            "softwareOpcional": ["Google Sheets","Claude Code"],
       "veredicto": "[EN] Puedo afrontarlo: Sí Motivo: regla comercial en tabla visible, sin técnica. Hasta dónde llego: tabla de umbral por zona, cartel para mostrador y registro de excepciones. Qué haría un especialista: análisis de margen por zona con datos de ventas, si se quiere afinar el umbral.",
       "estado": "validar-diseno"
     },

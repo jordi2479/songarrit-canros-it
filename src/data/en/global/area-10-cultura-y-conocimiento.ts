@@ -7,7 +7,7 @@ export const categoriaAREA10En: Categoria = {
   "propuestas": [
     {
       "id": "10.01",
-      "titulo": "[EN] Base conocimiento común por chat",
+      "titulo": "Technical Product Assistant",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA10En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","Google NotebookLM (Technical manuals)","WhatsApp Business"],
+            "softwareOpcional": ["Google Gemini","Claude Code","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "10.02",
-      "titulo": "[EN] Quién sabe qué en el grupo",
+      "titulo": "Specialist Directory",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA10En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Google Sheets / Docs","Google Antigravity"],
+            "softwareOpcional": ["Notion","Google Workspace"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "10.03",
-      "titulo": "[EN] Onboarding Ca'n Ros con vídeos 3 min Son Garrit",
+      "titulo": "Peak Season Relief",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA10En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp","Google Workspace / Sheets"],
+            "softwareOpcional": ["Microsoft Excel","Google Calendar"],
       "veredicto": "",
       "estado": "idea"
     },

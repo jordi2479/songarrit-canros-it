@@ -7,7 +7,7 @@ export const categoriaAREA09En: Categoria = {
   "propuestas": [
     {
       "id": "09.01",
-      "titulo": "[EN] Respuesta resenas Google ES/CA/EN/DE con alerta en 1-2 estrellas",
+      "titulo": "Review Manager",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA09En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Business Profile","Google Gemini / ChatGPT","Google Antigravity"],
+            "softwareOpcional": ["Claude","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "09.02",
-      "titulo": "[EN] Captador resenas con QR en ticket post-compra",
+      "titulo": "Seasonal Campaigns",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA09En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Instagram / Social","Google Gemini / ChatGPT"],
+            "softwareOpcional": ["Photoshop / Canva","Meta Ads"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "09.03",
-      "titulo": "[EN] Posts hiperlocales payes pre-lluvias piscina",
+      "titulo": "Overstock Clearance",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA09En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["ERP/POS Export (Dead stock)","WhatsApp Business","Photoshop / Canva"],
+            "softwareOpcional": ["Microsoft Excel","Google Antigravity"],
       "veredicto": "",
       "estado": "idea"
     },

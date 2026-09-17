@@ -7,7 +7,7 @@ export const categoriaAREA15De: Categoria = {
   "propuestas": [
     {
       "id": "15.01",
-      "titulo": "[DE] Click y Collect reserva 24h",
+      "titulo": "Abholung im Laden",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA15De: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 días",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Next.js / Web-Prototyp","ERP/Kassensystem-Export"],
+            "softwareOpcional": ["Google Sheets","Google Antigravity"],
       "veredicto": "",
       "estado": "validar-diseno"
     },
     {
       "id": "15.02",
-      "titulo": "[DE] Encargos avísame cuando llegue",
+      "titulo": "Sonderbestellungen",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA15De: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 días",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Google Sheets / Docs","ERP/Kassensystem-Export"],
+            "softwareOpcional": ["Google Antigravity","Microsoft Excel"],
       "veredicto": "",
       "estado": "validar-diseno"
     },
     {
       "id": "15.03",
-      "titulo": "[DE] Picking por pasillo",
+      "titulo": "Mietgeräte-Verwaltung",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA15De: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 días",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Sheets / Excel","WhatsApp Business (Signatur/Foto Ausweis)"],
+            "softwareOpcional": ["Next.js / Web","Google Antigravity"],
       "veredicto": "",
       "estado": "validar-diseno"
     },

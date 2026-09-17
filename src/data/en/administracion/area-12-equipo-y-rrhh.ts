@@ -7,7 +7,7 @@ export const categoriaAREA12En: Categoria = {
   "propuestas": [
     {
       "id": "12.01",
-      "titulo": "[EN] Copiloto experto interno",
+      "titulo": "Shift Planner",
       "descripcion": "[EN] Asistente interno que responde dudas técnicas de mostrador con el surtido propio, del tipo qué broca para porcelánico o ...",
       "descripcionLarga": "[EN] Asistente interno que responde dudas técnicas de mostrador con el surtido propio, del tipo qué broca para porcelánico o qué EPI para radial, indicando marca disponible en cada tienda.",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA12En: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 dias",
       "stack": "no-code",
+            "softwareRecomendado": ["Microsoft Excel / Google Sheets","WhatsApp (Staff groups)"],
+            "softwareOpcional": ["Google Calendar","Google Antigravity"],
       "veredicto": "",
       "estado": "validar-diseno"
     },
     {
       "id": "12.02",
-      "titulo": "[EN] Onboarding 7 días temporeros",
+      "titulo": "New Hire Guide",
       "descripcion": "[EN] Recorrido guiado de 7 días para temporeros que explica dónde está cada familia, cómo hacer presupuestos, devoluciones y ...",
       "descripcionLarga": "[EN] Recorrido guiado de 7 días para temporeros que explica dónde está cada familia, cómo hacer presupuestos, devoluciones y caja, con el criterio de cada tienda.",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA12En: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 dias",
       "stack": "no-code",
+            "softwareRecomendado": ["Google NotebookLM","Google Docs / PDF","WhatsApp"],
+            "softwareOpcional": ["Notion","Google Gemini"],
       "veredicto": "",
       "estado": "validar-diseno"
     },
     {
       "id": "12.03",
-      "titulo": "[EN] Planificador turnos",
+      "titulo": "Maintenance Checklist",
       "descripcion": "[EN] Plantilla de turnos que cubre sábados, verano, Sant Joan, fiestas y vacaciones con reglas simples por tienda.",
       "descripcionLarga": "[EN] Plantilla de turnos que cubre sábados, verano, Sant Joan, fiestas y vacaciones con reglas simples por tienda.",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA12En: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 dias",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Forms / Sheets","WhatsApp (Incident photos)"],
+            "softwareOpcional": ["Google Antigravity","Notion"],
       "veredicto": "",
       "estado": "validar-diseno"
     },

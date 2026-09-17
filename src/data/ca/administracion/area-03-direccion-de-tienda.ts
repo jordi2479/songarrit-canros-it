@@ -7,7 +7,7 @@ export const categoriaAREA03Ca: Categoria = {
   "propuestas": [
     {
       "id": "03.01",
-      "titulo": "[CA] Informe lunes 9h ventas, ticket medio, top ventas/rotura, caja",
+      "titulo": "Quadre de Comandament",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA03Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","Volcat des d'ERP/TPV (CSV/Excel)","WhatsApp Business"],
+            "softwareOpcional": ["Microsoft Excel","Google Sheets","Claude Code"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "03.02",
-      "titulo": "[CA] Alerta caída vs año anterior con causa",
+      "titulo": "Caigudes de Venda",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA03Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 dias",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","Volcat des d'ERP/TPV (Històric)","Microsoft Excel"],
+            "softwareOpcional": ["OpenCode Desktop","Claude Code","Google Gemini"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "03.03",
-      "titulo": "[CA] Qué decide esta semana 3 prioridades pedir liquidar reforzar",
+      "titulo": "Previsió de Tancament",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA03Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Microsoft Excel (.xlsx)","Volcat des d'ERP/TPV (CSV)","Google Antigravity"],
+            "softwareOpcional": ["Google Sheets","Claude"],
       "veredicto": "",
       "estado": "idea"
     },

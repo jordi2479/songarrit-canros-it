@@ -7,7 +7,7 @@ export const categoriaAREA02Ca: Categoria = {
   "propuestas": [
     {
       "id": "02.01",
-      "titulo": "[CA] Límite fiado por paleta según historial y días pago",
+      "titulo": "Control de Fiats",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA02Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","Volcat des d'ERP/TPV (CSV/Excel)","WhatsApp Business"],
+            "softwareOpcional": ["Microsoft Excel","Claude Code","Outlook / Correu"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "02.02",
-      "titulo": "[CA] Alerta vencimiento",
+      "titulo": "Control de Marges",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA02Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","Volcat des d'ERP/TPV (CSV/Excel)","Microsoft Excel"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop","Google Gemini"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "02.03",
-      "titulo": "[CA] Reclamador educado cobro sin quemar relación pueblo, en borrador",
+      "titulo": "Quadrat de Caixa",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA02Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Microsoft Excel (.xlsx)","Volcat des d'ERP/TPV (Tancament diari)"],
+            "softwareOpcional": ["Google Sheets","Google Antigravity"],
       "veredicto": "",
       "estado": "idea"
     },

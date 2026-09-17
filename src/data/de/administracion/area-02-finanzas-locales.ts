@@ -7,7 +7,7 @@ export const categoriaAREA02De: Categoria = {
   "propuestas": [
     {
       "id": "02.01",
-      "titulo": "[DE] Límite fiado por paleta según historial y días pago",
+      "titulo": "Kreditlimit-Kontrolle",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA02De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/Kassensystem-Export (CSV/Excel)","WhatsApp Business"],
+            "softwareOpcional": ["Microsoft Excel","Claude Code","Outlook / E-Mail"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "02.02",
-      "titulo": "[DE] Alerta vencimiento",
+      "titulo": "Margen-Monitor",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA02De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/Kassensystem-Export (CSV/Excel)","Microsoft Excel"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop","Google Gemini"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "02.03",
-      "titulo": "[DE] Reclamador educado cobro sin quemar relación pueblo, en borrador",
+      "titulo": "Kassenabschluss",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA02De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Microsoft Excel (.xlsx)","ERP/Kassensystem-Export (Tagesabschluss)"],
+            "softwareOpcional": ["Google Sheets","Google Antigravity"],
       "veredicto": "",
       "estado": "idea"
     },

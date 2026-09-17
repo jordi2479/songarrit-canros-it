@@ -15,6 +15,8 @@ export interface Propuesta {
   viabilidad?: string;
   fase?: string;
   stack?: string;
+  softwareRecomendado?: string[];
+  softwareOpcional?: string[];
   veredicto?: string;
   estado?: string;
   area_id?: AreaId;

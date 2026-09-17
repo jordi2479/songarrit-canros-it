@@ -7,7 +7,7 @@ export const categoriaAREA06Ca: Categoria = {
   "propuestas": [
     {
       "id": "06.01",
-      "titulo": "[CA] Visor stock conjunto tiempo real",
+      "titulo": "Estoc Creuat",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA06Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Next.js / Web Prototip","Volcat des d'ERP/TPV (Còpia periòdica)","Google Antigravity"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "06.02",
-      "titulo": "[CA] Lo tienes mañana 9h reserva en ruta",
+      "titulo": "Reserves Entre Botigues",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA06Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Next.js / Web","Volcat des d'ERP/TPV"],
+            "softwareOpcional": ["Google Sheets","Google Antigravity"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "06.03",
-      "titulo": "[CA] Ruta interna 2-3 veces por semana",
+      "titulo": "Traspassos Automàtics",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA06Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","Volcat des d'ERP/TPV (Albarà intern)","Microsoft Excel"],
+            "softwareOpcional": ["Claude Code","Importació a ERP/TPV (CSV validat)"],
       "veredicto": "",
       "estado": "idea"
     },

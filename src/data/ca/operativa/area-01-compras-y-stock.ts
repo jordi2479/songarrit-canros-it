@@ -7,7 +7,7 @@ export const categoriaAREA01Ca: Categoria = {
   "propuestas": [
     {
       "id": "01.01",
-      "titulo": "[CA] Propuesta pedido semanal",
+      "titulo": "Gestor de Comandes",
       "descripcion": "[CA] Propuesta semanal de qué pedir en Ca'n Ros según ventas 90 días y stock.",
       "descripcionLarga": "[CA] Propuesta semanal de qué pedir en Ca'n Ros según ventas 90 días y stock.",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA01Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","Volcat des d'ERP/TPV (CSV/Excel)","Microsoft Excel (.xlsx)"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop","Importació a ERP/TPV (CSV validat)"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "01.02",
-      "titulo": "[CA] Alerta rotura crítica",
+      "titulo": "Radar d'Esgotats",
       "descripcion": "[CA] Aviso cuando un top-100 de Ca'n Ros queda a menos de 7 días de venta.",
       "descripcionLarga": "[CA] Aviso cuando un top-100 de Ca'n Ros queda a menos de 7 días de venta.",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA01Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","Volcat des d'ERP/TPV (CSV)","WhatsApp Business"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop","Outlook / Correu"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "01.03",
-      "titulo": "[CA] Revisor factura vs albarán",
+      "titulo": "Auditor d'Albarans",
       "descripcion": "[CA] Compara PDF factura proveedor con albarán y pedido, marca cobros de más.",
       "descripcionLarga": "[CA] Compara PDF factura proveedor con albarán y pedido, marca cobros de más.",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA01Ca: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google NotebookLM","Volcat des d'ERP/TPV (Excel/PDF)","Microsoft Excel"],
+            "softwareOpcional": ["Google Antigravity","Claude","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },

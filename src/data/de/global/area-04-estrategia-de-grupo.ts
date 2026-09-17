@@ -7,7 +7,7 @@ export const categoriaAREA04De: Categoria = {
   "propuestas": [
     {
       "id": "04.01",
-      "titulo": "[DE] Informe lunes grupo 1 página Son Garrit vs Ca'n Ros",
+      "titulo": "Filialvergleich",
       "descripcion": "[DE] Informe único de una página que cada lunes compara Son Garrit Palma y Ca'n Ros Campos en ventas, ticket medio, caja y pu...",
       "descripcionLarga": "[DE] Informe único de una página que cada lunes compara Son Garrit Palma y Ca'n Ros Campos en ventas, ticket medio, caja y puntos calientes de venta y rotura.",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA04De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/Kassensystem-Export (Palma + Campos)","Microsoft Excel"],
+            "softwareOpcional": ["Google Sheets","Claude Code","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "04.02",
-      "titulo": "[DE] Qué centralizar y qué no en grupo",
+      "titulo": "Zentrale Einkaufsregeln",
       "descripcion": "[DE] Matriz simple que fija qué se centraliza en grupo y qué queda en cada tienda, con proveedores y sistema sí y surtido y t...",
       "descripcionLarga": "[DE] Matriz simple que fija qué se centraliza en grupo y qué queda en cada tienda, con proveedores y sistema sí y surtido y tono no.",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA04De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google NotebookLM","Google Workspace / Dokumente"],
+            "softwareOpcional": ["Google Gemini","Claude","Microsoft Word"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "04.03",
-      "titulo": "[DE] Agenda dueño semanal 3 decisiones grupo",
+      "titulo": "Palma-Campos Nachfrage",
       "descripcion": "[DE] Agenda semanal de tres decisiones de grupo que el dueño recibe cada lunes a partir del informe comparado.",
       "descripcionLarga": "[DE] Agenda semanal de tres decisiones de grupo que el dueño recibe cada lunes a partir del informe comparado.",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA04De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google NotebookLM","ERP/Kassensystem-Export (Warengruppen)","Microsoft Excel"],
+            "softwareOpcional": ["Google Antigravity","ChatGPT Plus"],
       "veredicto": "",
       "estado": "idea"
     },

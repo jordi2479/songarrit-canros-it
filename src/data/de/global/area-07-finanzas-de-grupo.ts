@@ -7,7 +7,7 @@ export const categoriaAREA07De: Categoria = {
   "propuestas": [
     {
       "id": "07.01",
-      "titulo": "[DE] Consolidado diario caja Son Garrit más Ca'n Ros",
+      "titulo": "Liquiditätsprognose",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA07De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Microsoft Excel (.xlsx)","ERP/Kassensystem-Export (Zahlungsflüsse)","Google Antigravity"],
+            "softwareOpcional": ["Google Sheets","Claude"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "07.02",
-      "titulo": "[DE] Quién financia a quién préstamo interno trazado",
+      "titulo": "Einheitlicher Kundenkredit",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA07De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["ERP/Kassensystem-Export (Kundenstamm)","Microsoft Excel","WhatsApp Business"],
+            "softwareOpcional": ["Google Antigravity","Google Sheets"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "07.03",
-      "titulo": "[DE] Límite fiado único pro que compra en ambas",
+      "titulo": "Warengruppen-Rentabilität",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA07De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/Kassensystem-Export (Margen)","Microsoft Excel"],
+            "softwareOpcional": ["Claude Code","Google NotebookLM"],
       "veredicto": "",
       "estado": "idea"
     },

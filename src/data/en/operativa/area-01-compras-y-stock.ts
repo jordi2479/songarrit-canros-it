@@ -7,7 +7,7 @@ export const categoriaAREA01En: Categoria = {
   "propuestas": [
     {
       "id": "01.01",
-      "titulo": "[EN] Propuesta pedido semanal",
+      "titulo": "Order Manager",
       "descripcion": "[EN] Propuesta semanal de qué pedir en Ca'n Ros según ventas 90 días y stock.",
       "descripcionLarga": "[EN] Propuesta semanal de qué pedir en Ca'n Ros según ventas 90 días y stock.",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA01En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/POS Export (CSV/Excel)","Microsoft Excel (.xlsx)"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop","ERP/POS Import (Validated CSV)"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "01.02",
-      "titulo": "[EN] Alerta rotura crítica",
+      "titulo": "Stockout Radar",
       "descripcion": "[EN] Aviso cuando un top-100 de Ca'n Ros queda a menos de 7 días de venta.",
       "descripcionLarga": "[EN] Aviso cuando un top-100 de Ca'n Ros queda a menos de 7 días de venta.",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA01En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/POS Export (CSV)","WhatsApp Business"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop","Outlook / Email"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "01.03",
-      "titulo": "[EN] Revisor factura vs albarán",
+      "titulo": "Delivery Note Auditor",
       "descripcion": "[EN] Compara PDF factura proveedor con albarán y pedido, marca cobros de más.",
       "descripcionLarga": "[EN] Compara PDF factura proveedor con albarán y pedido, marca cobros de más.",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA01En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google NotebookLM","ERP/POS Export (Excel/PDF)","Microsoft Excel"],
+            "softwareOpcional": ["Google Antigravity","Claude","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },

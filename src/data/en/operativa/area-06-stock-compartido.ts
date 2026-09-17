@@ -7,7 +7,7 @@ export const categoriaAREA06En: Categoria = {
   "propuestas": [
     {
       "id": "06.01",
-      "titulo": "[EN] Visor stock conjunto tiempo real",
+      "titulo": "Cross-Store Stock",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA06En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Next.js / Web Prototype","ERP/POS Export (Scheduled replica)","Google Antigravity"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "06.02",
-      "titulo": "[EN] Lo tienes mañana 9h reserva en ruta",
+      "titulo": "Store Reservations",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA06En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Next.js / Web","ERP/POS Export"],
+            "softwareOpcional": ["Google Sheets","Google Antigravity"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "06.03",
-      "titulo": "[EN] Ruta interna 2-3 veces por semana",
+      "titulo": "Automated Transfers",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA06En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/POS Export (Internal transfer)","Microsoft Excel"],
+            "softwareOpcional": ["Claude Code","ERP/POS Import (Validated CSV)"],
       "veredicto": "",
       "estado": "idea"
     },

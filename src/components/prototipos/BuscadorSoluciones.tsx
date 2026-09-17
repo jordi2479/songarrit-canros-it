@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity, Wrench, Sparkles, X, SlidersHorizontal, ArrowUpDown, Maximize2, CheckCircle2, Store } from "lucide-react";
+import { ChevronDown, ChevronUp, Zap, ShieldAlert, BarChart, HardHat, Layers, Activity, Wrench, Sparkles, X, SlidersHorizontal, ArrowUpDown, Maximize2, CheckCircle2, Store, TrendingUp, AlertCircle, Cpu } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 
 import { catalogoCategorias } from "@/data/catalogo";
@@ -18,6 +18,33 @@ const cardSpringTransition = {
   stiffness: 260,
   mass: 0.85
 };
+
+function FormattedText({ 
+  text, 
+  className = "",
+  boldClassName = "font-bold text-slate-900" 
+}: { 
+  text?: string; 
+  className?: string;
+  boldClassName?: string;
+}) {
+  if (!text) return null;
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return (
+    <span className={className}>
+      {parts.map((part, i) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return (
+            <strong key={i} className={boldClassName}>
+              {part.slice(2, -2)}
+            </strong>
+          );
+        }
+        return part;
+      })}
+    </span>
+  );
+}
 
 export function BuscadorSoluciones() {
   const t = useTranslations("catalogo");
@@ -317,15 +344,6 @@ export function BuscadorSoluciones() {
                         <span className="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-md text-[10px] font-medium tracking-wide border border-slate-200/80">
                           {idea.categoriaTitulo}
                         </span>
-                        {idea.acceso && (
-                          <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
-                            idea.acceso === 'escritura'
-                              ? 'bg-amber-50 text-amber-800 border-amber-200'
-                              : 'bg-sky-50 text-sky-700 border-sky-200'
-                          }`}>
-                            {idea.acceso === 'escritura' ? 'Escritura' : 'Lectura'}
-                          </span>
-                        )}
                       </div>
                       
                       <div className="text-slate-400 group-hover:text-slate-700 transition-colors p-1 flex-shrink-0">
@@ -342,7 +360,7 @@ export function BuscadorSoluciones() {
                     </motion.h4>
                     
                     <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
-                      {idea.descripcion}
+                      <FormattedText text={idea.descripcion} />
                     </p>
                   </div>
 
@@ -401,15 +419,6 @@ export function BuscadorSoluciones() {
                       <span className="px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-md text-[11px] font-medium tracking-wide border border-slate-200">
                         {activeIdea.categoriaTitulo}
                       </span>
-                      {activeIdea.acceso && (
-                        <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider border ${
-                          activeIdea.acceso === 'escritura'
-                            ? 'bg-amber-50 text-amber-800 border-amber-200'
-                            : 'bg-sky-50 text-sky-700 border-sky-200'
-                        }`}>
-                          {activeIdea.acceso === 'escritura' ? 'Escritura' : 'Lectura Segura'}
-                        </span>
-                      )}
                     </div>
                     <motion.h3
                       layoutId={`card-title-${activeIdea.id}`}
@@ -431,7 +440,7 @@ export function BuscadorSoluciones() {
                 >
 
                 {/* Pestañas estilo Carpeta Clasificadora / Dossier */}
-                <div className="flex items-end px-5 md:px-7 pt-2.5 bg-slate-100/90 border-b border-slate-200 gap-2 select-none shrink-0 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div className="flex items-end px-5 md:px-7 pt-2.5 bg-slate-100/90 border-b border-slate-200 gap-2 select-none shrink-0 overflow-hidden no-scrollbar">
                   <button
                     onClick={() => setActiveTab('accion')}
                     className={`px-4 py-2.5 rounded-t-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer relative border-t border-x ${
@@ -495,7 +504,7 @@ export function BuscadorSoluciones() {
                 </div>
 
                 {/* Cuerpo del Dossier (Layout apaisado en 2 columnas según pestaña) */}
-                <div className="p-5 md:p-7 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden bg-white flex-1">
+                <div className="p-5 md:p-7 overflow-y-auto no-scrollbar bg-white flex-1">
                   
                   {/* PESTAÑA 1: PLAN DE ACCIÓN (2 Columnas Apaisadas - Cero Scroll) */}
                   {activeTab === 'accion' && (
@@ -516,7 +525,7 @@ export function BuscadorSoluciones() {
                             </span>
                           </div>
                           <p className="text-base md:text-lg font-bold text-slate-900 leading-snug">
-                            {activeIdea.descripcion}
+                            <FormattedText text={activeIdea.descripcion} />
                           </p>
                           <p className="text-xs text-slate-600 leading-relaxed pt-1">
                             Proceso analítico aislado. Se ejecuta sobre copias y volcados programados sin sobrecargar ni poner en riesgo los sistemas de mostrador.
@@ -551,7 +560,7 @@ export function BuscadorSoluciones() {
                                   {idx + 1}
                                 </span>
                                 <p className="text-xs md:text-sm text-slate-700 leading-relaxed font-normal">
-                                  {paso}
+                                  <FormattedText text={paso} />
                                 </p>
                               </div>
                             ))}
@@ -561,7 +570,7 @@ export function BuscadorSoluciones() {
                     </motion.div>
                   )}
 
-                  {/* PESTAÑA 2: CASO DE NEGOCIO (2 Columnas Apaisadas) */}
+                  {/* PESTAÑA 2: CASO DE NEGOCIO (Opción A: Problema en Tienda vs. Retorno ROI) */}
                   {activeTab === 'negocio' && (
                     <motion.div
                       key="negocio"
@@ -570,33 +579,41 @@ export function BuscadorSoluciones() {
                       transition={{ duration: 0.2 }}
                       className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 h-full items-stretch"
                     >
-                      {activeIdea.ejemplo && (
-                        <div className="bg-amber-50/40 p-5 rounded-2xl border border-amber-200/80 shadow-2xs flex flex-col justify-between">
-                          <div>
-                            <h5 className="text-xs text-amber-900 uppercase tracking-widest font-bold mb-3 flex items-center gap-2">
-                              <Store className="w-4 h-4 text-amber-600" /> Escenario Real en Mostrador / Tienda
-                            </h5>
-                            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-wrap font-normal">
-                              {activeIdea.ejemplo}
-                            </p>
-                          </div>
-                          <div className="pt-3 border-t border-amber-200/60 text-[11px] text-amber-800 font-medium">
-                            Validado con la operativa real de ferretería.
-                          </div>
-                        </div>
-                      )}
-
-                      <div className="bg-slate-50/60 p-5 rounded-2xl border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                      {/* Columna 1: El Problema en Tienda */}
+                      <div className="bg-rose-50/40 p-5 rounded-2xl border border-rose-200/80 shadow-2xs flex flex-col justify-between">
                         <div>
-                          <h5 className="text-xs text-slate-700 uppercase tracking-widest font-bold mb-3 flex items-center gap-2">
-                            <Zap className="w-4 h-4 text-slate-500" /> Contexto e Impacto Operativo
-                          </h5>
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                            <h5 className="text-xs text-rose-900 uppercase tracking-widest font-bold flex items-center gap-2">
+                              <AlertCircle className="w-4 h-4 text-rose-600" /> Situación Actual (El Problema)
+                            </h5>
+                          </div>
                           <p className="text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-wrap font-normal">
-                            {activeIdea.descripcionLarga || activeIdea.descripcion}
+                            <FormattedText text={activeIdea.ejemplo || activeIdea.descripcion} boldClassName="font-bold text-rose-950" />
                           </p>
                         </div>
-                        <div className="pt-3 border-t border-slate-200/60 text-[11px] text-slate-500 font-medium">
-                          Permite al responsable tomar decisiones con criterio firme.
+                        <div className="pt-3 border-t border-rose-200/60 text-[11px] text-rose-800 font-medium flex items-center gap-1.5">
+                          <Store className="w-3.5 h-3.5 text-rose-600 shrink-0" />
+                          <span>Fricción o pérdida operativa identificada en el día a día.</span>
+                        </div>
+                      </div>
+
+                      {/* Columna 2: Impacto y Retorno (ROI) */}
+                      <div className="bg-emerald-50/40 p-5 rounded-2xl border border-emerald-200/80 shadow-2xs flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <h5 className="text-xs text-emerald-900 uppercase tracking-widest font-bold flex items-center gap-2">
+                              <TrendingUp className="w-4 h-4 text-emerald-600" /> Impacto y Retorno (ROI)
+                            </h5>
+                          </div>
+                          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-wrap font-normal">
+                            <FormattedText text={activeIdea.descripcionLarga || activeIdea.descripcion} boldClassName="font-bold text-emerald-950" />
+                          </p>
+                        </div>
+                        <div className="pt-3 border-t border-emerald-200/60 text-[11px] text-emerald-800 font-medium flex items-center justify-between">
+                          <span>Beneficio estimado: <strong>{activeIdea.beneficio}</strong></span>
+                          <span className="text-[10px] uppercase font-bold text-emerald-700 bg-emerald-100/60 px-2 py-0.5 rounded">Retorno Directo</span>
                         </div>
                       </div>
                     </motion.div>
@@ -611,44 +628,79 @@ export function BuscadorSoluciones() {
                       transition={{ duration: 0.2 }}
                       className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 h-full items-start"
                     >
+                      {/* Columna Izquierda: Arquitectura & Desacoplamiento */}
                       {(activeIdea.viabilidad || activeIdea.veredicto) && (
-                        <div className="md:col-span-7 bg-sky-50/40 p-5 rounded-2xl border border-sky-200/80 shadow-2xs flex flex-col justify-between">
+                        <div className="md:col-span-6 bg-sky-50/40 p-5 rounded-2xl border border-sky-200/80 shadow-2xs flex flex-col justify-between">
                           <div>
                             <h5 className="text-xs text-sky-900 uppercase tracking-widest font-bold mb-3 flex items-center gap-2">
                               <HardHat className="w-4 h-4 text-sky-600" /> Arquitectura & Desacoplamiento
                             </h5>
                             <p className="text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-wrap font-normal">
-                              {activeIdea.viabilidad || activeIdea.veredicto}
+                              <FormattedText text={activeIdea.viabilidad || activeIdea.veredicto} boldClassName="font-bold text-sky-950" />
                             </p>
                           </div>
                           <div className="mt-4 pt-3 border-t border-sky-200/60 text-[11px] text-sky-800 font-semibold flex items-center gap-1.5">
                             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                            Aislamiento transaccional garantizado (cero riesgo de bloqueo)
+                            Aislamiento transaccional garantizado (cero riesgo para la tienda)
                           </div>
                         </div>
                       )}
 
-                      <div className="md:col-span-5 grid grid-cols-1 gap-2.5">
-                        {activeIdea.acceso && (
-                          <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 shadow-2xs">
-                            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block mb-0.5">Permiso del Sistema</span>
-                            <span className="text-xs font-bold text-slate-800">
-                              {activeIdea.acceso === 'escritura' ? 'Escritura controlada (con validación)' : 'Solo lectura sobre copia / volcado'}
+                      {/* Columna Derecha: Ecosistema de Software & Herramientas */}
+                      <div className="md:col-span-6 flex flex-col gap-3">
+                        
+                        {/* Software Recomendado */}
+                        {activeIdea.softwareRecomendado && activeIdea.softwareRecomendado.length > 0 && (
+                          <div className="bg-slate-50/90 p-4 rounded-2xl border border-slate-200/90 shadow-2xs">
+                            <div className="flex items-center justify-between gap-2 mb-2.5">
+                              <span className="text-[10px] text-slate-700 uppercase font-bold tracking-wider flex items-center gap-1.5">
+                                <Cpu className="w-3.5 h-3.5 text-emerald-600" /> Software Recomendado (Kit Principal)
+                              </span>
+                              <span className="text-[10px] text-emerald-700 bg-emerald-100/70 font-bold px-2 py-0.5 rounded-md">
+                                Esencial
+                              </span>
+                            </div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {activeIdea.softwareRecomendado.map((soft: string, sIdx: number) => (
+                                <span
+                                  key={sIdx}
+                                  className="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 shadow-2xs flex items-center gap-1.5"
+                                >
+                                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                  {soft}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Software Opcional / Alternativas */}
+                        {activeIdea.softwareOpcional && activeIdea.softwareOpcional.length > 0 && (
+                          <div className="bg-slate-50/60 p-3.5 rounded-2xl border border-slate-200/70 shadow-2xs">
+                            <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block mb-2">
+                              Alternativas / Software Opcional
                             </span>
+                            <div className="flex flex-wrap gap-1.5">
+                              {activeIdea.softwareOpcional.map((soft: string, sIdx: number) => (
+                                <span
+                                  key={sIdx}
+                                  className="px-2 py-0.5 bg-slate-100/80 border border-slate-200/60 rounded-md text-[11px] font-medium text-slate-600"
+                                >
+                                  {soft}
+                                </span>
+                              ))}
+                            </div>
                           </div>
                         )}
-                        {activeIdea.stack && (
-                          <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 shadow-2xs">
-                            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block mb-0.5">Stack Tecnológico</span>
-                            <span className="text-xs font-bold text-slate-800">{activeIdea.stack}</span>
-                          </div>
-                        )}
-                        {activeIdea.fase && (
-                          <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 shadow-2xs">
-                            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block mb-0.5">Horizonte de Activación</span>
-                            <span className="text-xs font-bold text-slate-800">{activeIdea.fase}</span>
-                          </div>
-                        )}
+
+                        {/* Tipo de Integración con ERP/TPV */}
+                        <div className="bg-slate-50/60 px-4 py-2.5 rounded-xl border border-slate-200/80 flex items-center justify-between text-xs">
+                          <span className="text-slate-500 text-[11px] font-medium">Integración con Tienda:</span>
+                          <span className="font-bold text-slate-800 text-[11px]">
+                            {activeIdea.acceso === 'escritura' ? 'Importación a ERP/TPV (con validación)' : 'Volcado seguro desde ERP/TPV'}
+                          </span>
+                        </div>
+
                       </div>
                     </motion.div>
                   )}

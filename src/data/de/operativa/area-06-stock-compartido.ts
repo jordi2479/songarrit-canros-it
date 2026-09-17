@@ -7,7 +7,7 @@ export const categoriaAREA06De: Categoria = {
   "propuestas": [
     {
       "id": "06.01",
-      "titulo": "[DE] Visor stock conjunto tiempo real",
+      "titulo": "Filialübergreifender Bestand",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA06De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Next.js / Web-Prototyp","ERP/Kassensystem-Export (Kopie)","Google Antigravity"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "06.02",
-      "titulo": "[DE] Lo tienes mañana 9h reserva en ruta",
+      "titulo": "Filial-Reservierungen",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA06De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Next.js / Web","ERP/Kassensystem-Export"],
+            "softwareOpcional": ["Google Sheets","Google Antigravity"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "06.03",
-      "titulo": "[DE] Ruta interna 2-3 veces por semana",
+      "titulo": "Automatische Umlagerungen",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA06De: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/Kassensystem-Export (Umlagerung)","Microsoft Excel"],
+            "softwareOpcional": ["Claude Code","ERP/Kassensystem-Import (CSV)"],
       "veredicto": "",
       "estado": "idea"
     },

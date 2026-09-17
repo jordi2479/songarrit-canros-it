@@ -7,7 +7,7 @@ export const categoriaAREA05En: Categoria = {
   "propuestas": [
     {
       "id": "05.01",
-      "titulo": "[EN] Tarifa única grupo por volumen Son Garrit + Ca'n Ros",
+      "titulo": "Unified Group Pricing",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA05En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google NotebookLM","Microsoft Excel (Supplier rates)","Google Antigravity"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "05.02",
-      "titulo": "[EN] Pedido conjunto con entrega separada y 2 albaranes",
+      "titulo": "Rebate Optimizer",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA05En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Microsoft Excel (.xlsx)","ERP/POS Export (Annual purchases)","Google NotebookLM"],
+            "softwareOpcional": ["Google Antigravity","Claude"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "05.03",
-      "titulo": "[EN] Quién compra mejor e igualación interna de precio",
+      "titulo": "Assortment Coordinator",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA05En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google NotebookLM","Microsoft Excel","ERP/POS Export (Catalog)"],
+            "softwareOpcional": ["Google Workspace","Claude Code"],
       "veredicto": "",
       "estado": "idea"
     },

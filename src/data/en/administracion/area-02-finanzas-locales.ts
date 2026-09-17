@@ -7,7 +7,7 @@ export const categoriaAREA02En: Categoria = {
   "propuestas": [
     {
       "id": "02.01",
-      "titulo": "[EN] Límite fiado por paleta según historial y días pago",
+      "titulo": "Credit Limit Control",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA02En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/POS Export (CSV/Excel)","WhatsApp Business"],
+            "softwareOpcional": ["Microsoft Excel","Claude Code","Outlook / Email"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "02.02",
-      "titulo": "[EN] Alerta vencimiento",
+      "titulo": "Margin Monitor",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA02En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Antigravity","ERP/POS Export (CSV/Excel)","Microsoft Excel"],
+            "softwareOpcional": ["Claude Code","OpenCode Desktop","Google Gemini"],
       "veredicto": "",
       "estado": "idea"
     },
     {
       "id": "02.03",
-      "titulo": "[EN] Reclamador educado cobro sin quemar relación pueblo, en borrador",
+      "titulo": "Daily Cash Balance",
       "descripcion": "",
       "descripcionLarga": "",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA02En: Categoria = {
       "beneficio": "Alto",
       "fase": "pendiente",
       "stack": "no-code",
+            "softwareRecomendado": ["Microsoft Excel (.xlsx)","ERP/POS Export (Daily close)"],
+            "softwareOpcional": ["Google Sheets","Google Antigravity"],
       "veredicto": "",
       "estado": "idea"
     },

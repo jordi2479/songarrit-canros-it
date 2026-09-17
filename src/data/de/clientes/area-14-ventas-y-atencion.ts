@@ -7,7 +7,7 @@ export const categoriaAREA14De: Categoria = {
   "propuestas": [
     {
       "id": "14.01",
-      "titulo": "[DE] WhatsApp stock, precio y horario",
+      "titulo": "WhatsApp-Assistent",
       "descripcion": "[DE] Asistente de WhatsApp que responde dudas de stock orientativo, precio con IVA, horario y cómo llegar para Ca'n Ros Campo...",
       "descripcionLarga": "[DE] Asistente de WhatsApp que responde dudas de stock orientativo, precio con IVA, horario y cómo llegar para Ca'n Ros Campos, con apoyo de conocimiento de Son Garrit. Beneficia a mostrador en horas pico y a cliente que pregunta antes de desplazarse. Ejemplo: cliente escribe horario de sábado o precio de silicona neutra y recibe respuesta con precio, disponibilidad orientativa y dirección. Valoración: viable.",
       "dificultad": "Baja",
@@ -15,12 +15,14 @@ export const categoriaAREA14De: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 dias",
       "stack": "no-code",
+            "softwareRecomendado": ["WhatsApp Business","Google Gemini","Google Antigravity"],
+            "softwareOpcional": ["ERP/Kassensystem-Export (Preise/Bestand)","Claude Code","OpenCode Desktop"],
       "veredicto": "",
       "estado": "validar-diseno"
     },
     {
       "id": "14.02",
-      "titulo": "[DE] Buscador coloquial ES CA",
+      "titulo": "Profi-Preise",
       "descripcion": "[DE] Buscador interno para móvil de mostrador o tableta que entiende lenguaje coloquial en español y catalán y lleva a refere...",
       "descripcionLarga": "[DE] Buscador interno para móvil de mostrador o tableta que entiende lenguaje coloquial en español y catalán y lleva a referencia y pasillo. Beneficia a dependiente novel y a cliente que pide alcayata o taco del 8 sin saber referencia exacta. Ejemplo: se escribe taco del 8 pared hueca y devuelve 2 referencias con pasillo y precio. Valoración: viable.",
       "dificultad": "Baja",
@@ -28,12 +30,14 @@ export const categoriaAREA14De: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 1 30 dias",
       "stack": "no-code",
+            "softwareRecomendado": ["ERP/Kassensystem-Export (Gewerbetarife)","Microsoft Excel (.xlsx)","WhatsApp Business"],
+            "softwareOpcional": ["Google NotebookLM","Google Antigravity"],
       "veredicto": "",
       "estado": "validar-diseno"
     },
     {
       "id": "14.03",
-      "titulo": "[DE] Identificación por foto y equivalencias",
+      "titulo": "Mehrsprachiger Support",
       "descripcion": "[DE] Identificación de pieza por foto en mostrador que propone referencia exacta más segunda marca barata como alternativa. B...",
       "descripcionLarga": "[DE] Identificación de pieza por foto en mostrador que propone referencia exacta más segunda marca barata como alternativa. Beneficia a cliente con bisagra, grifo o pieza rota sin referencia y reduce tiempo de mostrador. Ejemplo: foto de taco de persiana roto y respuesta con referencia exacta, compatible económico y aviso de verificar medida. Valoración: viable con apoyo.",
       "dificultad": "Baja",
@@ -41,6 +45,8 @@ export const categoriaAREA14De: Categoria = {
       "beneficio": "Alto",
       "fase": "Fase 2 60-90 dias",
       "stack": "no-code",
+            "softwareRecomendado": ["Google Gemini","WhatsApp Business","Google Antigravity"],
+            "softwareOpcional": ["Claude","DeepL / Web"],
       "veredicto": "",
       "estado": "validar-diseno"
     },
