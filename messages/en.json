@@ -82,14 +82,14 @@
   },
   "garantias": {
     "title": "Three guarantees",
-    "highlight": "for peace of mind",
-    "desc": "Technology exists to add agility, never to create uncertainty. Every automation is built around safety, control, and zero friction for Management.",
+    "highlight": "for total peace of mind",
+    "desc": "Technology exists to add agility, never uncertainty. Every workflow is built on a single premise: <bold>security, control, and zero friction</bold> for Management.",
     "g1Title": "The system assists, you decide",
-    "g1Desc": "No process runs autonomously. Technology creates suggestions and drafts; final validation is always yours.",
-    "g2Title": "Critical systems remain untouched",
-    "g2Desc": "POS, ERP, and banking are managed by certified providers. I add automation and intelligence layers without altering the core.",
+    "g1Desc": "No process runs autonomously. Technology drafts proposals and alerts; **final approval is always yours**.",
+    "g2Title": "Core critical systems untouched",
+    "g2Desc": "Core **ERP, POS, and banking** remain handled by certified vendors. We build agile automation layers **without touching core systems**.",
     "g3Title": "100% Reversible and risk-free",
-    "g3Desc": "Any implemented tool can be toggled on or off in seconds. Operations never stop or depend on a single tool."
+    "g3Desc": "Any deployed tool can be **toggled on or off in seconds**. Store operations never halt or rely on a single vendor."
   },
   "areas": {
     "title": "Structure of",

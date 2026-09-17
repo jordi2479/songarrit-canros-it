@@ -48,13 +48,13 @@ const colorClasses: Record<string, { card: string; badge: string; icon: string }
 /* ═══════════════════════════════════════════════════════════════════
    PAGE
    ═══════════════════════════════════════════════════════════════════ */
-function renderMarkdownBold(text: string) {
+function renderMarkdownBold(text: string, boldClassName = "text-slate-900 font-bold") {
   if (!text) return text;
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, idx) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return (
-        <strong key={idx} className="text-slate-900 font-bold">
+        <strong key={idx} className={boldClassName}>
           {part.slice(2, -2)}
         </strong>
       );
@@ -305,9 +305,13 @@ export default function Home() {
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-2 md:mb-6 leading-tight">
             {tGarantias("title")}<br/><span className="text-emerald-400">{tGarantias("highlight")}</span>
           </h2>
-          <p className="text-xs sm:text-base md:text-xl text-slate-400 leading-relaxed font-normal">
-            {tGarantias("desc")}
-          </p>
+          <div className="text-xs sm:text-base md:text-xl text-slate-400 leading-relaxed font-normal max-w-3xl mx-auto">
+            {tGarantias.rich("desc", {
+              bold: (chunks) => <strong className="text-white font-semibold">{chunks}</strong>,
+              highlight: (chunks) => <span className="text-emerald-400 font-semibold">{chunks}</span>,
+              p: (chunks) => <p>{chunks}</p>
+            })}
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
           {[
@@ -315,18 +319,20 @@ export default function Home() {
             { icon: Handshake, title: tGarantias("g2Title"), desc: tGarantias("g2Desc"), color: "blue" },
             { icon: RotateCcw, title: tGarantias("g3Title"), desc: tGarantias("g3Desc"), color: "amber" },
           ].map((g, i) => (
-            <FadeCard key={g.title} delay={i * 0.15} className="p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl bg-slate-900 border border-slate-800 text-center flex flex-col justify-between">
+            <FadeCard key={g.title} delay={i * 0.15} className="p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl bg-slate-900 border border-slate-800 text-left flex flex-col justify-between">
               <div>
-                <div className={`w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-2 md:mb-5 ${
-                  g.color === "emerald" ? "bg-emerald-500/10 text-emerald-400" :
-                  g.color === "blue" ? "bg-blue-500/10 text-blue-400" :
-                  "bg-amber-500/10 text-amber-400"
-                }`}>
-                  <g.icon className="w-5 h-5 md:w-7 md:h-7" />
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 md:mb-5">
+                  <div className={`w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 ${
+                    g.color === "emerald" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" :
+                    g.color === "blue" ? "bg-blue-500/10 text-blue-400 border border-blue-500/20" :
+                    "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                  }`}>
+                    <g.icon className="w-5 h-5 md:w-6 md:h-6" />
+                  </div>
+                  <h3 className="font-bold text-white text-sm sm:text-base md:text-lg leading-snug">{g.title}</h3>
                 </div>
-                <h3 className="font-bold text-white mb-1 md:mb-3 text-sm sm:text-base md:text-lg">{g.title}</h3>
+                <p className="text-xs md:text-sm text-slate-400 leading-relaxed mt-1 md:mt-2">{renderMarkdownBold(g.desc, "text-white font-semibold")}</p>
               </div>
-              <p className="text-xs md:text-sm text-slate-400 leading-relaxed line-clamp-2 md:line-clamp-none mt-1 md:mt-2">{g.desc}</p>
             </FadeCard>
           ))}
         </div>

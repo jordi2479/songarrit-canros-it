@@ -83,13 +83,13 @@
   "garantias": {
     "title": "Tres garantías",
     "highlight": "de tranquilidad",
-    "desc": "La tecnología está para sumar agilidad, nunca para generar incertidumbre. Toda automatización se diseña con un único criterio: seguridad, control y cero fricción para la Dirección.",
+    "desc": "La tecnología está para sumar agilidad, nunca para generar incertidumbre. Toda automatización se diseña con un único criterio: <bold>seguridad, control y cero fricción</bold> para la Dirección.",
     "g1Title": "El sistema asiste, vosotros decidís",
-    "g1Desc": "Ningún proceso se ejecuta de forma autónoma. La tecnología genera propuestas y borradores; la validación final siempre es vuestra.",
+    "g1Desc": "Ningún proceso se ejecuta de forma autónoma. La tecnología genera propuestas y borradores; la **validación final siempre es vuestra**.",
     "g2Title": "Intocables los sistemas críticos",
-    "g2Desc": "El ERP, el TPV y la banca los gestionan sus proveedores certificados. Yo aporto capas de automatización e inteligencia, sin alterar el núcleo.",
+    "g2Desc": "El **ERP, el TPV y la banca** los gestionan sus proveedores certificados. Yo aporto capas de automatización e inteligencia, **sin alterar el núcleo**.",
     "g3Title": "100% Reversible y sin riesgo",
-    "g3Desc": "Cualquier herramienta implementada se puede activar o desactivar en segundos. El negocio nunca se detiene ni depende de una sola solución."
+    "g3Desc": "Cualquier herramienta implementada se puede **activar o desactivar en segundos**. El negocio nunca se detiene ni depende de una sola solución."
   },
   "areas": {
     "title": "Estructura de",

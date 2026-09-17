@@ -83,13 +83,13 @@
   "garantias": {
     "title": "Drei Garantien",
     "highlight": "für absolute Sicherheit",
-    "desc": "Technologie soll Agilität bringen, niemals Unsicherheit. Jede Automatisierung folgt einem klaren Prinzip: Sicherheit, Kontrolle und null Reibung für die Geschäftsführung.",
+    "desc": "Technologie soll Agilität bringen, niemals Unsicherheit. Jede Automatisierung folgt einem klaren Prinzip: <bold>Sicherheit, Kontrolle und null Reibung</bold> für die Geschäftsführung.",
     "g1Title": "Das System unterstützt, Sie entscheiden",
-    "g1Desc": "Kein Prozess läuft eigenständig. Die Technologie liefert Vorschläge und Entwürfe; die Freigabe liegt immer bei Ihnen.",
+    "g1Desc": "Kein Prozess läuft eigenständig. Die Technologie liefert Vorschläge und Entwürfe; die **Freigabe liegt immer bei Ihnen**.",
     "g2Title": "Kritische Kernsysteme bleiben unberührt",
-    "g2Desc": "ERP, Kasse und Banken werden von zertifizierten Partnern betreut. Ich schaffe Automatisierungs- und Logikebenen, ohne den Kern zu verändern.",
+    "g2Desc": "Die Kernsysteme **ERP, Kasse und Banken** bleiben unangetastet. Ich schaffe Automatisierungsebenen, **ohne den Kern zu verändern**.",
     "g3Title": "100% Reversibel und risikofrei",
-    "g3Desc": "Jedes Tool lässt sich in Sekunden aktivieren oder deaktivieren. Der Betrieb wird nie gestört oder abhängig gemacht."
+    "g3Desc": "Jedes Tool lässt sich **in Sekunden aktivieren oder deaktivieren**. Der Betrieb wird nie gestört oder abhängig gemacht."
   },
   "areas": {
     "title": "Struktur der",

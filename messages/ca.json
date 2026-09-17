@@ -83,13 +83,13 @@
   "garantias": {
     "title": "Tres garanties",
     "highlight": "de tranquil·litat",
-    "desc": "La tecnologia està per sumar agilitat, mai per generar incertesa. Tota automatització es dissenya amb un únic criteri: seguretat, control i zero fricció per a la Direcció.",
+    "desc": "La tecnologia està per sumar agilitat, mai per generar incertesa. Tota automatització es dissenya amb un únic criteri: <bold>seguretat, control i zero fricció</bold> per a la Direcció.",
     "g1Title": "El sistema assisteix, vosaltres decidiu",
-    "g1Desc": "Cap procés s'executa de manera autònoma. La tecnologia genera propostes i esborranys; la validació final sempre és vostra.",
+    "g1Desc": "Cap procés s'executa de manera autònoma. La tecnologia genera propostes i esborranys; la **validació final sempre és vostra**.",
     "g2Title": "Intocables els sistemes crítics",
-    "g2Desc": "L'ERP, el TPV i la banca els gestionen els seus proveïdors certificats. Jo aporto capes d'automatització i intel·ligència, sense alterar el nucli.",
+    "g2Desc": "L'**ERP, el TPV i la banca** els gestionen els seus proveïdors certificats. Jo aporto capes d'automatització i intel·ligència, **sense alterar el nucli**.",
     "g3Title": "100% Reversible i sense risc",
-    "g3Desc": "Qualsevol eina implementada es pot activar o desactivar en segons. El negoci mai no s'atura ni depèn d'una sola solució."
+    "g3Desc": "Qualsevol eina implementada es pot **activar o desactivar en segons**. El negoci mai no s'atura ni depèn d'una sola solució."
   },
   "areas": {
     "title": "Estructura d'",
