@@ -382,11 +382,6 @@ export default function Home() {
       {/* ─── SECCIÓN 10: VIABILIDAD (Negocio) ─── */}
       <Section id="viabilidad" dark className="bg-gradient-to-b from-slate-950 to-emerald-950">
         <div className="text-center mb-6 md:mb-16">
-          <div className="flex justify-center items-center gap-2 mb-3 md:mb-6">
-            <span className="px-2.5 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
-              {locale === 'ca' ? "Filosofia d'Execució" : locale === 'en' ? "Execution Philosophy" : locale === 'de' ? "Ausführungsphilosophie" : "Filosofía de Ejecución"}
-            </span>
-          </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 md:mb-6 text-white leading-tight">
             {locale === 'ca' ? (
               <>Transformació Orgànica i <span className="text-emerald-400">Segura</span></>
