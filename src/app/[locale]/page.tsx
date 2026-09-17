@@ -354,48 +354,34 @@ export default function Home() {
       </Section>
 
       {/* ─── SECCIÓN 10: VIABILIDAD (Negocio) ─── */}
-      <Section id="viabilidad" className="bg-slate-50">
+      <Section id="viabilidad" dark className="bg-gradient-to-b from-slate-950 to-emerald-950">
         <div className="text-center mb-16">
           <div className="flex justify-center items-center gap-2 mb-6">
-            <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full">
+            <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
               Filosofía de Ejecución
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-slate-900 leading-tight">
-            Transformación Orgánica y <span className="text-emerald-500">Segura</span>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-white leading-tight">
+            Transformación Orgánica y <span className="text-emerald-400">Segura</span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            La premisa innegociable de este plan es <strong className="text-slate-900">no interrumpir ni desestabilizar la operativa diaria</strong> de las tiendas. 
+          <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            La premisa innegociable de este plan es <strong className="text-white">no interrumpir ni desestabilizar la operativa diaria</strong> de las tiendas. 
             No aplicamos revoluciones teóricas. El desarrollo se plantea mediante inyecciones tecnológicas modulares que se prueban y validan directamente en el mostrador. 
-            <strong className="text-emerald-600"> Si una solución no facilita el trabajo del equipo de forma inmediata, se descarta.</strong>
+            <strong className="text-emerald-400"> Si una solución no facilita el trabajo del equipo de forma inmediata, se descarta.</strong>
           </p>
         </div>
         <Viabilidad />
       </Section>
 
-      {/* ─── SECCIÓN 11: CIERRE ─── */}
-      <Section id="cierre" dark className="bg-gradient-to-b from-slate-950 to-emerald-950">
-        <div className="text-center max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-8 leading-tight">
-              {tCierre("title1")}<br/>
-              <span className="text-emerald-400">{tCierre("highlight")}</span><br/>
-              {tCierre("title2")}
-            </h2>
-            <p className="text-xl text-slate-400 mb-12 leading-relaxed max-w-xl mx-auto">
-              {tCierre("desc")}
-            </p>
-            <Link href="/catalogo" className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-lg rounded-2xl transition-all shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-0.5">
-              {tCierre("cta")} <ArrowRight className="w-5 h-5" />
-            </Link>
-          </motion.div>
-        </div>
-      </Section>
+      {/* ─── FOOTER MINIMALISTA ─── */}
+      <footer className="w-full bg-emerald-950 border-t border-emerald-900/50 py-12 text-center">
+        <p className="text-emerald-500/60 font-medium text-sm tracking-widest uppercase mb-2">
+          Grupo Son Garrit &amp; Ca'n Ros
+        </p>
+        <p className="text-emerald-400/40 text-xs">
+          El futuro del grupo. Construido desde dentro.
+        </p>
+      </footer>
     </>
   );
 }

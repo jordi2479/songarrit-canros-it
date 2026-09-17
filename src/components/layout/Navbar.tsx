@@ -19,8 +19,8 @@ export function Navbar() {
     { href: "#bloques", label: t("bloques") },
     { href: "#areas", label: t("areas") },
     { href: "#prototipos", label: t("prototipos") },
+    { href: "#implantacion", label: t("implantacion") },
     { href: "#viabilidad", label: t("viabilidad") },
-    { href: "#cierre", label: t("cierre") },
   ];
 
   useEffect(() => {
