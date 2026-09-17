@@ -18,24 +18,36 @@ export function Viabilidad() {
         {
           icon: <PiggyBank className="w-5 h-5 md:w-6 md:h-6 text-emerald-500" />,
           title: "Cost Operatiu Controlat",
-          shortDesc: "Arquitectura Low-Code i IA sense llicències milionàries ni costos ocults.",
-          desc: "Evitem llicències milionàries de programari monolític i tarifes abusives d'agències. Utilitzem arquitectura 'Low-Code' i IA per construir eines potents, a mida, i amb un cost de manteniment residual.",
+          shortDesc: (
+            <>Arquitectura <strong className="text-white font-semibold">Low-Code i IA</strong> sense llicències milionàries ni costos ocults.</>
+          ),
+          desc: (
+            <>Evitem <strong className="text-slate-200 font-semibold">llicències milionàries</strong> de programari monolític i tarifes abusives d'agències. Utilitzem arquitectura <strong className="text-white font-semibold">"Low-Code" i IA</strong> per construir eines potents, a mida, i amb un <strong className="text-emerald-400 font-semibold">cost de manteniment residual</strong>.</>
+          ),
           color: "border-slate-800 bg-slate-900/50",
           iconBg: "bg-slate-800"
         },
         {
           icon: <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 text-blue-500" />,
           title: "Risc Asimètric (Modular)",
-          shortDesc: "Inversió per fites: només s'avança si la fase anterior genera tracció real.",
-          desc: "En avançar per Horitzons de Maduresa, la inversió de temps i recursos és modular. Només s'avança al següent horitzó si la fase anterior ha generat tracció real. Sense grans desemborsaments de capital a cegues.",
+          shortDesc: (
+            <>Inversió per fites: <strong className="text-white font-semibold">només s'avança</strong> si la fase anterior genera tracció real.</>
+          ),
+          desc: (
+            <>En avançar per Horitzons de Maduresa, la inversió de temps i recursos és <strong className="text-white font-semibold">estrictament modular</strong>. Només s'avança al següent horitzó si la fase anterior ha generat <strong className="text-blue-400 font-semibold">tracció real</strong>. Sense grans desemborsaments de capital a cegues.</>
+          ),
           color: "border-slate-800 bg-slate-900/50",
           iconBg: "bg-slate-800"
         },
         {
           icon: <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-violet-500" />,
           title: "Revalorització del Grup",
-          shortDesc: "Marca unificada i processos automatitzats que multipliquen el valor patrimonial.",
-          desc: "Una marca forta, unificada i amb processos operatius automatitzats no només genera estalvi diari. Multiplica el valor patrimonial de l'empresa de cara al futur i facilita enormement la gestió de la direcció.",
+          shortDesc: (
+            <><strong className="text-white font-semibold">Marca unificada</strong> i processos automatitzats que multipliquen el valor patrimonial.</>
+          ),
+          desc: (
+            <>Una <strong className="text-white font-semibold">marca forta i unificada</strong> amb processos operatius automatitzats no només genera estalvi diari: <strong className="text-violet-400 font-semibold">multiplica el valor patrimonial</strong> de l'empresa de cara al futur i facilita enormement la gestió de la direcció.</>
+          ),
           color: "border-slate-800 bg-slate-900/50",
           iconBg: "bg-slate-800"
         }
@@ -47,24 +59,36 @@ export function Viabilidad() {
         {
           icon: <PiggyBank className="w-5 h-5 md:w-6 md:h-6 text-emerald-500" />,
           title: "Controlled Operating Costs",
-          shortDesc: "Low-Code architecture & standard AI models without massive license fees.",
-          desc: "We avoid million-dollar monolithic software licenses and abusive agency retainers. We use Low-Code architecture and state-of-the-art AI to build custom, agile tools with near-zero maintenance overhead.",
+          shortDesc: (
+            <>Low-Code architecture & <strong className="text-white font-semibold">AI models</strong> without massive software fees.</>
+          ),
+          desc: (
+            <>We avoid <strong className="text-slate-200 font-semibold">million-dollar licenses</strong> for monolithic software and agency retainers. We use <strong className="text-white font-semibold">Low-Code & AI</strong> to build agile tools with <strong className="text-emerald-400 font-semibold">near-zero maintenance costs</strong>.</>
+          ),
           color: "border-slate-800 bg-slate-900/50",
           iconBg: "bg-slate-800"
         },
         {
           icon: <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 text-blue-500" />,
           title: "Asymmetric Risk (Modular)",
-          shortDesc: "Milestone-driven investment: only advancing once prior phase shows traction.",
-          desc: "By progressing across Maturity Horizons, resource and time investment is strictly modular. We only step into the next horizon if the previous tools generate verified traction. Zero blind capital bets.",
+          shortDesc: (
+            <>Milestone-driven: <strong className="text-white font-semibold">only advancing</strong> once prior phase shows real traction.</>
+          ),
+          desc: (
+            <>By progressing across Horizons, time and capital allocation is <strong className="text-white font-semibold">strictly modular</strong>. We only step into the next horizon if the previous tools generate <strong className="text-blue-400 font-semibold">verified traction</strong>. Zero blind bets.</>
+          ),
           color: "border-slate-800 bg-slate-900/50",
           iconBg: "bg-slate-800"
         },
         {
           icon: <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-violet-500" />,
           title: "Group Enterprise Valuation",
-          shortDesc: "Unified brand & automated workflows increasing group equity value.",
-          desc: "A strong, unified identity paired with automated operations does more than just save daily hours. It substantially multiplies enterprise valuation and makes executive management significantly simpler.",
+          shortDesc: (
+            <><strong className="text-white font-semibold">Unified brand</strong> and automated workflows increasing group equity value.</>
+          ),
+          desc: (
+            <>A <strong className="text-white font-semibold">strong unified identity</strong> paired with automated workflows does more than save daily hours: it <strong className="text-violet-400 font-semibold">multiplies enterprise valuation</strong> and streamlines management.</>
+          ),
           color: "border-slate-800 bg-slate-900/50",
           iconBg: "bg-slate-800"
         }
@@ -76,24 +100,36 @@ export function Viabilidad() {
         {
           icon: <PiggyBank className="w-5 h-5 md:w-6 md:h-6 text-emerald-500" />,
           title: "Kontrollierte Betriebskosten",
-          shortDesc: "Low-Code-Architektur & KI ohne teure Monopol-Lizenzen.",
-          desc: "Wir vermeiden Millionen-Lizenzgebühren schwerfälliger Standardsoftware und überhöhte Agenturhonorare. Mit Low-Code-Architektur und KI erstellen wir maßgeschneiderte, wartungsarme Werkzeuge.",
+          shortDesc: (
+            <>Low-Code-Architektur & <strong className="text-white font-semibold">KI</strong> ohne teure Monopol-Lizenzen.</>
+          ),
+          desc: (
+            <>Wir vermeiden <strong className="text-slate-200 font-semibold">Millionen-Lizenzgebühren</strong> und überhöhte Agenturhonorare. Mit <strong className="text-white font-semibold">Low-Code & KI</strong> erstellen wir maßgeschneiderte Werkzeuge mit <strong className="text-emerald-400 font-semibold">minimalen Wartungskosten</strong>.</>
+          ),
           color: "border-slate-800 bg-slate-900/50",
           iconBg: "bg-slate-800"
         },
         {
           icon: <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 text-blue-500" />,
           title: "Asymmetrisches Risiko (Modular)",
-          shortDesc: "Meilenstein-Investition: Fortschritt nur nach realem Nutzennachweis.",
-          desc: "Durch die Reifegrad-Horizonte investieren wir modular in Zeit und Ressourcen. Die nächste Phase startet nur, wenn die vorherige nachweisbare Effizienz bringt. Keine Blindinvestitionen.",
+          shortDesc: (
+            <>Meilenstein-Investition: <strong className="text-white font-semibold">Fortschritt nur</strong> nach realem Nutzennachweis.</>
+          ),
+          desc: (
+            <>Durch Reifegrad-Horizonte investieren wir <strong className="text-white font-semibold">streng modular</strong> in Ressourcen. Die nächste Phase startet nur, wenn die vorherige <strong className="text-blue-400 font-semibold">echte Effizienz</strong> bringt. Keine Blindinvestitionen.</>
+          ),
           color: "border-slate-800 bg-slate-900/50",
           iconBg: "bg-slate-800"
         },
         {
           icon: <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-violet-500" />,
           title: "Aufwertung der Gruppe",
-          shortDesc: "Einheitliche Marke und automatisierte Prozesse steigern Unternehmenswert.",
-          desc: "Eine starke, einheitliche Marke und automatisierte Abläufe sparen nicht nur täglich Arbeitszeit. Sie steigern den Unternehmenswert nachhaltig und erleichtern der Geschäftsführung die Leitung.",
+          shortDesc: (
+            <><strong className="text-white font-semibold">Einheitliche Marke</strong> und automatisierte Prozesse steigern Unternehmenswert.</>
+          ),
+          desc: (
+            <>Eine <strong className="text-white font-semibold">starke, einheitliche Marke</strong> und automatisierte Abläufe sparen nicht nur Arbeitszeit: Sie <strong className="text-violet-400 font-semibold">steigern den Unternehmenswert</strong> nachhaltig und entlasten die Leitung.</>
+          ),
           color: "border-slate-800 bg-slate-900/50",
           iconBg: "bg-slate-800"
         }
@@ -105,24 +141,36 @@ export function Viabilidad() {
       {
         icon: <PiggyBank className="w-5 h-5 md:w-6 md:h-6 text-emerald-500" />,
         title: "Coste Operativo Controlado",
-        shortDesc: "Arquitectura Low-Code e IA sin licencias millonarias ni costes ocultos.",
-        desc: "Evitamos licencias millonarias de software monolítico y tarifas abusivas de agencias. Utilizamos arquitectura 'Low-Code' e IA para construir herramientas potentes, a medida, y con un coste de mantenimiento residual.",
+        shortDesc: (
+          <>Arquitectura <strong className="text-white font-semibold">Low-Code e IA</strong> sin licencias millonarias ni costes ocultos.</>
+        ),
+        desc: (
+          <>Evitamos <strong className="text-slate-200 font-semibold">licencias millonarias</strong> de software monolítico y tarifas abusivas de agencias. Utilizamos arquitectura <strong className="text-white font-semibold">"Low-Code" e IA</strong> para construir herramientas potentes, a medida, y con un <strong className="text-emerald-400 font-semibold">coste de mantenimiento residual</strong>.</>
+        ),
         color: "border-slate-800 bg-slate-900/50",
         iconBg: "bg-slate-800"
       },
       {
         icon: <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 text-blue-500" />,
         title: "Riesgo Asimétrico (Modular)",
-        shortDesc: "Inversión por hitos: solo se avanza si la fase anterior genera tracción real.",
-        desc: "Al avanzar por Horizontes de Madurez, la inversión de tiempo y recursos es modular. Solo se avanza al siguiente horizonte si la fase anterior ha generado tracción real. Sin grandes desembolsos de capital a ciegas.",
+        shortDesc: (
+          <>Inversión por hitos: <strong className="text-white font-semibold">solo se avanza</strong> si la fase anterior genera tracción real.</>
+        ),
+        desc: (
+          <>Al avanzar por Horizontes de Madurez, la inversión de tiempo y recursos es <strong className="text-white font-semibold">estrictamente modular</strong>. Solo se avanza al siguiente horizonte si la fase anterior ha generado <strong className="text-blue-400 font-semibold">tracción real</strong>. Sin grandes desembolsos de capital a ciegas.</>
+        ),
         color: "border-slate-800 bg-slate-900/50",
         iconBg: "bg-slate-800"
       },
       {
         icon: <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-violet-500" />,
         title: "Revalorización del Grupo",
-        shortDesc: "Marca unificada y procesos automatizados que multiplican el valor patrimonial.",
-        desc: "Una marca fuerte, unificada y con procesos operativos automatizados no solo genera ahorro diario. Multiplica el valor patrimonial de la empresa de cara al futuro y facilita enormemente la gestión de la dirección.",
+        shortDesc: (
+          <><strong className="text-white font-semibold">Marca unificada</strong> y procesos automatizados que multiplican el valor patrimonial.</>
+        ),
+        desc: (
+          <>Una <strong className="text-white font-semibold">marca fuerte y unificada</strong> con procesos operativos automatizados no solo genera ahorro diario: <strong className="text-violet-400 font-semibold">multiplica el valor patrimonial</strong> de la empresa de cara al futuro y facilita enormemente la gestión directiva.</>
+        ),
         color: "border-slate-800 bg-slate-900/50",
         iconBg: "bg-slate-800"
       }
