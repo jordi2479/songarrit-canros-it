@@ -271,62 +271,59 @@ export function BuscadorSoluciones() {
 
         <div className="w-full h-px bg-slate-100"></div>
 
-        {/* VISTA MOBILE (< md): Fila de Chips deslizable + Dropdown nativo */}
+        {/* VISTA MOBILE (< md): 2 Filas de Píldoras Deslizables (Áreas y Categorías) */}
         <div className="flex flex-col gap-3 md:hidden">
-          {/* Fila scroll horizontal para Bloques */}
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 -mx-1 px-1">
-            <button
-              onClick={() => { setAreaFilter(null); setCategoriaFilter(null); }}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 transition-all border ${
-                !areaFilter 
-                  ? 'bg-slate-900 text-white border-slate-900 shadow-2xs' 
-                  : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
-              }`}
-            >
-              {isCa ? "Totes" : isEn ? "All" : isDe ? "Alle" : "Todas"}
-            </button>
-            {Object.entries(customAreaLabels).map(([key, label]) => {
-              const isActive = areaFilter === key;
-              return (
-                <button
-                  key={key}
-                  onClick={() => handleBloqueClick(key)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold border shrink-0 transition-all flex items-center gap-1.5 ${
-                    isActive
-                      ? AREA_THEMES[key as AreaId].light.pillActive
-                      : "bg-white text-slate-600 border-slate-200 shadow-2xs hover:bg-slate-50"
-                  }`}
-                >
-                  <div className={`w-2 h-2 rounded-full ${areaDotClasses[key]}`} />
-                  {label}
-                </button>
-              );
-            })}
+          {/* Fila 1: Macro-Áreas en píldoras horizontales deslizables */}
+          <div className="flex flex-col gap-1.5">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+              {isCa ? "1. Tria una Àrea:" : isEn ? "1. Select an Area:" : isDe ? "1. Bereich wählen:" : "1. Selecciona un Área:"}
+            </span>
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-1 px-1 scroll-smooth">
+              {Object.entries(customAreaLabels).map(([key, label]) => {
+                const isActive = areaFilter === key;
+                return (
+                  <button
+                    key={key}
+                    onClick={() => handleBloqueClick(key)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold border shrink-0 transition-all flex items-center gap-1.5 cursor-pointer ${
+                      isActive
+                        ? AREA_THEMES[key as AreaId].light.pillActive
+                        : "bg-white text-slate-600 border-slate-200 shadow-2xs hover:bg-slate-50"
+                    }`}
+                  >
+                    <div className={`w-2 h-2 rounded-full ${areaDotClasses[key]}`} />
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Selector desplegable estilizado para Categorías */}
-          <div className="relative">
-            <select
-              value={categoriaFilter || ""}
-              onChange={(e) => setCategoriaFilter(e.target.value ? e.target.value : null)}
-              className="w-full appearance-none bg-slate-50 hover:bg-slate-100 text-slate-800 text-xs font-semibold py-2.5 pl-3.5 pr-8 rounded-xl border border-slate-200/90 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-colors cursor-pointer shadow-2xs"
-            >
-              <option value="">
-                {areaFilter 
-                  ? (isCa ? `Totes les categories de ${customAreaLabels[areaFilter] || areaFilter}` : isEn ? `All categories in ${customAreaLabels[areaFilter] || areaFilter}` : isDe ? `Alle Kategorien in ${customAreaLabels[areaFilter] || areaFilter}` : `Todas las categorías de ${customAreaLabels[areaFilter] || areaFilter}`)
-                  : (isCa ? "Totes les categories (15)" : isEn ? "All categories (15)" : isDe ? "Alle Kategorien (15)" : "Todas las categorías (15)")
-                }
-              </option>
+          {/* Fila 2: Categorías correspondientes en píldoras horizontales deslizables */}
+          <div className="flex flex-col gap-1.5 pt-2 border-t border-slate-100">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+              {isCa ? "2. Filtra per Categoria:" : isEn ? "2. Filter by Category:" : isDe ? "2. Nach Kategorie filtern:" : "2. Filtra por Categoría:"}
+            </span>
+            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 -mx-1 px-1 scroll-smooth">
               {localizedCatalogoAreas
                 .filter(cat => !areaFilter || cat.area === areaFilter)
-                .map(cat => (
-                  <option key={cat.id} value={cat.titulo}>
-                    {cat.titulo}
-                  </option>
-              ))}
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-400">
-              <ChevronDown className="w-3.5 h-3.5" />
+                .map(cat => {
+                  const isSelectedCat = categoriaFilter === cat.titulo;
+                  const theme = AREA_THEMES[cat.area as AreaId]?.light;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => setCategoriaFilter(isSelectedCat ? null : cat.titulo)}
+                      className={`whitespace-nowrap px-3 py-1 rounded-full text-[11px] font-semibold border transition-all shrink-0 cursor-pointer ${
+                        isSelectedCat
+                          ? `shadow-sm ${theme?.badge} border-current`
+                          : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50"
+                      }`}
+                    >
+                      {cat.titulo}
+                    </button>
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -403,8 +400,45 @@ export function BuscadorSoluciones() {
           </span>
         </div>
 
-        {/* Rejilla de Tarjetas 3 Columnas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
+        {/* Guía en Móvil cuando no hay nada seleccionado */}
+        {!areaFilter && !categoriaFilter && (
+          <div className="md:hidden bg-white border border-slate-200/90 rounded-2xl p-6 text-center shadow-xs">
+            <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-3 border border-emerald-100">
+              <Layers className="w-5 h-5" />
+            </div>
+            <h4 className="text-sm font-bold text-slate-900 mb-1">
+              {isCa ? "Tria una àrea per començar" : isEn ? "Select an area to start" : isDe ? "Wählen Sie einen Bereich" : "Elige un área para comenzar"}
+            </h4>
+            <p className="text-xs text-slate-500 max-w-xs mx-auto mb-4">
+              {isCa 
+                ? "Prem qualsevol dels 4 blocs superiors per veure les seves iniciatives en format compacte." 
+                : isEn 
+                ? "Tap any of the 4 top blocks to view its initiatives in compact view." 
+                : isDe 
+                ? "Tippen Sie auf einen der 4 oberen Blöcke, um die Initiativen kompakt zu sehen." 
+                : "Pulsa cualquiera de los 4 bloques superiores para ver sus iniciativas en formato compacto."}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {Object.entries(customAreaLabels).map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => handleBloqueClick(key)}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 cursor-pointer ${
+                    AREA_THEMES[key as AreaId].light.pillActive
+                  }`}
+                >
+                  <div className={`w-2 h-2 rounded-full ${areaDotClasses[key]}`} />
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Rejilla de Tarjetas (en móvil se ocultan si no hay filtro activo para evitar saturar) */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 items-stretch ${
+          !areaFilter && !categoriaFilter ? 'hidden md:grid' : ''
+        }`}>
           <AnimatePresence mode="popLayout">
             {filtered.map((idea) => {
               return (
@@ -417,53 +451,54 @@ export function BuscadorSoluciones() {
                     setActiveTab('accion');
                     setExpandedId(idea.id);
                   }}
-                  className={`bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-lg rounded-2xl overflow-hidden flex flex-col justify-between p-4 md:p-5 cursor-pointer group select-none shadow-xs ${
+                  className={`bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-lg rounded-xl md:rounded-2xl overflow-hidden flex flex-col justify-between p-3 sm:p-4 md:p-5 cursor-pointer group select-none shadow-xs ${
                     areaBorderHover[idea.area] || ''
                   }`}
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <div className="flex items-center justify-between gap-1.5 mb-1.5 md:mb-2.5">
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
+                        <span className={`px-1.5 md:px-2 py-0.5 rounded-md text-[9px] md:text-[10px] font-bold uppercase tracking-wider border ${
                           areaBadgeClasses[idea.area] || 'bg-slate-100 text-slate-700 border-slate-200'
                         }`}>
                           {customAreaLabels[idea.area] || idea.area}
                         </span>
-                        <span className="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-md text-[10px] font-medium tracking-wide border border-slate-200/80">
+                        <span className="px-1.5 md:px-2 py-0.5 bg-slate-100 text-slate-600 rounded-md text-[9px] md:text-[10px] font-medium tracking-wide border border-slate-200/80">
                           {idea.categoriaTitulo}
                         </span>
                       </div>
                       
-                      <div className="text-slate-400 group-hover:text-slate-700 transition-colors p-1 flex-shrink-0">
-                        <Maximize2 className="w-3.5 h-3.5" />
+                      <div className="text-slate-400 group-hover:text-slate-700 transition-colors p-0.5 md:p-1 flex-shrink-0">
+                        <Maximize2 className="w-3 h-3 md:w-3.5 md:h-3.5" />
                       </div>
                     </div>
 
                     <motion.h4
                       layoutId={`card-title-${idea.id}`}
                       transition={cardSpringTransition}
-                      className="font-bold text-sm md:text-base text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug mb-2"
+                      className="font-bold text-xs sm:text-sm md:text-base text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug mb-1 md:mb-2"
                     >
                       {idea.titulo}
                     </motion.h4>
                     
-                    <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                    {/* Solo visible en pantallas grandes (Desktop/Tablet) */}
+                    <p className="hidden md:block text-xs text-slate-600 leading-relaxed line-clamp-3">
                       <FormattedText text={idea.descripcion} />
                     </p>
                   </div>
 
                   {/* Métricas Inferiores */}
-                  <div className="flex items-center gap-1.5 pt-3 mt-4 border-t border-slate-100 flex-wrap">
-                    <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getBeneficioBadge(idea.beneficio)}`}>
-                      <BarChart className="w-3 h-3" />
+                  <div className="flex items-center gap-1 md:gap-1.5 pt-2 md:pt-3 mt-2 md:mt-4 border-t border-slate-100 flex-wrap">
+                    <div className={`px-1.5 md:px-2 py-0.5 rounded-md text-[9px] md:text-[10px] font-bold border flex items-center gap-1 ${getBeneficioBadge(idea.beneficio)}`}>
+                      <BarChart className="w-2.5 h-2.5 md:w-3 md:h-3" />
                       <span>{idea.beneficio}</span>
                     </div>
-                    <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getRiesgoBadge(idea.riesgo)}`}>
-                      <ShieldAlert className="w-3 h-3" />
+                    <div className={`px-1.5 md:px-2 py-0.5 rounded-md text-[9px] md:text-[10px] font-bold border flex items-center gap-1 ${getRiesgoBadge(idea.riesgo)}`}>
+                      <ShieldAlert className="w-2.5 h-2.5 md:w-3 md:h-3" />
                       <span>{idea.riesgo}</span>
                     </div>
-                    <div title={`Dificultad: ${idea.dificultad || idea.facilidad}`} className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${getDificultadBadge(idea.dificultad || idea.facilidad)}`}>
-                      <Wrench className="w-3 h-3" />
+                    <div title={`Dificultad: ${idea.dificultad || idea.facilidad}`} className={`px-1.5 md:px-2 py-0.5 rounded-md text-[9px] md:text-[10px] font-bold border flex items-center gap-1 ${getDificultadBadge(idea.dificultad || idea.facilidad)}`}>
+                      <Wrench className="w-2.5 h-2.5 md:w-3 md:h-3" />
                       <span>{idea.dificultad || idea.facilidad}</span>
                     </div>
                   </div>
