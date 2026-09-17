@@ -29,19 +29,46 @@ export function LanguageSwitcher() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const switchLocale = (newLocale: string) => {
-    const currentScrollY = typeof window !== "undefined" ? window.scrollY : 0;
-    router.replace(pathname, { locale: newLocale, scroll: false });
-    
-    if (typeof window !== "undefined") {
-      window.scrollTo({ top: currentScrollY, behavior: "instant" });
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: currentScrollY, behavior: "instant" });
-      });
-      setTimeout(() => {
-        window.scrollTo({ top: currentScrollY, behavior: "instant" });
-      }, 50);
+  // Restaurar la posición de scroll exacta al cambiar de idioma (especialmente crítico en móvil)
+  useEffect(() => {
+    if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
     }
+
+    const saved = typeof window !== "undefined" ? sessionStorage.getItem("saved_scroll_pos") : null;
+    if (saved) {
+      const y = parseInt(saved, 10);
+      sessionStorage.removeItem("saved_scroll_pos");
+      
+      const restore = () => {
+        window.scrollTo({ top: y, behavior: "instant" });
+      };
+      
+      restore();
+      requestAnimationFrame(restore);
+      const t1 = setTimeout(restore, 50);
+      const t2 = setTimeout(restore, 150);
+      const t3 = setTimeout(restore, 300);
+
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+        clearTimeout(t3);
+      };
+    }
+  }, [locale]);
+
+  const switchLocale = (newLocale: string) => {
+    if (newLocale === locale) {
+      setIsOpen(false);
+      return;
+    }
+    const currentScrollY = typeof window !== "undefined" ? (window.scrollY || document.documentElement.scrollTop || 0) : 0;
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("saved_scroll_pos", currentScrollY.toString());
+    }
+    
+    router.replace(pathname, { locale: newLocale, scroll: false });
     setIsOpen(false);
   };
 
